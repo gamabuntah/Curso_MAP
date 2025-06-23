@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "7": {
     "title": "Módulo 7: Monitoramento (Bloco MON)",
-    "audio": "https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/Curso%20MAP%20-%20Mod%207.mp3",
+    "audio": "MAP/Audios/Curso MAP - Mod 7.mp3",
     "cards": [
       {
         "type": "default",

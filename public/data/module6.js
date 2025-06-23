@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "6": {
     "title": "Módulo 6: Destinação (Bloco DES) e Tratamento de Águas Pluviais",
-    "audio": "https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/Curso%20MAP%20-%20Mod%206.mp3",
+    "audio": "MAP/Audios/Curso MAP - Mod 6.mp3",
     "cards": [
       {
         "type": "default",

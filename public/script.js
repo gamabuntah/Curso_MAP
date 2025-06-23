@@ -799,6 +799,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             progressManager = pm;
         }
         applyProgressClasses();
+        
         // Atualiza também o estado visual do card de áudio, se visível
         if (currentModuleId && modulos[currentModuleId].audio) {
              const audioCard = domElements.contentContainer.querySelector('.audio-card');
@@ -811,7 +812,72 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
              }
         }
+        
+        // ATUALIZA BOTÃO DE CERTIFICADO DINAMICAMENTE
+        updateCertificateButton();
     };
+
+    // Função para atualizar o botão de certificado dinamicamente
+    async function updateCertificateButton() {
+        if (!window.CertificateManager || !domElements.sidebarFooter) return;
+        
+        try {
+            const currentUser = sessionStorage.getItem('currentUser');
+            const userRole = sessionStorage.getItem('userRole');
+            
+            if (!currentUser) return;
+            
+            const certManager = new window.CertificateManager(currentUser);
+            
+            // Verifica elegibilidade
+            let isEligible = false;
+            
+            if (userRole === 'admin') {
+                // Admin sempre tem acesso
+                isEligible = true;
+            } else {
+                // Para usuários normais, verifica se completou o curso OU já tem certificado
+                const canGenerate = await certManager.canGenerateCertificate();
+                const hasCert = canGenerate ? await certManager.hasCertificate() : false;
+                isEligible = canGenerate || hasCert;
+            }
+            
+            // Verifica se o botão já existe
+            let certLink = document.querySelector('.certificate-link');
+            
+            if (isEligible && !certLink) {
+                // Usuário agora é elegível e não tem botão - ADICIONA
+                certLink = document.createElement('a');
+                certLink.href = '#';
+                certLink.className = 'certificate-link';
+                certLink.innerHTML = '<i class="fa-solid fa-certificate"></i> <span>Meu Certificado</span>';
+                certLink.onclick = (e) => {
+                    e.preventDefault();
+                    window.showCertificateModal && window.showCertificateModal();
+                };
+                domElements.sidebarFooter.prepend(certLink);
+                
+                // Adiciona animação de entrada
+                certLink.style.opacity = '0';
+                certLink.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    certLink.style.transition = 'all 0.3s ease';
+                    certLink.style.opacity = '1';
+                    certLink.style.transform = 'translateY(0)';
+                }, 100);
+                
+                console.log('🎉 Botão de certificado adicionado! Usuário completou o curso.');
+                
+            } else if (!isEligible && certLink) {
+                // Usuário não é mais elegível mas tem botão - REMOVE (caso raro)
+                certLink.remove();
+                console.log('Botão de certificado removido - usuário não elegível.');
+            }
+            
+        } catch (error) {
+            console.error('Erro ao atualizar botão de certificado:', error);
+        }
+    }
 
     // --- MODAL DO CERTIFICADO ---
 
@@ -832,65 +898,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         modal.style.display = 'flex';
 
-        // Carrega dados do certificado
+        // Usa a nova interface do CertificateManager
         const currentUser = sessionStorage.getItem('currentUser');
-        const userRole = sessionStorage.getItem('userRole');
-        const progressManager = window.progressManager || (window.ProgressManager && new window.ProgressManager(currentUser, userRole));
         const certManager = new window.CertificateManager(currentUser);
-        const certData = await certManager.loadCertificate();
-
-        // Preenche preview e info
-        const previewDiv = document.getElementById('certificate-preview');
-        const infoDiv = document.getElementById('certificate-info');
-        if (!certData) {
-            previewDiv.innerHTML = '<div class="loading-preview">Certificado não encontrado.</div>';
-            infoDiv.innerHTML = '';
-            return;
-        }
-        // Gera preview do PDF (imagem)
-        previewDiv.innerHTML = '<div class="loading-preview">Gerando preview...</div>';
-        const generator = new window.CertificateGenerator(certData);
-        await generator.generatePDF(certData);
-        // Gera imagem do PDF (primeira página)
-        const pdfDataUrl = generator.pdf.output('datauristring');
-        previewDiv.innerHTML = `<iframe src="${pdfDataUrl}" style="width:100%;min-height:220px;border:none;"></iframe>`;
-
-        // Preenche info
-        infoDiv.innerHTML = `
-            <strong>Nome:</strong> ${certData.username}<br>
-            <strong>Data de Emissão:</strong> ${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}<br>
-            <strong>Pontuação Final:</strong> ${certData.finalScore}%<br>
-            <strong>Módulos Concluídos:</strong> ${certData.completedModules}/8<br>
-            <strong>Código de Validação:</strong> <span style="font-family:monospace;">${certData.validationCode}</span><br>
-            <strong>Status:</strong> ${certData.status === 'issued' ? 'Emitido' : 'Revogado'}
-            ${userRole === 'admin' ? '<br><strong>Função:</strong> Administrador' : ''}
-        `;
-
-        // Botão de download
-        document.getElementById('download-certificate-btn').onclick = async () => {
-            const downloadGenerator = new window.CertificateGenerator(certData);
-            await downloadGenerator.generatePDF(certData);
-            downloadGenerator.downloadPDF(`certificado-${certData.username}.pdf`);
-            certManager.incrementDownloadCount();
-        };
-        // Botão de validação
-        document.getElementById('validate-certificate-btn').onclick = () => {
-            window.open(`validate.html?code=${certData.validationCode}`, '_blank');
-        };
-        // Botão de compartilhar
-        document.getElementById('share-certificate-btn').onclick = () => {
-            const url = `${window.location.origin}/validate.html?code=${certData.validationCode}`;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Meu Certificado PNSB',
-                    text: 'Confira meu certificado do Curso PNSB!',
-                    url
-                });
-            } else {
-                navigator.clipboard.writeText(url);
-                alert('Link de validação copiado para a área de transferência!');
-            }
-        };
+        
+        // Substitui o conteúdo do modal com a interface do certificado
+        const modalBody = document.getElementById('certificate-modal-body');
+        modalBody.innerHTML = '<div id="certificate-container" style="min-height: 300px;"></div>';
+        
+        // Cria a interface do certificado
+        await certManager.createCertificateInterface();
     };
 
     window.closeCertificateModal = function() {

@@ -294,11 +294,13 @@ const addCertificate = async (validationCode, certificateData) => {
   }
 };
 
-// Inicializar banco na importação (com delay para permitir conexão)
+// Inicializar banco na importação (simplificado)
 if (isProduction && process.env.DATABASE_URL) {
-  setTimeout(() => {
-    initializePostgreSQL().catch(console.error);
-  }, 2000); // Aguarda 2 segundos para a conexão estabilizar
+  // Inicializar de forma mais segura
+  initializePostgreSQL().catch(err => {
+    console.error('❌ Erro na inicialização PostgreSQL:', err.message);
+    console.log('📁 Continuando com fallback JSON');
+  });
 }
 
 module.exports = {

@@ -21,6 +21,8 @@ const mimeTypes = {
   '.ico': 'image/x-icon',
   '.wav': 'audio/wav',
   '.mp3': 'audio/mpeg',
+  '.ogg': 'audio/ogg',
+  '.m4a': 'audio/mp4',
   '.md': 'text/markdown',
   '.txt': 'text/plain'
 };
@@ -40,6 +42,7 @@ const simpleHash = (s) => {
 const serveStaticFile = (res, filePath) => {
   try {
     if (!fs.existsSync(filePath)) {
+      console.log(`❌ Arquivo não encontrado: ${filePath}`);
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('Arquivo não encontrado');
       return;
@@ -48,16 +51,32 @@ const serveStaticFile = (res, filePath) => {
     const ext = path.extname(filePath);
     const contentType = mimeTypes[ext] || 'application/octet-stream';
     
+    // Log especial para arquivos de áudio
+    if (ext === '.wav' || ext === '.mp3' || ext === '.ogg') {
+      console.log(`🎵 Servindo áudio: ${filePath} (tipo: ${contentType})`);
+    }
+    
     const data = fs.readFileSync(filePath);
-    res.writeHead(200, { 
+    
+    // Headers especiais para arquivos de áudio
+    const headers = {
       'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-    });
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Cache-Control': 'public, max-age=31536000' // Cache de 1 ano para arquivos estáticos
+    };
+    
+    // Headers adicionais para áudio
+    if (ext === '.wav' || ext === '.mp3' || ext === '.ogg') {
+      headers['Accept-Ranges'] = 'bytes';
+      headers['Content-Length'] = data.length;
+    }
+    
+    res.writeHead(200, headers);
     res.end(data);
   } catch (error) {
-    console.error('Erro ao servir arquivo:', error);
+    console.error('❌ Erro ao servir arquivo:', error);
     res.writeHead(500, { 'Content-Type': 'text/plain' });
     res.end('Erro interno do servidor');
   }

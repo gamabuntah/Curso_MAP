@@ -1,101 +1,147 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const showRegisterBtn = document.getElementById('showRegister');
-    const showLoginBtn = document.getElementById('showLogin');
+    const loginForm = document.getElementById('login-form');
+    const registerBtn = document.getElementById('register-btn');
+    const loginBtn = document.getElementById('login-btn');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const errorMessage = document.getElementById('error-message');
     
     // Detecta automaticamente se está em produção ou desenvolvimento  
     const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
-    // Alternar entre login e registro
-    showRegisterBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'block';
-    });
+    // Verificar se todos os elementos existem
+    if (!loginForm || !registerBtn || !loginBtn || !usernameInput || !passwordInput || !errorMessage) {
+        console.error('Elementos do DOM não encontrados:', {
+            loginForm: !!loginForm,
+            registerBtn: !!registerBtn,
+            loginBtn: !!loginBtn,
+            usernameInput: !!usernameInput,
+            passwordInput: !!passwordInput,
+            errorMessage: !!errorMessage
+        });
+        return;
+    }
 
-    showLoginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        registerForm.style.display = 'none';
-        loginForm.style.display = 'block';
-    });
+    // Função para mostrar mensagens de erro
+    function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+        errorMessage.style.backgroundColor = '#f44336';
+        errorMessage.style.color = 'white';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 5000);
+    }
 
-    // Login
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // Função para mostrar sucesso
+    function showSuccess(message) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+        errorMessage.style.backgroundColor = '#4CAF50';
+        errorMessage.style.color = 'white';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+            errorMessage.style.backgroundColor = '#f44336';
+        }, 3000);
+    }
+
+    // Estado da aplicação
+    let isLoginMode = true;
+
+    // Função para alternar entre login e registro
+    function toggleMode() {
+        isLoginMode = !isLoginMode;
         
-        const username = document.getElementById('loginUsername').value;
-        const password = document.getElementById('loginPassword').value;
-        const submitBtn = loginForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        try {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Entrando...';
+        if (isLoginMode) {
+            // Modo Login
+            document.querySelector('h2').textContent = 'Acesse seu Progresso';
+            document.querySelector('p').textContent = 'Use seu nome de usuário para acessar o curso. Se for seu primeiro acesso, crie um novo usuário.';
+            loginBtn.textContent = 'Entrar';
+            registerBtn.textContent = 'Criar Novo Usuário';
             
-            const response = await fetch(`${API_URL}/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                // Salvar dados do usuário
-                sessionStorage.setItem('currentUser', data.username);
-                sessionStorage.setItem('userRole', data.role || 'user');
-                
-                // Mostrar mensagem de sucesso
-                showMessage('Login realizado com sucesso!', 'success');
-                
-                // Aguardar um pouco e redirecionar
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1000);
-            } else {
-                showMessage(data.message || 'Erro no login', 'error');
+            // Remove campo de confirmação se existir
+            const confirmField = document.getElementById('confirm-password-group');
+            if (confirmField) {
+                confirmField.remove();
             }
-        } catch (error) {
-            console.error('Erro:', error);
-            showMessage('Erro de conexão com o servidor', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+        } else {
+            // Modo Registro
+            document.querySelector('h2').textContent = 'Criar Nova Conta';
+            document.querySelector('p').textContent = 'Crie sua conta para acessar o curso. Use um nome de usuário único e uma senha segura.';
+            loginBtn.textContent = 'Registrar';
+            registerBtn.textContent = 'Já tenho conta';
+            
+            // Adiciona campo de confirmação de senha
+            if (!document.getElementById('confirm-password-group')) {
+                const confirmGroup = document.createElement('div');
+                confirmGroup.className = 'input-group';
+                confirmGroup.id = 'confirm-password-group';
+                confirmGroup.innerHTML = `
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="••••••••">
+                `;
+                passwordInput.parentElement.insertAdjacentElement('afterend', confirmGroup);
+            }
         }
+        
+        // Limpar mensagens de erro
+        errorMessage.style.display = 'none';
+        
+        // Limpar campos
+        usernameInput.value = '';
+        passwordInput.value = '';
+        const confirmInput = document.getElementById('confirm-password');
+        if (confirmInput) {
+            confirmInput.value = '';
+        }
+    }
+
+    // Event listeners
+    registerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMode();
     });
 
-    // Registro
-    registerForm.addEventListener('submit', async (e) => {
+    // Login/Registro
+    loginBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         
-        const username = document.getElementById('registerUsername').value;
-        const password = document.getElementById('registerPassword').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        const submitBtn = registerForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        
+        // Validações básicas
+        if (!username || !password) {
+            showError('Por favor, preencha todos os campos.');
+            return;
+        }
 
-        // Validações no frontend
         if (username.length < 3) {
-            showMessage('Nome de usuário deve ter pelo menos 3 caracteres', 'error');
+            showError('Nome de usuário deve ter pelo menos 3 caracteres.');
             return;
         }
 
         if (password.length < 6) {
-            showMessage('Senha deve ter pelo menos 6 caracteres', 'error');
+            showError('Senha deve ter pelo menos 6 caracteres.');
             return;
         }
 
-        if (password !== confirmPassword) {
-            showMessage('Senhas não conferem', 'error');
-            return;
+        // Se estiver no modo registro, validar confirmação de senha
+        if (!isLoginMode) {
+            const confirmPassword = document.getElementById('confirm-password');
+            if (!confirmPassword || confirmPassword.value !== password) {
+                showError('As senhas não conferem.');
+                return;
+            }
         }
         
+        const originalText = loginBtn.textContent;
+        
         try {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Registrando...';
+            loginBtn.disabled = true;
+            loginBtn.textContent = isLoginMode ? 'Entrando...' : 'Registrando...';
             
-            const response = await fetch(`${API_URL}/register`, {
+            const endpoint = isLoginMode ? '/login' : '/register';
+            const response = await fetch(`${API_URL}${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -104,100 +150,137 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                showMessage('Usuário registrado com sucesso! Faça login para continuar.', 'success');
-                // Limpar formulário
-                registerForm.reset();
-                // Voltar para tela de login
-                setTimeout(() => {
-                    showLoginBtn.click();
-                }, 2000);
+                if (isLoginMode) {
+                    // Login bem-sucedido
+                    sessionStorage.setItem('currentUser', data.username);
+                    sessionStorage.setItem('userRole', data.role || 'user');
+                    
+                    showSuccess('Login realizado com sucesso!');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                } else {
+                    // Registro bem-sucedido
+                    showSuccess('Usuário registrado com sucesso! Agora você pode fazer login.');
+                    
+                    // Voltar para modo login
+                    setTimeout(() => {
+                        toggleMode();
+                    }, 2000);
+                }
             } else {
-                showMessage(data.message || 'Erro no registro', 'error');
+                showError(data.message || (isLoginMode ? 'Erro no login' : 'Erro no registro'));
             }
         } catch (error) {
             console.error('Erro:', error);
-            showMessage('Erro de conexão com o servidor', 'error');
+            showError('Erro de conexão com o servidor. Verifique sua internet e tente novamente.');
         } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+            loginBtn.disabled = false;
+            loginBtn.textContent = originalText;
         }
     });
 
-    // Função para mostrar mensagens
-    function showMessage(message, type = 'info') {
-        // Remove mensagem anterior se existir
-        const existingMessage = document.querySelector('.message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message message-${type}`;
-        messageDiv.textContent = message;
-        
-        // Estilos da mensagem
-        messageDiv.style.cssText = `
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 25px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            max-width: 90%;
-            text-align: center;
-            animation: slideDown 0.3s ease;
-        `;
-        
-        // Cores por tipo
-        const colors = {
-            success: '#4CAF50',
-            error: '#F44336',
-            warning: '#FF9800',
-            info: '#2196F3'
-        };
-        
-        messageDiv.style.backgroundColor = colors[type] || colors.info;
-        
-        document.body.appendChild(messageDiv);
-        
-        // Remover após alguns segundos
-        const duration = type === 'success' ? 3000 : 5000;
-        setTimeout(() => {
-            if (messageDiv.parentNode) {
-                messageDiv.style.animation = 'slideUp 0.3s ease';
-                setTimeout(() => {
-                    if (messageDiv.parentNode) {
-                        messageDiv.remove();
-                    }
-                }, 300);
-            }
-        }, duration);
-    }
+    // Permitir envio com Enter
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        loginBtn.click();
+    });
 
     // Verificar se já está logado
     const currentUser = sessionStorage.getItem('currentUser');
     if (currentUser) {
-        showMessage('Você já está logado. Redirecionando...', 'info');
+        showSuccess('Você já está logado. Redirecionando...');
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 1500);
     }
 });
 
-// Adicionar CSS para animações
+// CSS adicional para melhorar a aparência
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes slideDown {
-        from { transform: translate(-50%, -100%); opacity: 0; }
-        to { transform: translate(-50%, 0); opacity: 1; }
+    .error-message {
+        display: none;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        background-color: #f44336;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+        animation: slideDown 0.3s ease;
     }
     
-    @keyframes slideUp {
-        from { transform: translate(-50%, 0); opacity: 1; }
-        to { transform: translate(-50%, -100%); opacity: 0; }
+    @keyframes slideDown {
+        from { transform: translateY(-10px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
+    
+    .input-group input:focus {
+        outline: none;
+        border-color: #2980b9;
+    }
+    
+    .button-group {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+        background-color: #2980b9;
+        color: white;
+    }
+    
+    .btn-primary:hover:not(:disabled) {
+        background-color: #3498db;
+        transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+        background-color: #95a5a6;
+        color: white;
+    }
+    
+    .btn-secondary:hover:not(:disabled) {
+        background-color: #7f8c8d;
+        transform: translateY(-2px);
     }
 `;
 document.head.appendChild(style); 

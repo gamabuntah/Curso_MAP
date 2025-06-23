@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "8": {
     "title": "Módulo 8: Manejo de Águas Pluviais e Educação Ambiental",
-    "audio": "MAP/Audios/Curso MAP - Mod 8.wav",
+    "audio": "MAP/Audios/Curso MAP - Mod 8.mp3",
     "cards": [
       {
         "type": "default",

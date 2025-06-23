@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "7": {
     "title": "Módulo 7: Monitoramento (Bloco MON)",
-    "audio": "MAP/Audios/Curso MAP - Mod 7.wav",
+    "audio": "MAP/Audios/Curso MAP - Mod 7.mp3",
     "cards": [
       {
         "type": "default",

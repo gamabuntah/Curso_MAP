@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "2": {
     "title": "Módulo 2: Caracterização do Prestador de Serviço",
-    "audio": "MAP/Audios/Curso MAP - Mod 2.wav",
+    "audio": "MAP/Audios/Curso MAP - Mod 2.mp3",
     "cards": [
       {
         "type": "default",

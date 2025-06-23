@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "3": {
     "title": "Módulo 3: Aspectos Legais e Terceirização (Blocos LEG e SRT)",
-    "audio": "MAP/Audios/Curso MAP - Mod 3.wav",
+    "audio": "MAP/Audios/Curso MAP - Mod 3.mp3",
     "cards": [
       {
         "type": "default",

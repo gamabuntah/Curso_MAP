@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "1": {
     "title": "Módulo 1: Introdução à PNSB e Fundamentos de MAP",
-    "audio": "MAP/Audios/Curso MAP - Mod 1.mp3",
+    "audio": "https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/Curso%20MAP%20-%20Mod%201.mp3",
     "cards": [
       {
         "type": "default",

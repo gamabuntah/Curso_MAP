@@ -56,8 +56,8 @@ Object.assign(window.modulos_data, {
       },
       {
         "type": "exemplo",
-        "title": "📝 Exemplo",
-        "content": "Se a sua cidade possui apenas bocas de lobo, marque microdrenagem."
+        "title": "📝 Exemplo Prático para Técnicos do IBGE",
+        "content": "<b>Situação:</b> Você está auxiliando o responsável de uma Prefeitura Municipal que terceiriza a limpeza de sarjetas para uma empresa privada, mas opera diretamente uma estação de bombeamento de águas pluviais.<br><br><b>Como orientar o preenchimento:</b><br>✅ <b>A Prefeitura presta serviço de MAP?</b> SIM (opera a estação de bombeamento)<br>✅ <b>Que tipo de sistema a Prefeitura opera diretamente?</b> Macrodrenagem (estação de bombeamento = grande dispositivo)<br>✅ <b>E a limpeza de sarjetas?</b> Deve ser registrada no Bloco SRT (terceirização) com a empresa privada cadastrada<br><br><b>❌ Erro comum:</b> Marcar microdrenagem só porque o município tem sarjetas - o que importa é <b>o que o PRESTADOR ESPECÍFICO faz</b>, não o que existe no município."
       },
       {
         "type": "duvidas",

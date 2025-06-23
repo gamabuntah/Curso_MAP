@@ -94,169 +94,169 @@ Object.assign(window.modulos_data, {
       "title": "📝 Quiz do Módulo 7",
       "questions": [
         {
-          "question": "Qual é o objetivo principal do Bloco MON na PNSB?",
+          "question": "Qual é o objetivo central do Bloco MON (Monitoramento) na PNSB?",
           "options": [
-            "Medir a quantidade de chuva",
-            "Avaliar apenas a qualidade da água",
-            "Identificar e caracterizar as atividades de monitoramento e gestão do sistema de drenagem",
-            "Fiscalizar empresas de monitoramento"
+            "Controlar o orçamento destinado à compra de equipamentos de medição, como pluviômetros e sensores de nível.",
+            "Fiscalizar a frequência com que os funcionários do prestador de serviço realizam rondas de inspeção visual nas redes.",
+            "Verificar se o prestador monitora os aspectos quantitativos (nível e vazão) e qualitativos (parâmetros físico-químicos) das águas pluviais.",
+            "Analisar os relatórios de sustentabilidade publicados pelo prestador de serviço em seu site oficial e redes sociais."
           ],
-          "answer": "Identificar e caracterizar as atividades de monitoramento e gestão do sistema de drenagem",
-          "feedback": "O Bloco MON (Monitoramento) tem como objetivo capacitar o técnico a identificar se o município realiza monitoramento da quantidade e qualidade das águas pluviais, além de monitoramento de desastres e sistemas de alerta para a população."
+          "answer": "Verificar se o prestador monitora os aspectos quantitativos (nível e vazão) e qualitativos (parâmetros físico-químicos) das águas pluviais.",
+          "feedback": "Correto. O Bloco MON foca em investigar se e como o prestador de serviço realiza o monitoramento técnico, tanto da quantidade quanto da qualidade da água no sistema de drenagem."
         },
         {
-          "question": "O que significa \"monitoramento\" no contexto da drenagem urbana?",
+          "question": "Para o monitoramento da VAZÃO de um curso d'água, qual método ou equipamento é destacado como fundamental no material?",
           "options": [
-            "Manutenção preventiva",
-            "Acompanhamento contínuo do funcionamento e desempenho do sistema",
-            "Apenas medição da quantidade de chuva",
-            "Fiscalização de empresas"
+            "O uso de um Perfilador Acústico Doppler de Corrente (ADCP) ou a elaboração de uma curva-chave.",
+            "A utilização de sensores ultrassônicos e réguas linimétricas para medir apenas o nível estático da água.",
+            "A coleta de amostras de água para análise de Oxigênio Dissolvido (OD) e Demanda Química de Oxigênio (DQO).",
+            "A instalação de pluviômetros em pontos estratégicos para medir o volume de chuva na bacia hidrográfica."
           ],
-          "answer": "Acompanhamento contínuo do funcionamento e desempenho do sistema",
-          "feedback": "Monitoramento é o acompanhamento contínuo do funcionamento e desempenho do sistema de drenagem, incluindo medições de chuva, nível de rios e qualidade da água."
+          "answer": "O uso de um Perfilador Acústico Doppler de Corrente (ADCP) ou a elaboração de uma curva-chave.",
+          "feedback": "Exato. Enquanto pluviômetros medem chuva e sensores medem nível, a VAZÃO (volume de água por tempo) é determinada por equipamentos como o ADCP ou calculada através de uma curva-chave, que relaciona nível e vazão."
         },
         {
-          "question": "O que significa \"gestão\" no contexto da drenagem urbana?",
+          "question": "No monitoramento da qualidade da água, qual é a principal diferença entre a coleta manual e a não manual?",
           "options": [
-            "Apenas manutenção das estruturas",
-            "Administração e controle dos recursos e atividades do sistema",
-            "Medição de vazões",
-            "Fiscalização de empresas"
+            "A coleta manual é considerada mais precisa para medir o pH, enquanto a não manual é mais adequada para medir a temperatura da água.",
+            "A coleta não manual analisa apenas parâmetros visuais como cor e turbidez, enquanto a manual permite análises químicas complexas.",
+            "A coleta manual é realizada diretamente no curso d'água, enquanto a não manual é feita a partir de amostras de chuva coletadas em telhados.",
+            "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico."
           ],
-          "answer": "Administração e controle dos recursos e atividades do sistema",
-          "feedback": "Gestão é a administração e controle dos recursos e atividades do sistema de drenagem, garantindo seu funcionamento eficiente e seguro."
+          "answer": "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico.",
+          "feedback": "Correto. A coleta não manual se refere ao uso de equipamentos automáticos que podem ser programados para coletar amostras de forma sistemática, útil para monitorar eventos de chuva, por exemplo."
         },
         {
-          "question": "Qual é a importância do monitoramento contínuo?",
+          "question": "Qual dos seguintes grupos de parâmetros de qualidade da água é relevante para o monitoramento de águas pluviais, segundo o material?",
           "options": [
-            "Facilitar a manutenção",
-            "Reduzir custos de energia",
-            "Identificar problemas antes que se tornem críticos",
-            "Melhorar a aparência urbana"
+            "Contagem de células somáticas, teor de gordura e proteína, e acidez, característicos da análise de qualidade do leite.",
+            "Sólidos, nutrientes (fósforo e nitrogênio), Demanda Química de Oxigênio (DQO), metais pesados e óleos e graxas.",
+            "Nível de cloro residual, flúor, dureza da água e presença de sais minerais, típicos do tratamento de água potável.",
+            "Índice de radiação ultravioleta, concentração de ozônio e presença de material particulado no ar atmosférico."
           ],
-          "answer": "Identificar problemas antes que se tornem críticos",
-          "feedback": "O monitoramento contínuo permite identificar problemas no sistema de drenagem antes que se tornem críticos, possibilitando ações preventivas e evitando desastres."
+          "answer": "Sólidos, nutrientes (fósforo e nitrogênio), Demanda Química de Oxigênio (DQO), metais pesados e óleos e graxas.",
+          "feedback": "Isso mesmo. Estes parâmetros são indicadores típicos da poluição carregada pela água da chuva em ambientes urbanos (poluição difusa), refletindo o que é 'lavado' das ruas."
         },
         {
-          "question": "O que são \"estações pluviométricas\"?",
+          "question": "O que o Bloco MMP (Manutenção, Melhoria e Prevenção) busca identificar?",
           "options": [
-            "Equipamentos que medem a quantidade de chuva",
-            "Reservatórios de água",
-            "Estações de tratamento de água",
-            "Poços de monitoramento"
+            "As atividades realizadas para garantir o funcionamento do sistema, como limpeza, desassoreamento e medidas preventivas.",
+            "Os processos de licitação e compra de materiais de escritório, veículos e equipamentos de proteção individual (EPIs).",
+            "O planejamento de longo prazo para a expansão da malha urbana, incluindo a criação de novos bairros e loteamentos.",
+            "A gestão de recursos humanos do prestador, incluindo a contratação, treinamento e plano de carreira dos funcionários."
           ],
-          "answer": "Equipamentos que medem a quantidade de chuva",
-          "feedback": "Estações pluviométricas são equipamentos instalados para medir a quantidade de chuva em determinado local, fundamentais para o monitoramento do sistema de drenagem."
+          "answer": "As atividades realizadas para garantir o funcionamento do sistema, como limpeza, desassoreamento e medidas preventivas.",
+          "feedback": "Correto. O Bloco MMP foca nas ações práticas de manutenção (corretiva e preventiva) e nas melhorias realizadas na infraestrutura de drenagem existente."
         },
         {
-          "question": "O que são \"estações fluviométricas\"?",
+          "question": "Qual é a principal diferença na atividade de limpeza entre a microdrenagem e a macrodrenagem?",
           "options": [
-            "Poços de monitoramento",
-            "Estações de tratamento de água",
-            "Equipamentos que medem o nível e vazão dos rios",
-            "Reservatórios de água"
+            "A microdrenagem se refere à limpeza de estruturas cinzas, e a macrodrenagem à manutenção de infraestruturas verdes.",
+            "A limpeza da microdrenagem ocorre anualmente, enquanto a da macrodrenagem é realizada semanalmente.",
+            "A limpeza da microdrenagem envolve bueiros e galerias, enquanto a da macrodrenagem foca em córregos e rios.",
+            "A microdrenagem é limpa exclusivamente com equipamentos manuais, enquanto a macrodrenagem exige sempre grandes maquinários."
           ],
-          "answer": "Equipamentos que medem o nível e vazão dos rios",
-          "feedback": "Estações fluviométricas são equipamentos que medem o nível e a vazão dos rios, essenciais para prever enchentes e monitorar o comportamento dos cursos d'água."
+          "answer": "A limpeza da microdrenagem envolve bueiros e galerias, enquanto a da macrodrenagem foca em córregos e rios.",
+          "feedback": "Exato. A distinção se dá pela escala: microdrenagem são as estruturas menores de captação e condução (bueiros, sarjetas, galerias), e macrodrenagem são os grandes canais e cursos d'água."
         },
         {
-          "question": "O que é \"monitoramento de qualidade da água\"?",
+          "question": "O que é 'assoreamento' no contexto da manutenção de sistemas de drenagem?",
           "options": [
-            "Manutenção preventiva",
-            "Análise de parâmetros físicos, químicos e biológicos da água",
-            "Fiscalização de empresas",
-            "Apenas medição da quantidade de água"
+            "O crescimento excessivo de vegetação aquática nas margens e no leito dos rios, dificultando o fluxo da água.",
+            "O processo de corrosão de tubulações de metal devido à ação de agentes químicos presentes na água pluvial.",
+            "A formação de uma camada de lodo e biofilme na superfície interna das galerias pluviais.",
+            "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade."
           ],
-          "answer": "Análise de parâmetros físicos, químicos e biológicos da água",
-          "feedback": "Monitoramento de qualidade da água é a análise de parâmetros físicos, químicos e biológicos para avaliar a presença de poluentes e garantir a segurança ambiental."
+          "answer": "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade.",
+          "feedback": "Correto. O assoreamento é um dos principais problemas a serem combatidos com a manutenção (desassoreamento), pois ele diminui a capacidade de vazão dos canais e aumenta o risco de inundações."
         },
         {
-          "question": "O que é \"monitoramento de vazões\"?",
+          "question": "Qual das seguintes opções é uma medida PREVENTIVA para o controle de sedimentos em sistemas de drenagem?",
           "options": [
-            "Manutenção preventiva",
-            "Medição do volume de água que passa por um ponto específico",
-            "Análise da qualidade da água",
-            "Fiscalização de empresas"
+            "Implantação de ecobarreiras, caixas de areia ou varrição mecanizada de ruas antes das chuvas.",
+            "Reforço estrutural das margens de um córrego com gabiões após um evento de erosão e deslizamento.",
+            "Abertura de comportas de barragens após uma chuva intensa para liberar o excesso de água acumulada.",
+            "Utilização de caminhões hidrojato para desobstruir galerias que já estão entupidas com lixo e detritos."
           ],
-          "answer": "Medição do volume de água que passa por um ponto específico",
-          "feedback": "Monitoramento de vazões é a medição do volume de água que passa por um ponto específico do sistema, importante para prever enchentes e dimensionar estruturas."
+          "answer": "Implantação de ecobarreiras, caixas de areia ou varrição mecanizada de ruas antes das chuvas.",
+          "feedback": "Isso mesmo. Medidas preventivas são aquelas que evitam que o problema ocorra, como impedir que o lixo e os sedimentos cheguem ao sistema de drenagem. A desobstrução e o reforço são ações corretivas."
         },
         {
-          "question": "O que é \"sistema de alerta\"?",
+          "question": "Para controle de sedimentos em áreas de OBRAS, que tipo de medida preventiva pode ser adotada?",
           "options": [
-            "Poço de monitoramento",
-            "Reservatório de água",
-            "Estação de tratamento de água",
-            "Mecanismo que avisa sobre situações de risco"
+            "Aumento do número de bueiros no entorno da obra para captar mais rapidamente a água com sedimentos.",
+            "Instalação de dispositivos de lava-rodas para veículos, construção de leiras e uso de barreiras de contenção.",
+            "Cobertura total da área da obra com lona plástica para impedir o contato da chuva com o solo exposto.",
+            "Aplicação de uma camada de asfalto temporária em toda a área de terraplanagem para evitar a lama."
           ],
-          "answer": "Mecanismo que avisa sobre situações de risco",
-          "feedback": "Sistema de alerta é qualquer mecanismo que avisa a população sobre situações de risco, como sirenes, SMS, rádio, carros de som ou grupos de WhatsApp."
+          "answer": "Instalação de dispositivos de lava-rodas para veículos, construção de leiras e uso de barreiras de contenção.",
+          "feedback": "Correto. O material destaca medidas específicas para canteiros de obras, que são grandes fontes de sedimentos. Lava-rodas, leiras e barreiras ajudam a conter o sedimento na fonte."
         },
         {
-          "question": "Qual é a importância de um sistema de alerta?",
+          "question": "Qual é a principal finalidade da 'renaturalização' de um curso d'água, como uma melhoria no sistema de drenagem?",
           "options": [
-            "Permitir ações preventivas e proteção da população",
-            "Facilitar a manutenção",
-            "Reduzir custos de energia",
-            "Melhorar a aparência urbana"
+            "Transformar o rio em um canal retilíneo e profundo para otimizar o transporte de água e evitar transbordamentos.",
+            "Cobrir (tamponar) o rio com uma laje de concreto para criar novas áreas de lazer e espaços públicos sobre ele.",
+            "Revestir completamente o leito e as margens do rio com concreto para aumentar a velocidade da água e a eficiência da vazão.",
+            "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização."
           ],
-          "answer": "Permitir ações preventivas e proteção da população",
-          "feedback": "O sistema de alerta permite que a população tome medidas preventivas e se proteja em situações de risco, salvando vidas e reduzindo danos."
+          "answer": "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização.",
+          "feedback": "Exato. A renaturalização é o oposto da canalização com concreto. Ela busca trazer de volta a vegetação, as curvas e as funções ecológicas de um rio, sendo uma abordagem de infraestrutura verde."
         },
         {
-          "question": "O que é \"plano de contingência\"?",
+          "question": "O que distingue a destinação final dos resíduos removidos na limpeza dos sistemas de drenagem?",
           "options": [
-            "Documento que define ações para situações de emergência",
-            "Plano de manutenção preventiva",
-            "Plano de fiscalização",
-            "Plano de monitoramento"
+            "Podem ser destinados a aterros sanitários, vazadouros, áreas de processamento (bota-fora) ou compostagem.",
+            "Devem ser obrigatoriamente incinerados em usinas específicas para geração de energia elétrica.",
+            "São sempre reutilizados como matéria-prima na indústria da construção civil para fabricação de tijolos.",
+            "Precisam ser depositados diretamente nas margens dos rios a jusante do ponto de coleta para seguir o fluxo natural."
           ],
-          "answer": "Documento que define ações para situações de emergência",
-          "feedback": "Plano de contingência é um documento que define as ações a serem tomadas em situações de emergência, como enchentes ou deslizamentos, garantindo resposta rápida e eficiente."
+          "answer": "Podem ser destinados a aterros sanitários, vazadouros, áreas de processamento (bota-fora) ou compostagem.",
+          "feedback": "Correto. O questionário investiga o destino dado a esses resíduos, que pode variar muito em termos de adequação ambiental, desde a correta (aterro, compostagem) até a incorreta (vazadouro)."
         },
         {
-          "question": "Qual é a importância de um plano de contingência?",
+          "question": "O que são 'bioindicadores' no contexto do monitoramento da qualidade da água?",
           "options": [
-            "Garantir resposta rápida e eficiente em emergências",
-            "Melhorar a aparência urbana",
-            "Reduzir custos de energia",
-            "Facilitar a manutenção"
+            "Modelos matemáticos que preveem a qualidade da água com base em dados de chuva e uso do solo.",
+            "Sensores eletrônicos que mudam de cor para indicar a presença de poluentes específicos na água.",
+            "Organismos vivos (como peixes ou insetos aquáticos) cuja presença, ausência ou condição indica a saúde do ecossistema.",
+            "Tabelas de referência com os limites máximos permitidos para cada poluente, definidas pelo CONAMA."
           ],
-          "answer": "Garantir resposta rápida e eficiente em emergências",
-          "feedback": "O plano de contingência garante que o município esteja preparado para responder rapidamente a emergências, minimizando danos e protegendo a população."
+          "answer": "Organismos vivos (como peixes ou insetos aquáticos) cuja presença, ausência ou condição indica a saúde do ecossistema.",
+          "feedback": "Isso mesmo. O uso de bioindicadores é uma forma de avaliar a qualidade da água a partir da resposta da comunidade biológica, complementando as análises físico-químicas."
         },
         {
-          "question": "O que é \"gestão integrada\"?",
+          "question": "Qual é a diferença fundamental entre 'melhoria' e 'manutenção' no Bloco MMP?",
           "options": [
-            "Apenas gestão federal",
-            "Coordenação entre diferentes setores e níveis de governo",
-            "Apenas gestão municipal",
-            "Apenas gestão estadual"
+            "Manutenção é realizada por equipes próprias do prestador, enquanto melhorias são sempre executadas por empresas terceirizadas.",
+            "Manutenção se aplica apenas a infraestruturas cinzas (concreto), enquanto melhoria se aplica a infraestruturas verdes.",
+            "Manutenção é uma despesa corrente (custeio), enquanto melhoria é sempre classificada como despesa de capital (investimento).",
+            "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura."
           ],
-          "answer": "Coordenação entre diferentes setores e níveis de governo",
-          "feedback": "Gestão integrada é a coordenação entre diferentes setores e níveis de governo para otimizar recursos e garantir a eficiência do sistema de drenagem."
+          "answer": "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura.",
+          "feedback": "Correto. Manutenção é sobre manter o que já existe funcionando (limpeza, reparos). Melhoria é sobre fazer um upgrade no sistema (ampliar, renaturalizar, etc.)."
         },
         {
-          "question": "Qual é a vantagem da gestão integrada?",
+          "question": "No monitoramento quantitativo, o que é uma 'curva-chave'?",
           "options": [
-            "Melhorar a aparência urbana",
-            "Facilitar a manutenção",
-            "Reduzir custos de energia",
-            "Otimizar recursos e evitar conflitos entre setores"
+            "Uma chave de acesso criptografada para acessar os dados de monitoramento em tempo real pela internet.",
+            "Uma relação matemática entre o nível da água e a vazão em uma seção do rio, obtida por medições de campo.",
+            "Uma ferramenta usada para abrir e fechar as comportas de barragens de forma manual em caso de emergência.",
+            "Um mapa que indica os pontos-chave onde o monitoramento de enchentes deve ser realizado com prioridade."
           ],
-          "answer": "Otimizar recursos e evitar conflitos entre setores",
-          "feedback": "A gestão integrada otimiza recursos e evita conflitos entre setores, promovendo uma atuação mais eficiente e coordenada no sistema de drenagem."
+          "answer": "Uma relação matemática entre o nível da água e a vazão em uma seção do rio, obtida por medições de campo.",
+          "feedback": "Exato. A curva-chave é uma ferramenta essencial. Após estabelecida, permite estimar a vazão (que é difícil de medir continuamente) a partir da medição do nível da água (que é mais fácil)."
         },
         {
-          "question": "O que é \"indicador de desempenho\"?",
+          "question": "Qual dos seguintes métodos é usado para monitorar o NÍVEL de um rio de forma contínua e automática?",
           "options": [
-            "Fiscalização de empresas",
-            "Apenas medição da quantidade de chuva",
-            "Medida que avalia a eficiência e eficácia do sistema",
-            "Manutenção preventiva"
+            "Consultar a previsão do tempo em institutos de meteorologia e estimar o nível com base na chuva prevista.",
+            "Instalar um sensor de pressão ou um sensor ultrassônico em uma estação fluviométrica.",
+            "Utilizar um Perfilador Acústico Doppler de Corrente (ADCP) para medir a velocidade em diferentes profundidades.",
+            "Medir manualmente com uma trena a distância da ponte até a superfície da água uma vez por semana."
           ],
-          "answer": "Medida que avalia a eficiência e eficácia do sistema",
-          "feedback": "Indicador de desempenho é uma medida utilizada para avaliar a eficiência e a eficácia do sistema de drenagem, permitindo identificar pontos de melhoria."
+          "answer": "Instalar um sensor de pressão ou um sensor ultrassônico em uma estação fluviométrica.",
+          "feedback": "Correto. Sensores de pressão (instalados no fundo) ou ultrassônicos (instalados acima da água) são tecnologias comuns para medir o nível da água de forma contínua e automática, enviando os dados remotamente."
         }
       ]
     }

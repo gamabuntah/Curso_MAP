@@ -89,169 +89,169 @@ Object.assign(window.modulos_data, {
       "title": "📝 Quiz do Módulo 8",
       "questions": [
         {
-          "question": "Qual é o objetivo principal do Bloco MAP na PNSB?",
+          "question": "Qual é a finalidade principal do Bloco RUR, conforme o material de referência da PNSB?",
           "options": [
-            "Medir a quantidade de chuva",
-            "Fiscalizar empresas de sustentabilidade",
-            "Identificar e caracterizar as práticas de manejo sustentável de águas pluviais",
-            "Avaliar apenas a qualidade da água"
+            "Mapear exclusivamente a infraestrutura de saneamento básico, como redes de esgoto e distribuição de água, na zona rural.",
+            "Fiscalizar a aplicação de agrotóxicos em grandes propriedades rurais e seu impacto nos lençóis freáticos.",
+            "Compreender as soluções e serviços implementados para o manejo de águas pluviais em áreas rurais, abrangendo vias, cursos d'água e domicílios.",
+            "Estabelecer normas para a construção de grandes barragens e usinas hidrelétricas em bacias hidrográficas rurais."
           ],
-          "answer": "Identificar e caracterizar as práticas de manejo sustentável de águas pluviais",
-          "feedback": "O Bloco MAP (Manejo de Águas Pluviais) tem como objetivo capacitar o técnico a identificar se o município possui planejamento, instrumentos de cobrança e ações de educação ambiental para o manejo sustentável das águas da chuva."
+          "answer": "Compreender as soluções e serviços implementados para o manejo de águas pluviais em áreas rurais, abrangendo vias, cursos d'água e domicílios.",
+          "feedback": "Correto. O Bloco RUR foca especificamente no manejo das águas da chuva em contextos rurais, analisando as soluções existentes desde as estradas até os domicílios."
         },
         {
-          "question": "O que significa \"manejo sustentável\" de águas pluviais?",
+          "question": "O que são 'barraginhas' no contexto do manejo de águas pluviais rurais?",
           "options": [
-            "Bombeamento para reservatórios",
-            "Tratamento com produtos químicos",
-            "Apenas armazenamento da água da chuva",
-            "Práticas que respeitam o ciclo hidrológico natural e reduzem impactos ambientais"
+            "Pequenas bacias escavadas no solo para capturar enxurradas, permitindo a infiltração da água e a conservação do solo.",
+            "Sistemas de diques e comportas projetados para proteger grandes áreas de plantio contra inundações sazonais.",
+            "Reservatórios de grande porte para armazenamento permanente de água pluvial, visando o abastecimento humano contínuo.",
+            "Canais de concreto construídos para acelerar o escoamento da água das chuvas em direção aos rios, evitando alagamentos."
           ],
-          "answer": "Práticas que respeitam o ciclo hidrológico natural e reduzem impactos ambientais",
-          "feedback": "Manejo sustentável de águas pluviais envolve práticas que respeitam o ciclo hidrológico natural, reduzem impactos ambientais e promovem o uso racional da água da chuva."
+          "answer": "Pequenas bacias escavadas no solo para capturar enxurradas, permitindo a infiltração da água e a conservação do solo.",
+          "feedback": "Exato. As barraginhas são uma tecnologia social de baixo custo que visa reter a água da chuva onde ela cai, promovendo a infiltração e recarga do lençol freático, ao contrário de estruturas que aceleram o escoamento."
         },
         {
-          "question": "O que são \"infraestruturas verdes\"?",
+          "question": "A 'adequação do abaulamento do leito da via' é uma técnica de manejo que consiste em:",
           "options": [
-            "Estações de tratamento verdes",
-            "Apenas parques e jardins",
-            "Reservatórios com vegetação",
-            "Soluções baseadas na natureza para drenagem urbana"
+            "Criar uma depressão central ao longo da via para funcionar como um canal de drenagem principal.",
+            "Construir a parte central da via mais elevada que as laterais, facilitando o escoamento da água para as margens.",
+            "Nivelar completamente a via para criar uma superfície plana, distribuindo a água da chuva de maneira uniforme.",
+            "Compactar intensamente o solo da via para torná-la impermeável e aumentar a velocidade do escoamento superficial."
           ],
-          "answer": "Soluções baseadas na natureza para drenagem urbana",
-          "feedback": "Infraestruturas verdes são soluções baseadas na natureza para drenagem urbana, como jardins de chuva, telhados verdes e biovaletas, que ajudam a infiltrar, reter e tratar a água da chuva."
+          "answer": "Construir a parte central da via mais elevada que as laterais, facilitando o escoamento da água para as margens.",
+          "feedback": "Correto. O abaulamento é uma técnica fundamental em estradas não pavimentadas para evitar a formação de poças e processos erosivos, direcionando a água de forma controlada para as laterais."
         },
         {
-          "question": "Qual é a vantagem das infraestruturas verdes?",
+          "question": "Qual grupo de materiais provenientes de reúso ou reciclagem é aplicável na pavimentação de vias rurais, conforme o material de referência?",
           "options": [
-            "Funcionam apenas em áreas rurais",
-            "São mais baratas de construir",
-            "Não precisam de manutenção",
-            "Reduzem escoamento superficial e melhoram a qualidade da água"
+            "Vidro moído para compor a massa asfáltica e gesso de descartes de obras para estabilização da base.",
+            "Garrafas PET trituradas, plásticos diversos e embalagens longa-vida compactadas para formar blocos intertravados.",
+            "Madeira de demolição tratada em formato de dormentes e compostos orgânicos para estabilização do solo.",
+            "Resíduos da construção civil, escória de siderurgia e borracha de pneus para composição de asfalto-borracha."
           ],
-          "answer": "Reduzem escoamento superficial e melhoram a qualidade da água",
-          "feedback": "As infraestruturas verdes reduzem o escoamento superficial, melhoram a qualidade da água e contribuem para a sustentabilidade urbana."
+          "answer": "Resíduos da construção civil, escória de siderurgia e borracha de pneus para composição de asfalto-borracha.",
+          "feedback": "Isso mesmo. O material de referência cita especificamente resíduos de construção, asfalto-borracha e escória como materiais de reúso aplicáveis, destacando soluções sustentáveis para a infraestrutura viária rural."
         },
         {
-          "question": "O que é um \"telhado verde\"?",
+          "question": "Entre as soluções para manejo de águas pluviais em VIAS INTERNAS de comunidades rurais, qual das seguintes opções está correta?",
           "options": [
-            "Telhado com isolamento térmico",
-            "Telhado pintado de verde",
-            "Cobertura vegetal sobre telhados que retém água da chuva",
-            "Telhado com painéis solares"
+            "Criação de hortas comunitárias e instalação de sistemas de irrigação por gotejamento com água de poços artesianos.",
+            "Distribuição de kits de saneamento domiciliar e construção de fossas sépticas para cada residência.",
+            "Implantação de dispositivos como sarjetas e canaletas, e orientação à comunidade para manutenção das soluções.",
+            "Instalação de sistemas de iluminação pública com energia solar e construção de pontos de ônibus cobertos."
           ],
-          "answer": "Cobertura vegetal sobre telhados que retém água da chuva",
-          "feedback": "Telhado verde é uma cobertura vegetal instalada sobre telhados, que retém parte da água da chuva, reduzindo o escoamento e melhorando o microclima urbano."
+          "answer": "Implantação de dispositivos como sarjetas e canaletas, e orientação à comunidade para manutenção das soluções.",
+          "feedback": "Correto. As soluções para vias internas rurais focam no manejo da água que escoa dentro da comunidade, utilizando estruturas de microdrenagem e o envolvimento dos moradores."
         },
         {
-          "question": "O que é \"pavimento permeável\"?",
+          "question": "No contexto dos PERIDOMICÍLIOS rurais, quais soluções de manejo de água pluvial são citadas no material?",
           "options": [
-            "Pavimento com drenos",
-            "Superfície que permite a infiltração da água da chuva",
-            "Pavimento pintado de verde",
-            "Pavimento com inclinação"
+            "A pavimentação completa da área externa com concreto para facilitar a limpeza e o rápido escoamento da água.",
+            "Técnicas que promovem a infiltração, como trincheiras e jardins de chuva, e a instalação de reservatórios domiciliares.",
+            "A construção de muros altos e barreiras de contenção para proteger a propriedade contra o fluxo de água externo.",
+            "A canalização direta da água da chuva do telhado para a rede de esgoto ou para a rua mais próxima."
           ],
-          "answer": "Superfície que permite a infiltração da água da chuva",
-          "feedback": "Pavimento permeável é uma superfície que permite a infiltração da água da chuva, ajudando a recarregar o lençol freático e reduzir enchentes."
+          "answer": "Técnicas que promovem a infiltração, como trincheiras e jardins de chuva, e a instalação de reservatórios domiciliares.",
+          "feedback": "Exato. No entorno do domicílio, a abordagem é reter e infiltrar a água (com jardins de chuva, por exemplo) ou armazená-la para uso (com reservatórios), reduzindo o volume de escoamento superficial."
         },
         {
-          "question": "O que é um \"jardim de chuva\"?",
+          "question": "Qual das seguintes estratégias para APROVEITAMENTO de águas pluviais em áreas rurais é destacada no curso?",
           "options": [
-            "Área rebaixada com vegetação que recebe e infiltra água da chuva",
-            "Área de lazer com fontes",
-            "Parque com lago artificial",
-            "Jardim suspenso em prédios"
+            "A instalação de dessalinizadores para tratar água de fontes salobras, tornando-a potável para a comunidade.",
+            "O tratamento avançado de esgoto para gerar água de reúso, que pode ser utilizada para irrigação de plantações.",
+            "A perfuração de poços artesianos para captar água do lençol freático, complementando o abastecimento da chuva.",
+            "O uso de diferentes tipos de cisternas domiciliares, tanto para consumo humano quanto para outros usos como dessedentação de animais."
           ],
-          "answer": "Área rebaixada com vegetação que recebe e infiltra água da chuva",
-          "feedback": "Jardim de chuva é uma área rebaixada com vegetação projetada para receber, infiltrar e filtrar a água da chuva, reduzindo o escoamento e melhorando a qualidade da água."
+          "answer": "O uso de diferentes tipos de cisternas domiciliares, tanto para consumo humano quanto para outros usos como dessedentação de animais.",
+          "feedback": "Correto. O material foca no aproveitamento direto da água da chuva, sendo as cisternas (de placas, plásticas, etc.) a principal tecnologia abordada para o contexto rural."
         },
         {
-          "question": "O que é uma \"biovaleta\"?",
+          "question": "O que caracteriza a 'gestão compartilhada' das águas pluviais, conforme o Bloco RUR?",
           "options": [
-            "Barreira para conter inundações",
-            "Canal com vegetação que transporta e infiltra água da chuva",
-            "Canal para escoamento de esgoto",
-            "Vala de drenagem sem vegetação"
+            "A atuação conjunta entre poder público, comunidades e outras organizações para orientar técnicas e realizar ações educativas.",
+            "A privatização completa dos serviços de drenagem, onde uma única empresa assume toda a gestão mediante concessão.",
+            "Um modelo onde o governo federal centraliza todas as decisões e o município apenas executa as ordens recebidas.",
+            "A transferência total da responsabilidade de manutenção da drenagem do poder público para os moradores locais."
           ],
-          "answer": "Canal com vegetação que transporta e infiltra água da chuva",
-          "feedback": "Biovaleta é um canal com vegetação que transporta e infiltra água da chuva, promovendo a recarga do solo e filtrando poluentes."
+          "answer": "A atuação conjunta entre poder público, comunidades e outras organizações para orientar técnicas e realizar ações educativas.",
+          "feedback": "Isso mesmo. A gestão compartilhada pressupõe a colaboração e a divisão de responsabilidades entre diferentes atores, sendo um pilar para a sustentabilidade das ações em áreas rurais."
         },
         {
-          "question": "O que é \"reuso de água da chuva\"?",
+          "question": "Qual é o objetivo principal do Bloco EDU no contexto da pesquisa?",
           "options": [
-            "Armazenamento permanente",
-            "Utilização da água captada para fins não potáveis",
-            "Tratamento da água da chuva",
-            "Infiltração no solo"
+            "Financiar a construção de novas escolas e centros de educação ambiental nas áreas pesquisadas pelo IBGE.",
+            "Investigar a existência e a natureza das ações de educação ambiental realizadas pelo prestador de serviço sobre o tema.",
+            "Avaliar o nível de escolaridade dos funcionários do prestador de serviço de drenagem e manejo de águas pluviais.",
+            "Distribuir material didático sobre saneamento básico para todas as escolas da rede municipal e estadual."
           ],
-          "answer": "Utilização da água captada para fins não potáveis",
-          "feedback": "Reuso de água da chuva é a utilização da água captada para fins não potáveis, como irrigação, limpeza e descargas sanitárias, reduzindo o consumo de água potável."
+          "answer": "Investigar a existência e a natureza das ações de educação ambiental realizadas pelo prestador de serviço sobre o tema.",
+          "feedback": "Correto. O Bloco EDU não executa, mas sim investiga as ações que o prestador realiza para conscientizar a população sobre a importância do manejo de águas pluviais e temas correlatos."
         },
         {
-          "question": "Qual é a vantagem do reuso de água da chuva?",
+          "question": "A frequência das ações de educação ambiental é classificada em:",
           "options": [
-            "É mais barato que outros métodos",
-            "Não precisa de tratamento",
-            "Reduz a demanda de água potável e economiza recursos",
-            "Funciona apenas em áreas rurais"
+            "Local, quando abrangem apenas um bairro, ou municipal, quando se destinam a toda a cidade.",
+            "Diurna, quando realizadas durante o dia, ou noturna, quando realizadas após o horário comercial.",
+            "Formal, quando integram o currículo escolar, ou informal, quando ocorrem em espaços comunitários.",
+            "Contínua, quando ocorrem de forma regular, ou eventual/esporádica, quando realizadas em datas específicas."
           ],
-          "answer": "Reduz a demanda de água potável e economiza recursos",
-          "feedback": "O reuso da água da chuva reduz a demanda de água potável e economiza recursos, sendo uma prática sustentável e econômica."
+          "answer": "Contínua, quando ocorrem de forma regular, ou eventual/esporádica, quando realizadas em datas específicas.",
+          "feedback": "Exato. O questionário busca saber se as ações são parte de um programa permanente (contínua) ou se são pontuais (eventual), como em campanhas do Dia da Água ou Dia do Meio Ambiente."
         },
         {
-          "question": "O que é \"drenagem urbana sustentável\"?",
+          "question": "Qual dos seguintes grupos de temas é representativo das ações de educação ambiental abordadas no Bloco EDU?",
           "options": [
-            "Apenas drenagem subterrânea",
-            "Sistema que minimiza impactos ambientais e maximiza benefícios",
-            "Apenas drenagem superficial",
-            "Apenas tratamento de água"
+            "Renaturalização de rios, ciclo hidrológico, disposição de resíduos sólidos e os impactos da urbanização na drenagem.",
+            "História do município, preservação do patrimônio arquitetônico, manifestações culturais e folclore local.",
+            "Técnicas de primeiros socorros, prevenção de acidentes domésticos, segurança no trânsito e combate a endemias.",
+            "Princípios de contabilidade, gestão financeira pessoal, microempreendedorismo e abertura de novos negócios."
           ],
-          "answer": "Sistema que minimiza impactos ambientais e maximiza benefícios",
-          "feedback": "Drenagem urbana sustentável é o sistema que minimiza impactos ambientais, maximiza benefícios sociais e ambientais e promove o uso racional da água da chuva."
+          "answer": "Renaturalização de rios, ciclo hidrológico, disposição de resíduos sólidos e os impactos da urbanização na drenagem.",
+          "feedback": "Correto. Os temas do Bloco EDU são diretamente ligados ao meio ambiente e ao saneamento, com foco nos impactos e soluções para o manejo de águas pluviais."
         },
         {
-          "question": "Qual é a importância da educação ambiental?",
+          "question": "Qual das opções abaixo descreve 'formas de realização' de projetos de educação ambiental citadas no material?",
           "options": [
-            "Reduzir custos de energia",
-            "Conscientizar a população sobre práticas sustentáveis",
-            "Facilitar a manutenção",
-            "Melhorar a aparência urbana"
+            "Aplicação de multas por descarte irregular de lixo e interdição de obras que não cumprem as normas de drenagem.",
+            "Realização de palestras temáticas, mutirões de limpeza, rodas de conversa e veiculação de campanhas em mídias sociais.",
+            "Criação de leis mais rígidas para proteção de mananciais e fiscalização de empresas potencialmente poluidoras.",
+            "Construção de ecopontos para coleta de recicláveis e instalação de novas lixeiras em áreas públicas."
           ],
-          "answer": "Conscientizar a população sobre práticas sustentáveis",
-          "feedback": "A educação ambiental é fundamental para conscientizar a população sobre práticas sustentáveis, promovendo o engajamento e a responsabilidade coletiva no manejo das águas pluviais."
+          "answer": "Realização de palestras temáticas, mutirões de limpeza, rodas de conversa e veiculação de campanhas em mídias sociais.",
+          "feedback": "Isso mesmo. As formas de realização são as ações e métodos práticos usados para engajar e educar a população, como oficinas, palestras, mutirões e campanhas de sensibilização."
         },
         {
-          "question": "O que são \"práticas de baixo impacto\"?",
+          "question": "O que significa 'tamponamento de cursos d'água', um dos serviços de manejo que podem ser realizados?",
           "options": [
-            "Apenas técnicas tradicionais",
-            "Apenas técnicas baratas",
-            "Técnicas que minimizam a alteração do ciclo hidrológico natural",
-            "Apenas técnicas simples"
+            "Plantio de vegetação nativa nas margens para conter a erosão e 'tamponar' a perda de solo.",
+            "Criação de uma barragem temporária com sacos de areia para desviar o curso do rio durante uma obra.",
+            "Tipo de canalização onde o curso d'água é 'enterrado' em galerias ou tubulações fechadas.",
+            "Aplicação de produtos químicos na água para neutralizar poluentes e melhorar sua qualidade."
           ],
-          "answer": "Técnicas que minimizam a alteração do ciclo hidrológico natural",
-          "feedback": "Práticas de baixo impacto são técnicas que minimizam a alteração do ciclo hidrológico natural, como pavimentos permeáveis, jardins de chuva e telhados verdes."
+          "answer": "Tipo de canalização onde o curso d'água é 'enterrado' em galerias ou tubulações fechadas.",
+          "feedback": "Correto. O tamponamento é uma intervenção de infraestrutura cinza onde o rio deixa de ser a céu aberto e passa a correr por dentro de uma galeria, sendo um serviço relevante a ser identificado."
         },
         {
-          "question": "Qual é a vantagem das práticas de baixo impacto?",
+          "question": "Segundo o Bloco RUR, o que distingue o pavimento de 'paralelepípedo' de outros tipos de pavimento em relação à água da chuva?",
           "options": [
-            "Não precisam de manutenção",
-            "São mais baratas de construir",
-            "Reduzem custos e melhoram a sustentabilidade",
-            "Funcionam apenas em áreas rurais"
+            "Seu custo de instalação significativamente mais baixo do que qualquer outro tipo de pavimentação.",
+            "Sua permeabilidade, pois quando assentado sem juntas de cimento, permite a infiltração da água da chuva.",
+            "Sua alta capacidade de refletir o calor, ajudando a reduzir a temperatura da superfície da via.",
+            "Sua resistência superior ao tráfego de veículos pesados em comparação com o asfalto convencional."
           ],
-          "answer": "Reduzem custos e melhoram a sustentabilidade",
-          "feedback": "As práticas de baixo impacto reduzem custos, melhoram a sustentabilidade e promovem a adaptação das cidades às mudanças climáticas."
+          "answer": "Sua permeabilidade, pois quando assentado sem juntas de cimento, permite a infiltração da água da chuva.",
+          "feedback": "Exato. A característica chave do paralelepípedo, no contexto do manejo de águas pluviais, é sua capacidade de permitir a infiltração, funcionando como um pavimento permeável."
         },
         {
-          "question": "O que é \"gestão integrada de recursos hídricos\"?",
+          "question": "Qual a principal importância da Educação Ambiental (Bloco EDU) no contexto geral do Manejo de Águas Pluviais (MAP)?",
           "options": [
-            "Apenas gestão de esgoto",
-            "Coordenação entre diferentes usos e usuários da água",
-            "Apenas gestão de drenagem",
-            "Apenas gestão de água potável"
+            "Aumentar a arrecadação de taxas e impostos relacionados ao saneamento para financiar novas obras de macrodrenagem.",
+            "Garantir que a prefeitura cumpra as metas de reciclagem e receba certificações ambientais internacionais.",
+            "Sensibilizar a população sobre a relação entre drenagem e desastres, estimulando a redução da impermeabilização e a infiltração local.",
+            "Capacitar professores da rede pública para que ministrem aulas sobre o ciclo hidrológico."
           ],
-          "answer": "Coordenação entre diferentes usos e usuários da água",
-          "feedback": "Gestão integrada de recursos hídricos é a coordenação entre diferentes usos e usuários da água, promovendo o uso racional e sustentável dos recursos hídricos no município."
+          "answer": "Sensibilizar a população sobre a relação entre drenagem e desastres, estimulando a redução da impermeabilização e a infiltração local.",
+          "feedback": "Correto. A educação ambiental é fundamental para mudar comportamentos (como o descarte incorreto de lixo) e promover a corresponsabilidade, mostrando como as ações individuais impactam o sistema de drenagem coletivo e a ocorrência de desastres."
         }
       ]
     }

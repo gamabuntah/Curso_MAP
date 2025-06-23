@@ -84,167 +84,169 @@ Object.assign(window.modulos_data, {
       "title": "📝 Quiz do Módulo 5",
       "questions": [
         {
-          "question": "Qual é o objetivo principal do Bloco RET na PNSB?",
+          "question": "Qual é o objetivo principal do Bloco EDR (Estruturas de Retenção/Detenção)?",
           "options": [
-            "Avaliar apenas a qualidade da água",
-            "Medir a quantidade de chuva",
-            "Fiscalizar empresas de construção",
-            "Identificar e caracterizar as estruturas de retenção e detenção de águas pluviais"
+            "Verificar a documentação de posse e a regularidade fundiária das áreas onde os reservatórios estão instalados.",
+            "Analisar a qualidade da água armazenada para determinar se ela pode ser usada para abastecimento público.",
+            "Identificar e caracterizar reservatórios, como 'piscinões', que amortecem o volume de água das chuvas.",
+            "Mapear todas as nascentes e cursos d'água que contribuem para a bacia hidrográfica do reservatório."
           ],
-          "answer": "Identificar e caracterizar as estruturas de retenção e detenção de águas pluviais",
-          "feedback": "O Bloco ERD (Estruturas de Retenção/Detenção) tem como objetivo capacitar o técnico para identificar os tipos de grandes dispositivos de drenagem existentes no município, sua finalidade e manutenção, focando em estruturas que controlam o escoamento de águas pluviais."
+          "answer": "Identificar e caracterizar reservatórios, como 'piscinões', que amortecem o volume de água das chuvas.",
+          "feedback": "Correto. O foco do Bloco EDR é nos reservatórios (piscinões) e sua função de controlar cheias, amortecendo o pico de vazão durante as chuvas."
         },
         {
-          "question": "O que significa \"retenção\" no contexto da drenagem urbana?",
+          "question": "Qual a diferença técnica fundamental entre uma estrutura de DETENÇÃO e uma de RETENÇÃO de águas pluviais?",
           "options": [
-            "Armazenamento permanente de água da chuva para reuso",
-            "Evaporar a água da chuva",
-            "Tratar a água da chuva",
-            "Apenas desacelerar o escoamento"
+            "As estruturas de detenção são de responsabilidade municipal, enquanto as de retenção são sempre de responsabilidade do governo estadual.",
+            "A detenção armazena o escoamento temporariamente, esvaziando-se após a chuva, enquanto a retenção mantém um volume de água permanente (lagoa).",
+            "A detenção é projetada para melhorar a qualidade da água por processos biológicos, enquanto a retenção serve apenas para controlar a quantidade (vazão).",
+            "As estruturas de detenção são sempre a céu aberto (piscinões), enquanto as de retenção são obrigatoriamente subterrâneas e fechadas."
           ],
-          "answer": "Armazenamento permanente de água da chuva para reuso",
-          "feedback": "Retenção refere-se ao armazenamento permanente de água da chuva para reuso, onde a água fica armazenada de forma definitiva, sem liberação controlada, podendo ser utilizada para diversos fins."
+          "answer": "A detenção armazena o escoamento temporariamente, esvaziando-se após a chuva, enquanto a retenção mantém um volume de água permanente (lagoa).",
+          "feedback": "Exato. A distinção chave é a permanência da água: detenção é temporária ('piscinão' seco), retenção é permanente (lagoa)."
         },
         {
-          "question": "O que significa \"detenção\" no contexto da drenagem urbana?",
+          "question": "Em estruturas que operam com bombeamento, por que é crucial identificar o responsável pela operação e manutenção?",
           "options": [
-            "Tratamento da água da chuva",
-            "Infiltração no solo",
-            "Armazenamento permanente para reuso",
-            "Armazenamento temporário para desacelerar o escoamento"
+            "Porque a falha no bombeamento por falta de energia ou manutenção pode agravar a inundação em vez de mitigá-la.",
+            "Para garantir que a conta de energia elétrica seja paga pela entidade correta, evitando cortes no fornecimento.",
+            "A fim de verificar se o operador das bombas possui certificação técnica específica para manusear aquele modelo de equipamento.",
+            "Para assegurar que o ruído das bombas não ultrapasse os limites permitidos pela legislação ambiental local."
           ],
-          "answer": "Armazenamento temporário para desacelerar o escoamento",
-          "feedback": "Detenção refere-se ao armazenamento temporário de água da chuva para desacelerar o escoamento, onde a água é armazenada temporariamente e liberada de forma controlada."
+          "answer": "Porque a falha no bombeamento por falta de energia ou manutenção pode agravar a inundação em vez de mitigá-la.",
+          "feedback": "Correto. A operação por bombeamento introduz um ponto crítico de falha. Se as bombas não funcionarem na hora certa, a estrutura perde sua função e pode até piorar a situação de cheia."
         },
         {
-          "question": "Qual é a principal diferença entre retenção e detenção?",
+          "question": "O que é um 'protocolo de contingência e mitigação de riscos' para estruturas de detenção/retenção?",
           "options": [
-            "Retenção é permanente, detenção é temporária",
-            "Não há diferença significativa",
-            "Retenção trata água, detenção apenas armazena",
-            "Retenção é mais cara que detenção"
+            "Uma apólice de seguro contratada para cobrir os danos materiais à estrutura em caso de vandalismo ou desastres.",
+            "Um plano de ação detalhado que define os procedimentos a serem seguidos em caso de falha da estrutura ou de cheias extremas.",
+            "O manual de instruções do fabricante das bombas, contendo especificações técnicas e guia de reparos.",
+            "Um documento que estabelece o cronograma anual de limpeza e desassoreamento do fundo do reservatório."
           ],
-          "answer": "Retenção é permanente, detenção é temporária",
-          "feedback": "A principal diferença é que retenção é permanente (a água fica armazenada definitivamente), enquanto detenção é temporária (a água é armazenada temporariamente e liberada de forma controlada)."
+          "answer": "Um plano de ação detalhado que define os procedimentos a serem seguidos em caso de falha da estrutura ou de cheias extremas.",
+          "feedback": "Isso mesmo. É um plano de emergência que prevê 'o que fazer se tudo der errado', definindo responsabilidades e ações para minimizar os danos de uma falha."
         },
         {
-          "question": "O que é um reservatório de detenção?",
+          "question": "Qual parâmetro é tipicamente usado para o acionamento automático do sistema de bombeamento em um 'piscinão'?",
           "options": [
-            "Estrutura que armazena temporariamente água da chuva para controlar vazões",
-            "Estação de tratamento",
-            "Reservatório de água potável",
-            "Poço artesiano"
+            "A qualidade da água, ativando o sistema quando a turbidez atinge um valor crítico.",
+            "O horário do dia, com as bombas sendo ligadas preventivamente durante a madrugada.",
+            "O nível de cheia da água dentro do reservatório, medido por sensores de nível.",
+            "A previsão do tempo, acionando as bombas quando há uma probabilidade de chuva acima de 80%."
           ],
-          "answer": "Estrutura que armazena temporariamente água da chuva para controlar vazões",
-          "feedback": "Um reservatório de detenção é uma estrutura que armazena temporariamente água da chuva para controlar vazões, reduzindo picos de escoamento e prevenindo inundações a jusante."
+          "answer": "O nível de cheia da água dentro do reservatório, medido por sensores de nível.",
+          "feedback": "Correto. O acionamento é geralmente automatizado por sensores que medem o nível da água, garantindo que as bombas só operem quando for estritamente necessário."
         },
         {
-          "question": "O que é um reservatório de retenção?",
+          "question": "Qual é o objetivo central do Bloco SPI (Sistema de Proteção contra Inundações)?",
           "options": [
-            "Estação de tratamento",
-            "Reservatório de água potável",
-            "Poço de infiltração",
-            "Estrutura que armazena permanentemente água da chuva para reuso"
+            "Identificar estruturas lineares, como diques e canais, que protegem áreas específicas contra o avanço das águas.",
+            "Mapear as áreas de inundação para fins de cobrança de um imposto sobre propriedades em áreas de risco.",
+            "Verificar a qualidade da água dos rios e canais, focando em parâmetros de poluição industrial e esgoto doméstico.",
+            "Analisar a estabilidade geológica das encostas no entorno de rios para prevenir deslizamentos de terra."
           ],
-          "answer": "Estrutura que armazena permanentemente água da chuva para reuso",
-          "feedback": "Um reservatório de retenção é uma estrutura que armazena permanentemente água da chuva para reuso, permitindo o aproveitamento da água coletada para diversos fins."
+          "answer": "Identificar estruturas lineares, como diques e canais, que protegem áreas específicas contra o avanço das águas.",
+          "feedback": "Exato. O Bloco SPI foca em sistemas de proteção que funcionam como barreiras físicas (diques, comportas, pôlderes) para impedir que a água de um rio ou canal invada uma área protegida."
         },
         {
-          "question": "Qual é a vantagem dos reservatórios de detenção?",
+          "question": "O que são 'pôlderes' no contexto de sistemas de proteção contra inundações?",
           "options": [
-            "Não precisam de manutenção",
-            "Funcionam apenas em áreas rurais",
-            "São mais baratos de construir",
-            "Reduzem picos de vazão e previnem inundações"
+            "Plataformas elevadas construídas nas margens dos rios para abrigar a população durante eventos de cheia.",
+            "Grandes reservatórios a céu aberto construídos para armazenar o excesso de água das chuvas nas cidades.",
+            "Áreas baixas protegidas por um sistema de diques e que geralmente dependem de bombeamento para escoar a água interna.",
+            "Canais subterrâneos de grande diâmetro projetados para desviar o curso de um rio por baixo de uma área urbana."
           ],
-          "answer": "Reduzem picos de vazão e previnem inundações",
-          "feedback": "Os reservatórios de detenção reduzem picos de vazão e previnem inundações, controlando o escoamento de forma temporária e liberando a água de maneira controlada."
+          "answer": "Áreas baixas protegidas por um sistema de diques e que geralmente dependem de bombeamento para escoar a água interna.",
+          "feedback": "Correto. Pôlder é o termo técnico para uma área (frequentemente uma planície de inundação) que foi isolada do rio por diques e outras estruturas, formando uma espécie de 'bacia' protegida."
         },
         {
-          "question": "Qual é a vantagem dos reservatórios de retenção?",
+          "question": "Qual a principal diferença entre um 'dique' e uma 'cortina de concreto'?",
           "options": [
-            "Não precisam de manutenção",
-            "Permitem o reuso da água da chuva e reduzem demanda de água potável",
-            "São mais baratos de construir",
-            "Funcionam apenas em áreas rurais"
+            "Diques são estruturas temporárias montadas durante emergências, enquanto cortinas de concreto são sempre permanentes.",
+            "Diques são geralmente estruturas de terra compactada ou outros materiais, enquanto cortinas são barreiras verticais de concreto armado.",
+            "Diques permitem a passagem controlada de água através de comportas, enquanto cortinas são barreiras totalmente impermeáveis.",
+            "Diques são usados para proteger contra a água de rios, enquanto cortinas de concreto são usadas para proteger contra o avanço do mar."
           ],
-          "answer": "Permitem o reuso da água da chuva e reduzem demanda de água potável",
-          "feedback": "Os reservatórios de retenção permitem o reuso da água da chuva e reduzem a demanda de água potável, contribuindo para a sustentabilidade hídrica."
+          "answer": "Diques são geralmente estruturas de terra compactada ou outros materiais, enquanto cortinas são barreiras verticais de concreto armado.",
+          "feedback": "Isso mesmo. A diferença fundamental está no material e na forma construtiva: diques são maciços de terra (ou materiais similares), enquanto cortinas são estruturas esbeltas de concreto."
         },
         {
-          "question": "O que é um \"piscinão\"?",
+          "question": "Que tipo de comporta é projetada para ser operada manually, sendo totalmente removida ou inserida para bloquear o fluxo?",
           "options": [
-            "Estação de tratamento",
-            "Reservatório de água potável",
-            "Piscina pública",
-            "Reservatório de detenção de grandes dimensões"
+            "Comporta basculante, que gira em torno de um eixo horizontal para abrir ou fechar a passagem.",
+            "Comporta de gaveta, que é elevada ou abaixada por um sistema mecânico ou elétrico.",
+            "Comporta do tipo stop-log, que consiste em vigas ou pranchas encaixadas umas sobre as outras.",
+            "Comporta de passagem (flap), que abre e fecha automaticamente com a força da correnteza."
           ],
-          "answer": "Reservatório de detenção de grandes dimensões",
-          "feedback": "Um piscinão é um reservatório de detenção de grandes dimensões, também conhecido como bacia ou lago de detenção, utilizado para controle de cheias em áreas urbanas."
+          "answer": "Comporta do tipo stop-log, que consiste em vigas ou pranchas encaixadas umas sobre as outras.",
+          "feedback": "Correto. A comporta stop-log é um sistema mais simples, operado manualmente, onde 'toras' ou vigas são adicionadas ou removidas para controlar o fluxo, sendo comum em canais menores ou para manutenção."
         },
         {
-          "question": "Qual é a função de um sistema de controle de vazão?",
+          "question": "O que é uma 'casa de bombas' ou 'estação elevatória' no contexto de um sistema de proteção contra inundações?",
           "options": [
-            "Medir a quantidade de chuva",
-            "Regular a saída de água do reservatório para controlar vazões",
-            "Tratar água com produtos químicos",
-            "Bombear água para reservatórios"
+            "A estação responsável por bombear água do rio para a estação de tratamento, visando o abastecimento público.",
+            "A infraestrutura que abriga as bombas usadas para remover a água acumulada de áreas baixas (como pôlderes) e lançá-la no rio.",
+            "O local onde as bombas de incêndio são armazenadas e mantidas para uso do corpo de bombeiros em emergências.",
+            "Uma edificação elevada e segura projetada para abrigar os operadores e equipamentos de controle durante uma enchente."
           ],
-          "answer": "Regular a saída de água do reservatório para controlar vazões",
-          "feedback": "O sistema de controle de vazão regula a saída de água do reservatório para controlar vazões, garantindo que o escoamento seja liberado de forma adequada e controlada."
+          "answer": "A infraestrutura que abriga as bombas usadas para remover a água acumulada de áreas baixas (como pôlderes) e lançá-la no rio.",
+          "feedback": "Exato. Em áreas protegidas que estão abaixo do nível do rio (ou que não conseguem escoar por gravidade), a casa de bombas é essencial para retirar a água da chuva ou de infiltração da área protegida."
         },
         {
-          "question": "O que significa \"volume de detenção\"?",
+          "question": "Durante uma vistoria e inspeção visual em um dique, qual dos seguintes itens seria um sinal de problema a ser reportado?",
           "options": [
-            "Volume de água tratada",
-            "Volume de água infiltrada",
-            "Volume de água que pode ser armazenado temporariamente",
-            "Volume total do reservatório"
+            "O cercamento completo da área do dique para impedir o acesso de pessoas não autorizadas e de gado.",
+            "A instalação de instrumentos de monitoramento, como piezômetros e medidores de recalque, ao longo da crista.",
+            "Presença de trincas, erosão, caminhos de formigas, tocas de animais ou crescimento de árvores de grande porte sobre a estrutura.",
+            "A existência de uma cobertura vegetal de grama bem aparada e uniforme em toda a extensão do talude."
           ],
-          "answer": "Volume de água que pode ser armazenado temporariamente",
-          "feedback": "Volume de detenção refere-se ao volume de água que pode ser armazenado temporariamente no reservatório, sendo liberado de forma controlada após o período de chuva."
+          "answer": "Presença de trincas, erosão, caminhos de formigas, tocas de animais ou crescimento de árvores de grande porte sobre a estrutura.",
+          "feedback": "Correto. Todos esses são sinais de vulnerabilidade. Trincas, erosão, tocas e raízes de árvores podem criar caminhos preferenciais para a infiltração de água, comprometendo a segurança do dique."
         },
         {
-          "question": "O que significa \"volume de retenção\"?",
+          "question": "Qual a finalidade de um levantamento topográfico periódico em um Sistema de Proteção contra Inundações (SPI)?",
           "options": [
-            "Volume total do reservatório",
-            "Volume de água tratada",
-            "Volume de água que pode ser armazenado permanentemente",
-            "Volume de água infiltrada"
+            "Verificar se ocorreram deformações, como recalques (afundamentos) ou deslocamentos, na estrutura dos diques e canais.",
+            "Definir a localização exata para a instalação de novas estações de monitoramento de qualidade da água.",
+            "Calcular o volume exato de terra que foi erodido das margens do rio durante o último período de chuvas.",
+            "Atualizar o mapa de zoneamento da cidade para permitir a construção de novas edificações em áreas antes consideradas de risco."
           ],
-          "answer": "Volume de água que pode ser armazenado permanentemente",
-          "feedback": "Volume de retenção refere-se ao volume de água que pode ser armazenado permanentemente no reservatório, ficando disponível para reuso."
+          "answer": "Verificar se ocorreram deformações, como recalques (afundamentos) ou deslocamentos, na estrutura dos diques e canais.",
+          "feedback": "Isso mesmo. A topografia de precisão permite identificar pequenas movimentações na estrutura ao longo do tempo, que podem ser um sinal precoce de problemas estruturais e da necessidade de manutenção."
         },
         {
-          "question": "Qual é a importância do dimensionamento correto dos reservatórios?",
+          "question": "A manutenção de comportas metálicas inclui, tipicamente, qual tipo de atividade?",
           "options": [
-            "Facilitar a manutenção",
-            "Melhorar a aparência urbana",
-            "Garantir capacidade adequada para controlar vazões e prevenir inundações",
-            "Reduzir custos de construção"
+            "A substituição anual de todas as vedações de borracha, independentemente de seu estado de conservação.",
+            "O polimento da superfície da comporta para melhorar a estética e facilitar o escoamento da água.",
+            "Lubrificação de partes móveis, aplicação de pintura de proteção contra corrosão e testes de abertura e fechamento.",
+            "A instalação de um sistema de aquecimento para evitar o congelamento da comporta em regiões de clima frio."
           ],
-          "answer": "Garantir capacidade adequada para controlar vazões e prevenir inundações",
-          "feedback": "O dimensionamento correto dos reservatórios é fundamental para garantir capacidade adequada para controlar vazões e prevenir inundações, assegurando o funcionamento eficiente do sistema de drenagem."
+          "answer": "Lubrificação de partes móveis, aplicação de pintura de proteção contra corrosão e testes de abertura e fechamento.",
+          "feedback": "Correto. A manutenção de comportas foca em garantir sua operacionalidade e integridade, o que envolve lubrificação, proteção contra a ferrugem e testes para assegurar que funcionarão quando necessário."
         },
         {
-          "question": "O que são \"reservatórios modulares\"?",
+          "question": "Qual o principal risco associado à falta de limpeza e desobstrução de galerias em um Sistema de Proteção contra Inundações?",
           "options": [
-            "Estações de tratamento modulares",
-            "Sistemas pré-fabricados para retenção ou detenção",
-            "Poços artesianos",
-            "Reservatórios de água potável"
+            "A geração de ruído excessivo devido à turbulência da água ao passar por obstáculos dentro da galeria.",
+            "A redução da capacidade de vazão da galeria, o que pode causar o acúmulo de água a montante e o transbordamento do sistema.",
+            "O aumento da velocidade da água dentro da galeria, causando erosão nas paredes da tubulação.",
+            "A contaminação da água que passa pela galeria por materiais que se decompõem em seu interior."
           ],
-          "answer": "Sistemas pré-fabricados para retenção ou detenção"
+          "answer": "A redução da capacidade de vazão da galeria, o que pode causar o acúmulo de água a montante e o transbordamento do sistema.",
+          "feedback": "Exato. Entulhos e sedimentos dentro de uma galeria agem como uma barreira, reduzindo a seção útil para a passagem da água. Isso diminui a eficiência do sistema e eleva o risco de falha e inundação."
         },
         {
-          "question": "Qual é a importância da manutenção dos reservatórios?",
+          "question": "O que é uma 'comporta de passagem' ou 'comporta flap'?",
           "options": [
-            "Reduzir custos de energia",
-            "Aumentar a vida útil dos equipamentos",
-            "Garantir o funcionamento adequado e evitar entupimentos",
-            "Melhorar a qualidade da água"
+            "Um conjunto de vigas de madeira ou metal que são encaixadas manualmente para barrar o fluxo de água.",
+            "Uma barreira inflável que é preenchida com água ou ar durante uma emergência para criar um dique temporário.",
+            "Uma grande placa metálica que desliza verticalmente em guias, operada por um motor elétrico.",
+            "Uma comporta articulada que abre automaticamente para permitir o escoamento quando o nível da água de um lado é maior, e fecha para evitar o retorno."
           ],
-          "answer": "Garantir o funcionamento adequado e evitar entupimentos"
+          "answer": "Uma comporta articulada que abre automaticamente para permitir o escoamento quando o nível da água de um lado é maior, e fecha para evitar o retorno.",
+          "feedback": "Correto. A comporta flap funciona como uma válvula de retenção unidirecional, muito usada em saídas de redes de drenagem para rios de maré, permitindo a saída da água da chuva mas impedindo a entrada da água do rio na maré alta."
         }
       ]
     }

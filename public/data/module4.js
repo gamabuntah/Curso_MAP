@@ -99,169 +99,169 @@ Object.assign(window.modulos_data, {
       "title": "📝 Quiz do Módulo 4",
       "questions": [
         {
-          "question": "Qual é o objetivo principal do Bloco CAP na PNSB?",
+          "question": "Qual é o escopo principal do Bloco CCI (Captação, Condução e Infiltração) dentro do diagnóstico de drenagem urbana?",
           "options": [
-            "Medir apenas a quantidade de chuva",
-            "Avaliar apenas a qualidade da água",
-            "Identificar e caracterizar as infraestruturas de captação, condução e infiltração de águas pluviais",
-            "Fiscalizar empresas de construção"
+            "Analisar exclusivamente a qualidade da água dos rios e córregos urbanos antes e depois de eventos de chuva.",
+            "Identificar e caracterizar o sistema de drenagem do município, incluindo dispositivos de captação, transporte, infiltração e os serviços de manutenção associados.",
+            "Focar no licenciamento ambiental de novas obras de infraestrutura de saneamento básico e em seu impacto na drenagem.",
+            "Inventariar todas as espécies de flora e fauna presentes nas áreas de influência direta dos sistemas de macrodrenagem."
           ],
-          "answer": "Identificar e caracterizar as infraestruturas de captação, condução e infiltração de águas pluviais",
-          "feedback": "O Bloco CCI (Captação, Condução e Infiltração) tem como objetivo capacitar o técnico para identificar os tipos de dispositivos existentes no município para captação, condução e infiltração de águas pluviais, as áreas de cobertura, o corpo hídrico receptor e a manutenção de dispositivos."
+          "answer": "Identificar e caracterizar o sistema de drenagem do município, incluindo dispositivos de captação, transporte, infiltração e os serviços de manutenção associados.",
+          "feedback": "Correto. O Bloco CCI visa um diagnóstico completo da infraestrutura de drenagem (captação, condução, infiltração), seu funcionamento e a manutenção realizada, abrangendo microdrenagem, macrodrenagem e infraestruturas verdes."
         },
         {
-          "question": "O que significa \"captação\" no contexto da drenagem urbana?",
+          "question": "No contexto dos sistemas de esgotamento sanitário e drenagem pluvial, qual a principal distinção entre uma 'Rede Tipo Unitária' e uma 'Rede Tipo Separadora Absoluta'?",
           "options": [
-            "Armazenamento de água potável",
-            "Coleta e direcionamento das águas pluviais para o sistema de drenagem",
-            "Tratamento da água da chuva",
-            "Filtragem de poluentes"
+            "A rede unitária coleta e transporta águas pluviais e esgoto sanitário conjuntamente na mesma tubulação, enquanto a separadora absoluta possui sistemas distintos para cada um.",
+            "A rede separadora absoluta é utilizada exclusivamente em áreas industriais devido à complexidade dos efluentes, enquanto a unitária é comum em áreas residenciais.",
+            "A rede unitária exige estações de tratamento de esgoto de maior porte e complexidade, ao passo que a separadora absoluta pode dispensar totalmente o tratamento das águas pluviais.",
+            "A rede separadora absoluta tem um custo de implantação significativamente menor, mas uma manutenção mais complexa que a rede unitária."
           ],
-          "answer": "Coleta e direcionamento das águas pluviais para o sistema de drenagem",
-          "feedback": "Captação refere-se ao processo de coleta e direcionamento das águas pluviais para o sistema de drenagem, incluindo dispositivos como bocas de lobo, sarjetas e outros elementos que coletam a água da chuva das superfícies urbanas."
+          "answer": "A rede unitária coleta e transporta águas pluviais e esgoto sanitário conjuntamente na mesma tubulação, enquanto a separadora absoluta possui sistemas distintos para cada um.",
+          "feedback": "Correto. A rede unitária combina o fluxo de águas pluviais e esgoto na mesma infraestrutura, enquanto a separadora absoluta mantém esses fluxos em sistemas de tubulações independentes."
         },
         {
-          "question": "Qual é a função principal das sarjetas no sistema de drenagem?",
+          "question": "Qual das seguintes alternativas MELHOR descreve o sistema de MICRODRENAGEM urbana?",
           "options": [
-            "Armazenar água para reuso",
-            "Medir a vazão dos rios",
-            "Captar e conduzir as águas superficiais para as galerias",
-            "Tratar a água da chuva"
+            "Conjunto de grandes canais e reservatórios destinados ao controle de cheias em bacias hidrográficas extensas.",
+            "Infraestrutura responsável pelo tratamento avançado das águas pluviais antes de seu lançamento em corpos receptores, visando a remoção de poluentes específicos.",
+            "Sistema de dispositivos como pavimentos de ruas, guias, sarjetas, bueiros e bocas de lobo, responsável pelo disciplinamento inicial das águas pluviais em áreas urbanizadas.",
+            "Rede de monitoramento da qualidade do ar e da água em áreas urbanas densamente povoadas, com foco na prevenção de doenças de veiculação hídrica."
           ],
-          "answer": "Captar e conduzir as águas superficiais para as galerias",
-          "feedback": "As sarjetas são canais longitudinais, triangulares, localizados entre a guia e a pista de rolamento, responsáveis por captar e conduzir as águas superficiais para as galerias subterrâneas."
+          "answer": "Sistema de dispositivos como pavimentos de ruas, guias, sarjetas, bueiros e bocas de lobo, responsável pelo disciplinamento inicial das águas pluviais em áreas urbanizadas.",
+          "feedback": "Exato. A microdrenagem compreende os elementos iniciais de coleta e condução da água da chuva nas vias públicas e áreas adjacentes."
         },
         {
-          "question": "O que são \"bocas de lobo\" no sistema de drenagem?",
+          "question": "Qual dos seguintes conjuntos de dispositivos é MAIS representativo do sistema de MICRODRENAGEM?",
           "options": [
-            "Aberturas nas sarjetas que permitem a entrada de água para as galerias",
-            "Reservatórios de água",
-            "Filtros de poluição",
-            "Estações de tratamento"
+            "Barragens de amortecimento de cheias, piscinões e diques de contenção.",
+            "Estações elevatórias de esgoto, interceptores oceânicos e emissários submarinos.",
+            "Jardins de chuva, telhados verdes e pavimentos permeáveis.",
+            "Bocas de lobo, grelhas, poços de visita, guias e sarjetas."
           ],
-          "answer": "Aberturas nas sarjetas que permitem a entrada de água para as galerias",
-          "feedback": "Bocas de lobo são estruturas para captar águas pluviais das sarjetas e encaminhá-las à rede de galerias subterrâneas, funcionando como pontos de entrada da água no sistema de drenagem."
+          "answer": "Bocas de lobo, grelhas, poços de visita, guias e sarjetas.",
+          "feedback": "Correto. Esses são os componentes fundamentais da microdrenagem, responsáveis pela captação e condução inicial das águas pluviais nas vias."
         },
         {
-          "question": "Qual é a diferença entre sarjetas e galerias?",
+          "question": "O sistema de MACRODRENAGEM urbana é caracterizado principalmente por:",
           "options": [
-            "Sarjetas são superficiais e galerias são subterrâneas",
-            "Sarjetas tratam água e galerias apenas conduzem",
-            "Não há diferença, são sinônimos",
-            "Sarjetas são para esgoto e galerias para água da chuva"
+            "Focar na captação individualizada da água de chuva em lotes residenciais e comerciais para fins de reúso não potável.",
+            "Ser responsável pelo escoamento final das águas pluviais, compreendendo canais naturais ou artificiais e galerias de grandes dimensões que recebem o fluxo de vários sistemas de microdrenagem.",
+            "Utilizar exclusivamente soluções baseadas na natureza, como a renaturalização de córregos e a criação de wetlands, para o controle de inundações.",
+            "Priorizar a construção de pequenas bacias de detenção distribuídas pela malha urbana para controle do escoamento superficial em eventos de baixa intensidade."
           ],
-          "answer": "Sarjetas são superficiais e galerias são subterrâneas",
-          "feedback": "Sarjetas são dispositivos superficiais (canais abertos) localizados nas vias públicas, enquanto galerias são condutos subterrâneos que formam uma rede para coletar e conduzir as águas pluviais."
+          "answer": "Ser responsável pelo escoamento final das águas pluviais, compreendendo canais naturais ou artificiais e galerias de grandes dimensões que recebem o fluxo de vários sistemas de microdrenagem.",
+          "feedback": "Exatamente. A macrodrenagem lida com os grandes volumes de água, conduzindo-os aos seus destinos finais, como rios ou o mar."
         },
         {
-          "question": "O que significa \"infiltração\" no contexto da drenagem sustentável?",
+          "question": "No contexto da macrodrenagem, o que significa a 'retificação' de um rio ou córrego?",
           "options": [
-            "Permitir que a água da chuva penetre no solo naturalmente",
-            "Evaporar a água da chuva",
-            "Bombear água para reservatórios",
-            "Tratar água com produtos químicos"
+            "A implantação de matas ciliares ao longo de suas margens para estabilização e proteção contra erosão.",
+            "O processo de tratamento da água do rio para torná-la potável para abastecimento público.",
+            "A alteração de seu curso natural, geralmente por aprofundamento e/ou alargamento do canal, para aumentar a velocidade do fluxo e transferir cheias para jusante.",
+            "A construção de pequenas barragens escalonadas ao longo do curso d'água para controle de sedimentos e criação de áreas de lazer."
           ],
-          "answer": "Permitir que a água da chuva penetre no solo naturalmente",
-          "feedback": "Infiltração refere-se ao processo de permitir que a água da chuva penetre no solo naturalmente, promovendo a recarga dos aquíferos e reduzindo o escoamento superficial."
+          "answer": "A alteração de seu curso natural, geralmente por aprofundamento e/ou alargamento do canal, para aumentar a velocidade do fluxo e transferir cheias para jusante.",
+          "feedback": "Correto. A retificação é uma intervenção de engenharia que visa modificar o traçado original de um curso d'água, muitas vezes com o objetivo de acelerar o escoamento."
         },
         {
-          "question": "Qual é a vantagem dos sistemas de infiltração?",
+          "question": "Infraestruturas Verdes (ou Soluções Baseadas na Natureza - SBN) são melhor definidas como:",
           "options": [
-            "São mais baratos de construir",
-            "Recarregam o lençol freático e reduzem o escoamento superficial",
-            "Funcionam apenas em áreas rurais",
-            "Não precisam de manutenção"
+            "Parques e praças urbanas destinadas exclusivamente ao lazer e recreação da população, sem função específica de drenagem.",
+            "Sistemas de irrigação de alta tecnologia para áreas verdes públicas, utilizando água de reúso proveniente de estações de tratamento de esgoto.",
+            "Estruturas construídas que utilizam processos e funções da natureza para auxiliar na drenagem das águas de chuva, integrando-se à infraestrutura convencional (cinza).",
+            "Projetos de reflorestamento em larga escala em áreas de mananciais, visando exclusivamente a proteção dos recursos hídricos para abastecimento."
           ],
-          "answer": "Recarregam o lençol freático e reduzem o escoamento superficial",
-          "feedback": "Os sistemas de infiltração recarregam o lençol freático e reduzem o escoamento superficial, contribuindo para a sustentabilidade hídrica e diminuindo os riscos de inundações."
+          "answer": "Estruturas construídas que utilizam processos e funções da natureza para auxiliar na drenagem das águas de chuva, integrando-se à infraestrutura convencional (cinza).",
+          "feedback": "Perfeito. As infraestruturas verdes mimetizam processos naturais para gerenciar as águas pluviais de forma sustentável, complementando os sistemas tradicionais."
         },
         {
-          "question": "O que são \"valas de infiltração\"?",
+          "question": "Qual dos seguintes dispositivos NÃO é considerado uma Infraestrutura Verde ou Solução Baseada na Natureza (SBN)?",
           "options": [
-            "Reservatórios de água potável",
-            "Estações de tratamento",
-            "Estruturas que permitem a infiltração controlada de águas pluviais",
-            "Canais para esgoto"
+            "Uma galeria de concreto armado de grande diâmetro para condução rápida de águas pluviais canalizadas.",
+            "Um jardim de chuva projetado para reter e infiltrar o escoamento superficial de uma rua.",
+            "Um telhado verde instalado no topo de um edifício comercial para reduzir o runoff.",
+            "Uma biovaleta construída ao longo de uma ciclovia para filtrar e conduzir a água da chuva."
           ],
-          "answer": "Estruturas que permitem a infiltração controlada de águas pluviais",
-          "feedback": "Valas de infiltração são estruturas que permitem a infiltração controlada de águas pluviais no solo, sendo uma solução baseada na natureza para drenagem sustentável."
+          "answer": "Uma galeria de concreto armado de grande diâmetro para condução rápida de águas pluviais canalizadas.",
+          "feedback": "Correto. Galerias de concreto são exemplos de infraestrutura cinza (convencional), enquanto jardins de chuva, telhados verdes e biovaletas são SBNs."
         },
         {
-          "question": "Qual é a função das \"calhas\" no sistema de drenagem?",
+          "question": "O que é a 'captação de esgoto sanitário de tempo seco' em sistemas de drenagem pluvial?",
           "options": [
-            "Conduzir água de telhados e superfícies para o sistema de drenagem",
-            "Medir a quantidade de chuva",
-            "Armazenar água da chuva",
-            "Tratar água poluída"
+            "Um método para coletar amostras de água da chuva durante períodos de estiagem para análise de sua qualidade antes do contato com o esgoto.",
+            "A prática de desviar o fluxo de galerias pluviais para estações de tratamento de água da chuva durante os meses mais secos do ano.",
+            "A interceptação e desvio do esgoto sanitário (presente em galerias pluviais devido a ligações cruzadas, clandestinas ou em sistemas unitários) para uma ETE durante períodos sem chuva.",
+            "Um sistema de alerta precoce para identificar o início da estação seca, permitindo o planejamento da limpeza de canais e bueiros."
           ],
-          "answer": "Conduzir água de telhados e superfícies para o sistema de drenagem",
-          "feedback": "As calhas conduzem água de telhados e superfícies para o sistema de drenagem, sendo elementos importantes na captação de águas pluviais de edificações."
+          "answer": "A interceptação e desvio do esgoto sanitário (presente em galerias pluviais devido a ligações cruzadas, clandestinas ou em sistemas unitários) para uma ETE durante períodos sem chuva.",
+          "feedback": "Exato. Essa prática visa mitigar a poluição hídrica causada pelo lançamento de esgoto sanitário em corpos d'água através da rede pluvial em períodos de estiagem."
         },
         {
-          "question": "O que significa \"condução\" no sistema de drenagem?",
+          "question": "O reúso de águas pluviais, geralmente captadas de telhados e armazenadas em cisternas, destina-se PRIMARIAMENTE para qual finalidade?",
           "options": [
-            "Armazenamento temporário",
-            "Filtragem de poluentes",
-            "Transporte das águas captadas até o ponto de destinação",
-            "Tratamento da água da chuva"
+            "Substituir integralmente o abastecimento de água potável fornecido pela concessionária local em residências e comércios.",
+            "Ser utilizada para fins não potáveis, como irrigação de jardins, lavagem de pisos e descargas sanitárias, reduzindo o consumo de água potável.",
+            "Alimentar diretamente a rede pública de distribuição de água após um processo simplificado de filtração e cloração.",
+            "Ser exportada para regiões com escassez hídrica como forma de compensação ambiental por grandes empreendimentos urbanos."
           ],
-          "answer": "Transporte das águas captadas até o ponto de destinação",
-          "feedback": "Condução refere-se ao transporte das águas captadas até o ponto de destinação final, seja um corpo hídrico receptor ou sistema de infiltração."
+          "answer": "Ser utilizada para fins não potáveis, como irrigação de jardins, lavagem de pisos e descargas sanitárias, reduzindo o consumo de água potável.",
+          "feedback": "Correto. O reúso de água de chuva é uma prática sustentável focada em usos que não exigem potabilidade, preservando a água tratada para consumo humano."
         },
         {
-          "question": "Qual é a importância do dimensionamento correto das galerias?",
+          "question": "Em sistemas de captação e aproveitamento de água de chuva, qual a função de um 'reservatório de primeira chuva' (first flush diverter)?",
           "options": [
-            "Melhorar a aparência urbana",
-            "Facilitar a manutenção",
-            "Evitar transbordamentos e garantir a capacidade de condução adequada",
-            "Reduzir custos de construção"
+            "Armazenar o maior volume possível da primeira precipitação intensa para análise laboratorial detalhada de contaminantes atmosféricos.",
+            "Descartar o volume inicial da água da chuva, que geralmente carrega maior concentração de sujeira e poluentes acumulados em telhados e calhas.",
+            "Resfriar a água da chuva antes que ela entre na cisterna principal, para evitar o crescimento de microrganismos sensíveis à temperatura.",
+            "Aumentar a pressão da água captada para permitir seu uso em equipamentos que exigem maior força hidráulica, como lavadoras de alta pressão."
           ],
-          "answer": "Evitar transbordamentos e garantir a capacidade de condução adequada",
-          "feedback": "O dimensionamento correto das galerias é fundamental para evitar transbordamentos e garantir a capacidade de condução adequada das águas pluviais, prevenindo alagamentos."
+          "answer": "Descartar o volume inicial da água da chuva, que geralmente carrega maior concentração de sujeira e poluentes acumulados em telhados e calhas.",
+          "feedback": "Isso mesmo. O descarte da primeira chuva ('first flush') melhora a qualidade da água que será armazenada para reúso."
         },
         {
-          "question": "O que são \"poços de visita\" no sistema de galerias?",
+          "question": "Qual a principal vantagem da utilização de 'pavimento permeável' em áreas urbanas, em comparação com o pavimento impermeável convencional (asfalto ou concreto)?",
           "options": [
-            "Filtros de tratamento",
-            "Aberturas que permitem acesso para inspeção e limpeza das galerias",
-            "Estações de bombeamento",
-            "Reservatórios de água"
+            "Reduzir significativamente os custos de instalação e manutenção das vias, por utilizar materiais mais baratos e de maior durabilidade.",
+            "Permitir a infiltração da água da chuva no solo, reduzindo o escoamento superficial, recarregando aquíferos e minimizando o risco de enchentes.",
+            "Aumentar a capacidade de suporte das vias para tráfego pesado, como caminhões e ônibus, devido à sua maior resistência estrutural.",
+            "Refletir maior quantidade de luz solar, contribuindo para a redução das ilhas de calor urbanas de forma mais eficaz que áreas vegetadas."
           ],
-          "answer": "Aberturas que permitem acesso para inspeção e limpeza das galerias",
-          "feedback": "Poços de visita são aberturas que permitem acesso para inspeção e limpeza das galerias subterrâneas, sendo elementos importantes para a manutenção e limpeza do sistema de drenagem."
+          "answer": "Permitir a infiltração da água da chuva no solo, reduzindo o escoamento superficial, recarregando aquíferos e minimizando o risco de enchentes.",
+          "feedback": "Correto. A permeabilidade do pavimento é uma importante medida de manejo de águas pluviais, auxiliando na redução do volume e da velocidade do runoff."
         },
         {
-          "question": "Qual é a diferença entre drenagem superficial e subterrânea?",
+          "question": "A utilização de 'resíduos de construção e demolição (RCD)' e 'borracha de pneus reciclados' na composição de pavimentos é um exemplo de qual prática sustentável?",
           "options": [
-            "Superficial trata água e subterrânea apenas conduz",
-            "Não há diferença técnica",
-            "Superficial é mais cara que subterrânea",
-            "Superficial usa sarjetas e subterrânea usa galerias"
+            "Aumento da impermeabilização superficial para garantir maior durabilidade das vias.",
+            "Aplicação de materiais de reúso/reciclagem na pavimentação, reduzindo a extração de recursos naturais e o descarte inadequado de resíduos.",
+            "Utilização exclusiva de materiais importados de alta tecnologia para garantir a qualidade superior do pavimento em áreas nobres da cidade.",
+            "Desenvolvimento de pavimentos com maior capacidade de absorção sonora para reduzir a poluição acústica em corredores de tráfego intenso."
           ],
-          "answer": "Superficial usa sarjetas e subterrânea usa galerias",
-          "feedback": "Drenagem superficial usa sarjetas e subterrânea usa galerias para coletar e conduzir as águas pluviais, sendo uma diferença técnica importante para o projeto e manutenção do sistema de drenagem."
+          "answer": "Aplicação de materiais de reúso/reciclagem na pavimentação, reduzindo a extração de recursos naturais e o descarte inadequado de resíduos.",
+          "feedback": "Exato. Essa prática contribui para a economia circular e para a redução do impacto ambiental da construção civil."
         },
         {
-          "question": "O que significa \"capacidade de vazão\" de uma galeria?",
+          "question": "O que caracteriza uma 'rua pavimentada sem sistema de drenagem' adequado?",
           "options": [
-            "Profundidade da galeria",
-            "Velocidade da água na galeria",
-            "Volume máximo de água que a galeria pode transportar por unidade de tempo",
-            "Quantidade de água armazenada"
+            "Uma via que possui apenas sarjetas, mas não dispõe de bocas de lobo ou galerias para conduzir a água captada.",
+            "Uma rua onde a pavimentação foi executada, porém sem a instalação de dispositivos de microdrenagem como guias, sarjetas e bocas de lobo para o correto escoamento das águas pluviais.",
+            "Uma estrada rural que, apesar de não pavimentada, possui um sistema eficiente de canaletas laterais para direcionar a enxurrada.",
+            "Uma via urbana com sistema de drenagem completo, mas que apresenta problemas recorrentes de obstrução devido à falta de limpeza."
           ],
-          "answer": "Volume máximo de água que a galeria pode transportar por unidade de tempo",
-          "feedback": "A capacidade de vazão de uma galeria refere-se ao volume máximo de água que a galeria pode transportar por unidade de tempo, sendo um parâmetro importante para o dimensionamento correto do sistema de drenagem."
+          "answer": "Uma rua onde a pavimentação foi executada, porém sem a instalação de dispositivos de microdrenagem como guias, sarjetas e bocas de lobo para o correto escoamento das águas pluviais.",
+          "feedback": "Correto. A ausência desses componentes compromete o escoamento adequado da água da chuva, podendo levar a alagamentos e danos à pavimentação e áreas adjacentes."
         },
         {
-          "question": "Qual é a importância da manutenção preventiva no sistema de captação e condução?",
+          "question": "No manejo de águas pluviais em ruas ou estradas NÃO pavimentadas, qual das seguintes estratégias contribui para o controle de erosão e o aumento da infiltração?",
           "options": [
-            "Reduzir custos de energia",
-            "Melhorar a qualidade da água",
-            "Aumentar a vida útil dos equipamentos",
-            "Evitar entupimentos e garantir o funcionamento adequado do sistema"
+            "Compactação intensiva do leito da estrada com rolo compressor para aumentar sua capacidade de suporte.",
+            "Remoção completa da vegetação das margens para evitar que raízes desestabilizem o solo.",
+            "Instalação de bacias de acumulação (barraginhas) e/ou construção de jardins de chuva e valas de infiltração ao longo da via.",
+            "Impermeabilização das laterais da estrada com concreto ou asfalto para canalizar rapidamente a água para longe."
           ],
-          "answer": "Evitar entupimentos e garantir o funcionamento adequado do sistema",
-          "feedback": "A manutenção preventiva é essencial para evitar entupimentos e garantir o funcionamento adequado do sistema de captação e condução de águas pluviais, melhorando a qualidade da água e prolongando a vida útil dos equipamentos."
+          "answer": "Instalação de bacias de acumulação (barraginhas) e/ou construção de jardins de chuva e valas de infiltração ao longo da via.",
+          "feedback": "Exato. Essas técnicas ajudam a reter a água, reduzir a velocidade do escoamento, controlar a erosão e promover a infiltração no solo em vias não pavimentadas."
         }
       ]
     }

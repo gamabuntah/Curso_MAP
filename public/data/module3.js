@@ -99,169 +99,169 @@ Object.assign(window.modulos_data, {
       "title": "📝 Quiz do Módulo 3",
       "questions": [
         {
-          "question": "Qual é o objetivo principal do Bloco LEG no contexto da PNSB?",
+          "question": "Qual é o principal objetivo do Bloco LEG (Aspectos Legais) no diagnóstico do serviço de drenagem urbana?",
           "options": [
-            "Definir o orçamento municipal",
-            "Compreender os mecanismos de transferência da execução do serviço público e os canais de atendimento ao cidadão",
-            "Avaliar a qualidade da água",
-            "Registrar apenas reclamações de esgoto"
+            "Realizar o licenciamento ambiental de todas as obras de infraestrutura do município.",
+            "Fiscalizar o cumprimento de normas técnicas de engenharia na construção de galerias e canais.",
+            "Compreender os mecanismos de transferência da execução do serviço (de município para prestador) e identificar os canais de atendimento ao cidadão.",
+            "Definir as tarifas e os impostos que serão cobrados da população pelos serviços de manejo de águas pluviais."
           ],
-          "answer": "Compreender os mecanismos de transferência da execução do serviço público e os canais de atendimento ao cidadão",
-          "feedback": "O Bloco LEG tem como objetivo capacitar o técnico a compreender os mecanismos de transferência da execução do serviço público de drenagem e manejo de águas pluviais, além de identificar os canais de atendimento ao cidadão, como ouvidorias e centrais de atendimento."
+          "answer": "Compreender os mecanismos de transferência da execução do serviço (de município para prestador) e identificar os canais de atendimento ao cidadão.",
+          "feedback": "Correto. O Bloco LEG foca em como o serviço é formalmente delegado a um prestador (por contrato, lei, etc.) e como o cidadão interage com esse prestador (via ouvidorias, centrais de atendimento)."
         },
         {
-          "question": "O que caracteriza um contrato de programa?",
+          "question": "Um município delega a prestação dos serviços de drenagem a um consórcio público intermunicipal, sem a necessidade de um processo licitatório. Qual instrumento legal formaliza essa relação?",
           "options": [
-            "Instrumento normativo legal sem contrato",
-            "Transferência ao particular, com licitação",
-            "Delegação sem licitação, restrita a prestadores públicos em cooperação federativa",
-            "Remuneração por desempenho em PPP"
+            "Contrato de Concessão Comum.",
+            "Contrato de Programa.",
+            "Contrato de Parceria Público-Privada (PPP).",
+            "Lei municipal específica de criação de autarquia."
           ],
-          "answer": "Delegação sem licitação, restrita a prestadores públicos em cooperação federativa",
-          "feedback": "O contrato de programa é um instrumento de delegação da prestação de serviço público que não exige licitação, sendo restrito aos casos em que o prestador de caráter público foi contratado no âmbito de cooperação federativa."
+          "answer": "Contrato de Programa.",
+          "feedback": "Exato. O Contrato de Programa é o instrumento adequado para a gestão associada de serviços públicos entre entes da federação, como em um consórcio público, dispensando a licitação."
         },
         {
-          "question": "Quando o questionário deve pular para o quesito 3 no Bloco LEG?",
+          "question": "Ao preencher o questionário, o técnico descobre que não existe nenhum instrumento legal (contrato, lei, etc.) formalizando a prestação dos serviços de drenagem pelo município. Como ele deve proceder?",
           "options": [
-            "Quando a opção \"Inexistente\" for marcada no instrumento de delegação",
-            "Quando houver contrato de concessão",
-            "Quando houver reclamação registrada",
-            "Quando houver PPP"
+            "Deve interromper o preenchimento e informar a irregularidade ao seu superior.",
+            "Deve registrar a opção 'Outro' e descrever a situação informal no campo de observações.",
+            "Deve marcar a opção 'Inexistente' no quesito sobre o instrumento de delegação e, em seguida, pular diretamente para o quesito sobre canais de atendimento ao cidadão.",
+            "Deve considerar a prefeitura como prestadora direta e continuar o preenchimento normalmente, assumindo uma delegação tácita."
           ],
-          "answer": "Quando a opção \"Inexistente\" for marcada no instrumento de delegação",
-          "feedback": "Se não houver instrumento de delegação ou outorga (opção 'Inexistente'), o questionário deve pular para o quesito 3, pois não há formalização legal para o serviço de drenagem e manejo de águas pluviais."
+          "answer": "Deve marcar a opção 'Inexistente' no quesito sobre o instrumento de delegação e, em seguida, pular diretamente para o quesito sobre canais de atendimento ao cidadão.",
+          "feedback": "Correto. O fluxo do questionário estabelece que, na ausência de um instrumento formal de delegação, a seção sobre a vigência desse instrumento deve ser pulada."
         },
         {
-          "question": "O que é considerado período de vigência de um instrumento de delegação?",
+          "question": "O 'período de vigência' de um contrato de concessão se refere a quê?",
           "options": [
-            "Tempo previsto para início e fim da validade do instrumento",
-            "Tempo de execução de obras",
-            "Tempo de resposta da ouvidoria",
-            "Tempo de manutenção dos dispositivos"
+            "Ao prazo total para a execução de todas as obras de ampliação do sistema previstas no contrato.",
+            "Ao período em que o prestador de serviço esteve efetivamente em atividade, desconsiderando interrupções.",
+            "Ao tempo que a ouvidoria do prestador leva para responder a uma reclamação do cidadão.",
+            "Ao tempo de validade do instrumento legal (contrato), com datas de início e fim predefinidas."
           ],
-          "answer": "Tempo previsto para início e fim da validade do instrumento",
-          "feedback": "O período de vigência é o tempo previsto para o início e o fim da validade do instrumento legal, ou seja, a duração da prestação dos serviços indicada no documento, não necessariamente correspondendo à efetiva duração da prestação do serviço."
+          "answer": "Ao tempo de validade do instrumento legal (contrato), com datas de início e fim predefinidas.",
+          "feedback": "Isso mesmo. O período de vigência corresponde à duração formal do contrato ou da delegação, conforme estipulado no documento legal."
         },
         {
-          "question": "Se não souber informar o período de vigência, o que deve ser registrado?",
+          "question": "Uma prefeitura possui um serviço telefônico geral (ex: '156') que recebe reclamações sobre diversos assuntos, incluindo entupimento de bueiros e alagamentos. Para o Bloco LEG, como essa estrutura deve ser considerada?",
           "options": [
-            "3 – Não sabe",
-            "1 – Sim",
-            "0 – Não existe",
-            "2 – Não"
+            "Não pode ser considerada, pois não é uma ouvidoria exclusiva para o serviço de drenagem.",
+            "Deve ser classificada como 'Ouvidoria', pois atua na defesa dos direitos dos cidadãos.",
+            "Deve ser considerada como uma 'Central de Atendimento' ou 'Ouvidoria', validando a existência de um canal para manifestações dos cidadãos.",
+            "Deve ser registrada no Bloco SRT, pois indica uma provável terceirização do serviço de atendimento."
           ],
-          "answer": "3 – Não sabe",
-          "feedback": "Caso não saiba informar o período de vigência, deve-se registrar '3 – Não sabe', conforme orientação do módulo."
+          "answer": "Deve ser considerada como uma 'Central de Atendimento' ou 'Ouvidoria', validando a existência de um canal para manifestações dos cidadãos.",
+          "feedback": "Correto. O critério é a existência de um canal que receba manifestações sobre drenagem, mesmo que não seja exclusivo para esse serviço."
         },
         {
-          "question": "O que é uma ouvidoria no contexto dos serviços de drenagem?",
+          "question": "Ao analisar os registros da ouvidoria de um município, o técnico identifica que a queixa mais frequente dos cidadãos é sobre o 'entupimento de bocas de lobo e grelhas quebradas'. Como essa informação deve ser registrada?",
           "options": [
-            "Canal aberto para receber reivindicações, denúncias, sugestões e solucionar conflitos entre empresa e cliente",
-            "Sistema de monitoramento de qualidade da água",
-            "Departamento de obras",
-            "Empresa terceirizada"
+            "Como 'Reclamação sobre ocorrência de alagamentos, inundações ou enxurradas'.",
+            "Como 'Solicitação para expansão de sistema de drenagem e manejo de águas pluviais'.",
+            "Como 'Reclamação sobre problemas nos dispositivos de drenagem'.",
+            "Como 'Reclamação sobre lançamento de esgotos na rede de drenagem'."
           ],
-          "answer": "Canal aberto para receber reivindicações, denúncias, sugestões e solucionar conflitos entre empresa e cliente",
-          "feedback": "Ouvidoria é um canal aberto para receber reivindicações, denúncias, sugestões e solucionar conflitos entre empresa e cliente, atuando na defesa dos direitos dos cidadãos e usuários dos serviços."
+          "answer": "Como 'Reclamação sobre problemas nos dispositivos de drenagem'.",
+          "feedback": "Exato. Essa opção descreve precisamente o tipo de problema relatado, que se refere a falhas ou mau funcionamento de componentes da microdrenagem."
         },
         {
-          "question": "Se não houver canal de atendimento, o questionário deve:",
+          "question": "Qual é a principal função do Bloco SRT (Serviço(s) Realizado(s) por Terceiro(s))?",
           "options": [
-            "Solicitar novo cadastro",
-            "Voltar ao início",
-            "Pular para o quesito 5",
-            "Encerrar imediatamente"
+            "Avaliar a qualidade técnica e a capacidade financeira das empresas que participam de licitações para serviços de drenagem.",
+            "Identificar se o prestador de serviço principal contrata outras empresas para executar, total ou parcialmente, as atividades de drenagem e manejo pluvial.",
+            "Auditar os contratos de todas as empresas terceirizadas que prestam qualquer tipo de serviço para a prefeitura municipal.",
+            "Definir os critérios para a seleção e o cadastramento de novas empresas interessadas em prestar serviços de drenagem."
           ],
-          "answer": "Pular para o quesito 5",
-          "feedback": "Se não houver canal de atendimento (ouvidoria ou central), o questionário deve pular para o quesito 5, conforme o fluxo do módulo."
+          "answer": "Identificar se o prestador de serviço principal contrata outras empresas para executar, total ou parcialmente, as atividades de drenagem e manejo pluvial.",
+          "feedback": "Correto. O Bloco SRT visa mapear a cadeia de prestação de serviços, entendendo quais atividades são delegadas a outras empresas."
         },
         {
-          "question": "O que caracteriza a contratação de empresa terceirizada no Bloco SRT?",
+          "question": "Se um prestador de serviço informa que NÃO contratou nenhuma empresa terceirizada para os serviços de drenagem em 2024, qual o procedimento correto no questionário?",
           "options": [
-            "Prestador contrata empresa(s) para execução de serviços de drenagem e manejo de águas pluviais",
-            "Apenas monitoramento de qualidade",
-            "Município executa todos os serviços diretamente",
-            "Apenas serviços de esgoto"
+            "O Bloco SRT deve ser encerrado, e o preenchimento continua nos blocos seguintes.",
+            "O questionário deve ser totalmente encerrado, pois pressupõe-se que nenhum serviço foi realizado.",
+            "Deve-se registrar essa informação no campo 'Outro' e detalhar os motivos da não contratação.",
+            "O técnico deve investigar se a informação é verídica antes de prosseguir com o preenchimento."
           ],
-          "answer": "Prestador contrata empresa(s) para execução de serviços de drenagem e manejo de águas pluviais",
-          "feedback": "A contratação de empresa terceirizada ocorre quando o prestador contrata empresa(s) para execução de serviços de drenagem e manejo de águas pluviais no município pesquisado."
+          "answer": "O Bloco SRT deve ser encerrado, e o preenchimento continua nos blocos seguintes.",
+          "feedback": "Isso mesmo. Se a resposta ao quesito inicial do Bloco SRT for 'Não', o restante do bloco é pulado, pois não há serviços terceirizados a detalhar."
         },
         {
-          "question": "Se for assinalado \"Não\" para contratação de terceiros, o que acontece?",
+          "question": "Qual é a distinção fundamental na forma de remuneração entre um 'Contrato de Concessão Comum' e um 'Contrato de Parceria Público-Privada (PPP)' para serviços de drenagem?",
           "options": [
-            "Nada muda no fluxo",
-            "Deve-se preencher todos os quesitos seguintes",
-            "O bloco SRT deve ser encerrado",
-            "O questionário volta ao início"
+            "Na concessão comum, a remuneração é um valor fixo anual pago pelo município, enquanto na PPP a remuneração é paga pela União, independentemente do desempenho.",
+            "Em ambos os modelos, a remuneração provém exclusivamente de uma taxa de drenagem cobrada dos cidadãos, mas na PPP há um bônus por performance.",
+            "A concessão comum é remunerada por meio de financiamentos de organismos internacionais, ao passo que a PPP é custeada integralmente pelo orçamento estadual.",
+            "Na concessão comum, a remuneração do prestador provém de tarifas pagas pelos usuários, enquanto na PPP a remuneração é paga pelo Poder Público e atrelada ao desempenho."
           ],
-          "answer": "O bloco SRT deve ser encerrado",
-          "feedback": "Se não houver contratação de terceiros, o bloco SRT deve ser encerrado, pois não há serviços terceirizados a serem detalhados."
+          "answer": "Na concessão comum, a remuneração do prestador provém de tarifas pagas pelos usuários, enquanto na PPP a remuneração é paga pelo Poder Público e atrelada ao desempenho.",
+          "feedback": "Exato. A origem da remuneração é o diferencial chave: na concessão comum, o risco é do concessionário, que cobra tarifas dos usuários. Na PPP, o Poder Público remunera o parceiro privado com base em metas de desempenho."
         },
         {
-          "question": "Por que é importante cadastrar corretamente a empresa terceirizada?",
+          "question": "O prestador de serviço municipal informa que TODOS os serviços de drenagem (planejamento, obras, manutenção, operação, etc.) são executados por uma única empresa contratada. Qual é o fluxo correto de preenchimento do questionário?",
           "options": [
-            "Para garantir que as informações sobre os serviços prestados estejam completas e corretas",
-            "Para aumentar o número de empresas no município",
-            "Para facilitar a fiscalização de obras",
-            "Para registrar reclamações de moradores"
+            "O questionário deve ser preenchido integralmente, respondendo a todos os blocos com base nas informações da empresa terceirizada.",
+            "Deve-se marcar 'Sim' no Bloco SRT, assinalar todos os serviços como terceirizados e, em seguida, encerrar o questionário.",
+            "O Bloco SRT não deve ser preenchido; em vez disso, a empresa terceirizada deve ser cadastrada como o prestador principal.",
+            "O questionário deve ser preenchido até o Bloco LEG, e os demais blocos devem ser marcados como 'Não se aplica'."
           ],
-          "answer": "Para garantir que as informações sobre os serviços prestados estejam completas e corretas",
-          "feedback": "O cadastro correto da empresa terceirizada garante que as informações sobre os serviços prestados estejam completas e corretas, permitindo um mapeamento fiel da execução dos serviços de drenagem e manejo de águas pluviais."
+          "answer": "Deve-se marcar 'Sim' no Bloco SRT, assinalar todos os serviços como terceirizados e, em seguida, encerrar o questionário.",
+          "feedback": "Correto. A terceirização total dos serviços implica um fluxo de encerramento mais curto no questionário, após a devida identificação dos serviços delegados no Bloco SRT."
         },
         {
-          "question": "Qual é o papel do técnico ao identificar o instrumento legal de delegação?",
+          "question": "Uma 'Lei' municipal que cria uma autarquia para ser a responsável pela drenagem urbana é considerada que tipo de instrumento?",
           "options": [
-            "Registrar apenas reclamações",
-            "Solicitar apenas informações financeiras",
-            "Executar obras diretamente",
-            "Verificar se há contrato, lei ou outro documento formalizando a delegação"
+            "Um instrumento de delegação ou outorga válido para formalizar a prestação do serviço.",
+            "Um Contrato de Programa, pois autarquias são entidades públicas.",
+            "Um tipo de Parceria Público-Privada (PPP) simplificada.",
+            "Um documento informativo, mas que não constitui uma delegação formal do serviço."
           ],
-          "answer": "Verificar se há contrato, lei ou outro documento formalizando a delegação",
-          "feedback": ""
+          "answer": "Um instrumento de delegação ou outorga válido para formalizar a prestação do serviço.",
+          "feedback": "Correto. Uma lei municipal é um dos instrumentos legais previstos que podem formalizar a delegação ou a outorga da responsabilidade pela prestação dos serviços de drenagem."
         },
         {
-          "question": "Por que o quesito sobre \"conflitos pelo uso da água\" é importante no diagnóstico de saneamento?",
+          "question": "Um cidadão liga para a central de atendimento da prefeitura para sugerir a implantação de um jardim de chuva em sua rua. Como essa manifestação deve ser classificada?",
           "options": [
-            "Para mapear disputas entre vizinhos sobre o uso de poços.",
-            "Para proibir o uso industrial da água.",
-            "Para identificar situações onde a demanda por água é maior que a oferta, ou onde o uso por um ator prejudica outro, indicando a necessidade de uma gestão mais robusta.",
-            "Apenas para registrar brigas que chegam à polícia."
+            "Como 'Reclamação sobre ocorrência de alagamentos'.",
+            "Como 'Solicitação para limpeza de corpos hídricos'.",
+            "Como 'Implantação de soluções baseadas na natureza'.",
+            "Como 'Reclamação sobre falta de pavimentação'."
           ],
-          "answer": "Para identificar situações onde a demanda por água é maior que a oferta, ou onde o uso por um ator prejudica outro, indicando a necessidade de uma gestão mais robusta.",
-          "feedback": ""
+          "answer": "Como 'Implantação de soluções baseadas na natureza'.",
+          "feedback": "Isso mesmo. A sugestão de um jardim de chuva se enquadra perfeitamente na categoria de solicitação para implantação de Soluções Baseadas na Natureza (SBN)."
         },
         {
-          "question": "A \"Política Nacional de Resíduos Sólidos\" (Lei nº 12.305/2010) tem relação com o manejo de águas pluviais?",
+          "question": "A prefeitura de uma cidade contratou uma empresa especializada apenas para realizar o 'Monitoramento pluviométrico e fluviométrico' e a 'Atualização do mapeamento de áreas de risco'. Como essa situação é tratada no Bloco SRT?",
           "options": [
-            "Apenas no que se refere a resíduos industriais.",
-            "Nenhuma, as leis são totalmente separadas.",
-            "Não, a lei de resíduos trata apenas da coleta seletiva.",
-            "Sim, pois a gestão inadequada de resíduos sólidos pode levar à obstrução de bueiros e galerias, causando enchentes."
+            "Isso não é considerado terceirização, pois não envolve obras ou manutenção direta.",
+            "A prefeitura deve marcar 'Sim' para a contratação de terceiros e selecionar apenas os dois serviços específicos que foram delegados.",
+            "Como os serviços são apenas de monitoramento e mapeamento, o Bloco SRT deve ser pulado.",
+            "Considera-se terceirização total, e o questionário deve ser encerrado após o registro."
           ],
-          "answer": "Sim, pois a gestão inadequada de resíduos sólidos pode levar à obstrução de bueiros e galerias, causando enchentes.",
-          "feedback": ""
+          "answer": "A prefeitura deve marcar 'Sim' para a contratação de terceiros e selecionar apenas os dois serviços específicos que foram delegados.",
+          "feedback": "Correto. O Bloco SRT permite a seleção múltipla, e o informante deve assinalar exatamente quais serviços, dentre os listados, são executados por empresas terceirizadas."
         },
         {
-          "question": "O que é um comitê de bacia hidrográfica?",
+          "question": "A ouvidoria de um prestador de serviço atua principalmente para:",
           "options": [
-            "Departamento de obras",
-            "Um órgão colegiado com representantes do poder público, usuários de água e sociedade civil para discutir e deliberar sobre o uso da água na bacia.",
-            "Sistema de monitoramento de qualidade da água",
-            "Empresa terceirizada"
+            "Planejar e executar as obras de ampliação da rede de drenagem.",
+            "Defender os interesses da empresa em disputas judiciais com os cidadãos.",
+            "Funcionar como um canal para o cidadão apresentar reclamações, sugestões e solucionar conflitos, defendendo os direitos dos usuários.",
+            "Emitir as faturas e realizar a cobrança das tarifas de drenagem e manejo de águas pluviais."
           ],
-          "answer": "Um órgão colegiado com representantes do poder público, usuários de água e sociedade civil para discutir e deliberar sobre o uso da água na bacia.",
-          "feedback": ""
+          "answer": "Funcionar como um canal para o cidadão apresentar reclamações, sugestões e solucionar conflitos, defendendo os direitos dos usuários.",
+          "feedback": "Exato. A ouvidoria é um canal de mediação e defesa dos direitos do cidadão, essencial para a qualidade e transparência do serviço prestado."
         },
         {
-          "question": "O que caracteriza o crime ambiental relacionado ao manejo de águas pluviais?",
+          "question": "Qual das seguintes opções NÃO é considerada um instrumento formal de delegação ou outorga de serviço, conforme o Bloco LEG?",
           "options": [
-            "Empresa terceirizada",
-            "Departamento de obras",
-            "Sistema de monitoramento de qualidade da água",
-            "É uma prática ilegal, considerada crime ambiental, sujeita a multas e outras penalidades."
+            "Um decreto municipal.",
+            "Um Contrato de Concessão Comum.",
+            "Uma Lei aprovada pela câmara de vereadores.",
+            "Um acordo verbal entre o prefeito e o diretor da empresa prestadora de serviço."
           ],
-          "answer": "É uma prática ilegal, considerada crime ambiental, sujeita a multas e outras penalidades.",
-          "feedback": ""
+          "answer": "Um acordo verbal entre o prefeito e o diretor da empresa prestadora de serviço.",
+          "feedback": "Correto. A delegação de um serviço público exige formalidade. Um acordo verbal não tem validade jurídica como instrumento de delegação ou outorga, sendo necessário um documento como contrato, lei, ou ato administrativo formal."
         }
       ]
     }

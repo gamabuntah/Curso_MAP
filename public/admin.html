@@ -56,23 +56,23 @@
         <div id="users" class="tab-content">
             <h3>Progresso dos Usuários</h3>
             <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Usuário</th>
-                            <th>Progresso</th>
-                            <th>Módulos Concluídos</th>
-                            <th>Avaliação Final</th>
-                            <th>Status</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="usersTableBody">
-                        <tr>
-                            <td colspan="6" style="text-align: center;">Carregando dados...</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Progresso</th>
+                        <th>Módulos Concluídos</th>
+                        <th>Avaliação Final</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Carregando dados...</td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
         </div>
 
@@ -80,25 +80,25 @@
         <div id="certificates" class="tab-content">
             <h3>Certificados Emitidos</h3>
             <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Usuário</th>
-                            <th>Código</th>
-                            <th>Data de Emissão</th>
-                            <th>Pontuação</th>
-                            <th>Downloads</th>
-                            <th>Validações</th>
-                            <th>Status</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="certificatesTableBody">
-                        <tr>
-                            <td colspan="8" style="text-align: center;">Carregando dados...</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Código</th>
+                        <th>Data de Emissão</th>
+                        <th>Pontuação</th>
+                        <th>Downloads</th>
+                        <th>Validações</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="certificatesTableBody">
+                    <tr>
+                        <td colspan="8" style="text-align: center;">Carregando dados...</td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
         </div>
     </div>
@@ -268,9 +268,9 @@
                                 <i class="fa-solid fa-search"></i> Validar
                             </button>
                             ${cert.status === 'issued' ? `
-                                <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
+                            <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
                                     <i class="fa-solid fa-ban"></i> Revogar
-                                </button>
+                            </button>
                             ` : ''}
                         </td>
                     `;
@@ -460,4 +460,4 @@
         });
     </script>
 </body>
-</html>
+</html> 

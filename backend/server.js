@@ -2,10 +2,12 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
+const { readDB, writeDB, addUser, updateProgress, addCertificate, isProduction } = require('./database');
 
 const PORT = process.env.PORT || 3000;
-const DB_PATH = path.join(__dirname, 'database.json');
 const PUBLIC_PATH = path.join(__dirname, '..', 'public');
+
+console.log(`🔧 Modo: ${isProduction ? 'PRODUÇÃO (PostgreSQL)' : 'DESENVOLVIMENTO (JSON)'}`);
 
 // MIME types
 const mimeTypes = {
@@ -21,31 +23,6 @@ const mimeTypes = {
   '.mp3': 'audio/mpeg',
   '.md': 'text/markdown',
   '.txt': 'text/plain'
-};
-
-// Função para ler banco de dados
-const readDB = () => {
-  try {
-    if (!fs.existsSync(DB_PATH)) {
-      const initialData = { users: [], progress: {}, certificates: {} };
-      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-      return initialData;
-    }
-    const data = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error('Erro ao ler DB:', error);
-    return { users: [], progress: {}, certificates: {} };
-  }
-};
-
-// Função para escrever no banco
-const writeDB = (data) => {
-  try {
-    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf8');
-  } catch (error) {
-    console.error('Erro ao escrever DB:', error);
-  }
 };
 
 // Hash simples
@@ -140,7 +117,9 @@ const server = http.createServer(async (req, res) => {
       if (pathname === '/api' && method === 'GET') {
         sendJSON(res, 200, { 
           message: 'API funcionando!', 
-          timestamp: new Date().toISOString() 
+          timestamp: new Date().toISOString(),
+          database: isProduction ? 'PostgreSQL' : 'JSON File',
+          persistent: isProduction
         });
         return;
       }
@@ -155,7 +134,7 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        const db = readDB();
+        const db = await readDB();
         const userExists = db.users.find(user => user.username === username);
 
         if (userExists) {
@@ -170,10 +149,7 @@ const server = http.createServer(async (req, res) => {
           createdAt: new Date().toISOString()
         };
 
-        db.users.push(newUser);
-        db.progress[username] = {};
-        writeDB(db);
-
+        await addUser(newUser);
         sendJSON(res, 201, { message: 'Usuário criado com sucesso!' });
         return;
       }
@@ -188,7 +164,7 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        const db = readDB();
+        const db = await readDB();
         const user = db.users.find(user => user.username === username);
 
         if (!user || user.passwordHash !== simpleHash(password)) {
@@ -207,7 +183,7 @@ const server = http.createServer(async (req, res) => {
       // Obter progresso
       if (pathname.startsWith('/api/progress/') && method === 'GET') {
         const username = pathname.split('/')[3];
-        const db = readDB();
+        const db = await readDB();
 
         const user = db.users.find(u => u.username === username);
         if (!user) {
@@ -224,7 +200,7 @@ const server = http.createServer(async (req, res) => {
       if (pathname.startsWith('/api/progress/') && method === 'POST') {
         const username = pathname.split('/')[3];
         const body = await getRequestBody(req);
-        const db = readDB();
+        const db = await readDB();
 
         const user = db.users.find(u => u.username === username);
         if (!user) {
@@ -232,9 +208,7 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        db.progress[username] = body;
-        writeDB(db);
-
+        await updateProgress(username, body);
         sendJSON(res, 200, { message: 'Progresso salvo com sucesso.' });
         return;
       }
@@ -243,7 +217,7 @@ const server = http.createServer(async (req, res) => {
       if (pathname.startsWith('/api/certificates/') && method === 'POST' && !pathname.includes('/download')) {
         const username = pathname.split('/')[3];
         const body = await getRequestBody(req);
-        const db = readDB();
+        const db = await readDB();
 
         const user = db.users.find(u => u.username === username);
         if (!user) {
@@ -251,9 +225,7 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        if (!db.certificates) db.certificates = {};
-
-        const existingCertificate = Object.values(db.certificates).find(
+        const existingCertificate = Object.values(db.certificates || {}).find(
           cert => cert.username === username
         );
 
@@ -265,9 +237,7 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        db.certificates[body.validationCode] = body;
-        writeDB(db);
-
+        await addCertificate(body.validationCode, body);
         sendJSON(res, 201, body);
         return;
       }
@@ -275,7 +245,7 @@ const server = http.createServer(async (req, res) => {
       // Obter certificado
       if (pathname.startsWith('/api/certificates/') && method === 'GET' && !pathname.includes('/validate')) {
         const username = pathname.split('/')[3];
-        const db = readDB();
+        const db = await readDB();
 
         const user = db.users.find(u => u.username === username);
         if (!user) {
@@ -299,7 +269,7 @@ const server = http.createServer(async (req, res) => {
       // Validar certificado
       if (pathname.startsWith('/api/certificates/validate/') && method === 'GET') {
         const validationCode = pathname.split('/')[4];
-        const db = readDB();
+        const db = await readDB();
 
         const certificate = db.certificates[validationCode];
         if (!certificate) {
@@ -310,8 +280,9 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
+        // Incrementar contador (usando writeDB para compatibilidade)
         certificate.validationCount = (certificate.validationCount || 0) + 1;
-        writeDB(db);
+        await writeDB(db);
 
         sendJSON(res, 200, {
           valid: true,
@@ -330,7 +301,7 @@ const server = http.createServer(async (req, res) => {
       // Admin - todos os certificados
       if (pathname === '/api/admin/all-certificates' && method === 'GET') {
         const adminUser = parsedUrl.query.adminUser;
-        const db = readDB();
+        const db = await readDB();
         const requester = db.users.find(u => u.username === adminUser);
 
         if (!requester || requester.role !== 'admin') {
@@ -346,7 +317,7 @@ const server = http.createServer(async (req, res) => {
       // Admin - todo o progresso
       if (pathname === '/api/admin/all-progress' && method === 'GET') {
         const adminUser = parsedUrl.query.adminUser;
-        const db = readDB();
+        const db = await readDB();
         const requester = db.users.find(u => u.username === adminUser);
 
         if (!requester || requester.role !== 'admin') {
@@ -404,5 +375,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Servidor HTTP rodando na porta ${PORT}`);
   console.log(`📁 Servindo arquivos de: ${PUBLIC_PATH}`);
-  console.log(`💾 Banco de dados: ${DB_PATH}`);
+  console.log(`💾 Banco de dados: ${isProduction ? 'PostgreSQL (Persistente)' : 'JSON File (Temporário)'}`);
 }); 

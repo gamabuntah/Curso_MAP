@@ -293,22 +293,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         let fallbackAttempted = false;
         
         domElements.audioElement.onerror = (e) => {
-            console.warn('⚠️ Erro ao carregar áudio:', audioSrc);
-            
             // Se ainda não tentou o fallback e não é uma URL do GitHub
             if (!fallbackAttempted && !audioSrc.startsWith('https://github.com')) {
+                console.log('📂 Arquivo local não encontrado (normal em hospedagem):', audioSrc);
                 fallbackAttempted = true;
                 
                 // Mapear caminho local para URL do GitHub
                 const githubUrl = audioSrc.replace('MAP/Audios/', 'https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/')
                                           .replace(/ /g, '%20'); // Codifica espaços
                 
-                console.log('🔄 Tentando fallback do GitHub:', githubUrl);
+                console.log('🔄 Ativando fallback do GitHub:', githubUrl);
                 domElements.audioElement.src = githubUrl;
             } else {
                 // Fallback também falhou ou já estava usando GitHub
-                console.error('❌ Erro definitivo ao carregar áudio');
-                console.error('❌ Caminho tentado:', audioSrc);
+                console.error('❌ ERRO: Não foi possível carregar áudio de nenhuma fonte');
+                console.error('❌ Última tentativa:', audioSrc);
                 const fullUrl = audioSrc.startsWith('http') ? audioSrc : window.location.origin + '/' + audioSrc;
                 console.error('❌ URL completa:', fullUrl);
                 
@@ -323,7 +322,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         
         domElements.audioElement.oncanplay = () => {
-            console.log('✅ Áudio carregado e pronto para reproduzir');
+            const source = domElements.audioElement.src.includes('github.com') ? 'GitHub (fallback)' : 'arquivo local';
+            console.log(`✅ Áudio carregado com sucesso via ${source}`);
         };
         
         domElements.audioElement.src = audioSrc;

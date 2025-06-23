@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "4": {
     "title": "Módulo 4: Captação, Condução e Infiltração (Bloco CCI)",
-    "audio": "MAP/Audios/Curso MAP - Mod 4.mp3",
+    "audio": "https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/Curso%20MAP%20-%20Mod%204.mp3",
     "cards": [
       {
         "type": "default",

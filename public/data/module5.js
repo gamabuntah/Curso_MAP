@@ -2,7 +2,7 @@ window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "5": {
     "title": "Módulo 5: Estruturas de Retenção/Detenção (Bloco ERD)",
-    "audio": "MAP/Audios/Curso MAP - mod 5.mp3",
+    "audio": "https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/Curso%20MAP%20-%20mod%205.mp3",
     "cards": [
       {
         "type": "default",

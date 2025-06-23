@@ -20,6 +20,11 @@ Object.assign(window.modulos_data, {
         "content": "Sempre consulte o manual antes de preencher o questionário. Os quesitos são agrupados em blocos de acordo com o assunto. Expressões e conceitos que exigem esclarecimento estão definidos no manual ou nos questionários."
       },
       {
+        "type": "atencao",
+        "title": "📅 DATA DE REFERÊNCIA CRUCIAL",
+        "content": "<b>MUITO IMPORTANTE:</b> O período de referência da pesquisa é <b>31 de dezembro de 2024</b>. <br><br>✅ <b>Todas as informações devem se referir ao ano de 2024</b><br>✅ <b>Exceto aquelas com datas específicas no quesito</b><br>✅ <b>Esta data é fundamental para a precisão dos dados coletados</b><br><br><b>Sempre lembre:</b> Ao preencher o questionário, considere a situação do município em 31/12/2024."
+      },
+      {
         "type": "default",
         "title": "1.2 Conceitos Essenciais de Drenagem e Manejo de Águas Pluviais (MAP) 🌧️",
         "content": "<b>Definição do Serviço:</b> O serviço de Drenagem e Manejo de Águas Pluviais (MAP) é o escoamento e infiltração da água em áreas urbanas e rurais, com controle dos impactos a jusante na bacia.<br><br><b>Objetivos do Serviço:</b><ul><li>✔️ Redução dos danos à sociedade e ao ambiente por chuvas e cheias</li><li>✔️ Prevenção de alagamentos, inundações e enxurradas</li><li>✔️ Prevenção de deslizamentos, corridas de massa e erosões</li></ul><b>Terminologia Chave:</b><ul><li><b>Jusante:</b> Rio abaixo, montanha abaixo, encosta abaixo</li><li><b>Montante:</b> Rio acima, montanha acima, encosta acima</li></ul>"

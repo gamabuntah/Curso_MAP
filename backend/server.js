@@ -319,7 +319,7 @@ app.get('/api/admin/all-progress', (req, res) => {
 */
 
 // Rota para servir o index.html principal para qualquer rota não encontrada
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 

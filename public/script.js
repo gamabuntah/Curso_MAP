@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
+        console.log('🎵 Configurando player de áudio:', audioSrc);
         audioCompletedMarked = false; // Reseta a flag para o novo áudio
 
         // Cria e adiciona o botão de fechar se ele não existir
@@ -269,7 +270,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         domElements.playerModuleTitle.textContent = moduleTitle;
         domElements.audioPlayer.style.display = 'flex';
+        
+        // Adicionar evento de erro antes de definir o src
+        domElements.audioElement.onerror = (e) => {
+            console.error('❌ Erro ao carregar áudio:', e);
+            console.error('❌ Caminho do áudio:', audioSrc);
+            console.error('❌ URL completa:', window.location.origin + '/' + audioSrc);
+        };
+        
+        // Adicionar evento de carregamento
+        domElements.audioElement.onloadstart = () => {
+            console.log('🔄 Iniciando carregamento do áudio...');
+        };
+        
+        domElements.audioElement.oncanplay = () => {
+            console.log('✅ Áudio carregado e pronto para reproduzir');
+        };
+        
         domElements.audioElement.src = audioSrc;
+        console.log('🎵 Áudio src definido:', domElements.audioElement.src);
 
         // Reset a velocidade para o padrão quando um novo áudio é carregado
         currentSpeedIndex = 0;
@@ -279,6 +298,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- Event Listeners ---
         domElements.audioElement.onloadedmetadata = () => {
             domElements.duration.textContent = formatTime(domElements.audioElement.duration);
+            console.log('📊 Metadados carregados - Duração:', domElements.audioElement.duration);
         };
 
         domElements.audioElement.ontimeupdate = () => {
@@ -318,10 +338,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         domElements.playPauseBtn.onclick = () => {
             if (domElements.audioElement.paused) {
-                domElements.audioElement.play();
+                console.log('▶️ Tentando reproduzir áudio...');
+                domElements.audioElement.play().catch(error => {
+                    console.error('❌ Erro ao reproduzir áudio:', error);
+                    alert('Erro ao reproduzir áudio. Verifique se o arquivo existe e está acessível.');
+                });
                 domElements.playPauseBtn.classList.remove('play-btn');
                 domElements.playPauseBtn.classList.add('pause-btn');
             } else {
+                console.log('⏸️ Pausando áudio...');
                 domElements.audioElement.pause();
                 domElements.playPauseBtn.classList.remove('pause-btn');
                 domElements.playPauseBtn.classList.add('play-btn');
@@ -356,11 +381,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             domElements.speedBtn.textContent = `${newSpeed}x`;
         };
 
-        // Força a primeira execução para garantir o estado inicial
-        domElements.audioElement.play().catch(() => {
-            // A reprodução automática pode ser bloqueada, o que é normal.
-            // O importante é que o usuário possa iniciar com o botão de play.
-        });
+        // Não força a reprodução automática para evitar erros
+        console.log('🎵 Player de áudio configurado com sucesso');
     }
 
     /**

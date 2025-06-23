@@ -10,7 +10,15 @@ class ProgressManager {
         this.username = username;
         this.role = role;
         this.progress = {}; // O progresso será carregado de forma assíncrona
-        this.API_URL = `http://localhost:3000/api/progress/${this.username}`;
+        this.currentModule = 1;
+        this.modules = {};
+        this.final_evaluation = {};
+        
+        // Detecta automaticamente se está em produção ou desenvolvimento
+        const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+        this.API_URL = `${baseURL}/api/progress/${this.username}`;
+        
+        this.loadProgress();
     }
 
     /**

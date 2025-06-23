@@ -12,9 +12,16 @@ class CertificateManager {
         this.username = username;
         this.progressManager = progressManager;
         this.certificateData = null;
-        this.API_URL = `http://localhost:3000/api/certificates/${this.username}`;
+        
+        // Detecta automaticamente se está em produção ou desenvolvimento
+        const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+        this.API_URL = `${baseURL}/api/certificates/${this.username}`;
+        this.BASE_URL = baseURL;
+        
         this.VALIDATION_URL = 'http://localhost:8000/validate.html';
         this.isAdmin = this.progressManager.role === 'admin' || this.username.toLowerCase() === 'admin';
+        
+        this.loadCertificate();
     }
 
     /**
@@ -210,7 +217,7 @@ class CertificateManager {
      */
     async validateCertificate(validationCode) {
         try {
-            const response = await fetch(`http://localhost:3000/api/certificates/validate/${validationCode}`);
+            const response = await fetch(`${this.BASE_URL}/api/certificates/validate/${validationCode}`);
             if (response.ok) {
                 return await response.json();
             } else {
@@ -270,7 +277,7 @@ class CertificateManager {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/admin/all-certificates?adminUser=${this.username}`);
+            const response = await fetch(`${this.BASE_URL}/api/admin/all-certificates?adminUser=${this.username}`);
             if (response.ok) {
                 return await response.json();
             } else {

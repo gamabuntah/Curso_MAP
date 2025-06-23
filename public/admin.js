@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const tableBody = document.querySelector('#progress-table tbody');
     const loadingMessage = document.getElementById('loading-message');
     const errorMessageDiv = document.getElementById('error-message-admin');
@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentUser = sessionStorage.getItem('currentUser');
     const userRole = sessionStorage.getItem('userRole');
-    const API_URL = `http://localhost:3000/api/admin/all-progress?adminUser=${currentUser}`;
+
+    // Detecta automaticamente se está em produção ou desenvolvimento
+    const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+    const API_URL = `${baseURL}/api/admin/all-progress?adminUser=${currentUser}`;
 
     // Função para mostrar mensagens
     const showMessage = (message, isError = true) => {

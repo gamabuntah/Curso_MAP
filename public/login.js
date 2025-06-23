@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerBtn = document.getElementById('register-btn');
     const errorMessageDiv = document.getElementById('error-message');
 
-    const API_URL = 'http://localhost:3000/api';
+    // Detecta automaticamente se está em produção ou desenvolvimento
+    const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
     // Função para mostrar mensagens de erro
     const showMessage = (message, isError = true) => {

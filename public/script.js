@@ -75,31 +75,32 @@ document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const certManager = new window.CertificateManager(currentUser);
                 
-                // Verifica se o método loadCertificate existe
-                if (typeof certManager.loadCertificate === 'function') {
-                    await certManager.loadCertificate();
-                    
-                    // Admin sempre tem acesso, usuários normais precisam atender critérios
-                    const isEligible = userRole === 'admin' || 
-                                     (typeof certManager.canIssueCertificate === 'function' && certManager.canIssueCertificate()) || 
-                                     (typeof certManager.hasCertificate === 'function' && await certManager.hasCertificate());
-                    
-                    if (isEligible) {
-                        let certLink = document.querySelector('.certificate-link');
-                        if (!certLink) {
-                            certLink = document.createElement('a');
-                            certLink.href = '#';
-                            certLink.className = 'certificate-link';
-                            certLink.innerHTML = '<i class="fa-solid fa-certificate"></i> <span>Meu Certificado</span>';
-                            certLink.onclick = (e) => {
-                                e.preventDefault();
-                                window.showCertificateModal && window.showCertificateModal();
-                            };
-                            domElements.sidebarFooter.prepend(certLink);
-                        }
-                    }
+                // Verifica elegibilidade
+                let isEligible = false;
+                
+                if (userRole === 'admin') {
+                    // Admin sempre tem acesso
+                    isEligible = true;
                 } else {
-                    console.warn('CertificateManager.loadCertificate não encontrado - sistema de certificados desabilitado');
+                    // Para usuários normais, verifica se completou o curso OU já tem certificado
+                    const canGenerate = await certManager.canGenerateCertificate();
+                    const hasCert = canGenerate ? await certManager.hasCertificate() : false;
+                    isEligible = canGenerate || hasCert;
+                }
+                
+                if (isEligible) {
+                    let certLink = document.querySelector('.certificate-link');
+                    if (!certLink) {
+                        certLink = document.createElement('a');
+                        certLink.href = '#';
+                        certLink.className = 'certificate-link';
+                        certLink.innerHTML = '<i class="fa-solid fa-certificate"></i> <span>Meu Certificado</span>';
+                        certLink.onclick = (e) => {
+                            e.preventDefault();
+                            window.showCertificateModal && window.showCertificateModal();
+                        };
+                        domElements.sidebarFooter.prepend(certLink);
+                    }
                 }
             } catch (error) {
                 console.error('Erro ao inicializar sistema de certificados:', error);

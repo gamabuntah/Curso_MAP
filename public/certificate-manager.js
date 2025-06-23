@@ -71,6 +71,7 @@ class CertificateManager {
                 this.validationCode = data.validationCode;
                 return data;
             }
+            // Se não for 200 (incluindo 404), retorna null (normal quando não tem certificado)
             return null;
         } catch (error) {
             console.error('Erro ao carregar certificado:', error);
@@ -83,6 +84,13 @@ class CertificateManager {
      */
     async hasCertificate() {
         try {
+            // Primeiro verifica se pode gerar certificado (completou curso)
+            const canGenerate = await this.canGenerateCertificate();
+            if (!canGenerate) {
+                return false; // Se não completou curso, não tem certificado
+            }
+            
+            // Só então tenta carregar o certificado
             const cert = await this.loadCertificate();
             return cert !== null;
         } catch (error) {
@@ -345,20 +353,25 @@ class CertificateManager {
                 return;
             }
 
-            // Verifica status atual
-            const hasExisting = await this.hasCertificate();
+            // Primeiro verifica se completou o curso
             const canGenerate = await this.canGenerateCertificate();
+            
+            if (!canGenerate) {
+                // Usuário ainda não completou o curso
+                this.renderRequirements(container);
+                return;
+            }
 
+            // Se completou o curso, verifica se já tem certificado
+            const hasExisting = await this.hasCertificate();
+            
             if (hasExisting) {
                 // Usuário já tem certificado
                 const certData = await this.getCertificateData();
                 this.renderExistingCertificate(container, certData);
-            } else if (canGenerate) {
+            } else {
                 // Usuário pode gerar certificado
                 this.renderGenerateButton(container);
-            } else {
-                // Usuário ainda não pode gerar certificado
-                this.renderRequirements(container);
             }
         } catch (error) {
             console.error('Erro ao criar interface:', error);

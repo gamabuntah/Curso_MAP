@@ -220,9 +220,17 @@ class CertificateManager {
         if (!this.certificateData) return;
 
         try {
-            await fetch(`${this.API_URL}/download`, {
+            // Para admin, usa rota específica
+            const downloadUrl = this.isAdmin 
+                ? `${this.BASE_URL}/api/certificates/admin/download`
+                : `${this.API_URL}/download`;
+            
+            await fetch(downloadUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    validationCode: this.certificateData.validationCode 
+                })
             });
             this.certificateData.downloadCount++;
         } catch (error) {

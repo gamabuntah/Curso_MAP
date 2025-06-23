@@ -317,6 +317,32 @@ const server = http.createServer(async (req, res) => {
         return;
       }
 
+      // Download de certificado (admin)
+      if (pathname === '/api/certificates/admin/download' && method === 'POST') {
+        const body = await getRequestBody(req);
+        const { validationCode } = body;
+        
+        if (!validationCode) {
+          sendJSON(res, 400, { message: 'Código de validação é obrigatório.' });
+          return;
+        }
+
+        const db = await readDB();
+        const certificate = db.certificates[validationCode];
+        
+        if (!certificate) {
+          sendJSON(res, 404, { message: 'Certificado não encontrado.' });
+          return;
+        }
+
+        // Retorna os dados do certificado para download
+        sendJSON(res, 200, {
+          success: true,
+          certificate: certificate
+        });
+        return;
+      }
+
       // Admin - todos os certificados
       if (pathname === '/api/admin/all-certificates' && method === 'GET') {
         const adminUser = parsedUrl.query.adminUser;

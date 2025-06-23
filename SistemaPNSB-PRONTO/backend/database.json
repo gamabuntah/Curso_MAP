@@ -1,0 +1,313 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "passwordHash": "-1799229257",
+      "role": "admin"
+    },
+    {
+      "username": "Gustavo",
+      "passwordHash": "1509472",
+      "role": "user"
+    },
+    {
+      "username": "Oliveira",
+      "passwordHash": "1509472",
+      "role": "user"
+    },
+    {
+      "username": "teste_automato",
+      "passwordHash": "-657627925",
+      "role": "user"
+    }
+  ],
+  "progress": {
+    "admin": {
+      "modules": {
+        "1": {
+          "status": "available",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "2": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "3": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "4": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "5": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "6": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "7": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "8": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        }
+      },
+      "final_evaluation": {
+        "status": "not_attempted",
+        "score": null,
+        "date": null
+      },
+      "certificate": {
+        "issued": false,
+        "date": null,
+        "final_score": null
+      }
+    },
+    "Gustavo": {
+      "modules": {
+        "1": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.349Z",
+          "audioCompleted": true
+        },
+        "2": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.367Z",
+          "audioCompleted": true
+        },
+        "3": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.376Z",
+          "audioCompleted": true
+        },
+        "4": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.388Z",
+          "audioCompleted": true
+        },
+        "5": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.397Z",
+          "audioCompleted": true
+        },
+        "6": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.406Z",
+          "audioCompleted": true
+        },
+        "7": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.417Z",
+          "audioCompleted": true
+        },
+        "8": {
+          "status": "completed",
+          "score": 100,
+          "date": "2025-06-21T01:52:39.426Z",
+          "audioCompleted": true
+        }
+      },
+      "final_evaluation": {
+        "status": "passed",
+        "score": 95,
+        "date": "2025-06-21T01:52:39.435Z"
+      },
+      "certificate": {
+        "issued": true,
+        "date": "2025-06-21T01:52:39.435Z",
+        "final_score": 95
+      }
+    },
+    "Oliveira": {
+      "modules": {
+        "1": {
+          "status": "available",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "2": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "3": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "4": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "5": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "6": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "7": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        },
+        "8": {
+          "status": "locked",
+          "score": null,
+          "date": null,
+          "audioCompleted": false
+        }
+      },
+      "final_evaluation": {
+        "status": "not_attempted",
+        "score": null,
+        "date": null
+      },
+      "certificate": {
+        "issued": false,
+        "date": null,
+        "final_score": null
+      }
+    },
+    "teste_automato": {
+      "modulos": {
+        "1": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.981Z"
+        },
+        "2": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "3": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "4": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "5": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "6": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "7": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        },
+        "8": {
+          "concluido": true,
+          "quizConcluido": true,
+          "quizNota": 100,
+          "quizAcertos": 10,
+          "quizTotal": 10,
+          "ultimoAcesso": "2025-06-22T22:28:08.994Z"
+        }
+      },
+      "avaliacaoFinal": {
+        "concluida": false,
+        "nota": 0,
+        "aprovado": false,
+        "dataConclusao": null
+      },
+      "dataInicio": "2025-06-22T22:28:08.994Z",
+      "ultimoAcesso": "2025-06-22T22:28:08.994Z",
+      "tempoTotal": 0
+    }
+  },
+  "certificates": {
+    "PNSB-2025-2S7C-IOX1": {
+      "username": "Gustavo",
+      "issuedDate": "2025-06-21T01:39:27.676Z",
+      "finalScore": 95,
+      "completedModules": 8,
+      "status": "issued",
+      "validationCode": "PNSB-2025-2S7C-IOX1",
+      "digitalSignature": "R3VzdGF2by1QTlNCLTIwMjUtMlM3Qy1J",
+      "downloadCount": 0,
+      "validationCount": 1
+    },
+    "PNSB-2025-7B5M-O59Q": {
+      "username": "admin",
+      "issuedDate": "2025-06-21T02:13:28.552Z",
+      "finalScore": 100,
+      "completedModules": 8,
+      "status": "issued",
+      "validationCode": "PNSB-2025-7B5M-O59Q",
+      "digitalSignature": "YWRtaW4tUE5TQi0yMDI1LTdCNU0tTzU5",
+      "downloadCount": 0,
+      "validationCount": 0
+    }
+  }
+}

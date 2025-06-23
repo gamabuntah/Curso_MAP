@@ -1,0 +1,37 @@
+{
+  "sistema": {
+    "nome": "Sistema de Certificação PNSB",
+    "versao": "1.0.0",
+    "porta_backend": 3000,
+    "porta_frontend": 8000
+  },
+  "usuarios_padrao": {
+    "admin": {
+      "nome": "Administrador",
+      "tipo": "admin",
+      "senha": "admin123"
+    },
+    "gustavo": {
+      "nome": "Gustavo",
+      "tipo": "usuario",
+      "senha": "gustavo123"
+    }
+  },
+  "configuracoes": {
+    "auto_abrir_navegador": true,
+    "verificar_dependencias": true,
+    "tempo_espera_inicializacao": 3,
+    "mostrar_logs_detalhados": false
+  },
+  "backup": {
+    "auto_backup": true,
+    "intervalo_backup_minutos": 30,
+    "manter_ultimos_backups": 5
+  },
+  "certificado": {
+    "titulo": "Certificado de Conclusão",
+    "subtitulo": "Programa Nacional de Saneamento Básico",
+    "validade_dias": 365,
+    "incluir_qr_code": true
+  }
+} 

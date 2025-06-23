@@ -1,0 +1,13 @@
+# Dependencies
+/node_modules
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Portable version - to avoid re-uploading the entire node portable version
+/SistemaPNSB-PRONTA/nodejs-portable/
+
+# Backup files
+*.backup 

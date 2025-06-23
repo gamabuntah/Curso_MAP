@@ -380,8 +380,19 @@ const server = http.createServer(async (req, res) => {
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       serveStaticFile(res, filePath);
     } else {
-      // SPA fallback - servir index.html para rotas não encontradas
-      serveStaticFile(res, path.join(PUBLIC_PATH, 'index.html'));
+      // Verificar se é uma requisição para arquivo de mídia ou recurso específico
+      const ext = path.extname(pathname);
+      const isMediaFile = ['.wav', '.mp3', '.ogg', '.mp4', '.avi', '.jpg', '.jpeg', '.png', '.gif', '.css', '.js', '.ico', '.svg'].includes(ext);
+      
+      if (isMediaFile) {
+        // Para arquivos de mídia/recursos, retornar 404 em vez de fallback
+        console.log(`❌ Arquivo não encontrado: ${filePath}`);
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Arquivo não encontrado');
+      } else {
+        // SPA fallback - servir index.html apenas para rotas da aplicação
+        serveStaticFile(res, path.join(PUBLIC_PATH, 'index.html'));
+      }
     }
 
   } catch (error) {

@@ -1,19 +1,27 @@
-const express = require('express');
-const cors = require('cors');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'database.json');
+const PUBLIC_PATH = path.join(__dirname, '..', 'public');
 
-// Middlewares básicos
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
-// Servir arquivos estáticos
-app.use(express.static(path.join(__dirname, '..', 'public')));
+// MIME types
+const mimeTypes = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'application/javascript',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.ico': 'image/x-icon',
+  '.wav': 'audio/wav',
+  '.mp3': 'audio/mpeg',
+  '.md': 'text/markdown',
+  '.txt': 'text/plain'
+};
 
 // Função para ler banco de dados
 const readDB = () => {
@@ -51,290 +59,350 @@ const simpleHash = (s) => {
   return hash.toString();
 };
 
-// Rota de teste
-app.get('/api', (req, res) => {
-  res.json({ message: 'API funcionando!', timestamp: new Date().toISOString() });
-});
-
-// Registro de usuário
-app.post('/api/register', (req, res) => {
+// Função para servir arquivos estáticos
+const serveStaticFile = (res, filePath) => {
   try {
-    const { username, password } = req.body;
-
-    if (!username || !password) {
-      return res.status(400).json({ message: 'Nome de usuário e senha são obrigatórios.' });
+    if (!fs.existsSync(filePath)) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Arquivo não encontrado');
+      return;
     }
 
-    const db = readDB();
-    const userExists = db.users.find(user => user.username === username);
-
-    if (userExists) {
-      return res.status(409).json({ message: 'Este nome de usuário já existe.' });
-    }
-
-    const newUser = {
-      username,
-      passwordHash: simpleHash(password),
-      role: username.toLowerCase() === 'admin' ? 'admin' : 'user',
-      createdAt: new Date().toISOString()
-    };
-
-    db.users.push(newUser);
-    db.progress[username] = {};
-    writeDB(db);
-
-    res.status(201).json({ message: 'Usuário criado com sucesso!' });
-  } catch (error) {
-    console.error('Erro no registro:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Login
-app.post('/api/login', (req, res) => {
-  try {
-    const { username, password } = req.body;
-
-    if (!username || !password) {
-      return res.status(400).json({ message: 'Nome de usuário e senha são obrigatórios.' });
-    }
-
-    const db = readDB();
-    const user = db.users.find(user => user.username === username);
-
-    if (!user || user.passwordHash !== simpleHash(password)) {
-      return res.status(401).json({ message: 'Nome de usuário ou senha inválidos.' });
-    }
-
-    res.status(200).json({ 
-      message: 'Login bem-sucedido!', 
-      username: user.username,
-      role: user.role || 'user'
+    const ext = path.extname(filePath);
+    const contentType = mimeTypes[ext] || 'application/octet-stream';
+    
+    const data = fs.readFileSync(filePath);
+    res.writeHead(200, { 
+      'Content-Type': contentType,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     });
+    res.end(data);
   } catch (error) {
-    console.error('Erro no login:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
+    console.error('Erro ao servir arquivo:', error);
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    res.end('Erro interno do servidor');
   }
-});
+};
 
-// Obter progresso
-app.get('/api/progress/:username', (req, res) => {
-  try {
-    const username = req.params.username;
-    const db = readDB();
-
-    const user = db.users.find(u => u.username === username);
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado.' });
-    }
-
-    const userProgress = db.progress[username] || {};
-    res.status(200).json(userProgress);
-  } catch (error) {
-    console.error('Erro ao obter progresso:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Salvar progresso
-app.post('/api/progress/:username', (req, res) => {
-  try {
-    const username = req.params.username;
-    const newProgress = req.body;
-
-    const db = readDB();
-    const user = db.users.find(u => u.username === username);
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado.' });
-    }
-
-    db.progress[username] = newProgress;
-    writeDB(db);
-
-    res.status(200).json({ message: 'Progresso salvo com sucesso.' });
-  } catch (error) {
-    console.error('Erro ao salvar progresso:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Gerar certificado
-app.post('/api/certificates/:username', (req, res) => {
-  try {
-    const username = req.params.username;
-    const certificateData = req.body;
-
-    const db = readDB();
-    const user = db.users.find(u => u.username === username);
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado.' });
-    }
-
-    if (!db.certificates) db.certificates = {};
-
-    const existingCertificate = Object.values(db.certificates).find(
-      cert => cert.username === username
-    );
-
-    if (existingCertificate) {
-      return res.status(409).json({ 
-        message: 'Usuário já possui um certificado.',
-        certificate: existingCertificate
-      });
-    }
-
-    db.certificates[certificateData.validationCode] = certificateData;
-    writeDB(db);
-
-    res.status(201).json(certificateData);
-  } catch (error) {
-    console.error('Erro ao gerar certificado:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Obter certificado
-app.get('/api/certificates/:username', (req, res) => {
-  try {
-    const username = req.params.username;
-    const db = readDB();
-
-    const user = db.users.find(u => u.username === username);
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado.' });
-    }
-
-    const certificate = Object.values(db.certificates || {}).find(
-      cert => cert.username === username
-    );
-
-    if (!certificate) {
-      return res.status(404).json({ message: 'Certificado não encontrado.' });
-    }
-
-    res.status(200).json(certificate);
-  } catch (error) {
-    console.error('Erro ao obter certificado:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Validar certificado
-app.get('/api/certificates/validate/:validationCode', (req, res) => {
-  try {
-    const validationCode = req.params.validationCode;
-    const db = readDB();
-
-    const certificate = db.certificates[validationCode];
-    if (!certificate) {
-      return res.status(404).json({ 
-        valid: false, 
-        error: 'Certificado não encontrado' 
-      });
-    }
-
-    certificate.validationCount = (certificate.validationCount || 0) + 1;
-    writeDB(db);
-
-    res.status(200).json({
-      valid: true,
-      certificate: {
-        username: certificate.username,
-        issuedDate: certificate.issuedDate,
-        finalScore: certificate.finalScore,
-        completedModules: certificate.completedModules,
-        status: certificate.status,
-        validationCount: certificate.validationCount
+// Função para ler body da requisição
+const getRequestBody = (req) => {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (error) {
+        resolve({});
       }
     });
-  } catch (error) {
-    console.error('Erro ao validar certificado:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
+    req.on('error', reject);
+  });
+};
 
-// Download count
-app.post('/api/certificates/:username/download', (req, res) => {
-  try {
-    const username = req.params.username;
-    const db = readDB();
+// Função para enviar resposta JSON
+const sendJSON = (res, statusCode, data) => {
+  res.writeHead(statusCode, { 
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+  });
+  res.end(JSON.stringify(data));
+};
 
-    const certificate = Object.values(db.certificates || {}).find(
-      cert => cert.username === username
-    );
+// Criar servidor HTTP
+const server = http.createServer(async (req, res) => {
+  const parsedUrl = url.parse(req.url, true);
+  const pathname = parsedUrl.pathname;
+  const method = req.method;
 
-    if (certificate) {
-      certificate.downloadCount = (certificate.downloadCount || 0) + 1;
-      writeDB(db);
-    }
-
-    res.status(200).json({ message: 'Download count atualizado.' });
-  } catch (error) {
-    console.error('Erro ao atualizar download:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Admin - todos os certificados
-app.get('/api/admin/all-certificates', (req, res) => {
-  try {
-    const adminUser = req.query.adminUser;
-    const db = readDB();
-    const requester = db.users.find(u => u.username === adminUser);
-
-    if (!requester || requester.role !== 'admin') {
-      return res.status(403).json({ message: 'Acesso negado.' });
-    }
-
-    const allCertificates = Object.values(db.certificates || {});
-    res.status(200).json(allCertificates);
-  } catch (error) {
-    console.error('Erro admin certificados:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
-  }
-});
-
-// Admin - todo o progresso
-app.get('/api/admin/all-progress', (req, res) => {
-  try {
-    const adminUser = req.query.adminUser;
-    const db = readDB();
-    const requester = db.users.find(u => u.username === adminUser);
-
-    if (!requester || requester.role !== 'admin') {
-      return res.status(403).json({ message: 'Acesso negado.' });
-    }
-
-    const allProgressWithDetails = Object.keys(db.progress).map(username => {
-      const userProgress = db.progress[username];
-      const completedModules = userProgress.modules 
-        ? Object.values(userProgress.modules).filter(m => m.status === 'completed').length 
-        : 0;
-      const progressPercent = Math.round((completedModules / 8) * 100);
-      
-      return {
-        username,
-        progressPercent,
-        completedModules,
-        finalEvaluationScore: userProgress.final_evaluation?.score || 'N/A'
-      };
+  // CORS preflight
+  if (method === 'OPTIONS') {
+    res.writeHead(200, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     });
-    
-    res.status(200).json(allProgressWithDetails);
-  } catch (error) {
-    console.error('Erro admin progresso:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
+    res.end();
+    return;
   }
-});
 
-// Catch-all route - deve ser a última
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  try {
+    // API Routes
+    if (pathname.startsWith('/api')) {
+      
+      // Teste da API
+      if (pathname === '/api' && method === 'GET') {
+        sendJSON(res, 200, { 
+          message: 'API funcionando!', 
+          timestamp: new Date().toISOString() 
+        });
+        return;
+      }
+
+      // Registro
+      if (pathname === '/api/register' && method === 'POST') {
+        const body = await getRequestBody(req);
+        const { username, password } = body;
+
+        if (!username || !password) {
+          sendJSON(res, 400, { message: 'Nome de usuário e senha são obrigatórios.' });
+          return;
+        }
+
+        const db = readDB();
+        const userExists = db.users.find(user => user.username === username);
+
+        if (userExists) {
+          sendJSON(res, 409, { message: 'Este nome de usuário já existe.' });
+          return;
+        }
+
+        const newUser = {
+          username,
+          passwordHash: simpleHash(password),
+          role: username.toLowerCase() === 'admin' ? 'admin' : 'user',
+          createdAt: new Date().toISOString()
+        };
+
+        db.users.push(newUser);
+        db.progress[username] = {};
+        writeDB(db);
+
+        sendJSON(res, 201, { message: 'Usuário criado com sucesso!' });
+        return;
+      }
+
+      // Login
+      if (pathname === '/api/login' && method === 'POST') {
+        const body = await getRequestBody(req);
+        const { username, password } = body;
+
+        if (!username || !password) {
+          sendJSON(res, 400, { message: 'Nome de usuário e senha são obrigatórios.' });
+          return;
+        }
+
+        const db = readDB();
+        const user = db.users.find(user => user.username === username);
+
+        if (!user || user.passwordHash !== simpleHash(password)) {
+          sendJSON(res, 401, { message: 'Nome de usuário ou senha inválidos.' });
+          return;
+        }
+
+        sendJSON(res, 200, { 
+          message: 'Login bem-sucedido!', 
+          username: user.username,
+          role: user.role || 'user'
+        });
+        return;
+      }
+
+      // Obter progresso
+      if (pathname.startsWith('/api/progress/') && method === 'GET') {
+        const username = pathname.split('/')[3];
+        const db = readDB();
+
+        const user = db.users.find(u => u.username === username);
+        if (!user) {
+          sendJSON(res, 404, { message: 'Usuário não encontrado.' });
+          return;
+        }
+
+        const userProgress = db.progress[username] || {};
+        sendJSON(res, 200, userProgress);
+        return;
+      }
+
+      // Salvar progresso
+      if (pathname.startsWith('/api/progress/') && method === 'POST') {
+        const username = pathname.split('/')[3];
+        const body = await getRequestBody(req);
+        const db = readDB();
+
+        const user = db.users.find(u => u.username === username);
+        if (!user) {
+          sendJSON(res, 404, { message: 'Usuário não encontrado.' });
+          return;
+        }
+
+        db.progress[username] = body;
+        writeDB(db);
+
+        sendJSON(res, 200, { message: 'Progresso salvo com sucesso.' });
+        return;
+      }
+
+      // Gerar certificado
+      if (pathname.startsWith('/api/certificates/') && method === 'POST' && !pathname.includes('/download')) {
+        const username = pathname.split('/')[3];
+        const body = await getRequestBody(req);
+        const db = readDB();
+
+        const user = db.users.find(u => u.username === username);
+        if (!user) {
+          sendJSON(res, 404, { message: 'Usuário não encontrado.' });
+          return;
+        }
+
+        if (!db.certificates) db.certificates = {};
+
+        const existingCertificate = Object.values(db.certificates).find(
+          cert => cert.username === username
+        );
+
+        if (existingCertificate) {
+          sendJSON(res, 409, { 
+            message: 'Usuário já possui um certificado.',
+            certificate: existingCertificate
+          });
+          return;
+        }
+
+        db.certificates[body.validationCode] = body;
+        writeDB(db);
+
+        sendJSON(res, 201, body);
+        return;
+      }
+
+      // Obter certificado
+      if (pathname.startsWith('/api/certificates/') && method === 'GET' && !pathname.includes('/validate')) {
+        const username = pathname.split('/')[3];
+        const db = readDB();
+
+        const user = db.users.find(u => u.username === username);
+        if (!user) {
+          sendJSON(res, 404, { message: 'Usuário não encontrado.' });
+          return;
+        }
+
+        const certificate = Object.values(db.certificates || {}).find(
+          cert => cert.username === username
+        );
+
+        if (!certificate) {
+          sendJSON(res, 404, { message: 'Certificado não encontrado.' });
+          return;
+        }
+
+        sendJSON(res, 200, certificate);
+        return;
+      }
+
+      // Validar certificado
+      if (pathname.startsWith('/api/certificates/validate/') && method === 'GET') {
+        const validationCode = pathname.split('/')[4];
+        const db = readDB();
+
+        const certificate = db.certificates[validationCode];
+        if (!certificate) {
+          sendJSON(res, 404, { 
+            valid: false, 
+            error: 'Certificado não encontrado' 
+          });
+          return;
+        }
+
+        certificate.validationCount = (certificate.validationCount || 0) + 1;
+        writeDB(db);
+
+        sendJSON(res, 200, {
+          valid: true,
+          certificate: {
+            username: certificate.username,
+            issuedDate: certificate.issuedDate,
+            finalScore: certificate.finalScore,
+            completedModules: certificate.completedModules,
+            status: certificate.status,
+            validationCount: certificate.validationCount
+          }
+        });
+        return;
+      }
+
+      // Admin - todos os certificados
+      if (pathname === '/api/admin/all-certificates' && method === 'GET') {
+        const adminUser = parsedUrl.query.adminUser;
+        const db = readDB();
+        const requester = db.users.find(u => u.username === adminUser);
+
+        if (!requester || requester.role !== 'admin') {
+          sendJSON(res, 403, { message: 'Acesso negado.' });
+          return;
+        }
+
+        const allCertificates = Object.values(db.certificates || {});
+        sendJSON(res, 200, allCertificates);
+        return;
+      }
+
+      // Admin - todo o progresso
+      if (pathname === '/api/admin/all-progress' && method === 'GET') {
+        const adminUser = parsedUrl.query.adminUser;
+        const db = readDB();
+        const requester = db.users.find(u => u.username === adminUser);
+
+        if (!requester || requester.role !== 'admin') {
+          sendJSON(res, 403, { message: 'Acesso negado.' });
+          return;
+        }
+
+        const allProgressWithDetails = Object.keys(db.progress).map(username => {
+          const userProgress = db.progress[username];
+          const completedModules = userProgress.modules 
+            ? Object.values(userProgress.modules).filter(m => m.status === 'completed').length 
+            : 0;
+          const progressPercent = Math.round((completedModules / 8) * 100);
+          
+          return {
+            username,
+            progressPercent,
+            completedModules,
+            finalEvaluationScore: userProgress.final_evaluation?.score || 'N/A'
+          };
+        });
+        
+        sendJSON(res, 200, allProgressWithDetails);
+        return;
+      }
+
+      // Se chegou aqui, rota da API não encontrada
+      sendJSON(res, 404, { message: 'Rota da API não encontrada' });
+      return;
+    }
+
+    // Servir arquivos estáticos
+    let filePath;
+    if (pathname === '/') {
+      filePath = path.join(PUBLIC_PATH, 'index.html');
+    } else {
+      filePath = path.join(PUBLIC_PATH, pathname);
+    }
+
+    // Verificar se é um arquivo
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      serveStaticFile(res, filePath);
+    } else {
+      // SPA fallback - servir index.html para rotas não encontradas
+      serveStaticFile(res, path.join(PUBLIC_PATH, 'index.html'));
+    }
+
+  } catch (error) {
+    console.error('Erro no servidor:', error);
+    sendJSON(res, 500, { message: 'Erro interno do servidor' });
+  }
 });
 
 // Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
-  console.log(`📁 Servindo arquivos de: ${path.join(__dirname, '..', 'public')}`);
+server.listen(PORT, () => {
+  console.log(`🚀 Servidor HTTP rodando na porta ${PORT}`);
+  console.log(`📁 Servindo arquivos de: ${PUBLIC_PATH}`);
   console.log(`💾 Banco de dados: ${DB_PATH}`);
 }); 

@@ -2987,3 +2987,189 @@ body {
     padding: 14px 20px !important; /* Ajusta o espaçamento interno */
     color: #FFFFFF !important; /* Deixa o texto bem branco e visível */
 }
+
+/* === CARD DE AVISO DE ÁUDIO PENDENTE === */
+.audio-warning-card {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 2px solid #ffc107;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    animation: audioWarningSlide 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-warning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffc107, #ff9800, #ffc107);
+    background-size: 200% 100%;
+    animation: warningGlow 2s ease-in-out infinite;
+}
+
+@keyframes audioWarningSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes warningGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.warning-icon {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+    animation: audioIconBounce 1s ease-in-out infinite;
+}
+
+@keyframes audioIconBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+.warning-content {
+    flex: 1;
+}
+
+.warning-content h3 {
+    color: #856404;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.warning-content p {
+    color: #856404;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
+
+.warning-content ul {
+    color: #856404;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.warning-content li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.warning-action {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.audio-reminder-btn {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: #856404;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.audio-reminder-btn:hover {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.5);
+    color: #5d4e75;
+}
+
+.audio-reminder-btn i {
+    font-size: 1.1rem;
+}
+
+/* Responsividade para o card de aviso */
+@media (max-width: 768px) {
+    .audio-warning-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .warning-icon {
+        font-size: 2rem;
+        min-width: auto;
+    }
+    
+    .warning-content h3 {
+        font-size: 1.1rem;
+        justify-content: center;
+    }
+    
+    .warning-content p,
+    .warning-content li {
+        font-size: 0.9rem;
+    }
+    
+    .audio-reminder-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .audio-warning-card {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    .warning-icon {
+        font-size: 1.8rem;
+    }
+    
+    .warning-content h3 {
+        font-size: 1rem;
+    }
+    
+    .warning-content p,
+    .warning-content li {
+        font-size: 0.85rem;
+    }
+    
+    .audio-reminder-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}

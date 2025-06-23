@@ -690,6 +690,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             progressManager.completeModule(currentModuleId, parseFloat(percentage));
         }
 
+        // Verifica se precisa mostrar aviso sobre áudio pendente
+        let audioWarning = '';
+        if (config.containerId !== 'final-quiz-container' && currentModuleId && percentage >= 70) {
+            const moduleProgress = progressManager.progress.modules[currentModuleId];
+            const hasAudio = modulos[currentModuleId] && modulos[currentModuleId].audio;
+            
+            if (hasAudio && moduleProgress && !moduleProgress.audioCompleted) {
+                audioWarning = `
+                    <div class="audio-warning-card">
+                        <div class="warning-icon">🎵</div>
+                        <div class="warning-content">
+                            <h3>⚠️ Atenção: Áudio Pendente!</h3>
+                            <p><strong>Parabéns por passar no quiz!</strong> Porém, para <strong>desbloquear o próximo módulo</strong>, você ainda precisa:</p>
+                            <ul>
+                                <li>🎧 <strong>Ouvir integralmente o áudio</strong> da conversa aprofundada deste módulo</li>
+                                <li>📚 O áudio contém informações complementares importantes</li>
+                                <li>🔓 Só assim o próximo módulo será liberado</li>
+                            </ul>
+                            <div class="warning-action">
+                                <button class="audio-reminder-btn" onclick="scrollToAudio()">
+                                    <i class="fa-solid fa-headphones"></i>
+                                    Ir para o Áudio
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
         // Se o resultado for em um container separado, oculta o de perguntas
         if (config.resultsContainer) {
             quizContainer.style.display = 'none';
@@ -706,6 +736,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </div>
                 </div>
                 <div class="final-result-message">${resultMessage}</div>
+                ${audioWarning}
                 <button class="quiz-button restart-quiz-btn">
                     ${config.restartButtonText}
                 </button>
@@ -719,6 +750,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Atualiza indicadores visuais após registrar progresso
         applyProgressClasses();
     }
+
+    // Função para rolar até o card de áudio
+    window.scrollToAudio = function() {
+        const audioCard = document.querySelector('.audio-card');
+        if (audioCard) {
+            audioCard.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+            // Adiciona destaque temporário
+            audioCard.style.boxShadow = '0 0 20px rgba(255, 193, 7, 0.6)';
+            audioCard.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                audioCard.style.boxShadow = '';
+                audioCard.style.transform = '';
+                audioCard.style.transition = 'all 0.3s ease';
+            }, 2000);
+        } else {
+            alert('Card de áudio não encontrado. Role a página para encontrar a seção de áudio.');
+        }
+    };
 
     /**
      * Inicia a avaliação final

@@ -317,6 +317,38 @@ const server = http.createServer(async (req, res) => {
         return;
       }
 
+      // Download de certificado (usuário comum)
+      if (pathname.startsWith('/api/certificates/') && pathname.endsWith('/download') && method === 'POST') {
+        const username = pathname.split('/')[3];
+        const db = await readDB();
+
+        const user = db.users.find(u => u.username === username);
+        if (!user) {
+          sendJSON(res, 404, { message: 'Usuário não encontrado.' });
+          return;
+        }
+
+        const certificate = Object.values(db.certificates || {}).find(
+          cert => cert.username === username
+        );
+
+        if (!certificate) {
+          sendJSON(res, 404, { message: 'Certificado não encontrado.' });
+          return;
+        }
+
+        // Incrementa contador de downloads
+        certificate.downloadCount = (certificate.downloadCount || 0) + 1;
+        await writeDB(db);
+
+        // Retorna os dados do certificado para download
+        sendJSON(res, 200, {
+          success: true,
+          certificate: certificate
+        });
+        return;
+      }
+
       // Download de certificado (admin)
       if (pathname === '/api/certificates/admin/download' && method === 'POST') {
         const body = await getRequestBody(req);
@@ -334,6 +366,10 @@ const server = http.createServer(async (req, res) => {
           sendJSON(res, 404, { message: 'Certificado não encontrado.' });
           return;
         }
+
+        // Incrementa contador de downloads
+        certificate.downloadCount = (certificate.downloadCount || 0) + 1;
+        await writeDB(db);
 
         // Retorna os dados do certificado para download
         sendJSON(res, 200, {

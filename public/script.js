@@ -71,25 +71,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // --- INTEGRAÇÃO CERTIFICADO ---
         // Adiciona botão "Meu Certificado" se elegível
-        if (domElements.sidebarFooter) {
-            const certManager = new window.CertificateManager(currentUser, progressManager);
-            await certManager.loadCertificate();
-            // Admin sempre tem acesso, usuários normais precisam atender critérios
-            const isEligible = userRole === 'admin' || certManager.canIssueCertificate() || certManager.hasCertificate();
-            if (isEligible) {
-                let certLink = document.querySelector('.certificate-link');
-                if (!certLink) {
-                    certLink = document.createElement('a');
-                    certLink.href = '#';
-                    certLink.className = 'certificate-link';
-                    certLink.innerHTML = '<i class="fa-solid fa-certificate"></i> <span>Meu Certificado</span>';
-                    certLink.onclick = (e) => {
-                        e.preventDefault();
-                        window.showCertificateModal && window.showCertificateModal();
-                    };
-                    domElements.sidebarFooter.prepend(certLink);
+        if (domElements.sidebarFooter && window.CertificateManager) {
+            try {
+                const certManager = new window.CertificateManager(currentUser);
+                
+                // Verifica se o método loadCertificate existe
+                if (typeof certManager.loadCertificate === 'function') {
+                    await certManager.loadCertificate();
+                    
+                    // Admin sempre tem acesso, usuários normais precisam atender critérios
+                    const isEligible = userRole === 'admin' || 
+                                     (typeof certManager.canIssueCertificate === 'function' && certManager.canIssueCertificate()) || 
+                                     (typeof certManager.hasCertificate === 'function' && await certManager.hasCertificate());
+                    
+                    if (isEligible) {
+                        let certLink = document.querySelector('.certificate-link');
+                        if (!certLink) {
+                            certLink = document.createElement('a');
+                            certLink.href = '#';
+                            certLink.className = 'certificate-link';
+                            certLink.innerHTML = '<i class="fa-solid fa-certificate"></i> <span>Meu Certificado</span>';
+                            certLink.onclick = (e) => {
+                                e.preventDefault();
+                                window.showCertificateModal && window.showCertificateModal();
+                            };
+                            domElements.sidebarFooter.prepend(certLink);
+                        }
+                    }
+                } else {
+                    console.warn('CertificateManager.loadCertificate não encontrado - sistema de certificados desabilitado');
                 }
+            } catch (error) {
+                console.error('Erro ao inicializar sistema de certificados:', error);
+                // Sistema continua funcionando sem certificados
             }
+        } else {
+            console.warn('CertificateManager não carregado - sistema de certificados desabilitado');
         }
 
         if (!domElements.sidebarNav || !domElements.moduleTitle || !domElements.contentContainer) {
@@ -818,7 +835,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const currentUser = sessionStorage.getItem('currentUser');
         const userRole = sessionStorage.getItem('userRole');
         const progressManager = window.progressManager || (window.ProgressManager && new window.ProgressManager(currentUser, userRole));
-        const certManager = new window.CertificateManager(currentUser, progressManager);
+        const certManager = new window.CertificateManager(currentUser);
         const certData = await certManager.loadCertificate();
 
         // Preenche preview e info

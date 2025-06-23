@@ -277,6 +277,24 @@ class CertificateGenerator {
     getPDFBlob() {
         return this.pdf.output('blob');
     }
+
+    /**
+     * Função principal para gerar PDF (compatibilidade)
+     */
+    async generatePDF(certificateData) {
+        console.log('=== INICIANDO generatePDF ===');
+        
+        // Atualiza os dados se fornecidos
+        if (certificateData) {
+            this.data = certificateData;
+        }
+        
+        // Gera o PDF
+        await this.generate();
+        
+        console.log('✅ generatePDF concluída com sucesso');
+        return this.pdf;
+    }
 }
 
 // Exporta para uso global

@@ -830,7 +830,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         // Gera preview do PDF (imagem)
         previewDiv.innerHTML = '<div class="loading-preview">Gerando preview...</div>';
-        const generator = new window.CertificateGenerator();
+        const generator = new window.CertificateGenerator(certData);
         await generator.generatePDF(certData);
         // Gera imagem do PDF (primeira página)
         const pdfDataUrl = generator.pdf.output('datauristring');
@@ -849,8 +849,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Botão de download
         document.getElementById('download-certificate-btn').onclick = async () => {
-            await generator.generatePDF(certData);
-            generator.downloadPDF(`certificado-${certData.username}.pdf`);
+            const downloadGenerator = new window.CertificateGenerator(certData);
+            await downloadGenerator.generatePDF(certData);
+            downloadGenerator.downloadPDF(`certificado-${certData.username}.pdf`);
             certManager.incrementDownloadCount();
         };
         // Botão de validação

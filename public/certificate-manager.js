@@ -60,20 +60,43 @@ class CertificateManager {
     }
 
     /**
+     * Carrega dados do certificado se existir
+     */
+    async loadCertificate() {
+        try {
+            const response = await fetch(`${this.API_URL}`);
+            if (response.ok) {
+                const data = await response.json();
+                this.certificateData = data;
+                this.validationCode = data.validationCode;
+                return data;
+            }
+            return null;
+        } catch (error) {
+            console.error('Erro ao carregar certificado:', error);
+            return null;
+        }
+    }
+
+    /**
      * Verifica se já possui certificado
      */
     async hasCertificate() {
         try {
-            const response = await fetch(`${this.API_URL}/check`);
-            if (response.ok) {
-                const data = await response.json();
-                return data.hasCertificate;
-            }
-            return false;
+            const cert = await this.loadCertificate();
+            return cert !== null;
         } catch (error) {
             console.error('Erro ao verificar certificado:', error);
             return false;
         }
+    }
+
+    /**
+     * Verifica se pode emitir certificado
+     */
+    canIssueCertificate() {
+        // Esta função será chamada após loadCertificate, então podemos usar dados em cache
+        return this.certificateData === null; // Pode emitir se não tem certificado
     }
 
     /**

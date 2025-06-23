@@ -819,8 +819,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const userRole = sessionStorage.getItem('userRole');
         const progressManager = window.progressManager || (window.ProgressManager && new window.ProgressManager(currentUser, userRole));
         const certManager = new window.CertificateManager(currentUser, progressManager);
-        await certManager.loadCertificate();
-        const certData = certManager.getCertificateData();
+        const certData = await certManager.loadCertificate();
 
         // Preenche preview e info
         const previewDiv = document.getElementById('certificate-preview');

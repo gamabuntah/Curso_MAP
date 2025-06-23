@@ -275,7 +275,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         domElements.audioElement.onerror = (e) => {
             console.error('❌ Erro ao carregar áudio:', e);
             console.error('❌ Caminho do áudio:', audioSrc);
-            console.error('❌ URL completa:', window.location.origin + '/' + audioSrc);
+            // Se é URL externa, não concatena com origin
+            const fullUrl = audioSrc.startsWith('http') ? audioSrc : window.location.origin + '/' + audioSrc;
+            console.error('❌ URL completa:', fullUrl);
         };
         
         // Adicionar evento de carregamento

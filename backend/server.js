@@ -41,7 +41,6 @@ const simpleHash = (s) => {
   return hash.toString();
 };
 
-/*
 // --- ROTAS DA API ---
 
 // Rota de Teste
@@ -132,6 +131,7 @@ app.post('/api/progress/:username', (req, res) => {
   res.status(200).json({ message: 'Progresso salvo com sucesso.' });
 });
 
+/*
 // --- ROTAS DE CERTIFICADOS ---
 
 // Rota para GERAR um certificado
@@ -316,12 +316,12 @@ app.get('/api/admin/all-progress', (req, res) => {
     
     res.status(200).json(allProgressWithDetails);
 });
+*/
 
 // Rota para servir o index.html principal para qualquer rota não encontrada
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
-*/
 
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);

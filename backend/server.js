@@ -41,6 +41,7 @@ const simpleHash = (s) => {
   return hash.toString();
 };
 
+/*
 // --- ROTAS DA API ---
 
 // Rota de Teste
@@ -320,6 +321,7 @@ app.get('/api/admin/all-progress', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
+*/
 
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);

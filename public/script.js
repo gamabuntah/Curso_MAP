@@ -457,6 +457,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.title = moduleData.title; // Ajusta o título da página
 
         currentModuleId = moduleId;
+        
+        // SCROLL PARA O TOPO DO CONTEÚDO
+        // Pequeno delay para garantir que o DOM foi atualizado
+        setTimeout(() => {
+            scrollToTop();
+        }, 100);
         // Limpa todos os contêineres de conteúdo e quiz
         domElements.contentContainer.innerHTML = '';
         domElements.contentContainer.style.display = 'block'; // Garante que o conteúdo seja visível
@@ -751,6 +757,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         applyProgressClasses();
     }
 
+    // Função utilitária para scroll suave para o topo
+    function scrollToTop() {
+        // Prioriza rolar para o container de conteúdo se estiver visível
+        if (domElements.contentContainer && domElements.contentContainer.style.display !== 'none') {
+            domElements.contentContainer.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        } else {
+            // Caso contrário, rola para o topo da página
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            });
+        }
+    }
+
     // Função para rolar até o card de áudio
     window.scrollToAudio = function() {
         const audioCard = document.querySelector('.audio-card');
@@ -783,6 +806,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         domElements.contentContainer.style.display = 'none'; // Oculta o container de conteúdo
         domElements.quizContainer.innerHTML = '';
         domElements.quizContainer.style.display = 'none';
+        
+        // SCROLL PARA O TOPO PARA AVALIAÇÃO FINAL
+        setTimeout(() => {
+            scrollToTop();
+        }, 100);
 
         // Cria interface premium para a avaliação final
         domElements.finalQuizContainer.innerHTML = `

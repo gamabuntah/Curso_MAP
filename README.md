@@ -4,6 +4,8 @@
 
 Sistema de certificação para o Plano Nacional de Saneamento Básico, focado em Manejo de Águas Pluviais.
 
+**🔄 Teste Auto-Deploy:** 2024-12-19 15:45
+
 ### ✅ Funcionalidades:
 - Login e registro de usuários
 - 8 módulos de aprendizagem com áudio

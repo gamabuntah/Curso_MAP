@@ -111,7 +111,6 @@
         }
 
         function showTab(tabName) {
-            // Remove active de todas as tabs
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
@@ -119,11 +118,9 @@
                 btn.classList.remove('active');
             });
 
-            // Adiciona active na tab selecionada
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
 
-            // Carrega dados específicos da tab
             if (tabName === 'users') {
                 loadUsersData();
             } else if (tabName === 'certificates') {
@@ -135,6 +132,7 @@
 
         async function loadOverviewData() {
             try {
+<<<<<<< HEAD
                 // Carrega dados de usuários
                 const usersResponse = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
                 const usersData = await usersResponse.json();
@@ -144,18 +142,33 @@
                 const certsData = await certsResponse.json();
 
                 // Atualiza estatísticas
+=======
+                // Carrega dados de usuarios PNSB
+                const usersResponse = await fetch(`${API_BASE_URL}/api/admin/all-progress?adminUser=${currentUser}`);
+                const usersData = await usersResponse.json();
+
+                // Carrega dados de certificados PNSB
+                const certsResponse = await fetch(`${API_BASE_URL}/api/admin/all-certificates?adminUser=${currentUser}`);
+                const certsData = await certsResponse.json();
+
+                // Atualiza estatisticas
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 document.getElementById('totalUsers').textContent = usersData.length || 0;
                 document.getElementById('activeUsers').textContent = usersData.filter(u => u.progressPercent > 0).length || 0;
                 document.getElementById('totalCertificates').textContent = certsData.length || 0;
                 
                 const avgProgress = usersData.length > 0 
-                    ? Math.round(usersData.reduce((sum, u) => sum + u.progressPercent, 0) / usersData.length)
+                    ? Math.round(usersData.reduce((sum, u) => sum + (u.progressPercent || 0), 0) / usersData.length)
                     : 0;
                 document.getElementById('avgProgress').textContent = avgProgress + '%';
 
             } catch (error) {
                 console.error('Erro ao carregar dados gerais:', error);
+<<<<<<< HEAD
                 // Valores padrão em caso de erro
+=======
+                // Valores padrao em caso de erro
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 document.getElementById('totalUsers').textContent = '0';
                 document.getElementById('activeUsers').textContent = '0';
                 document.getElementById('totalCertificates').textContent = '0';
@@ -165,14 +178,22 @@
 
         async function loadUsersData() {
             try {
+<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
+=======
+                const response = await fetch(`${API_BASE_URL}/api/admin/all-progress?adminUser=${currentUser}`);
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 const usersData = await response.json();
 
                 const tbody = document.getElementById('usersTableBody');
                 tbody.innerHTML = '';
 
                 if (usersData.length === 0) {
+<<<<<<< HEAD
                     tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuário encontrado</td></tr>';
+=======
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuario encontrado</td></tr>';
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                     return;
                 }
 
@@ -181,16 +202,23 @@
                     row.innerHTML = `
                         <td><strong>${user.username}</strong></td>
                         <td>
+<<<<<<< HEAD
                             <div class="progress-container">
                                 <div class="progress-bar" style="width: ${user.progressPercent}%;"></div>
                                 <span class="progress-text">${user.progressPercent}%</span>
                             </div>
+=======
+                            <div style="width: 100px; background: #ecf0f1; border-radius: 4px; overflow: hidden;">
+                                <div style="width: ${user.progressPercent || 0}%; height: 20px; background: #2980b9;"></div>
+                            </div>
+                            ${user.progressPercent || 0}%
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                         </td>
-                        <td>${user.completedModules}/8</td>
-                        <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Não realizada'}</td>
+                        <td>${user.completedModules || 0}/8</td>
+                        <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Nao realizada'}</td>
                         <td>
-                            <span class="status-badge ${user.progressPercent === 100 ? 'status-completed' : user.progressPercent > 0 ? 'status-available' : 'status-locked'}">
-                                ${user.progressPercent === 100 ? 'Concluído' : user.progressPercent > 0 ? 'Em Progresso' : 'Não Iniciado'}
+                            <span class="status-badge ${(user.progressPercent || 0) === 100 ? 'status-completed' : (user.progressPercent || 0) > 0 ? 'status-available' : 'status-locked'}">
+                                ${(user.progressPercent || 0) === 100 ? 'Concluido' : (user.progressPercent || 0) > 0 ? 'Em Progresso' : 'Nao Iniciado'}
                             </span>
                         </td>
                         <td>
@@ -203,7 +231,7 @@
                 });
 
             } catch (error) {
-                console.error('Erro ao carregar dados de usuários:', error);
+                console.error('Erro ao carregar dados de usuarios:', error);
                 document.getElementById('usersTableBody').innerHTML = 
                     '<tr><td colspan="6" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
             }
@@ -211,7 +239,11 @@
 
         async function loadCertificatesData() {
             try {
+<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
+=======
+                const response = await fetch(`${API_BASE_URL}/api/admin/all-certificates?adminUser=${currentUser}`);
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 const certsData = await response.json();
 
                 const tbody = document.getElementById('certificatesTableBody');
@@ -229,7 +261,7 @@
                         <td><strong>${cert.username}</strong></td>
                         <td><code>${cert.validationCode}</code></td>
                         <td>${issuedDate}</td>
-                        <td>${cert.finalScore}%</td>
+                        <td>${cert.finalScore || 0}%</td>
                         <td>${cert.downloadCount || 0}</td>
                         <td>${cert.validationCount || 0}</td>
                         <td>
@@ -404,7 +436,11 @@
             }
 
             try {
+<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
+=======
+                const response = await fetch(`${API_BASE_URL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
+>>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ reason: 'Revogado pelo administrador' })
@@ -412,7 +448,7 @@
 
                 if (response.ok) {
                     alert('Certificado revogado com sucesso!');
-                    loadCertificatesData(); // Recarrega a tabela
+                    loadCertificatesData();
                 } else {
                     alert('Erro ao revogar certificado.');
                 }
@@ -428,4 +464,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

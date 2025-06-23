@@ -1,3 +1,29 @@
+# Sistema de Certificação PNSB - Manejo de Águas Pluviais
+
+## 🌟 Status: ONLINE E FUNCIONANDO!
+
+Sistema de certificação para o Plano Nacional de Saneamento Básico, focado em Manejo de Águas Pluviais.
+
+### ✅ Funcionalidades:
+- Login e registro de usuários
+- 8 módulos de aprendizagem com áudio
+- Sistema de progresso automático
+- Avaliação final
+- Geração de certificados
+- Painel administrativo
+
+### 🚀 Tecnologias:
+- Backend: Node.js HTTP nativo
+- Frontend: HTML5, CSS3, JavaScript
+- Banco de dados: JSON file-based
+- Hospedagem: Render (gratuito)
+
+### 📱 Acesso:
+Sistema disponível online 24/7 através do Render.
+
+---
+**Última atualização:** 2024-12-19 - Deploy bem-sucedido! 🎉
+
 # 🎓 Sistema de Certificação PNSB
 
 Sistema completo de certificação para o curso de capacitação sobre a **Pesquisa Nacional de Saneamento Básico (PNSB)**, desenvolvido com tecnologias modernas e interface responsiva.

@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrativo - PNSB</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="admin.css">
+    <title>Painel Administrativo - Curso PNSB</title>
+    <link rel="stylesheet" href="admin.css?v=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="admin-container">
-        <button class="back-btn" onclick="window.location.href='index.html'">
-            <i class="fa-solid fa-arrow-left"></i> Voltar ao Curso
-        </button>
-
         <div class="admin-header">
-            <h1><i class="fa-solid fa-user-shield"></i> Painel Administrativo</h1>
-            <p>Gerencie usuários, progresso e certificados do curso PNSB</p>
+            <h1><i class="fa-solid fa-shield-halved"></i> Painel Administrativo</h1>
+            <div class="admin-info">
+                <span>Bem-vindo, <strong id="adminName">Admin</strong></span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i> Sair
+                </button>
+            </div>
         </div>
 
         <div class="admin-tabs">
@@ -110,7 +111,12 @@
             window.location.href = 'login.html';
         }
 
+        // Atualizar nome do admin
+        document.getElementById('adminName').textContent = currentUser;
+
+        // Função para mostrar abas
         function showTab(tabName) {
+            // Remove classe active de todas as abas e botões
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
@@ -118,9 +124,11 @@
                 btn.classList.remove('active');
             });
 
+            // Adiciona classe active na aba e botão selecionados
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
 
+            // Carrega dados específicos da aba
             if (tabName === 'users') {
                 loadUsersData();
             } else if (tabName === 'certificates') {
@@ -130,9 +138,17 @@
             }
         }
 
+        // Função para logout
+        function logout() {
+            if (confirm('Tem certeza que deseja sair?')) {
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Carrega dados da visão geral
         async function loadOverviewData() {
             try {
-<<<<<<< HEAD
                 // Carrega dados de usuários
                 const usersResponse = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
                 const usersData = await usersResponse.json();
@@ -142,17 +158,6 @@
                 const certsData = await certsResponse.json();
 
                 // Atualiza estatísticas
-=======
-                // Carrega dados de usuarios PNSB
-                const usersResponse = await fetch(`${API_BASE_URL}/api/admin/all-progress?adminUser=${currentUser}`);
-                const usersData = await usersResponse.json();
-
-                // Carrega dados de certificados PNSB
-                const certsResponse = await fetch(`${API_BASE_URL}/api/admin/all-certificates?adminUser=${currentUser}`);
-                const certsData = await certsResponse.json();
-
-                // Atualiza estatisticas
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 document.getElementById('totalUsers').textContent = usersData.length || 0;
                 document.getElementById('activeUsers').textContent = usersData.filter(u => u.progressPercent > 0).length || 0;
                 document.getElementById('totalCertificates').textContent = certsData.length || 0;
@@ -164,11 +169,7 @@
 
             } catch (error) {
                 console.error('Erro ao carregar dados gerais:', error);
-<<<<<<< HEAD
                 // Valores padrão em caso de erro
-=======
-                // Valores padrao em caso de erro
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 document.getElementById('totalUsers').textContent = '0';
                 document.getElementById('activeUsers').textContent = '0';
                 document.getElementById('totalCertificates').textContent = '0';
@@ -176,24 +177,17 @@
             }
         }
 
+        // Carrega dados dos usuários
         async function loadUsersData() {
             try {
-<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
-=======
-                const response = await fetch(`${API_BASE_URL}/api/admin/all-progress?adminUser=${currentUser}`);
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 const usersData = await response.json();
 
                 const tbody = document.getElementById('usersTableBody');
                 tbody.innerHTML = '';
 
                 if (usersData.length === 0) {
-<<<<<<< HEAD
                     tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuário encontrado</td></tr>';
-=======
-                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuario encontrado</td></tr>';
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                     return;
                 }
 
@@ -202,23 +196,16 @@
                     row.innerHTML = `
                         <td><strong>${user.username}</strong></td>
                         <td>
-<<<<<<< HEAD
                             <div class="progress-container">
-                                <div class="progress-bar" style="width: ${user.progressPercent}%;"></div>
-                                <span class="progress-text">${user.progressPercent}%</span>
+                                <div class="progress-bar" style="width: ${user.progressPercent || 0}%;"></div>
+                                <span class="progress-text">${user.progressPercent || 0}%</span>
                             </div>
-=======
-                            <div style="width: 100px; background: #ecf0f1; border-radius: 4px; overflow: hidden;">
-                                <div style="width: ${user.progressPercent || 0}%; height: 20px; background: #2980b9;"></div>
-                            </div>
-                            ${user.progressPercent || 0}%
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                         </td>
                         <td>${user.completedModules || 0}/8</td>
-                        <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Nao realizada'}</td>
+                        <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Não realizada'}</td>
                         <td>
                             <span class="status-badge ${(user.progressPercent || 0) === 100 ? 'status-completed' : (user.progressPercent || 0) > 0 ? 'status-available' : 'status-locked'}">
-                                ${(user.progressPercent || 0) === 100 ? 'Concluido' : (user.progressPercent || 0) > 0 ? 'Em Progresso' : 'Nao Iniciado'}
+                                ${(user.progressPercent || 0) === 100 ? 'Concluído' : (user.progressPercent || 0) > 0 ? 'Em Progresso' : 'Não Iniciado'}
                             </span>
                         </td>
                         <td>
@@ -231,19 +218,16 @@
                 });
 
             } catch (error) {
-                console.error('Erro ao carregar dados de usuarios:', error);
+                console.error('Erro ao carregar dados de usuários:', error);
                 document.getElementById('usersTableBody').innerHTML = 
                     '<tr><td colspan="6" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
             }
         }
 
+        // Carrega dados dos certificados
         async function loadCertificatesData() {
             try {
-<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
-=======
-                const response = await fetch(`${API_BASE_URL}/api/admin/all-certificates?adminUser=${currentUser}`);
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                 const certsData = await response.json();
 
                 const tbody = document.getElementById('certificatesTableBody');
@@ -273,9 +257,11 @@
                             <button class="action-btn" onclick="validateCertificate('${cert.validationCode}')">
                                 <i class="fa-solid fa-search"></i> Validar
                             </button>
-                            <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
-                                <i class="fa-solid fa-ban"></i> Revogar
-                            </button>
+                            ${cert.status === 'issued' ? `
+                                <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
+                                    <i class="fa-solid fa-ban"></i> Revogar
+                                </button>
+                            ` : ''}
                         </td>
                     `;
                     tbody.appendChild(row);
@@ -288,6 +274,7 @@
             }
         }
 
+        // Visualizar progresso detalhado do usuário
         async function viewUserProgress(username) {
             try {
                 const response = await fetch(`${baseURL}/api/progress/${username}`);
@@ -303,6 +290,7 @@
             }
         }
 
+        // Modal de progresso detalhado
         function showUserProgressModal(username, progress) {
             // Remove modal anterior se existir
             const existingModal = document.getElementById('userProgressModal');
@@ -330,136 +318,134 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: 10000;
+                z-index: 1000;
             `;
 
-            // Criar módulos HTML
-            let modulesHTML = '';
-            for (let i = 1; i <= totalModules; i++) {
-                const moduleData = modules[i.toString()] || { status: 'locked', score: null, audioCompleted: false };
-                const statusIcon = {
-                    'completed': '✅',
-                    'failed': '❌',
-                    'available': '📖',
-                    'locked': '🔒'
-                }[moduleData.status] || '🔒';
+            let modulesHtml = '';
+            for (let i = 1; i <= 8; i++) {
+                const module = modules[`module${i}`] || {};
+                const status = module.status || 'not_started';
+                const score = module.score || 0;
                 
-                const scoreText = moduleData.score !== null ? `${moduleData.score}%` : 'N/A';
-                const audioStatus = moduleData.audioCompleted ? '🎵' : '🔇';
+                let statusText = 'Não Iniciado';
+                let statusClass = 'status-locked';
                 
-                modulesHTML += `
+                if (status === 'completed') {
+                    statusText = 'Concluído';
+                    statusClass = 'status-completed';
+                } else if (status === 'failed') {
+                    statusText = 'Reprovado';
+                    statusClass = 'status-locked';
+                } else if (status === 'in_progress') {
+                    statusText = 'Em Progresso';
+                    statusClass = 'status-available';
+                }
+
+                modulesHtml += `
                     <tr>
                         <td>Módulo ${i}</td>
-                        <td>${statusIcon} ${moduleData.status}</td>
-                        <td>${scoreText}</td>
-                        <td>${audioStatus}</td>
+                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                        <td>${score}%</td>
                     </tr>
                 `;
             }
 
-            // Avaliação final
-            const finalEval = progress.final_evaluation || {};
-            const finalStatus = finalEval.status || 'not_attempted';
-            const finalScore = finalEval.score || 'N/A';
-
             modal.innerHTML = `
-                <div style="background: white; padding: 30px; border-radius: 15px; max-width: 800px; width: 90%; max-height: 90%; overflow-y: auto;">
+                <div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                        <h2>Progresso de ${username}</h2>
-                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;">×</button>
+                        <h2>Progresso Detalhado - ${username}</h2>
+                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
                     </div>
                     
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                        <div style="background: #3498db; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-                            <h3>${progressPercent}%</h3>
-                            <p>Progresso Geral</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: bold; color: #2980b9;">${progressPercent}%</div>
+                            <div style="font-size: 14px; color: #666;">Progresso Geral</div>
                         </div>
-                        <div style="background: #27ae60; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-                            <h3>${completedModules}/${totalModules}</h3>
-                            <p>Módulos Concluídos</p>
+                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: bold; color: #27ae60;">${completedModules}</div>
+                            <div style="font-size: 14px; color: #666;">Módulos Concluídos</div>
                         </div>
-                        <div style="background: #e74c3c; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-                            <h3>${failedModules}</h3>
-                            <p>Módulos Falharam</p>
+                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: bold; color: #e74c3c;">${failedModules}</div>
+                            <div style="font-size: 14px; color: #666;">Módulos Reprovados</div>
                         </div>
-                        <div style="background: #f39c12; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-                            <h3>${finalScore}%</h3>
-                            <p>Avaliação Final</p>
+                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: bold; color: #f39c12;">${progress.final_evaluation?.score || 'N/A'}</div>
+                            <div style="font-size: 14px; color: #666;">Avaliação Final</div>
                         </div>
                     </div>
 
-                    <h3>Detalhes dos Módulos</h3>
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <h3>Detalhes por Módulo</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
                         <thead>
                             <tr style="background: #f8f9fa;">
-                                <th style="padding: 10px; border: 1px solid #ddd;">Módulo</th>
-                                <th style="padding: 10px; border: 1px solid #ddd;">Status</th>
-                                <th style="padding: 10px; border: 1px solid #ddd;">Pontuação</th>
-                                <th style="padding: 10px; border: 1px solid #ddd;">Áudio</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Módulo</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Status</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Pontuação</th>
                             </tr>
                         </thead>
                         <tbody>
-                            ${modulesHTML}
+                            ${modulesHtml}
                         </tbody>
                     </table>
-
-                    <h3>Avaliação Final</h3>
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                        <p><strong>Status:</strong> ${finalStatus}</p>
-                        <p><strong>Pontuação:</strong> ${finalScore}${typeof finalScore === 'number' ? '%' : ''}</p>
-                        <p><strong>Data:</strong> ${finalEval.date ? new Date(finalEval.date).toLocaleDateString('pt-BR') : 'N/A'}</p>
-                    </div>
-
-                    <div style="text-align: right;">
-                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: #95a5a6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Fechar</button>
-                    </div>
                 </div>
             `;
 
             document.body.appendChild(modal);
+        }
 
-            // Fechar modal ao clicar fora
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.remove();
+        // Validar certificado
+        async function validateCertificate(validationCode) {
+            try {
+                const response = await fetch(`${baseURL}/api/certificates/validate/${validationCode}`);
+                const result = await response.json();
+
+                if (result.valid) {
+                    alert(`Certificado VÁLIDO!\n\nUsuário: ${result.certificate.username}\nData de Emissão: ${new Date(result.certificate.issuedDate).toLocaleDateString('pt-BR')}\nPontuação: ${result.certificate.finalScore}%\nValidações: ${result.certificate.validationCount}`);
+                } else {
+                    alert(`Certificado INVÁLIDO!\n\nMotivo: ${result.error}`);
                 }
-            });
+            } catch (error) {
+                console.error('Erro ao validar certificado:', error);
+                alert('Erro ao validar certificado. Tente novamente.');
+            }
         }
 
-        function validateCertificate(validationCode) {
-            window.open(`validate.html?code=${validationCode}`, '_blank');
-        }
-
+        // Revogar certificado
         async function revokeCertificate(username) {
-            if (!confirm(`Tem certeza que deseja revogar o certificado de ${username}?`)) {
+            const reason = prompt(`Motivo da revogação do certificado de ${username}:`);
+            if (!reason) return;
+
+            if (!confirm(`Tem certeza que deseja revogar o certificado de ${username}?\n\nMotivo: ${reason}\n\nEsta ação não pode ser desfeita.`)) {
                 return;
             }
 
             try {
-<<<<<<< HEAD
                 const response = await fetch(`${baseURL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
-=======
-                const response = await fetch(`${API_BASE_URL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
->>>>>>> 864c040f2bc1bbaaf9db4882e8764ece22df673e
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ reason: 'Revogado pelo administrador' })
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ reason })
                 });
+
+                const result = await response.json();
 
                 if (response.ok) {
                     alert('Certificado revogado com sucesso!');
-                    loadCertificatesData();
+                    loadCertificatesData(); // Recarrega a lista
                 } else {
-                    alert('Erro ao revogar certificado.');
+                    alert(`Erro ao revogar certificado: ${result.message}`);
                 }
             } catch (error) {
                 console.error('Erro ao revogar certificado:', error);
-                alert('Erro ao revogar certificados.');
+                alert('Erro ao revogar certificado. Tente novamente.');
             }
         }
 
-        // Carrega dados iniciais quando a página carrega
-        window.addEventListener('load', () => {
+        // Carrega dados iniciais
+        document.addEventListener('DOMContentLoaded', () => {
             loadOverviewData();
         });
     </script>

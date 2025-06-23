@@ -268,7 +268,9 @@
             validateBtn.disabled = true;
 
             try {
-                const response = await fetch(`http://localhost:3000/api/certificates/validate/${code}`);
+                // Detecta automaticamente o ambiente
+                const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+                const response = await fetch(`${baseURL}/api/certificates/validate/${code}`);
                 const data = await response.json();
 
                 if (data.valid) {

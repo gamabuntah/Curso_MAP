@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Sistema de Certificação para o Plano Nacional de Saneamento Básico",
   "main": "backend/server.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

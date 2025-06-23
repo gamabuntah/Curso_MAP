@@ -289,13 +289,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         domElements.playerModuleTitle.textContent = moduleTitle;
         domElements.audioPlayer.style.display = 'flex';
         
-        // Adicionar evento de erro antes de definir o src
+        // Sistema de fallback para áudio: tenta local primeiro, depois GitHub
+        let fallbackAttempted = false;
+        
         domElements.audioElement.onerror = (e) => {
-            console.error('❌ Erro ao carregar áudio:', e);
-            console.error('❌ Caminho do áudio:', audioSrc);
-            // Se é URL externa, não concatena com origin
-            const fullUrl = audioSrc.startsWith('http') ? audioSrc : window.location.origin + '/' + audioSrc;
-            console.error('❌ URL completa:', fullUrl);
+            console.warn('⚠️ Erro ao carregar áudio:', audioSrc);
+            
+            // Se ainda não tentou o fallback e não é uma URL do GitHub
+            if (!fallbackAttempted && !audioSrc.startsWith('https://github.com')) {
+                fallbackAttempted = true;
+                
+                // Mapear caminho local para URL do GitHub
+                const githubUrl = audioSrc.replace('MAP/Audios/', 'https://github.com/gamabuntah/Curso_MAP/raw/main/public/MAP/Audios/')
+                                          .replace(/ /g, '%20'); // Codifica espaços
+                
+                console.log('🔄 Tentando fallback do GitHub:', githubUrl);
+                domElements.audioElement.src = githubUrl;
+            } else {
+                // Fallback também falhou ou já estava usando GitHub
+                console.error('❌ Erro definitivo ao carregar áudio');
+                console.error('❌ Caminho tentado:', audioSrc);
+                const fullUrl = audioSrc.startsWith('http') ? audioSrc : window.location.origin + '/' + audioSrc;
+                console.error('❌ URL completa:', fullUrl);
+                
+                // Mostra mensagem amigável ao usuário
+                alert('Não foi possível carregar o áudio. Verifique sua conexão com a internet.');
+            }
         };
         
         // Adicionar evento de carregamento

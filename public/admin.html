@@ -10,7 +10,12 @@
 <body>
     <div class="admin-container">
         <div class="admin-header">
-            <h1><i class="fa-solid fa-shield-halved"></i> Painel Administrativo</h1>
+            <div class="header-left">
+                <button class="back-btn" onclick="goBackToSystem()" title="Voltar ao Sistema">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Curso
+                </button>
+                <h1><i class="fa-solid fa-shield-halved"></i> Painel Administrativo</h1>
+            </div>
             <div class="admin-info">
                 <span>Bem-vindo, <strong id="adminName">Admin</strong></span>
                 <button class="logout-btn" onclick="logout()">
@@ -136,6 +141,11 @@
             } else if (tabName === 'overview') {
                 loadOverviewData();
             }
+        }
+
+        // Função para voltar ao sistema principal
+        function goBackToSystem() {
+            window.location.href = 'index.html';
         }
 
         // Função para logout

@@ -8,19 +8,51 @@ const DB_PATH = path.join(__dirname, 'database.json');
 let pg = null;
 let pool = null;
 
+// Debug da DATABASE_URL
+console.log('🔍 DEBUG - DATABASE_URL presente:', !!process.env.DATABASE_URL);
+if (process.env.DATABASE_URL) {
+  // Não mostrar a URL completa por segurança, apenas o início
+  const urlStart = process.env.DATABASE_URL.substring(0, 20);
+  console.log('🔍 DEBUG - DATABASE_URL inicia com:', urlStart + '...');
+}
+
 // Inicializar PostgreSQL se em produção
-if (isProduction) {
+if (isProduction && process.env.DATABASE_URL) {
   try {
     pg = require('pg');
+    
+    // Configuração mais robusta
     pool = new pg.Pool({
       connectionString: process.env.DATABASE_URL,
-      ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
+      ssl: {
+        rejectUnauthorized: false
+      },
+      connectionTimeoutMillis: 5000,
+      idleTimeoutMillis: 30000,
+      max: 10
     });
+
     console.log('📊 Usando PostgreSQL para persistência de dados');
+    
+    // Teste de conexão
+    pool.connect()
+      .then(client => {
+        console.log('✅ Conexão PostgreSQL bem-sucedida');
+        client.release();
+      })
+      .catch(err => {
+        console.error('❌ Erro ao testar conexão PostgreSQL:', err.message);
+        console.log('📁 Fallback para arquivo JSON ativado');
+        pool = null; // Desabilita PostgreSQL e usa JSON
+      });
+      
   } catch (error) {
-    console.error('Erro ao conectar PostgreSQL:', error);
+    console.error('Erro ao configurar PostgreSQL:', error.message);
     console.log('📁 Fallback para arquivo JSON');
+    pool = null;
   }
+} else {
+  console.log('📁 Usando arquivo JSON (desenvolvimento ou sem DATABASE_URL)');
 }
 
 // Estrutura inicial do banco
@@ -35,6 +67,8 @@ const initializePostgreSQL = async () => {
   if (!pool) return;
   
   try {
+    console.log('🔧 Inicializando tabelas PostgreSQL...');
+    
     // Criar tabela de usuários
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
@@ -69,9 +103,11 @@ const initializePostgreSQL = async () => {
       )
     `);
 
-    console.log('✅ Tabelas PostgreSQL inicializadas');
+    console.log('✅ Tabelas PostgreSQL inicializadas com sucesso');
   } catch (error) {
-    console.error('Erro ao inicializar PostgreSQL:', error);
+    console.error('❌ Erro ao inicializar PostgreSQL:', error.message);
+    console.log('📁 Fallback para arquivo JSON ativado');
+    pool = null; // Desabilita PostgreSQL em caso de erro
   }
 };
 
@@ -104,22 +140,28 @@ const readDB = async () => {
 
       return { users, progress, certificates };
     } catch (error) {
-      console.error('Erro ao ler PostgreSQL:', error);
-      return initialData;
+      console.error('Erro ao ler PostgreSQL:', error.message);
+      console.log('📁 Usando fallback para arquivo JSON');
+      pool = null; // Desabilita PostgreSQL e usa JSON
+      return await readJSONDB();
     }
   } else {
-    // Arquivo JSON (desenvolvimento)
-    try {
-      if (!fs.existsSync(DB_PATH)) {
-        fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-        return initialData;
-      }
-      const data = fs.readFileSync(DB_PATH, 'utf8');
-      return JSON.parse(data);
-    } catch (error) {
-      console.error('Erro ao ler arquivo JSON:', error);
+    return await readJSONDB();
+  }
+};
+
+// Função para ler arquivo JSON
+const readJSONDB = async () => {
+  try {
+    if (!fs.existsSync(DB_PATH)) {
+      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
       return initialData;
     }
+    const data = fs.readFileSync(DB_PATH, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Erro ao ler arquivo JSON:', error);
+    return initialData;
   }
 };
 
@@ -169,15 +211,22 @@ const writeDB = async (data) => {
         client.release();
       }
     } catch (error) {
-      console.error('Erro ao escrever PostgreSQL:', error);
+      console.error('Erro ao escrever PostgreSQL:', error.message);
+      console.log('📁 Usando fallback para arquivo JSON');
+      pool = null;
+      await writeJSONDB(data);
     }
   } else {
-    // Arquivo JSON (desenvolvimento)
-    try {
-      fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf8');
-    } catch (error) {
-      console.error('Erro ao escrever arquivo JSON:', error);
-    }
+    await writeJSONDB(data);
+  }
+};
+
+// Função para escrever arquivo JSON
+const writeJSONDB = async (data) => {
+  try {
+    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf8');
+  } catch (error) {
+    console.error('Erro ao escrever arquivo JSON:', error);
   }
 };
 
@@ -245,9 +294,11 @@ const addCertificate = async (validationCode, certificateData) => {
   }
 };
 
-// Inicializar banco na importação
-if (isProduction) {
-  initializePostgreSQL().catch(console.error);
+// Inicializar banco na importação (com delay para permitir conexão)
+if (isProduction && process.env.DATABASE_URL) {
+  setTimeout(() => {
+    initializePostgreSQL().catch(console.error);
+  }, 2000); // Aguarda 2 segundos para a conexão estabilizar
 }
 
 module.exports = {

@@ -92,7 +92,7 @@ Object.assign(window.modulos_data, {
             "Analisar a viabilidade econômica da implementação de sistemas de reuso de água da chuva para fins potáveis."
           ],
           "answer": "Identificar o destino final das águas pluviais coletadas e se há tratamento prévio, incluindo a verificação de ligações clandestinas.",
-          "feedback": "Correto. O Bloco DES foca em identificar para onde vai a água da chuva, se ela passa por algum tratamento antes de chegar ao seu destino e se existem problemas como esgoto sendo lançado irregularmente na rede pluvial."
+          "feedback": "O Bloco DES foca em identificar para onde vai a água da chuva, se ela passa por algum tratamento antes de chegar ao seu destino e se existem problemas como esgoto sendo lançado irregularmente na rede pluvial."
         },
         {
           "question": "De acordo com o material, qual das seguintes opções é considerada um tipo válido de corpo hídrico receptor para as águas pluviais?",
@@ -103,7 +103,7 @@ Object.assign(window.modulos_data, {
             "Lançamento em aterros sanitários para auxiliar na compactação do lixo e controle de poeira."
           ],
           "answer": "Infiltração no solo para recarga de aquífero, representando uma destinação que promove a sustentabilidade hídrica.",
-          "feedback": "Correto. A infiltração no solo é uma forma de destinação válida e sustentável, pois ajuda a recarregar os aquíferos, ao contrário das outras opções que representam práticas incorretas ou conceitos distintos."
+          "feedback": "A infiltração no solo é uma forma de destinação válida e sustentável, pois ajuda a recarregar os aquíferos, ao contrário das outras opções que representam práticas incorretas ou conceitos distintos."
         },
         {
           "question": "Um município informa que possui uma estrutura que utiliza plantas e processos naturais para purificar a água da chuva antes de seu lançamento em um lago. Como essa estrutura deve ser classificada?",
@@ -114,7 +114,7 @@ Object.assign(window.modulos_data, {
             "Como uma bacia de detenção, cuja única função é o controle de vazão."
           ],
           "answer": "Como um alagado construído (wetland), que funciona como tratamento e infraestrutura verde.",
-          "feedback": "Correto. Alagados construídos (wetlands) são soluções baseadas na natureza que utilizam processos biológicos para tratar a água, sendo classificadas tanto como tratamento (Bloco DES) quanto infraestrutura verde (Bloco CCI)."
+          "feedback": "Alagados construídos (wetlands) são soluções baseadas na natureza que utilizam processos biológicos para tratar a água, sendo classificadas tanto como tratamento (Bloco DES) quanto infraestrutura verde (Bloco CCI)."
         },
         {
           "question": "O que o quesito sobre 'Ligações Clandestinas de Esgoto' busca investigar especificamente?",
@@ -125,7 +125,7 @@ Object.assign(window.modulos_data, {
             "O número de multas aplicadas por ligações irregulares de calhas e rufos na rede de esgoto."
           ],
           "answer": "Se o prestador de serviço tem conhecimento formal da existência de conexões de esgoto doméstico ou industrial na rede de drenagem pluvial.",
-          "feedback": "Exato. A pergunta foca no conhecimento do prestador sobre o problema específico de esgoto sanitário ou industrial sendo lançado na rede projetada apenas para águas pluviais."
+          "feedback": "A pergunta foca no conhecimento do prestador sobre o problema específico de esgoto sanitário ou industrial sendo lançado na rede projetada apenas para águas pluviais."
         },
         {
           "question": "Se um prestador de serviços identifica ligações clandestinas de esgoto em sua rede pluvial e comunica o fato à companhia de esgotamento sanitário, qual ação ele está tomando?",
@@ -136,7 +136,7 @@ Object.assign(window.modulos_data, {
             "Execução de obra para desconexão, que implica na intervenção física direta na ligação irregular."
           ],
           "answer": "Comunicação entre órgãos/entidades, uma medida administrativa para a resolução conjunta do problema.",
-          "feedback": "Correto. A comunicação à companhia de esgoto é uma ação colaborativa entre entidades para resolver o problema da poluição, sendo uma das ações previstas no questionário."
+          "feedback": "A comunicação à companhia de esgoto é uma ação colaborativa entre entidades para resolver o problema da poluição, sendo uma das ações previstas no questionário."
         },
         {
           "question": "Qual é a principal diferença de propósito entre o tratamento de águas pluviais e o tratamento de esgoto sanitário?",
@@ -147,7 +147,7 @@ Object.assign(window.modulos_data, {
             "O tratamento de esgoto é sempre mais simples e barato, pois lida com um volume menor e mais constante que o da água da chuva."
           ],
           "answer": "O tratamento de águas pluviais visa remover principalmente poluentes difusos como lixo, areia e óleos, enquanto o tratamento de esgoto foca em matéria orgânica e patógenos.",
-          "feedback": "Exato. Os alvos do tratamento são distintos. A água da chuva carrega poluição das ruas (lixo, areia, óleo), enquanto o esgoto tem alta carga de matéria orgânica e microrganismos."
+          "feedback": "Os alvos do tratamento são distintos. A água da chuva carrega poluição das ruas (lixo, areia, óleo), enquanto o esgoto tem alta carga de matéria orgânica e microrganismos."
         },
         {
           "question": "Uma estrutura de 'desarenador' ou 'caixa de areia' instalada em um sistema de drenagem é considerada que tipo de processo?",
@@ -158,7 +158,7 @@ Object.assign(window.modulos_data, {
             "Um mecanismo de reuso, que separa a areia para uso direto na construção civil."
           ],
           "answer": "Um tipo de tratamento preliminar ou primário, que remove sólidos pesados por sedimentação.",
-          "feedback": "Correto. O desarenador é uma etapa inicial do tratamento, projetada para remover, por gravidade, partículas mais densas como a areia, protegendo o restante do sistema."
+          "feedback": "O desarenador é uma etapa inicial do tratamento, projetada para remover, por gravidade, partículas mais densas como a areia, protegendo o restante do sistema."
         },
         {
           "question": "Por que a resposta 'Não' ao quesito 'O município dispunha de algum sistema para tratamento das águas pluviais?' encerra o preenchimento de parte do questionário?",
@@ -169,7 +169,7 @@ Object.assign(window.modulos_data, {
             "Porque a legislação proíbe o preenchimento de dados sobre drenagem para municípios sem tratamento de águas pluviais."
           ],
           "answer": "Porque se não há tratamento, os quesitos subsequentes sobre os *tipos* de tratamento existentes se tornam inaplicáveis.",
-          "feedback": "Correto. A lógica do questionário é que, se não existe um sistema de tratamento, não faz sentido perguntar sobre quais tecnologias de tratamento são utilizadas."
+          "feedback": "A lógica do questionário é que, se não existe um sistema de tratamento, não faz sentido perguntar sobre quais tecnologias de tratamento são utilizadas."
         },
         {
           "question": "O que significa a coexistência de um 'alagado construído' (wetland) como infraestrutura verde (Bloco CCI) e estrutura de tratamento (Bloco DES)?",
@@ -180,7 +180,7 @@ Object.assign(window.modulos_data, {
             "Que a estrutura é puramente estética e sua função de tratamento é apenas secundária e não deve ser reportada."
           ],
           "answer": "Que a estrutura desempenha múltiplas funções: controla a vazão, promove a infiltração e melhora a qualidade da água simultaneamente.",
-          "feedback": "Exato. Essa é a essência das soluções baseadas na natureza. Um wetland pode, ao mesmo tempo, ajudar a controlar cheias (CCI) e remover poluentes (DES), sendo um exemplo de infraestrutura multifuncional."
+          "feedback": "Essa é a essência das soluções baseadas na natureza. Um wetland pode, ao mesmo tempo, ajudar a controlar cheias (CCI) e remover poluentes (DES), sendo um exemplo de infraestrutura multifuncional."
         },
         {
           "question": "Ao investigar as ações tomadas contra ligações clandestinas, a opção 'Notificação ao proprietário do imóvel' representa que tipo de medida?",
@@ -191,7 +191,7 @@ Object.assign(window.modulos_data, {
             "Uma comunicação formal inicial, informando o proprietário sobre a irregularidade e solicitando providências."
           ],
           "answer": "Uma comunicação formal inicial, informando o proprietário sobre a irregularidade e solicitando providências.",
-          "feedback": "Correto. A notificação é o primeiro passo administrativo, um ato formal de comunicação para dar ciência ao responsável e solicitar a regularização, antes de medidas mais severas."
+          "feedback": "A notificação é o primeiro passo administrativo, um ato formal de comunicação para dar ciência ao responsável e solicitar a regularização, antes de medidas mais severas."
         },
         {
           "question": "Qual dos seguintes itens NÃO é um tipo de tratamento de águas pluviais listado no material de referência?",
@@ -202,7 +202,7 @@ Object.assign(window.modulos_data, {
             "Alagado construído (wetland)."
           ],
           "answer": "Osmose reversa para dessalinização.",
-          "feedback": "Correto. Osmose reversa é um processo de tratamento de altíssima tecnologia, geralmente usado para purificação de água ou dessalinização, e não é uma tecnologia comumente listada para tratamento de águas pluviais em geral."
+          "feedback": "Osmose reversa é um processo de tratamento de altíssima tecnologia, geralmente usado para purificação de água ou dessalinização, e não é uma tecnologia comumente listada para tratamento de águas pluviais em geral."
         },
         {
           "question": "A presença de 'separadores de água e óleo' como sistema de tratamento é mais comum em que tipo de área de contribuição?",
@@ -213,7 +213,7 @@ Object.assign(window.modulos_data, {
             "Áreas rurais com foco na agricultura orgânica e de subsistência."
           ],
           "answer": "Bacias de drenagem com grande presença de postos de gasolina, oficinas mecânicas e grandes estacionamentos.",
-          "feedback": "Correto. Essas estruturas são projetadas para capturar poluentes específicos (hidrocarbonetos) que são mais comuns em áreas com alto tráfego de veículos e atividades relacionadas."
+          "feedback": "Essas estruturas são projetadas para capturar poluentes específicos (hidrocarbonetos) que são mais comuns em áreas com alto tráfego de veículos e atividades relacionadas."
         },
         {
           "question": "Se a água da drenagem de um município deságua em uma represa usada para abastecimento público, qual é a classificação correta do corpo receptor?",
@@ -224,7 +224,7 @@ Object.assign(window.modulos_data, {
             "Inexistente, pois a água está sendo reutilizada e não destinada."
           ],
           "answer": "Represa ou reservatório.",
-          "feedback": "Correto. De acordo com as opções do quesito, 'Represa ou reservatório' é a classificação apropriada para esse tipo de corpo d'água formado por barramento."
+          "feedback": "De acordo com as opções do quesito, 'Represa ou reservatório' é a classificação apropriada para esse tipo de corpo d'água formado por barramento."
         },
         {
           "question": "Qual é a principal preocupação ambiental relacionada à existência de ligações clandestinas de esgoto na rede pluvial?",
@@ -235,7 +235,7 @@ Object.assign(window.modulos_data, {
             "A mistura de água da chuva com esgoto, que dilui o esgoto e dificulta seu tratamento na ETE."
           ],
           "answer": "A descarga de esgoto bruto (não tratado) diretamente em rios e lagos, causando poluição hídrica e riscos à saúde.",
-          "feedback": "Exato. O impacto mais grave é a poluição direta dos corpos d'água, pois a rede pluvial geralmente não tem tratamento, transformando-se em uma fonte direta de contaminação."
+          "feedback": "O impacto mais grave é a poluição direta dos corpos d'água, pois a rede pluvial geralmente não tem tratamento, transformando-se em uma fonte direta de contaminação."
         },
         {
           "question": "Um informante diz que, em sua cidade, 'a água da chuva vai para o mesmo cano do esgoto'. Qual é a interpretação técnica mais provável e relevante para a pesquisa?",
@@ -246,7 +246,7 @@ Object.assign(window.modulos_data, {
             "A cidade não possui rede de esgoto, e todo o saneamento é feito por fossas sépticas individuais."
           ],
           "answer": "O município possui um sistema de drenagem do tipo unitário ou combinado, onde uma única rede transporta águas pluviais e esgoto.",
-          "feedback": "Correto. Embora menos comum em projetos novos no Brasil, o sistema unitário (ou combinado) é uma concepção de engenharia onde uma única tubulação é projetada para transportar tanto esgoto quanto águas pluviais, sendo esta a interpretação técnica correta para a fala do informante."
+          "feedback": "Embora menos comum em projetos novos no Brasil, o sistema unitário (ou combinado) é uma concepção de engenharia onde uma única tubulação é projetada para transportar tanto esgoto quanto águas pluviais, sendo esta a interpretação técnica correta para a fala do informante."
         }
       ]
     }

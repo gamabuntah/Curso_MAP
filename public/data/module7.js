@@ -102,7 +102,7 @@ Object.assign(window.modulos_data, {
             "Analisar os relatórios de sustentabilidade publicados pelo prestador de serviço em seu site oficial e redes sociais."
           ],
           "answer": "Verificar se o prestador monitora os aspectos quantitativos (nível e vazão) e qualitativos (parâmetros físico-químicos) das águas pluviais.",
-          "feedback": "Correto. O Bloco MON foca em investigar se e como o prestador de serviço realiza o monitoramento técnico, tanto da quantidade quanto da qualidade da água no sistema de drenagem."
+          "feedback": "O Bloco MON foca em investigar se e como o prestador de serviço realiza o monitoramento técnico, tanto da quantidade quanto da qualidade da água no sistema de drenagem."
         },
         {
           "question": "Para o monitoramento da VAZÃO de um curso d'água, qual método ou equipamento é destacado como fundamental no material?",
@@ -113,7 +113,7 @@ Object.assign(window.modulos_data, {
             "A instalação de pluviômetros em pontos estratégicos para medir o volume de chuva na bacia hidrográfica."
           ],
           "answer": "O uso de um Perfilador Acústico Doppler de Corrente (ADCP) ou a elaboração de uma curva-chave.",
-          "feedback": "Exato. Enquanto pluviômetros medem chuva e sensores medem nível, a VAZÃO (volume de água por tempo) é determinada por equipamentos como o ADCP ou calculada através de uma curva-chave, que relaciona nível e vazão."
+          "feedback": "Enquanto pluviômetros medem chuva e sensores medem nível, a VAZÃO (volume de água por tempo) é determinada por equipamentos como o ADCP ou calculada através de uma curva-chave, que relaciona nível e vazão."
         },
         {
           "question": "No monitoramento da qualidade da água, qual é a principal diferença entre a coleta manual e a não manual?",
@@ -124,7 +124,7 @@ Object.assign(window.modulos_data, {
             "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico."
           ],
           "answer": "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico.",
-          "feedback": "Correto. A coleta não manual se refere ao uso de equipamentos automáticos que podem ser programados para coletar amostras de forma sistemática, útil para monitorar eventos de chuva, por exemplo."
+          "feedback": "A coleta não manual se refere ao uso de equipamentos automáticos que podem ser programados para coletar amostras de forma sistemática, útil para monitorar eventos de chuva, por exemplo."
         },
         {
           "question": "Qual dos seguintes grupos de parâmetros de qualidade da água é relevante para o monitoramento de águas pluviais, segundo o material?",
@@ -135,7 +135,7 @@ Object.assign(window.modulos_data, {
             "Índice de radiação ultravioleta, concentração de ozônio e presença de material particulado no ar atmosférico."
           ],
           "answer": "Sólidos, nutrientes (fósforo e nitrogênio), Demanda Química de Oxigênio (DQO), metais pesados e óleos e graxas.",
-          "feedback": "Isso mesmo. Estes parâmetros são indicadores típicos da poluição carregada pela água da chuva em ambientes urbanos (poluição difusa), refletindo o que é 'lavado' das ruas."
+          "feedback": "Estes parâmetros são indicadores típicos da poluição carregada pela água da chuva em ambientes urbanos (poluição difusa), refletindo o que é 'lavado' das ruas."
         },
         {
           "question": "O que o Bloco MMP (Manutenção, Melhoria e Prevenção) busca identificar?",
@@ -146,7 +146,7 @@ Object.assign(window.modulos_data, {
             "A gestão de recursos humanos do prestador, incluindo a contratação, treinamento e plano de carreira dos funcionários."
           ],
           "answer": "As atividades realizadas para garantir o funcionamento do sistema, como limpeza, desassoreamento e medidas preventivas.",
-          "feedback": "Correto. O Bloco MMP foca nas ações práticas de manutenção (corretiva e preventiva) e nas melhorias realizadas na infraestrutura de drenagem existente."
+          "feedback": "O Bloco MMP foca nas ações práticas de manutenção (corretiva e preventiva) e nas melhorias realizadas na infraestrutura de drenagem existente."
         },
         {
           "question": "Qual é a principal diferença na atividade de limpeza entre a microdrenagem e a macrodrenagem?",
@@ -157,7 +157,7 @@ Object.assign(window.modulos_data, {
             "A microdrenagem é limpa exclusivamente com equipamentos manuais, enquanto a macrodrenagem exige sempre grandes maquinários."
           ],
           "answer": "A limpeza da microdrenagem envolve bueiros e galerias, enquanto a da macrodrenagem foca em córregos e rios.",
-          "feedback": "Exato. A distinção se dá pela escala: microdrenagem são as estruturas menores de captação e condução (bueiros, sarjetas, galerias), e macrodrenagem são os grandes canais e cursos d'água."
+          "feedback": "A distinção se dá pela escala: microdrenagem são as estruturas menores de captação e condução (bueiros, sarjetas, galerias), e macrodrenagem são os grandes canais e cursos d'água."
         },
         {
           "question": "O que é 'assoreamento' no contexto da manutenção de sistemas de drenagem?",
@@ -168,7 +168,7 @@ Object.assign(window.modulos_data, {
             "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade."
           ],
           "answer": "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade.",
-          "feedback": "Correto. O assoreamento é um dos principais problemas a serem combatidos com a manutenção (desassoreamento), pois ele diminui a capacidade de vazão dos canais e aumenta o risco de inundações."
+          "feedback": "O assoreamento é um dos principais problemas a serem combatidos com a manutenção (desassoreamento), pois ele diminui a capacidade de vazão dos canais e aumenta o risco de inundações."
         },
         {
           "question": "Qual das seguintes opções é uma medida PREVENTIVA para o controle de sedimentos em sistemas de drenagem?",
@@ -179,7 +179,7 @@ Object.assign(window.modulos_data, {
             "Utilização de caminhões hidrojato para desobstruir galerias que já estão entupidas com lixo e detritos."
           ],
           "answer": "Implantação de ecobarreiras, caixas de areia ou varrição mecanizada de ruas antes das chuvas.",
-          "feedback": "Isso mesmo. Medidas preventivas são aquelas que evitam que o problema ocorra, como impedir que o lixo e os sedimentos cheguem ao sistema de drenagem. A desobstrução e o reforço são ações corretivas."
+          "feedback": "Medidas preventivas são aquelas que evitam que o problema ocorra, como impedir que o lixo e os sedimentos cheguem ao sistema de drenagem. A desobstrução e o reforço são ações corretivas."
         },
         {
           "question": "Para controle de sedimentos em áreas de OBRAS, que tipo de medida preventiva pode ser adotada?",
@@ -190,7 +190,7 @@ Object.assign(window.modulos_data, {
             "Aplicação de uma camada de asfalto temporária em toda a área de terraplanagem para evitar a lama."
           ],
           "answer": "Instalação de dispositivos de lava-rodas para veículos, construção de leiras e uso de barreiras de contenção.",
-          "feedback": "Correto. O material destaca medidas específicas para canteiros de obras, que são grandes fontes de sedimentos. Lava-rodas, leiras e barreiras ajudam a conter o sedimento na fonte."
+          "feedback": "O material destaca medidas específicas para canteiros de obras, que são grandes fontes de sedimentos. Lava-rodas, leiras e barreiras ajudam a conter o sedimento na fonte."
         },
         {
           "question": "Qual é a principal finalidade da 'renaturalização' de um curso d'água, como uma melhoria no sistema de drenagem?",
@@ -201,7 +201,7 @@ Object.assign(window.modulos_data, {
             "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização."
           ],
           "answer": "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização.",
-          "feedback": "Exato. A renaturalização é o oposto da canalização com concreto. Ela busca trazer de volta a vegetação, as curvas e as funções ecológicas de um rio, sendo uma abordagem de infraestrutura verde."
+          "feedback": "A renaturalização é o oposto da canalização com concreto. Ela busca trazer de volta a vegetação, as curvas e as funções ecológicas de um rio, sendo uma abordagem de infraestrutura verde."
         },
         {
           "question": "O que distingue a destinação final dos resíduos removidos na limpeza dos sistemas de drenagem?",
@@ -212,7 +212,7 @@ Object.assign(window.modulos_data, {
             "Precisam ser depositados diretamente nas margens dos rios a jusante do ponto de coleta para seguir o fluxo natural."
           ],
           "answer": "Podem ser destinados a aterros sanitários, vazadouros, áreas de processamento (bota-fora) ou compostagem.",
-          "feedback": "Correto. O questionário investiga o destino dado a esses resíduos, que pode variar muito em termos de adequação ambiental, desde a correta (aterro, compostagem) até a incorreta (vazadouro)."
+          "feedback": "O questionário investiga o destino dado a esses resíduos, que pode variar muito em termos de adequação ambiental, desde a correta (aterro, compostagem) até a incorreta (vazadouro)."
         },
         {
           "question": "O que são 'bioindicadores' no contexto do monitoramento da qualidade da água?",
@@ -223,7 +223,7 @@ Object.assign(window.modulos_data, {
             "Tabelas de referência com os limites máximos permitidos para cada poluente, definidas pelo CONAMA."
           ],
           "answer": "Organismos vivos (como peixes ou insetos aquáticos) cuja presença, ausência ou condição indica a saúde do ecossistema.",
-          "feedback": "Isso mesmo. O uso de bioindicadores é uma forma de avaliar a qualidade da água a partir da resposta da comunidade biológica, complementando as análises físico-químicas."
+          "feedback": "O uso de bioindicadores é uma forma de avaliar a qualidade da água a partir da resposta da comunidade biológica, complementando as análises físico-químicas."
         },
         {
           "question": "Qual é a diferença fundamental entre 'melhoria' e 'manutenção' no Bloco MMP?",
@@ -234,7 +234,7 @@ Object.assign(window.modulos_data, {
             "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura."
           ],
           "answer": "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura.",
-          "feedback": "Correto. Manutenção é sobre manter o que já existe funcionando (limpeza, reparos). Melhoria é sobre fazer um upgrade no sistema (ampliar, renaturalizar, etc.)."
+          "feedback": "Manutenção é sobre manter o que já existe funcionando (limpeza, reparos). Melhoria é sobre fazer um upgrade no sistema (ampliar, renaturalizar, etc.)."
         },
         {
           "question": "No monitoramento quantitativo, o que é uma 'curva-chave'?",
@@ -245,18 +245,18 @@ Object.assign(window.modulos_data, {
             "Um mapa que indica os pontos-chave onde o monitoramento de enchentes deve ser realizado com prioridade."
           ],
           "answer": "Uma relação matemática entre o nível da água e a vazão em uma seção do rio, obtida por medições de campo.",
-          "feedback": "Exato. A curva-chave é uma ferramenta essencial. Após estabelecida, permite estimar a vazão (que é difícil de medir continuamente) a partir da medição do nível da água (que é mais fácil)."
+          "feedback": "A curva-chave é uma ferramenta essencial. Após estabelecida, permite estimar a vazão (que é difícil de medir continuamente) a partir da medição do nível da água (que é mais fácil)."
         },
         {
-          "question": "Qual dos seguintes métodos é usado para monitorar o NÍVEL de um rio de forma contínua e automática?",
+          "question": "Qual dos seguintes equipamentos é utilizado para medir a quantidade de chuva em um determinado local?",
           "options": [
-            "Consultar a previsão do tempo em institutos de meteorologia e estimar o nível com base na chuva prevista.",
-            "Instalar um sensor de pressão ou um sensor ultrassônico em uma estação fluviométrica.",
-            "Utilizar um Perfilador Acústico Doppler de Corrente (ADCP) para medir a velocidade em diferentes profundidades.",
-            "Medir manualmente com uma trena a distância da ponte até a superfície da água uma vez por semana."
+            "Um ADCP (Perfilador Acústico Doppler de Corrente), para medir a velocidade da água.",
+            "Um sensor de nível ultrassônico, para medir a altura da lâmina d'água em um rio.",
+            "Um pluviômetro ou uma estação pluviométrica.",
+            "Um termômetro digital, para registrar a temperatura do ar durante a precipitação."
           ],
-          "answer": "Instalar um sensor de pressão ou um sensor ultrassônico em uma estação fluviométrica.",
-          "feedback": "Correto. Sensores de pressão (instalados no fundo) ou ultrassônicos (instalados acima da água) são tecnologias comuns para medir o nível da água de forma contínua e automática, enviando os dados remotamente."
+          "answer": "Um pluviômetro ou uma estação pluviométrica.",
+          "feedback": "O pluviômetro é o instrumento padrão e específico para medir a precipitação (chuva) em um ponto."
         }
       ]
     }

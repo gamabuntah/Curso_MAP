@@ -107,7 +107,7 @@ Object.assign(window.modulos_data, {
             "Inventariar todas as espécies de flora e fauna presentes nas áreas de influência direta dos sistemas de macrodrenagem."
           ],
           "answer": "Identificar e caracterizar o sistema de drenagem do município, incluindo dispositivos de captação, transporte, infiltração e os serviços de manutenção associados.",
-          "feedback": "Correto. O Bloco CCI visa um diagnóstico completo da infraestrutura de drenagem (captação, condução, infiltração), seu funcionamento e a manutenção realizada, abrangendo microdrenagem, macrodrenagem e infraestruturas verdes."
+          "feedback": "O Bloco CCI visa um diagnóstico completo da infraestrutura de drenagem (captação, condução, infiltração), seu funcionamento e a manutenção realizada, abrangendo microdrenagem, macrodrenagem e infraestruturas verdes."
         },
         {
           "question": "No contexto dos sistemas de esgotamento sanitário e drenagem pluvial, qual a principal distinção entre uma 'Rede Tipo Unitária' e uma 'Rede Tipo Separadora Absoluta'?",
@@ -118,7 +118,7 @@ Object.assign(window.modulos_data, {
             "A rede separadora absoluta tem um custo de implantação significativamente menor, mas uma manutenção mais complexa que a rede unitária."
           ],
           "answer": "A rede unitária coleta e transporta águas pluviais e esgoto sanitário conjuntamente na mesma tubulação, enquanto a separadora absoluta possui sistemas distintos para cada um.",
-          "feedback": "Correto. A rede unitária combina o fluxo de águas pluviais e esgoto na mesma infraestrutura, enquanto a separadora absoluta mantém esses fluxos em sistemas de tubulações independentes."
+          "feedback": "A rede unitária combina o fluxo de águas pluviais e esgoto na mesma infraestrutura, enquanto a separadora absoluta mantém esses fluxos em sistemas de tubulações independentes."
         },
         {
           "question": "Qual das seguintes alternativas MELHOR descreve o sistema de MICRODRENAGEM urbana?",
@@ -129,7 +129,7 @@ Object.assign(window.modulos_data, {
             "Rede de monitoramento da qualidade do ar e da água em áreas urbanas densamente povoadas, com foco na prevenção de doenças de veiculação hídrica."
           ],
           "answer": "Sistema de dispositivos como pavimentos de ruas, guias, sarjetas, bueiros e bocas de lobo, responsável pelo disciplinamento inicial das águas pluviais em áreas urbanizadas.",
-          "feedback": "Exato. A microdrenagem compreende os elementos iniciais de coleta e condução da água da chuva nas vias públicas e áreas adjacentes."
+          "feedback": "A microdrenagem compreende os elementos iniciais de coleta e condução da água da chuva nas vias públicas e áreas adjacentes."
         },
         {
           "question": "Qual dos seguintes conjuntos de dispositivos é MAIS representativo do sistema de MICRODRENAGEM?",
@@ -140,7 +140,7 @@ Object.assign(window.modulos_data, {
             "Bocas de lobo, grelhas, poços de visita, guias e sarjetas."
           ],
           "answer": "Bocas de lobo, grelhas, poços de visita, guias e sarjetas.",
-          "feedback": "Correto. Esses são os componentes fundamentais da microdrenagem, responsáveis pela captação e condução inicial das águas pluviais nas vias."
+          "feedback": "Esses são os componentes fundamentais da microdrenagem, responsáveis pela captação e condução inicial das águas pluviais nas vias."
         },
         {
           "question": "O sistema de MACRODRENAGEM urbana é caracterizado principalmente por:",
@@ -151,7 +151,7 @@ Object.assign(window.modulos_data, {
             "Priorizar a construção de pequenas bacias de detenção distribuídas pela malha urbana para controle do escoamento superficial em eventos de baixa intensidade."
           ],
           "answer": "Ser responsável pelo escoamento final das águas pluviais, compreendendo canais naturais ou artificiais e galerias de grandes dimensões que recebem o fluxo de vários sistemas de microdrenagem.",
-          "feedback": "Exatamente. A macrodrenagem lida com os grandes volumes de água, conduzindo-os aos seus destinos finais, como rios ou o mar."
+          "feedback": "A macrodrenagem lida com os grandes volumes de água, conduzindo-os aos seus destinos finais, como rios ou o mar."
         },
         {
           "question": "No contexto da macrodrenagem, o que significa a 'retificação' de um rio ou córrego?",
@@ -162,7 +162,7 @@ Object.assign(window.modulos_data, {
             "A construção de pequenas barragens escalonadas ao longo do curso d'água para controle de sedimentos e criação de áreas de lazer."
           ],
           "answer": "A alteração de seu curso natural, geralmente por aprofundamento e/ou alargamento do canal, para aumentar a velocidade do fluxo e transferir cheias para jusante.",
-          "feedback": "Correto. A retificação é uma intervenção de engenharia que visa modificar o traçado original de um curso d'água, muitas vezes com o objetivo de acelerar o escoamento."
+          "feedback": "A retificação é uma intervenção de engenharia que visa modificar o traçado original de um curso d'água, muitas vezes com o objetivo de acelerar o escoamento."
         },
         {
           "question": "Infraestruturas Verdes (ou Soluções Baseadas na Natureza - SBN) são melhor definidas como:",
@@ -173,7 +173,7 @@ Object.assign(window.modulos_data, {
             "Projetos de reflorestamento em larga escala em áreas de mananciais, visando exclusivamente a proteção dos recursos hídricos para abastecimento."
           ],
           "answer": "Estruturas construídas que utilizam processos e funções da natureza para auxiliar na drenagem das águas de chuva, integrando-se à infraestrutura convencional (cinza).",
-          "feedback": "Perfeito. As infraestruturas verdes mimetizam processos naturais para gerenciar as águas pluviais de forma sustentável, complementando os sistemas tradicionais."
+          "feedback": "As infraestruturas verdes mimetizam processos naturais para gerenciar as águas pluviais de forma sustentável, complementando os sistemas tradicionais."
         },
         {
           "question": "Qual dos seguintes dispositivos NÃO é considerado uma Infraestrutura Verde ou Solução Baseada na Natureza (SBN)?",
@@ -184,7 +184,7 @@ Object.assign(window.modulos_data, {
             "Uma biovaleta construída ao longo de uma ciclovia para filtrar e conduzir a água da chuva."
           ],
           "answer": "Uma galeria de concreto armado de grande diâmetro para condução rápida de águas pluviais canalizadas.",
-          "feedback": "Correto. Galerias de concreto são exemplos de infraestrutura cinza (convencional), enquanto jardins de chuva, telhados verdes e biovaletas são SBNs."
+          "feedback": "Galerias de concreto são exemplos de infraestrutura cinza (convencional), enquanto jardins de chuva, telhados verdes e biovaletas são SBNs."
         },
         {
           "question": "O que é a 'captação de esgoto sanitário de tempo seco' em sistemas de drenagem pluvial?",
@@ -195,7 +195,7 @@ Object.assign(window.modulos_data, {
             "Um sistema de alerta precoce para identificar o início da estação seca, permitindo o planejamento da limpeza de canais e bueiros."
           ],
           "answer": "A interceptação e desvio do esgoto sanitário (presente em galerias pluviais devido a ligações cruzadas, clandestinas ou em sistemas unitários) para uma ETE durante períodos sem chuva.",
-          "feedback": "Exato. Essa prática visa mitigar a poluição hídrica causada pelo lançamento de esgoto sanitário em corpos d'água através da rede pluvial em períodos de estiagem."
+          "feedback": "Essa prática visa mitigar a poluição hídrica causada pelo lançamento de esgoto sanitário em corpos d'água através da rede pluvial em períodos de estiagem."
         },
         {
           "question": "O reúso de águas pluviais, geralmente captadas de telhados e armazenadas em cisternas, destina-se PRIMARIAMENTE para qual finalidade?",
@@ -206,7 +206,7 @@ Object.assign(window.modulos_data, {
             "Ser exportada para regiões com escassez hídrica como forma de compensação ambiental por grandes empreendimentos urbanos."
           ],
           "answer": "Ser utilizada para fins não potáveis, como irrigação de jardins, lavagem de pisos e descargas sanitárias, reduzindo o consumo de água potável.",
-          "feedback": "Correto. O reúso de água de chuva é uma prática sustentável focada em usos que não exigem potabilidade, preservando a água tratada para consumo humano."
+          "feedback": "O reúso de água de chuva é uma prática sustentável focada em usos que não exigem potabilidade, preservando a água tratada para consumo humano."
         },
         {
           "question": "Em sistemas de captação e aproveitamento de água de chuva, qual a função de um 'reservatório de primeira chuva' (first flush diverter)?",
@@ -217,7 +217,7 @@ Object.assign(window.modulos_data, {
             "Aumentar a pressão da água captada para permitir seu uso em equipamentos que exigem maior força hidráulica, como lavadoras de alta pressão."
           ],
           "answer": "Descartar o volume inicial da água da chuva, que geralmente carrega maior concentração de sujeira e poluentes acumulados em telhados e calhas.",
-          "feedback": "Isso mesmo. O descarte da primeira chuva ('first flush') melhora a qualidade da água que será armazenada para reúso."
+          "feedback": "O descarte da primeira chuva ('first flush') melhora a qualidade da água que será armazenada para reúso."
         },
         {
           "question": "Qual a principal vantagem da utilização de 'pavimento permeável' em áreas urbanas, em comparação com o pavimento impermeável convencional (asfalto ou concreto)?",
@@ -228,7 +228,7 @@ Object.assign(window.modulos_data, {
             "Refletir maior quantidade de luz solar, contribuindo para a redução das ilhas de calor urbanas de forma mais eficaz que áreas vegetadas."
           ],
           "answer": "Permitir a infiltração da água da chuva no solo, reduzindo o escoamento superficial, recarregando aquíferos e minimizando o risco de enchentes.",
-          "feedback": "Correto. A permeabilidade do pavimento é uma importante medida de manejo de águas pluviais, auxiliando na redução do volume e da velocidade do runoff."
+          "feedback": "A permeabilidade do pavimento é uma importante medida de manejo de águas pluviais, auxiliando na redução do volume e da velocidade do runoff."
         },
         {
           "question": "A utilização de 'resíduos de construção e demolição (RCD)' e 'borracha de pneus reciclados' na composição de pavimentos é um exemplo de qual prática sustentável?",
@@ -239,7 +239,7 @@ Object.assign(window.modulos_data, {
             "Desenvolvimento de pavimentos com maior capacidade de absorção sonora para reduzir a poluição acústica em corredores de tráfego intenso."
           ],
           "answer": "Aplicação de materiais de reúso/reciclagem na pavimentação, reduzindo a extração de recursos naturais e o descarte inadequado de resíduos.",
-          "feedback": "Exato. Essa prática contribui para a economia circular e para a redução do impacto ambiental da construção civil."
+          "feedback": "Essa prática contribui para a economia circular e para a redução do impacto ambiental da construção civil."
         },
         {
           "question": "O que caracteriza uma 'rua pavimentada sem sistema de drenagem' adequado?",
@@ -250,18 +250,18 @@ Object.assign(window.modulos_data, {
             "Uma via urbana com sistema de drenagem completo, mas que apresenta problemas recorrentes de obstrução devido à falta de limpeza."
           ],
           "answer": "Uma rua onde a pavimentação foi executada, porém sem a instalação de dispositivos de microdrenagem como guias, sarjetas e bocas de lobo para o correto escoamento das águas pluviais.",
-          "feedback": "Correto. A ausência desses componentes compromete o escoamento adequado da água da chuva, podendo levar a alagamentos e danos à pavimentação e áreas adjacentes."
+          "feedback": "A simples pavimentação sem a devida infraestrutura de microdrenagem para coletar e conduzir a água pode agravar problemas de alagamento e erosão."
         },
         {
-          "question": "No manejo de águas pluviais em ruas ou estradas NÃO pavimentadas, qual das seguintes estratégias contribui para o controle de erosão e o aumento da infiltração?",
+          "question": "Se um município informa possuir 50 km de 'canais naturais' e 20 km de 'canais artificiais', qual deve ser a resposta para o quesito 'Extensão total de canais de drenagem de águas pluviais'?",
           "options": [
-            "Compactação intensiva do leito da estrada com rolo compressor para aumentar sua capacidade de suporte.",
-            "Remoção completa da vegetação das margens para evitar que raízes desestabilizem o solo.",
-            "Instalação de bacias de acumulação (barraginhas) e/ou construção de jardins de chuva e valas de infiltração ao longo da via.",
-            "Impermeabilização das laterais da estrada com concreto ou asfalto para canalizar rapidamente a água para longe."
+            "Apenas a extensão dos canais artificiais (20 km), pois os naturais não são considerados infraestrutura.",
+            "A extensão total somada de ambos os tipos, ou seja, 70 km.",
+            "Apenas a extensão dos canais naturais (50 km), pois são os mais relevantes para a macrodrenagem.",
+            "A média das duas extensões, resultando em 35 km."
           ],
-          "answer": "Instalação de bacias de acumulação (barraginhas) e/ou construção de jardins de chuva e valas de infiltração ao longo da via.",
-          "feedback": "Exato. Essas técnicas ajudam a reter a água, reduzir a velocidade do escoamento, controlar a erosão e promover a infiltração no solo em vias não pavimentadas."
+          "answer": "A extensão total somada de ambos os tipos, ou seja, 70 km.",
+          "feedback": "O quesito solicita a extensão TOTAL, o que implica na soma de todos os tipos de canais (naturais e artificiais) existentes no município."
         }
       ]
     }

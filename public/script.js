@@ -537,10 +537,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             startQuizButton.onclick = () => {
                 // Mostra o container do quiz
                 domElements.quizContainer.style.display = 'block';
-                // Rola suavemente até o contêiner do quiz
-                domElements.quizContainer.scrollIntoView({ behavior: 'smooth' });
                 // Chama a nova função de quiz genérica
                 renderQuiz(moduleData.quiz, quizConfigs.module);
+                // Rola suavemente até o contêiner do quiz após um pequeno atraso
+                setTimeout(() => {
+                    domElements.quizContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100); // Timeout para garantir que o quiz foi renderizado no DOM
             };
             
             domElements.contentContainer.appendChild(startQuizButton);

@@ -92,7 +92,7 @@ Object.assign(window.modulos_data, {
             "Mapear todas as nascentes e cursos d'água que contribuem para a bacia hidrográfica do reservatório."
           ],
           "answer": "Identificar e caracterizar reservatórios, como 'piscinões', que amortecem o volume de água das chuvas.",
-          "feedback": "Correto. O foco do Bloco EDR é nos reservatórios (piscinões) e sua função de controlar cheias, amortecendo o pico de vazão durante as chuvas."
+          "feedback": "O foco do Bloco EDR é nos reservatórios (piscinões) e sua função de controlar cheias, amortecendo o pico de vazão durante as chuvas."
         },
         {
           "question": "Qual a diferença técnica fundamental entre uma estrutura de DETENÇÃO e uma de RETENÇÃO de águas pluviais?",
@@ -103,7 +103,7 @@ Object.assign(window.modulos_data, {
             "As estruturas de detenção são sempre a céu aberto (piscinões), enquanto as de retenção são obrigatoriamente subterrâneas e fechadas."
           ],
           "answer": "A detenção armazena o escoamento temporariamente, esvaziando-se após a chuva, enquanto a retenção mantém um volume de água permanente (lagoa).",
-          "feedback": "Exato. A distinção chave é a permanência da água: detenção é temporária ('piscinão' seco), retenção é permanente (lagoa)."
+          "feedback": "A distinção chave é a permanência da água: detenção é temporária ('piscinão' seco), retenção é permanente (lagoa)."
         },
         {
           "question": "Em estruturas que operam com bombeamento, por que é crucial identificar o responsável pela operação e manutenção?",
@@ -114,7 +114,7 @@ Object.assign(window.modulos_data, {
             "Para assegurar que o ruído das bombas não ultrapasse os limites permitidos pela legislação ambiental local."
           ],
           "answer": "Porque a falha no bombeamento por falta de energia ou manutenção pode agravar a inundação em vez de mitigá-la.",
-          "feedback": "Correto. A operação por bombeamento introduz um ponto crítico de falha. Se as bombas não funcionarem na hora certa, a estrutura perde sua função e pode até piorar a situação de cheia."
+          "feedback": "A operação por bombeamento introduz um ponto crítico de falha. Se as bombas não funcionarem na hora certa, a estrutura perde sua função e pode até piorar a situação de cheia."
         },
         {
           "question": "O que é um 'protocolo de contingência e mitigação de riscos' para estruturas de detenção/retenção?",
@@ -125,7 +125,7 @@ Object.assign(window.modulos_data, {
             "Um documento que estabelece o cronograma anual de limpeza e desassoreamento do fundo do reservatório."
           ],
           "answer": "Um plano de ação detalhado que define os procedimentos a serem seguidos em caso de falha da estrutura ou de cheias extremas.",
-          "feedback": "Isso mesmo. É um plano de emergência que prevê 'o que fazer se tudo der errado', definindo responsabilidades e ações para minimizar os danos de uma falha."
+          "feedback": "É um plano de emergência que prevê 'o que fazer se tudo der errado', definindo responsabilidades e ações para minimizar os danos de uma falha."
         },
         {
           "question": "Qual parâmetro é tipicamente usado para o acionamento automático do sistema de bombeamento em um 'piscinão'?",
@@ -136,7 +136,7 @@ Object.assign(window.modulos_data, {
             "A previsão do tempo, acionando as bombas quando há uma probabilidade de chuva acima de 80%."
           ],
           "answer": "O nível de cheia da água dentro do reservatório, medido por sensores de nível.",
-          "feedback": "Correto. O acionamento é geralmente automatizado por sensores que medem o nível da água, garantindo que as bombas só operem quando for estritamente necessário."
+          "feedback": "O acionamento é geralmente automatizado por sensores que medem o nível da água, garantindo que as bombas só operem quando for estritamente necessário."
         },
         {
           "question": "Qual é o objetivo central do Bloco SPI (Sistema de Proteção contra Inundações)?",
@@ -147,7 +147,7 @@ Object.assign(window.modulos_data, {
             "Analisar a estabilidade geológica das encostas no entorno de rios para prevenir deslizamentos de terra."
           ],
           "answer": "Identificar estruturas lineares, como diques e canais, que protegem áreas específicas contra o avanço das águas.",
-          "feedback": "Exato. O Bloco SPI foca em sistemas de proteção que funcionam como barreiras físicas (diques, comportas, pôlderes) para impedir que a água de um rio ou canal invada uma área protegida."
+          "feedback": "O Bloco SPI foca em sistemas de proteção que funcionam como barreiras físicas (diques, comportas, pôlderes) para impedir que a água de um rio ou canal invada uma área protegida."
         },
         {
           "question": "O que são 'pôlderes' no contexto de sistemas de proteção contra inundações?",
@@ -158,7 +158,7 @@ Object.assign(window.modulos_data, {
             "Canais subterrâneos de grande diâmetro projetados para desviar o curso de um rio por baixo de uma área urbana."
           ],
           "answer": "Áreas baixas protegidas por um sistema de diques e que geralmente dependem de bombeamento para escoar a água interna.",
-          "feedback": "Correto. Pôlder é o termo técnico para uma área (frequentemente uma planície de inundação) que foi isolada do rio por diques e outras estruturas, formando uma espécie de 'bacia' protegida."
+          "feedback": "Pôlder é o termo técnico para uma área (frequentemente uma planície de inundação) que foi isolada do rio por diques e outras estruturas, formando uma espécie de 'bacia' protegida."
         },
         {
           "question": "Qual a principal diferença entre um 'dique' e uma 'cortina de concreto'?",
@@ -169,7 +169,7 @@ Object.assign(window.modulos_data, {
             "Diques são usados para proteger contra a água de rios, enquanto cortinas de concreto são usadas para proteger contra o avanço do mar."
           ],
           "answer": "Diques são geralmente estruturas de terra compactada ou outros materiais, enquanto cortinas são barreiras verticais de concreto armado.",
-          "feedback": "Isso mesmo. A diferença fundamental está no material e na forma construtiva: diques são maciços de terra (ou materiais similares), enquanto cortinas são estruturas esbeltas de concreto."
+          "feedback": "A diferença fundamental está no material e na forma construtiva: diques são maciços de terra (ou materiais similares), enquanto cortinas são estruturas esbeltas de concreto."
         },
         {
           "question": "Que tipo de comporta é projetada para ser operada manually, sendo totalmente removida ou inserida para bloquear o fluxo?",
@@ -180,7 +180,7 @@ Object.assign(window.modulos_data, {
             "Comporta de passagem (flap), que abre e fecha automaticamente com a força da correnteza."
           ],
           "answer": "Comporta do tipo stop-log, que consiste em vigas ou pranchas encaixadas umas sobre as outras.",
-          "feedback": "Correto. A comporta stop-log é um sistema mais simples, operado manualmente, onde 'toras' ou vigas são adicionadas ou removidas para controlar o fluxo, sendo comum em canais menores ou para manutenção."
+          "feedback": "A comporta stop-log é um sistema mais simples, operado manualmente, onde 'toras' ou vigas são adicionadas ou removidas para controlar o fluxo, sendo comum em canais menores ou para manutenção."
         },
         {
           "question": "O que é uma 'casa de bombas' ou 'estação elevatória' no contexto de um sistema de proteção contra inundações?",
@@ -191,7 +191,7 @@ Object.assign(window.modulos_data, {
             "Uma edificação elevada e segura projetada para abrigar os operadores e equipamentos de controle durante uma enchente."
           ],
           "answer": "A infraestrutura que abriga as bombas usadas para remover a água acumulada de áreas baixas (como pôlderes) e lançá-la no rio.",
-          "feedback": "Exato. Em áreas protegidas que estão abaixo do nível do rio (ou que não conseguem escoar por gravidade), a casa de bombas é essencial para retirar a água da chuva ou de infiltração da área protegida."
+          "feedback": "Em áreas protegidas que estão abaixo do nível do rio (ou que não conseguem escoar por gravidade), a casa de bombas é essencial para retirar a água da chuva ou de infiltração da área protegida."
         },
         {
           "question": "Durante uma vistoria e inspeção visual em um dique, qual dos seguintes itens seria um sinal de problema a ser reportado?",
@@ -202,7 +202,7 @@ Object.assign(window.modulos_data, {
             "A existência de uma cobertura vegetal de grama bem aparada e uniforme em toda a extensão do talude."
           ],
           "answer": "Presença de trincas, erosão, caminhos de formigas, tocas de animais ou crescimento de árvores de grande porte sobre a estrutura.",
-          "feedback": "Correto. Todos esses são sinais de vulnerabilidade. Trincas, erosão, tocas e raízes de árvores podem criar caminhos preferenciais para a infiltração de água, comprometendo a segurança do dique."
+          "feedback": "Todos esses são sinais de vulnerabilidade. Trincas, erosão, tocas e raízes de árvores podem criar caminhos preferenciais para a infiltração de água, comprometendo a segurança do dique."
         },
         {
           "question": "Qual a finalidade de um levantamento topográfico periódico em um Sistema de Proteção contra Inundações (SPI)?",
@@ -213,7 +213,7 @@ Object.assign(window.modulos_data, {
             "Atualizar o mapa de zoneamento da cidade para permitir a construção de novas edificações em áreas antes consideradas de risco."
           ],
           "answer": "Verificar se ocorreram deformações, como recalques (afundamentos) ou deslocamentos, na estrutura dos diques e canais.",
-          "feedback": "Isso mesmo. A topografia de precisão permite identificar pequenas movimentações na estrutura ao longo do tempo, que podem ser um sinal precoce de problemas estruturais e da necessidade de manutenção."
+          "feedback": "A topografia de precisão permite identificar pequenas movimentações na estrutura ao longo do tempo, que podem ser um sinal precoce de problemas estruturais e da necessidade de manutenção."
         },
         {
           "question": "A manutenção de comportas metálicas inclui, tipicamente, qual tipo de atividade?",
@@ -224,7 +224,7 @@ Object.assign(window.modulos_data, {
             "A instalação de um sistema de aquecimento para evitar o congelamento da comporta em regiões de clima frio."
           ],
           "answer": "Lubrificação de partes móveis, aplicação de pintura de proteção contra corrosão e testes de abertura e fechamento.",
-          "feedback": "Correto. A manutenção de comportas foca em garantir sua operacionalidade e integridade, o que envolve lubrificação, proteção contra a ferrugem e testes para assegurar que funcionarão quando necessário."
+          "feedback": "A manutenção de comportas foca em garantir sua operacionalidade e integridade, o que envolve lubrificação, proteção contra a ferrugem e testes para assegurar que funcionarão quando necessário."
         },
         {
           "question": "Qual o principal risco associado à falta de limpeza e desobstrução de galerias em um Sistema de Proteção contra Inundações?",
@@ -235,7 +235,7 @@ Object.assign(window.modulos_data, {
             "A contaminação da água que passa pela galeria por materiais que se decompõem em seu interior."
           ],
           "answer": "A redução da capacidade de vazão da galeria, o que pode causar o acúmulo de água a montante e o transbordamento do sistema.",
-          "feedback": "Exato. Entulhos e sedimentos dentro de uma galeria agem como uma barreira, reduzindo a seção útil para a passagem da água. Isso diminui a eficiência do sistema e eleva o risco de falha e inundação."
+          "feedback": "Entulhos e sedimentos dentro de uma galeria agem como uma barreira, reduzindo a seção útil para a passagem da água. Isso diminui a eficiência do sistema e eleva o risco de falha e inundação."
         },
         {
           "question": "O que é uma 'comporta de passagem' ou 'comporta flap'?",
@@ -246,7 +246,7 @@ Object.assign(window.modulos_data, {
             "Uma comporta articulada que abre automaticamente para permitir o escoamento quando o nível da água de um lado é maior, e fecha para evitar o retorno."
           ],
           "answer": "Uma comporta articulada que abre automaticamente para permitir o escoamento quando o nível da água de um lado é maior, e fecha para evitar o retorno.",
-          "feedback": "Correto. A comporta flap funciona como uma válvula de retenção unidirecional, muito usada em saídas de redes de drenagem para rios de maré, permitindo a saída da água da chuva mas impedindo a entrada da água do rio na maré alta."
+          "feedback": "A comporta flap funciona como uma válvula de retenção unidirecional, muito usada em saídas de redes de drenagem para rios de maré, permitindo a saída da água da chuva mas impedindo a entrada da água do rio na maré alta."
         }
       ]
     }

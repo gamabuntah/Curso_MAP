@@ -97,7 +97,7 @@ Object.assign(window.modulos_data, {
             "Estabelecer normas para a construção de grandes barragens e usinas hidrelétricas em bacias hidrográficas rurais."
           ],
           "answer": "Compreender as soluções e serviços implementados para o manejo de águas pluviais em áreas rurais, abrangendo vias, cursos d'água e domicílios.",
-          "feedback": "Correto. O Bloco RUR foca especificamente no manejo das águas da chuva em contextos rurais, analisando as soluções existentes desde as estradas até os domicílios."
+          "feedback": "O Bloco RUR foca especificamente no manejo das águas da chuva em contextos rurais, analisando as soluções existentes desde as estradas até os domicílios."
         },
         {
           "question": "O que são 'barraginhas' no contexto do manejo de águas pluviais rurais?",
@@ -108,7 +108,7 @@ Object.assign(window.modulos_data, {
             "Canais de concreto construídos para acelerar o escoamento da água das chuvas em direção aos rios, evitando alagamentos."
           ],
           "answer": "Pequenas bacias escavadas no solo para capturar enxurradas, permitindo a infiltração da água e a conservação do solo.",
-          "feedback": "Exato. As barraginhas são uma tecnologia social de baixo custo que visa reter a água da chuva onde ela cai, promovendo a infiltração e recarga do lençol freático, ao contrário de estruturas que aceleram o escoamento."
+          "feedback": "As barraginhas são uma tecnologia social de baixo custo que visa reter a água da chuva onde ela cai, promovendo a infiltração e recarga do lençol freático, ao contrário de estruturas que aceleram o escoamento."
         },
         {
           "question": "A 'adequação do abaulamento do leito da via' é uma técnica de manejo que consiste em:",
@@ -119,7 +119,7 @@ Object.assign(window.modulos_data, {
             "Compactar intensamente o solo da via para torná-la impermeável e aumentar a velocidade do escoamento superficial."
           ],
           "answer": "Construir a parte central da via mais elevada que as laterais, facilitando o escoamento da água para as margens.",
-          "feedback": "Correto. O abaulamento é uma técnica fundamental em estradas não pavimentadas para evitar a formação de poças e processos erosivos, direcionando a água de forma controlada para as laterais."
+          "feedback": "O abaulamento é uma técnica fundamental em estradas não pavimentadas para evitar a formação de poças e processos erosivos, direcionando a água de forma controlada para as laterais."
         },
         {
           "question": "Qual grupo de materiais provenientes de reúso ou reciclagem é aplicável na pavimentação de vias rurais, conforme o material de referência?",
@@ -130,7 +130,7 @@ Object.assign(window.modulos_data, {
             "Resíduos da construção civil, escória de siderurgia e borracha de pneus para composição de asfalto-borracha."
           ],
           "answer": "Resíduos da construção civil, escória de siderurgia e borracha de pneus para composição de asfalto-borracha.",
-          "feedback": "Isso mesmo. O material de referência cita especificamente resíduos de construção, asfalto-borracha e escória como materiais de reúso aplicáveis, destacando soluções sustentáveis para a infraestrutura viária rural."
+          "feedback": "O material de referência cita especificamente resíduos de construção, asfalto-borracha e escória como materiais de reúso aplicáveis, destacando soluções sustentáveis para a infraestrutura viária rural."
         },
         {
           "question": "Entre as soluções para manejo de águas pluviais em VIAS INTERNAS de comunidades rurais, qual das seguintes opções está correta?",
@@ -141,7 +141,7 @@ Object.assign(window.modulos_data, {
             "Instalação de sistemas de iluminação pública com energia solar e construção de pontos de ônibus cobertos."
           ],
           "answer": "Implantação de dispositivos como sarjetas e canaletas, e orientação à comunidade para manutenção das soluções.",
-          "feedback": "Correto. As soluções para vias internas rurais focam no manejo da água que escoa dentro da comunidade, utilizando estruturas de microdrenagem e o envolvimento dos moradores."
+          "feedback": "As soluções para vias internas rurais focam no manejo da água que escoa dentro da comunidade, utilizando estruturas de microdrenagem e o envolvimento dos moradores."
         },
         {
           "question": "No contexto dos PERIDOMICÍLIOS rurais, quais soluções de manejo de água pluvial são citadas no material?",
@@ -152,7 +152,7 @@ Object.assign(window.modulos_data, {
             "A canalização direta da água da chuva do telhado para a rede de esgoto ou para a rua mais próxima."
           ],
           "answer": "Técnicas que promovem a infiltração, como trincheiras e jardins de chuva, e a instalação de reservatórios domiciliares.",
-          "feedback": "Exato. No entorno do domicílio, a abordagem é reter e infiltrar a água (com jardins de chuva, por exemplo) ou armazená-la para uso (com reservatórios), reduzindo o volume de escoamento superficial."
+          "feedback": "No entorno do domicílio, a abordagem é reter e infiltrar a água (com jardins de chuva, por exemplo) ou armazená-la para uso (com reservatórios), reduzindo o volume de escoamento superficial."
         },
         {
           "question": "Qual das seguintes estratégias para APROVEITAMENTO de águas pluviais em áreas rurais é destacada no curso?",
@@ -163,7 +163,7 @@ Object.assign(window.modulos_data, {
             "O uso de diferentes tipos de cisternas domiciliares, tanto para consumo humano quanto para outros usos como dessedentação de animais."
           ],
           "answer": "O uso de diferentes tipos de cisternas domiciliares, tanto para consumo humano quanto para outros usos como dessedentação de animais.",
-          "feedback": "Correto. O material foca no aproveitamento direto da água da chuva, sendo as cisternas (de placas, plásticas, etc.) a principal tecnologia abordada para o contexto rural."
+          "feedback": "O material foca no aproveitamento direto da água da chuva, sendo as cisternas (de placas, plásticas, etc.) a principal tecnologia abordada para o contexto rural."
         },
         {
           "question": "O que caracteriza a 'gestão compartilhada' das águas pluviais, conforme o Bloco RUR?",
@@ -174,7 +174,7 @@ Object.assign(window.modulos_data, {
             "A transferência total da responsabilidade de manutenção da drenagem do poder público para os moradores locais."
           ],
           "answer": "A atuação conjunta entre poder público, comunidades e outras organizações para orientar técnicas e realizar ações educativas.",
-          "feedback": "Isso mesmo. A gestão compartilhada pressupõe a colaboração e a divisão de responsabilidades entre diferentes atores, sendo um pilar para a sustentabilidade das ações em áreas rurais."
+          "feedback": "A gestão compartilhada pressupõe a colaboração e a divisão de responsabilidades entre diferentes atores, sendo um pilar para a sustentabilidade das ações em áreas rurais."
         },
         {
           "question": "Qual é o objetivo principal do Bloco EDU no contexto da pesquisa?",
@@ -185,7 +185,7 @@ Object.assign(window.modulos_data, {
             "Distribuir material didático sobre saneamento básico para todas as escolas da rede municipal e estadual."
           ],
           "answer": "Investigar a existência e a natureza das ações de educação ambiental realizadas pelo prestador de serviço sobre o tema.",
-          "feedback": "Correto. O Bloco EDU não executa, mas sim investiga as ações que o prestador realiza para conscientizar a população sobre a importância do manejo de águas pluviais e temas correlatos."
+          "feedback": "O Bloco EDU não executa, mas sim investiga as ações que o prestador realiza para conscientizar a população sobre a importância do manejo de águas pluviais e temas correlatos."
         },
         {
           "question": "A frequência das ações de educação ambiental é classificada em:",
@@ -196,7 +196,7 @@ Object.assign(window.modulos_data, {
             "Contínua, quando ocorrem de forma regular, ou eventual/esporádica, quando realizadas em datas específicas."
           ],
           "answer": "Contínua, quando ocorrem de forma regular, ou eventual/esporádica, quando realizadas em datas específicas.",
-          "feedback": "Exato. O questionário busca saber se as ações são parte de um programa permanente (contínua) ou se são pontuais (eventual), como em campanhas do Dia da Água ou Dia do Meio Ambiente."
+          "feedback": "O questionário busca saber se as ações são parte de um programa permanente (contínua) ou se são pontuais (eventual), como em campanhas do Dia da Água ou Dia do Meio Ambiente."
         },
         {
           "question": "Qual dos seguintes grupos de temas é representativo das ações de educação ambiental abordadas no Bloco EDU?",
@@ -207,7 +207,7 @@ Object.assign(window.modulos_data, {
             "Princípios de contabilidade, gestão financeira pessoal, microempreendedorismo e abertura de novos negócios."
           ],
           "answer": "Renaturalização de rios, ciclo hidrológico, disposição de resíduos sólidos e os impactos da urbanização na drenagem.",
-          "feedback": "Correto. Os temas do Bloco EDU são diretamente ligados ao meio ambiente e ao saneamento, com foco nos impactos e soluções para o manejo de águas pluviais."
+          "feedback": "Os temas do Bloco EDU são diretamente ligados ao meio ambiente e ao saneamento, com foco nos impactos e soluções para o manejo de águas pluviais."
         },
         {
           "question": "Qual das opções abaixo descreve 'formas de realização' de projetos de educação ambiental citadas no material?",
@@ -218,7 +218,7 @@ Object.assign(window.modulos_data, {
             "Construção de ecopontos para coleta de recicláveis e instalação de novas lixeiras em áreas públicas."
           ],
           "answer": "Realização de palestras temáticas, mutirões de limpeza, rodas de conversa e veiculação de campanhas em mídias sociais.",
-          "feedback": "Isso mesmo. As formas de realização são as ações e métodos práticos usados para engajar e educar a população, como oficinas, palestras, mutirões e campanhas de sensibilização."
+          "feedback": "As formas de realização são as ações e métodos práticos usados para engajar e educar a população, como oficinas, palestras, mutirões e campanhas de sensibilização."
         },
         {
           "question": "O que significa 'tamponamento de cursos d'água', um dos serviços de manejo que podem ser realizados?",
@@ -229,7 +229,7 @@ Object.assign(window.modulos_data, {
             "Aplicação de produtos químicos na água para neutralizar poluentes e melhorar sua qualidade."
           ],
           "answer": "Tipo de canalização onde o curso d'água é 'enterrado' em galerias ou tubulações fechadas.",
-          "feedback": "Correto. O tamponamento é uma intervenção de infraestrutura cinza onde o rio deixa de ser a céu aberto e passa a correr por dentro de uma galeria, sendo um serviço relevante a ser identificado."
+          "feedback": "O tamponamento é uma intervenção de infraestrutura cinza onde o rio deixa de ser a céu aberto e passa a correr por dentro de uma galeria, sendo um serviço relevante a ser identificado."
         },
         {
           "question": "Segundo o Bloco RUR, o que distingue o pavimento de 'paralelepípedo' de outros tipos de pavimento em relação à água da chuva?",
@@ -240,7 +240,7 @@ Object.assign(window.modulos_data, {
             "Sua resistência superior ao tráfego de veículos pesados em comparação com o asfalto convencional."
           ],
           "answer": "Sua permeabilidade, pois quando assentado sem juntas de cimento, permite a infiltração da água da chuva.",
-          "feedback": "Exato. A característica chave do paralelepípedo, no contexto do manejo de águas pluviais, é sua capacidade de permitir a infiltração, funcionando como um pavimento permeável."
+          "feedback": "A característica chave do paralelepípedo, no contexto do manejo de águas pluviais, é sua capacidade de permitir a infiltração, funcionando como um pavimento permeável."
         },
         {
           "question": "Qual a principal importância da Educação Ambiental (Bloco EDU) no contexto geral do Manejo de Águas Pluviais (MAP)?",
@@ -248,10 +248,10 @@ Object.assign(window.modulos_data, {
             "Aumentar a arrecadação de taxas e impostos relacionados ao saneamento para financiar novas obras de macrodrenagem.",
             "Garantir que a prefeitura cumpra as metas de reciclagem e receba certificações ambientais internacionais.",
             "Sensibilizar a população sobre a relação entre drenagem e desastres, estimulando a redução da impermeabilização e a infiltração local.",
-            "Capacitar professores da rede pública para que ministrem aulas sobre o ciclo hidrológico."
+            "Cumprir uma exigência legal para que o município possa receber verbas federais para projetos de infraestrutura urbana."
           ],
           "answer": "Sensibilizar a população sobre a relação entre drenagem e desastres, estimulando a redução da impermeabilização e a infiltração local.",
-          "feedback": "Correto. A educação ambiental é fundamental para mudar comportamentos (como o descarte incorreto de lixo) e promover a corresponsabilidade, mostrando como as ações individuais impactam o sistema de drenagem coletivo e a ocorrência de desastres."
+          "feedback": "A educação ambiental é fundamental para mudar comportamentos (como o descarte de lixo) e promover a corresponsabilidade, fazendo com que a população se torne uma aliada na gestão das águas pluviais e na prevenção de desastres."
         }
       ]
     }

@@ -107,7 +107,7 @@ Object.assign(window.modulos_data, {
             "Definir as tarifas e os impostos que serão cobrados da população pelos serviços de manejo de águas pluviais."
           ],
           "answer": "Compreender os mecanismos de transferência da execução do serviço (de município para prestador) e identificar os canais de atendimento ao cidadão.",
-          "feedback": "Correto. O Bloco LEG foca em como o serviço é formalmente delegado a um prestador (por contrato, lei, etc.) e como o cidadão interage com esse prestador (via ouvidorias, centrais de atendimento)."
+          "feedback": "O Bloco LEG foca em como o serviço é formalmente delegado a um prestador (por contrato, lei, etc.) e como o cidadão interage com esse prestador (via ouvidorias, centrais de atendimento)."
         },
         {
           "question": "Um município delega a prestação dos serviços de drenagem a um consórcio público intermunicipal, sem a necessidade de um processo licitatório. Qual instrumento legal formaliza essa relação?",
@@ -118,7 +118,7 @@ Object.assign(window.modulos_data, {
             "Lei municipal específica de criação de autarquia."
           ],
           "answer": "Contrato de Programa.",
-          "feedback": "Exato. O Contrato de Programa é o instrumento adequado para a gestão associada de serviços públicos entre entes da federação, como em um consórcio público, dispensando a licitação."
+          "feedback": "O Contrato de Programa é o instrumento adequado para a gestão associada de serviços públicos entre entes da federação, como em um consórcio público, dispensando a licitação."
         },
         {
           "question": "Ao preencher o questionário, o técnico descobre que não existe nenhum instrumento legal (contrato, lei, etc.) formalizando a prestação dos serviços de drenagem pelo município. Como ele deve proceder?",
@@ -129,7 +129,7 @@ Object.assign(window.modulos_data, {
             "Deve considerar a prefeitura como prestadora direta e continuar o preenchimento normalmente, assumindo uma delegação tácita."
           ],
           "answer": "Deve marcar a opção 'Inexistente' no quesito sobre o instrumento de delegação e, em seguida, pular diretamente para o quesito sobre canais de atendimento ao cidadão.",
-          "feedback": "Correto. O fluxo do questionário estabelece que, na ausência de um instrumento formal de delegação, a seção sobre a vigência desse instrumento deve ser pulada."
+          "feedback": "O fluxo do questionário estabelece que, na ausência de um instrumento formal de delegação, a seção sobre a vigência desse instrumento deve ser pulada."
         },
         {
           "question": "O 'período de vigência' de um contrato de concessão se refere a quê?",
@@ -140,7 +140,7 @@ Object.assign(window.modulos_data, {
             "Ao tempo de validade do instrumento legal (contrato), com datas de início e fim predefinidas."
           ],
           "answer": "Ao tempo de validade do instrumento legal (contrato), com datas de início e fim predefinidas.",
-          "feedback": "Isso mesmo. O período de vigência corresponde à duração formal do contrato ou da delegação, conforme estipulado no documento legal."
+          "feedback": "O período de vigência corresponde à duração formal do contrato ou da delegação, conforme estipulado no documento legal."
         },
         {
           "question": "Uma prefeitura possui um serviço telefônico geral (ex: '156') que recebe reclamações sobre diversos assuntos, incluindo entupimento de bueiros e alagamentos. Para o Bloco LEG, como essa estrutura deve ser considerada?",
@@ -151,7 +151,7 @@ Object.assign(window.modulos_data, {
             "Deve ser registrada no Bloco SRT, pois indica uma provável terceirização do serviço de atendimento."
           ],
           "answer": "Deve ser considerada como uma 'Central de Atendimento' ou 'Ouvidoria', validando a existência de um canal para manifestações dos cidadãos.",
-          "feedback": "Correto. O critério é a existência de um canal que receba manifestações sobre drenagem, mesmo que não seja exclusivo para esse serviço."
+          "feedback": "O critério é a existência de um canal que receba manifestações sobre drenagem, mesmo que não seja exclusivo para esse serviço."
         },
         {
           "question": "Ao analisar os registros da ouvidoria de um município, o técnico identifica que a queixa mais frequente dos cidadãos é sobre o 'entupimento de bocas de lobo e grelhas quebradas'. Como essa informação deve ser registrada?",
@@ -162,7 +162,7 @@ Object.assign(window.modulos_data, {
             "Como 'Reclamação sobre lançamento de esgotos na rede de drenagem'."
           ],
           "answer": "Como 'Reclamação sobre problemas nos dispositivos de drenagem'.",
-          "feedback": "Exato. Essa opção descreve precisamente o tipo de problema relatado, que se refere a falhas ou mau funcionamento de componentes da microdrenagem."
+          "feedback": "Essa opção descreve precisamente o tipo de problema relatado, que se refere a falhas ou mau funcionamento de componentes da microdrenagem."
         },
         {
           "question": "Qual é a principal função do Bloco SRT (Serviço(s) Realizado(s) por Terceiro(s))?",
@@ -173,7 +173,7 @@ Object.assign(window.modulos_data, {
             "Definir os critérios para a seleção e o cadastramento de novas empresas interessadas em prestar serviços de drenagem."
           ],
           "answer": "Identificar se o prestador de serviço principal contrata outras empresas para executar, total ou parcialmente, as atividades de drenagem e manejo pluvial.",
-          "feedback": "Correto. O Bloco SRT visa mapear a cadeia de prestação de serviços, entendendo quais atividades são delegadas a outras empresas."
+          "feedback": "O Bloco SRT visa mapear a cadeia de prestação de serviços, entendendo quais atividades são delegadas a outras empresas."
         },
         {
           "question": "Se um prestador de serviço informa que NÃO contratou nenhuma empresa terceirizada para os serviços de drenagem em 2024, qual o procedimento correto no questionário?",
@@ -184,7 +184,7 @@ Object.assign(window.modulos_data, {
             "O técnico deve investigar se a informação é verídica antes de prosseguir com o preenchimento."
           ],
           "answer": "O Bloco SRT deve ser encerrado, e o preenchimento continua nos blocos seguintes.",
-          "feedback": "Isso mesmo. Se a resposta ao quesito inicial do Bloco SRT for 'Não', o restante do bloco é pulado, pois não há serviços terceirizados a detalhar."
+          "feedback": "Se a resposta ao quesito inicial do Bloco SRT for 'Não', o restante do bloco é pulado, pois não há serviços terceirizados a detalhar."
         },
         {
           "question": "Qual é a distinção fundamental na forma de remuneração entre um 'Contrato de Concessão Comum' e um 'Contrato de Parceria Público-Privada (PPP)' para serviços de drenagem?",
@@ -195,7 +195,7 @@ Object.assign(window.modulos_data, {
             "Na concessão comum, a remuneração do prestador provém de tarifas pagas pelos usuários, enquanto na PPP a remuneração é paga pelo Poder Público e atrelada ao desempenho."
           ],
           "answer": "Na concessão comum, a remuneração do prestador provém de tarifas pagas pelos usuários, enquanto na PPP a remuneração é paga pelo Poder Público e atrelada ao desempenho.",
-          "feedback": "Exato. A origem da remuneração é o diferencial chave: na concessão comum, o risco é do concessionário, que cobra tarifas dos usuários. Na PPP, o Poder Público remunera o parceiro privado com base em metas de desempenho."
+          "feedback": "A origem da remuneração é o diferencial chave: na concessão comum, o risco é do concessionário, que cobra tarifas dos usuários. Na PPP, o Poder Público remunera o parceiro privado com base em metas de desempenho."
         },
         {
           "question": "O prestador de serviço municipal informa que TODOS os serviços de drenagem (planejamento, obras, manutenção, operação, etc.) são executados por uma única empresa contratada. Qual é o fluxo correto de preenchimento do questionário?",
@@ -206,7 +206,7 @@ Object.assign(window.modulos_data, {
             "O questionário deve ser preenchido até o Bloco LEG, e os demais blocos devem ser marcados como 'Não se aplica'."
           ],
           "answer": "Deve-se marcar 'Sim' no Bloco SRT, assinalar todos os serviços como terceirizados e, em seguida, encerrar o questionário.",
-          "feedback": "Correto. A terceirização total dos serviços implica um fluxo de encerramento mais curto no questionário, após a devida identificação dos serviços delegados no Bloco SRT."
+          "feedback": "A terceirização total dos serviços implica um fluxo de encerramento mais curto no questionário, após a devida identificação dos serviços delegados no Bloco SRT."
         },
         {
           "question": "Uma 'Lei' municipal que cria uma autarquia para ser a responsável pela drenagem urbana é considerada que tipo de instrumento?",
@@ -217,7 +217,7 @@ Object.assign(window.modulos_data, {
             "Um documento informativo, mas que não constitui uma delegação formal do serviço."
           ],
           "answer": "Um instrumento de delegação ou outorga válido para formalizar a prestação do serviço.",
-          "feedback": "Correto. Uma lei municipal é um dos instrumentos legais previstos que podem formalizar a delegação ou a outorga da responsabilidade pela prestação dos serviços de drenagem."
+          "feedback": "Uma lei municipal é um dos instrumentos legais previstos que podem formalizar a delegação ou a outorga da responsabilidade pela prestação dos serviços de drenagem."
         },
         {
           "question": "Um cidadão liga para a central de atendimento da prefeitura para sugerir a implantação de um jardim de chuva em sua rua. Como essa manifestação deve ser classificada?",
@@ -228,7 +228,7 @@ Object.assign(window.modulos_data, {
             "Como 'Reclamação sobre falta de pavimentação'."
           ],
           "answer": "Como 'Implantação de soluções baseadas na natureza'.",
-          "feedback": "Isso mesmo. A sugestão de um jardim de chuva se enquadra perfeitamente na categoria de solicitação para implantação de Soluções Baseadas na Natureza (SBN)."
+          "feedback": "A sugestão de um jardim de chuva se enquadra perfeitamente na categoria de solicitação para implantação de Soluções Baseadas na Natureza (SBN)."
         },
         {
           "question": "A prefeitura de uma cidade contratou uma empresa especializada apenas para realizar o 'Monitoramento pluviométrico e fluviométrico' e a 'Atualização do mapeamento de áreas de risco'. Como essa situação é tratada no Bloco SRT?",
@@ -239,7 +239,7 @@ Object.assign(window.modulos_data, {
             "Considera-se terceirização total, e o questionário deve ser encerrado após o registro."
           ],
           "answer": "A prefeitura deve marcar 'Sim' para a contratação de terceiros e selecionar apenas os dois serviços específicos que foram delegados.",
-          "feedback": "Correto. O Bloco SRT permite a seleção múltipla, e o informante deve assinalar exatamente quais serviços, dentre os listados, são executados por empresas terceirizadas."
+          "feedback": "O Bloco SRT permite a seleção múltipla, e o informante deve assinalar exatamente quais serviços, dentre os listados, são executados por empresas terceirizadas."
         },
         {
           "question": "A ouvidoria de um prestador de serviço atua principalmente para:",
@@ -250,18 +250,18 @@ Object.assign(window.modulos_data, {
             "Emitir as faturas e realizar a cobrança das tarifas de drenagem e manejo de águas pluviais."
           ],
           "answer": "Funcionar como um canal para o cidadão apresentar reclamações, sugestões e solucionar conflitos, defendendo os direitos dos usuários.",
-          "feedback": "Exato. A ouvidoria é um canal de mediação e defesa dos direitos do cidadão, essencial para a qualidade e transparência do serviço prestado."
+          "feedback": "A ouvidoria é um canal de segunda instância que visa a mediação de conflitos e a defesa dos direitos dos usuários, garantindo que suas vozes sejam ouvidas e seus problemas, resolvidos."
         },
         {
-          "question": "Qual das seguintes opções NÃO é considerada um instrumento formal de delegação ou outorga de serviço, conforme o Bloco LEG?",
+          "question": "Se um contrato de concessão não define um período de vigência, qual opção deve ser marcada no quesito correspondente?",
           "options": [
-            "Um decreto municipal.",
-            "Um Contrato de Concessão Comum.",
-            "Uma Lei aprovada pela câmara de vereadores.",
-            "Um acordo verbal entre o prefeito e o diretor da empresa prestadora de serviço."
+            "Deve-se deixar em branco para preenchimento posterior.",
+            "Deve-se marcar 'Sim' e inserir uma data simbólica, como 01/01/2024.",
+            "Deve-se marcar a opção 'Não sabe' ou 'Não', dependendo se a informação é desconhecida ou confirmadamente inexistente.",
+            "Deve-se marcar 'Inexistente' e pular para o próximo quesito."
           ],
-          "answer": "Um acordo verbal entre o prefeito e o diretor da empresa prestadora de serviço.",
-          "feedback": "Correto. A delegação de um serviço público exige formalidade. Um acordo verbal não tem validade jurídica como instrumento de delegação ou outorga, sendo necessário um documento como contrato, lei, ou ato administrativo formal."
+          "answer": "Deve-se marcar a opção 'Não sabe' ou 'Não', dependendo se a informação é desconhecida ou confirmadamente inexistente.",
+          "feedback": "O questionário oferece as opções 'Não' e 'Não sabe' para registrar com precisão a situação da vigência do contrato, evitando ambiguidades."
         }
       ]
     }

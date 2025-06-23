@@ -98,7 +98,7 @@ Object.assign(window.modulos_data, {
             "Esgotamento sanitário"
           ],
           "answer": "Energia elétrica",
-          "feedback": "Correto! Segundo a Lei 11.445/2007, o saneamento básico é definido como o conjunto de serviços, infraestruturas e instalações operacionais relacionados ao: 1) Abastecimento de água, 2) Esgotamento sanitário, 3) Limpeza urbana e manejo de resíduos sólidos, e 4) Drenagem e manejo de águas pluviais. A energia elétrica não faz parte do saneamento básico, sendo um serviço de infraestrutura urbana separado."
+          "feedback": "Segundo a Lei 11.445/2007, o saneamento básico é definido como o conjunto de serviços, infraestruturas e instalações operacionais relacionados ao: 1) Abastecimento de água, 2) Esgotamento sanitário, 3) Limpeza urbana e manejo de resíduos sólidos, e 4) Drenagem e manejo de águas pluviais. A energia elétrica não faz parte do saneamento básico, sendo um serviço de infraestrutura urbana separado."
         },
         {
           "question": "O que caracteriza a microdrenagem?",
@@ -109,7 +109,7 @@ Object.assign(window.modulos_data, {
             "Dispositivos locais como sarjetas, bocas de lobo e pavimentos"
           ],
           "answer": "Dispositivos locais como sarjetas, bocas de lobo e pavimentos",
-          "feedback": "Correto! A microdrenagem é caracterizada por dispositivos locais responsáveis pelo disciplinamento das águas pluviais em escala local. Estes incluem pavimentos das ruas, guias e sarjetas, bocas de lobo, que são elementos fundamentais para a redução de riscos de alagamentos e enxurradas, proteção de taludes/encostas e redução da poluição hídrica."
+          "feedback": "A microdrenagem é caracterizada por dispositivos locais responsáveis pelo disciplinamento das águas pluviais em escala local. Estes incluem pavimentos das ruas, guias e sarjetas, bocas de lobo, que são elementos fundamentais para a redução de riscos de alagamentos e enxurradas, proteção de taludes/encostas e redução da poluição hídrica."
         },
         {
           "question": "Qual é a principal função da macrodrenagem?",
@@ -120,7 +120,7 @@ Object.assign(window.modulos_data, {
             "Filtrar resíduos sólidos"
           ],
           "answer": "Escoamento final das águas pluviais por meio de grandes dispositivos",
-          "feedback": "Correto! A macrodrenagem tem como principal função o escoamento final das águas pluviais por meio de grandes dispositivos. Estes incluem canais naturais (igarapés, córregos, rios), canais artificiais (rios canalizados ou tamponados), galerias pluviais de grandes dimensões e estruturas de amortecimento de águas da chuva."
+          "feedback": "A macrodrenagem tem como principal função o escoamento final das águas pluviais por meio de grandes dispositivos. Estes incluem canais naturais (igarapés, córregos, rios), canais artificiais (rios canalizados ou tamponados), galerias pluviais de grandes dimensões e estruturas de amortecimento de águas da chuva."
         },
         {
           "question": "O que são infraestruturas verdes no contexto do MAP?",
@@ -131,7 +131,7 @@ Object.assign(window.modulos_data, {
             "Apenas galerias de concreto"
           ],
           "answer": "Soluções baseadas na natureza, como jardins de chuva e telhados verdes",
-          "feedback": "Correto! As infraestruturas verdes são Soluções Baseadas na Natureza (SBN) ou Drenagem Sustentável. Elas incluem jardins de chuva, telhados verdes, parques urbanos e alagados construídos. Estas soluções são fundamentais para promover a infiltração natural da água, reduzir o escoamento superficial e contribuir para a sustentabilidade urbana."
+          "feedback": "As infraestruturas verdes são Soluções Baseadas na Natureza (SBN) ou Drenagem Sustentável. Elas incluem jardins de chuva, telhados verdes, parques urbanos e alagados construídos. Estas soluções são fundamentais para promover a infiltração natural da água, reduzir o escoamento superficial e contribuir para a sustentabilidade urbana."
         },
         {
           "question": "Qual é o objetivo geral do serviço de Drenagem e Manejo de Águas Pluviais (MAP)?",
@@ -142,7 +142,7 @@ Object.assign(window.modulos_data, {
             "Aumentar a velocidade da água em áreas rurais"
           ],
           "answer": "Reduzir impactos causados por alagamentos, inundações, enxurradas e erosões",
-          "feedback": "Correto! O objetivo geral do serviço de MAP é reduzir os danos à sociedade e ao ambiente por chuvas e cheias, especificamente: prevenir alagamentos, inundações e enxurradas; prevenir deslizamentos, corridas de massa e erosões; e controlar os impactos a jusante na bacia hidrográfica."
+          "feedback": "O objetivo geral do serviço de MAP é reduzir os danos à sociedade e ao ambiente por chuvas e cheias, especificamente: prevenir alagamentos, inundações e enxurradas; prevenir deslizamentos, corridas de massa e erosões; e controlar os impactos a jusante na bacia hidrográfica."
         },
         {
           "question": "O que significa o termo \"jusante\"?",
@@ -153,7 +153,7 @@ Object.assign(window.modulos_data, {
             "Área de infiltração do solo"
           ],
           "answer": "Rio abaixo, montanha abaixo, encosta abaixo",
-          "feedback": "Correto! O termo \"jusante\" significa rio abaixo, montanha abaixo, encosta abaixo. É uma terminologia fundamental em hidrologia e drenagem, indicando a direção do fluxo da água. Em contrapartida, \"montante\" significa rio acima, montanha acima, encosta acima. Esta distinção é crucial para o planejamento de sistemas de drenagem."
+          "feedback": "O termo \"jusante\" significa rio abaixo, montanha abaixo, encosta abaixo. É uma terminologia fundamental em hidrologia e drenagem, indicando a direção do fluxo da água. Em contrapartida, \"montante\" significa rio acima, montanha acima, encosta acima. Esta distinção é crucial para o planejamento de sistemas de drenagem."
         },
         {
           "question": "Qual das opções é um objetivo do serviço de MAP?",
@@ -164,7 +164,7 @@ Object.assign(window.modulos_data, {
             "Redução da vegetação urbana"
           ],
           "answer": "Prevenção de alagamentos e inundações",
-          "feedback": "Correto! A prevenção de alagamentos e inundações é um dos objetivos principais do serviço de MAP. O sistema visa reduzir os impactos causados por chuvas e cheias, incluindo a prevenção de alagamentos, inundações, enxurradas, deslizamentos, corridas de massa e erosões, contribuindo para a proteção da sociedade e do ambiente."
+          "feedback": "A prevenção de alagamentos e inundações é um dos objetivos principais do serviço de MAP. O sistema visa reduzir os impactos causados por chuvas e cheias, incluindo a prevenção de alagamentos, inundações, enxurradas, deslizamentos, corridas de massa e erosões, contribuindo para a proteção da sociedade e do ambiente."
         },
         {
           "question": "A coleta de dados da PNSB é realizada principalmente por:",
@@ -175,7 +175,7 @@ Object.assign(window.modulos_data, {
             "Cartas enviadas pelo correio"
           ],
           "answer": "Preenchimento de questionário online",
-          "feedback": "Correto! A coleta das informações da PNSB é realizada através do preenchimento de questionários em um sistema online desenvolvido pelo IBGE. Uma alternativa de questionário em PDF editável também é disponibilizada. É indispensável que uma cópia do manual seja distribuída à área e à pessoa envolvida com o fornecimento dos dados para o correto preenchimento dos blocos."
+          "feedback": "A coleta das informações da PNSB é realizada através do preenchimento de questionários em um sistema online desenvolvido pelo IBGE. Uma alternativa de questionário em PDF editável também é disponibilizada. É indispensável que uma cópia do manual seja distribuída à área e à pessoa envolvida com o fornecimento dos dados para o correto preenchimento dos blocos."
         },
         {
           "question": "O que deve ser feito se houver terceirização dos serviços de drenagem?",
@@ -186,7 +186,7 @@ Object.assign(window.modulos_data, {
             "Preencher apenas dados do município"
           ],
           "answer": "Cadastrar a empresa terceirizada no bloco SRT",
-          "feedback": "Correto! Quando há terceirização dos serviços de drenagem, é necessário cadastrar a empresa terceirizada no bloco SRT (Serviços Realizados por Terceiros). Este bloco é específico para registrar informações sobre empresas que prestam serviços em nome do município ou entidade responsável, garantindo que todos os prestadores sejam adequadamente mapeados pela pesquisa."
+          "feedback": "Quando há terceirização dos serviços de drenagem, é necessário cadastrar a empresa terceirizada no bloco SRT (Serviços Realizados por Terceiros). Este bloco é específico para registrar informações sobre empresas que prestam serviços em nome do município ou entidade responsável, garantindo que todos os prestadores sejam adequadamente mapeados pela pesquisa."
         },
         {
           "question": "Qual é a principal diferença entre drenagem urbana e rural?",
@@ -197,7 +197,7 @@ Object.assign(window.modulos_data, {
             "Urbana visa aumentar a velocidade do escoamento; rural, aumentar a infiltração"
           ],
           "answer": "Urbana visa aumentar a velocidade do escoamento; rural, aumentar a infiltração",
-          "feedback": "Correto! A principal diferença está nos objetivos: a drenagem urbana visa aumentar a velocidade de escoamento da água da chuva para reduzir inundações e alagamentos em áreas edificadas. Já a drenagem rural visa diminuir a velocidade da água, aumentar a infiltração no solo e, consequentemente, reduzir a erosão do terreno. Esta distinção é fundamental para o planejamento adequado dos sistemas."
+          "feedback": "A principal diferença está nos objetivos: a drenagem urbana visa aumentar a velocidade de escoamento da água da chuva para reduzir inundações e alagamentos em áreas edificadas. Já a drenagem rural visa diminuir a velocidade da água, aumentar a infiltração no solo e, consequentemente, reduzir a erosão do terreno. Esta distinção é fundamental para o planejamento adequado dos sistemas."
         },
         {
           "question": "O que pode ocorrer em áreas de expansão urbana sem drenagem adequada?",
@@ -208,7 +208,7 @@ Object.assign(window.modulos_data, {
             "Redução de enchentes"
           ],
           "answer": "Erosão, perda de solo e assoreamento",
-          "feedback": "Correto! Áreas de expansão urbana e novos loteamentos são grandes indutores de problemas como erosão, perda de solo e assoreamento quando não contam com um sistema de drenagem adequado desde o planejamento e execução. A remoção da vegetação natural e a impermeabilização do solo sem compensação adequada podem causar sérios impactos ambientais."
+          "feedback": "Áreas de expansão urbana e novos loteamentos são grandes indutores de problemas como erosão, perda de solo e assoreamento quando não contam com um sistema de drenagem adequado desde o planejamento e execução. A remoção da vegetação natural e a impermeabilização do solo sem compensação adequada podem causar sérios impactos ambientais."
         },
         {
           "question": "Qual é a importância da conservação do solo no contexto do MAP?",
@@ -219,7 +219,7 @@ Object.assign(window.modulos_data, {
             "Promover a poluição hídrica"
           ],
           "answer": "Minimizar a erosão e proteger encostas",
-          "feedback": "Correto! A conservação do solo é uma das principais responsabilidades do serviço de MAP. O sistema visa minimizar a erosão e proteger encostas, ajudando a controlar a velocidade da água, a infiltração e a erosão do terreno. Isso contribui para a proteção do ambiente e para a sustentabilidade urbana."
+          "feedback": "A conservação do solo é uma das principais responsabilidades do serviço de MAP. O sistema visa minimizar a erosão e proteger encostas, ajudando a controlar a velocidade da água, a infiltração e a erosão do terreno. Isso contribui para a proteção do ambiente e para a sustentabilidade urbana."
         },
         {
           "question": "O que caracteriza um canal artificial no contexto da drenagem?",
@@ -230,7 +230,7 @@ Object.assign(window.modulos_data, {
             "Rios canalizados ou tamponados"
           ],
           "answer": "Rios canalizados ou tamponados",
-          "feedback": "Correto! Um canal artificial é caracterizado por ser um rio canalizado ou tamponado. Este tipo de canal é construído artificialmente para transportar água, geralmente para controle de inundações, escoamento de águas pluviais ou para outros propósitos hidráulicos."
+          "feedback": "Um canal artificial é caracterizado por ser um rio canalizado ou tamponado. Este tipo de canal é construído artificialmente para transportar água, geralmente para controle de inundações, escoamento de águas pluviais ou para outros propósitos hidráulicos."
         },
         {
           "question": "Por que é importante não deixar quesitos em branco no questionário da PNSB?",
@@ -241,7 +241,7 @@ Object.assign(window.modulos_data, {
             "Para garantir a completude e a qualidade das informações coletadas"
           ],
           "answer": "Para garantir a completude e a qualidade das informações coletadas",
-          "feedback": "Correto! É importante não deixar quesitos em branco no questionário da PNSB para garantir a completude e a qualidade das informações coletadas. Isso ajuda o IBGE a produzir um levantamento preciso e confiável sobre o saneamento básico no Brasil."
+          "feedback": "É importante não deixar quesitos em branco no questionário da PNSB para garantir a completude e a qualidade das informações coletadas. Isso ajuda o IBGE a produzir um levantamento preciso e confiável sobre o saneamento básico no Brasil."
         }
       ]
     }

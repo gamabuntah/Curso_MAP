@@ -60,6 +60,21 @@ Object.assign(window.modulos_data, {
         "content": "Este quesito investiga se, em 2024, o prestador de serviço desenvolveu ou participou de alguma ação de educação ambiental voltada ao manejo de águas pluviais."
       },
       {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 1 - Prefeitura com Plano Diretor",
+        "content": "<b>Situação Real:</b> Prefeitura que tem Plano Diretor de Drenagem e cobra taxa no IPTU.<br><br><b>Pergunta do informante:</b> \"Temos um Plano Diretor de Drenagem para toda cidade. A taxa vem no IPTU.\"<br><br><b>Como orientar:</b><br>1. Plano Diretor: SIM (quesito 1)<br>2. Abrangência: \"Total\" (quesito 2)<br>3. Cobrança: SIM (quesito 4)<br>4. Forma: \"Inclusa no carnê do IPTU\" (quesito 5)<br><br><b>Conceito-chave aplicado:</b> Planejamento formal = documento técnico oficial<br><br><b>Erro comum:</b> Não reconhecer cobrança embutida no IPTU"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Município sem Plano mas com Código de Obras",
+        "content": "<b>Situação Real:</b> Secretaria de Obras que não tem plano específico mas tem código que exige drenagem em loteamentos.<br><br><b>Pergunta do informante:</b> \"Não temos plano específico, mas nosso código de obras obriga loteamentos a fazer drenagem.\"<br><br><b>Como orientar:</b><br>1. Plano Diretor: NÃO (quesito 1)<br>2. Outros instrumentos (quesito 3): marque<br>   - \"Código de obras\"<br>   - \"Lei de uso e ocupação do solo\"<br>3. Instrumentos de planejamento SÃO válidos<br><br><b>Conceito-chave aplicado:</b> Planejamento pode ser indireto via códigos<br><br><b>Erro comum:</b> Achar que só plano específico conta"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Educação Ambiental nas Escolas",
+        "content": "<b>Situação Real:</b> Secretaria de Meio Ambiente que faz palestras sobre não jogar lixo nas ruas.<br><br><b>Pergunta do informante:</b> \"Fazemos palestras nas escolas sobre não jogar lixo na rua para não entupir bueiros.\"<br><br><b>Como orientar:</b><br>1. Educação ambiental: SIM (quesito 6)<br>2. Palestras sobre drenagem CONTAM<br>3. \"Não jogar lixo\" = educação para manejo de águas pluviais<br>4. Qualquer ação educativa sobre o tema vale<br><br><b>Conceito-chave aplicado:</b> Educação ambiental = conscientizar sobre drenagem<br><br><b>Erro comum:</b> Não reconhecer educação indireta (lixo x drenagem)"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"O que é zoneamento de áreas inundáveis?\"<br><b>Como Ajudar:</b> É um mapa que define onde as inundações são prováveis, restringindo construções nessas áreas.<br><br><b>Dúvida Comum:</b> \"Se a cobrança está no IPTU, como marco?\"<br><b>Como Ajudar:</b> Selecione a opção \"Inclusa no carnê do IPTU\".<br><br><b>Dúvida Comum:</b> \"Uma palestra em uma escola conta como educação ambiental?\"<br><b>Como Ajudar:</b> Sim, qualquer ação formal de conscientização (palestras, folhetos, campanhas) conta."

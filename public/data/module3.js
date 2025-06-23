@@ -70,6 +70,21 @@ Object.assign(window.modulos_data, {
         "content": "Caso os serviços sejam TOTALMENTE terceirizados, após responder a este quesito, o questionário deve ser encerrado."
       },
       {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 1 - Concessão vs PPP",
+        "content": "<b>Situação Real:</b> Empresa privada que assumiu os serviços de drenagem de um município por 25 anos.<br><br><b>Pergunta do informante:</b> <i>\"Como saber se é concessão comum ou PPP? Ambas são contratos com empresas privadas...\"</i><br><br><b>Como orientar:</b><br>✅ <b>Concessão comum:</b> Empresa assume por conta e risco, é remunerada pelos USUÁRIOS (tarifas)<br>✅ <b>PPP:</b> Empresa é remunerada pelo ESTADO de forma periódica, vinculada ao desempenho<br>✅ <b>Dica prática:</b> Quem paga a empresa? Usuários = concessão; Estado = PPP<br><br><b>💡 Conceito-chave:</b> A diferença está na FORMA DE REMUNERAÇÃO, não no tipo de empresa<br><br><b>❌ Erro comum:</b> Confundir pelo tempo de contrato - ambas podem ter prazos longos!"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 2 - Ouvidoria vs Central de Atendimento",
+        "content": "<b>Situação Real:</b> Prefeitura tem um telefone \"156\" para reclamações gerais, incluindo problemas de drenagem.<br><br><b>Pergunta do informante:</b> <i>\"O 156 conta como ouvidoria? Não é específico para drenagem...\"</i><br><br><b>Como orientar:</b><br>✅ <b>SIM, conta!</b> Não precisa ser exclusivo para drenagem<br>✅ <b>Central de atendimento:</b> Contato direto empresa-cliente (como o 156)<br>✅ <b>Ouvidoria:</b> Canal para defesa de direitos e solução de conflitos<br>✅ <b>No questionário:</b> Marcar \"SIM\" no quesito 3<br><br><b>💡 Conceito-chave:</b> Qualquer canal que receba reclamações sobre drenagem vale, mesmo que não seja exclusivo<br><br><b>❌ Erro comum:</b> Achar que precisa ser canal específico para drenagem - canais gerais também contam!"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 3 - Terceirização Total",
+        "content": "<b>Situação Real:</b> Prefeitura que terceiriza TODOS os serviços de drenagem para uma única empresa.<br><br><b>Pergunta do informante:</b> <i>\"Terceirizamos tudo. Como preencher? Ainda preciso responder todo o questionário?\"</i><br><br><b>Como orientar:</b><br>✅ <b>Bloco CZP - Quesito 1:</b> SIM (executa indiretamente via terceiros)<br>✅ <b>Bloco CZP - Quesito 2:</b> \"Não executou nenhum serviço diretamente\"<br>✅ <b>Bloco SRT:</b> Marcar TODOS os serviços terceirizados<br>✅ <b>IMPORTANTE:</b> Encerrar questionário após o Bloco SRT<br>✅ <b>CRUCIAL:</b> Verificar se a empresa terceirizada foi cadastrada<br><br><b>💡 Conceito-chave:</b> Terceirização total = fluxo especial mais curto no questionário<br><br><b>❌ Erro comum:</b> Continuar preenchendo após SRT quando é terceirização total!"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"Como saber qual instrumento legal utilizar?\"<br><b>Como Ajudar:</b> Verifique se há contrato, lei ou outro documento formalizando a delegação.<br><br><b>Dúvida Comum:</b> \"O que fazer se não houver reclamações registradas?\"<br><b>Como Ajudar:</b> Marque a opção \"Não houve reclamação ou manifestação em 2024\".<br><br><b>Dúvida Comum:</b> \"Como registrar serviços totalmente terceirizados?\"<br><b>Como Ajudar:</b> Marque todos os serviços terceirizados no bloco SRT e encerre o questionário após esse bloco."

@@ -51,8 +51,18 @@ Object.assign(window.modulos_data, {
       },
       {
         "type": "exemplo",
-        "title": "📝 Exemplo",
-        "content": "Se uma prefeitura executa diretamente a limpeza de sarjetas, mas terceiriza a manutenção de galerias, ela deve marcar apenas a limpeza de sarjetas no quesito 2 (serviços diretos) e cadastrar a empresa terceirizada no bloco SRT para a manutenção de galerias."
+        "title": "📝 Exemplo Prático 1 - Prefeitura com Terceirização",
+        "content": "<b>Situação Real:</b> Prefeitura que executa diretamente limpeza de sarjetas, mas terceiriza manutenção de galerias.<br><br><b>Pergunta do informante:</b> <i>\"Como preencher se fazemos algumas coisas e terceirizamos outras?\"</i><br><br><b>Como orientar:</b><br>✅ <b>Quesito 1:</b> SIM - executa serviços (diretos E indiretos)<br>✅ <b>Quesito 2 (serviços diretos):</b> Marcar apenas \"Manutenção\" (limpeza de sarjetas)<br>✅ <b>Bloco SRT:</b> Cadastrar a empresa terceirizada para manutenção de galerias<br><br><b>💡 Conceito-chave:</b> Separar claramente serviços DIRETOS (que a prefeitura faz) dos TERCEIRIZADOS (que outras empresas fazem)<br><br><b>❌ Erro comum:</b> Marcar tudo no quesito 2 - só marque o que VOCÊS fazem diretamente!"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 2 - Autarquia vs Empresa Pública",
+        "content": "<b>Situação Real:</b> Informante de uma entidade municipal responsável por drenagem, mas não sabe se é autarquia ou empresa pública.<br><br><b>Pergunta do informante:</b> <i>\"Como saber se somos autarquia ou empresa pública? Ambas são públicas...\"</i><br><br><b>Como orientar:</b><br>✅ <b>Autarquia:</b> Personalidade jurídica de DIREITO PÚBLICO (ex: SAAE, DMAE)<br>✅ <b>Empresa Pública:</b> Personalidade jurídica de DIREITO PRIVADO, mas capital 100% público<br>✅ <b>Dica prática:</b> Verifique o estatuto/lei de criação - menciona \"direito público\" ou \"direito privado\"?<br><br><b>💡 Conceito-chave:</b> A diferença está no REGIME JURÍDICO, não na origem dos recursos<br><br><b>❌ Erro comum:</b> Confundir origem do capital com regime jurídico - ambas são públicas, mas têm regimes diferentes!"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 3 - Consórcio Intermunicipal",
+        "content": "<b>Situação Real:</b> Consórcio de 5 municípios que faz monitoramento pluviométrico conjunto.<br><br><b>Pergunta do informante:</b> <i>\"Atendemos vários municípios pelo consórcio. Como classificar a abrangência e esfera administrativa?\"</i><br><br><b>Como orientar:</b><br>✅ <b>Abrangência territorial:</b> \"No município pesquisado E em outros municípios\"<br>✅ <b>Natureza jurídica:</b> \"Consórcio público\" (acordo formal entre municípios)<br>✅ <b>Esfera administrativa:</b> \"Intermunicipal\" (reúne municípios)<br>✅ <b>Serviço executado:</b> \"Monitoramento pluviométrico e fluviométrico\"<br><br><b>💡 Conceito-chave:</b> Consórcios permitem cooperação entre entes federativos para serviços mais eficientes<br><br><b>❌ Erro comum:</b> Marcar \"municipal\" na esfera - consórcio é INTERmunicipal!"
       },
       {
         "type": "duvidas",

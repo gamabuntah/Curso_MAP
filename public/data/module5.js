@@ -55,6 +55,21 @@ Object.assign(window.modulos_data, {
         "content": "Este quesito pergunta a quantidade de estruturas que receberam limpeza ou manutenção em 2024. Se a informação não estiver disponível, o informante deve marcar a opção \"Não possui a informação\"."
       },
       {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 1 - Piscinão da Prefeitura",
+        "content": "<b>Situação Real:</b> Prefeitura que construiu um piscinão que também é usado como campo de futebol.<br><br><b>Pergunta do informante:</b> \"Temos um piscinão que na seca vira campo de futebol. Como classificar?\"<br><br><b>Como orientar:</b><br>1. É estrutura de DETENÇÃO (armazena temporariamente)<br>2. Finalidade: marque DUAS opções<br>   - \"Controle de cheias\" (função principal)<br>   - \"Lazer\" (campo de futebol)<br>3. Conte como 1 estrutura no quesito 2<br><br><b>Conceito-chave aplicado:</b> Detenção = temporário, múltiplas finalidades<br><br><b>Erro comum:</b> Marcar só uma finalidade quando há uso múltiplo"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Lago Permanente no Parque",
+        "content": "<b>Situação Real:</b> Secretaria de Meio Ambiente com lago permanente no parque municipal.<br><br><b>Pergunta do informante:</b> \"Nosso parque tem um lago que nunca seca, com peixes. Isso é drenagem?\"<br><br><b>Como orientar:</b><br>1. SIM! É estrutura de RETENÇÃO (água permanente)<br>2. Finalidade: marque TRÊS opções<br>   - \"Lazer\" (parque)<br>   - \"Produção de pescado\" (peixes)<br>   - \"Preservação de ecossistema aquático\"<br>3. Se recebe água da chuva, conta na pesquisa<br><br><b>Conceito-chave aplicado:</b> Retenção = permanente, múltiplas funções ambientais<br><br><b>Erro comum:</b> Não reconhecer lagos de parque como estrutura de drenagem"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Barragem Municipal",
+        "content": "<b>Situação Real:</b> Autarquia municipal que mantém barragem para controle de enchentes.<br><br><b>Pergunta do informante:</b> \"Nossa barragem controla enchente e regulariza a vazão do rio. Fez manutenção ano passado.\"<br><br><b>Como orientar:</b><br>1. É estrutura de RETENÇÃO/DETENÇÃO<br>2. Finalidade: marque DUAS opções<br>   - \"Controle de cheias\"<br>   - \"Regularização de vazão\"<br>3. Manutenção: SIM (quesito 4)<br>4. Quantidade com manutenção: 1 (quesito 5)<br><br><b>Conceito-chave aplicado:</b> Grandes estruturas têm múltiplas funções<br><br><b>Erro comum:</b> Não registrar manutenção realizada em anos anteriores"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"Qual a diferença entre retenção e detenção?\"<br><b>Como Ajudar:</b> Detenção é temporária (piscinão que esvazia). Retenção é permanente (lago).<br><br><b>Dúvida Comum:</b> \"Um açude particular entra na contagem?\"<br><b>Como Ajudar:</b> Não, a pesquisa foca em estruturas públicas ou que servem ao sistema público de drenagem.<br><br><b>Dúvida Comum:</b> \"O que fazer se a finalidade for múltipla?\"<br><b>Como Ajudar:</b> Marque todas as finalidades aplicáveis."

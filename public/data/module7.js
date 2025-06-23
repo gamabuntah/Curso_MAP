@@ -65,6 +65,21 @@ Object.assign(window.modulos_data, {
         "content": "O sistema de alerta é crucial para a Defesa Civil e pode salvar vidas. Verifique se o município possui algum método, por mais simples que seja, para avisar a população sobre riscos iminentes."
       },
       {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 1 - Defesa Civil com Pluviômetro",
+        "content": "<b>Situação Real:</b> Defesa Civil municipal que tem um pluviômetro e mede chuva todo dia.<br><br><b>Pergunta do informante:</b> \"A Defesa Civil mede chuva todo dia com um pluviômetro. Isso conta como monitoramento?\"<br><br><b>Como orientar:</b><br>1. Monitoramento: SIM (quesito 1)<br>2. Tipo: \"pluviométrico\" (mede chuva)<br>3. Frequência: \"Diária\" (quesito 2)<br>4. Estações: \"Estações próprias\" (quesito 3)<br><br><b>Conceito-chave aplicado:</b> Monitoramento = acompanhar sistematicamente<br><br><b>Erro comum:</b> Achar que só equipamento sofisticado conta"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Sistema de Alerta por SMS",
+        "content": "<b>Situação Real:</b> Prefeitura que monitora áreas de risco e envia SMS de alerta para população.<br><br><b>Pergunta do informante:</b> \"Monitoramos 3 áreas de risco e mandamos SMS quando vai chover forte. Temos sirene também.\"<br><br><b>Como orientar:</b><br>1. Monitoramento de áreas de risco: SIM (quesito 6)<br>2. Sistema de alerta: SIM (quesito 7)<br>3. Tipos de alerta:<br>   - \"Mensagens de texto (SMS)\"<br>   - \"Sirenes em áreas de risco\"<br><br><b>Conceito-chave aplicado:</b> Sistema de alerta salva vidas<br><br><b>Erro comum:</b> Não registrar sistemas simples mas eficazes"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Monitoramento de Qualidade da Água",
+        "content": "<b>Situação Real:</b> Empresa de saneamento que analisa qualidade da água de drenagem mensalmente.<br><br><b>Pergunta do informante:</b> \"Todo mês coletamos água da nossa drenagem e analisamos pH, turbidez e coliformes.\"<br><br><b>Como orientar:</b><br>1. Monitoramento de qualidade: SIM (quesito 4)<br>2. Parâmetros analisados (quesito 5):<br>   - \"Parâmetros físico-químicos\" (pH, turbidez)<br>   - \"Parâmetros biológicos\" (coliformes)<br>3. Pode marcar MÚLTIPLOS parâmetros<br><br><b>Conceito-chave aplicado:</b> Qualidade = analisar poluentes na água<br><br><b>Erro comum:</b> Confundir análise de qualidade com tratamento"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"Se a medição de chuva é feita por um voluntário com um pluviômetro caseiro, isso conta?\"<br><b>Como Ajudar:</b> Sim, se essa informação for utilizada oficialmente pelo prestador de serviço, conta como monitoramento.<br><br><b>Dúvida Comum:</b> \"Qual a diferença entre monitoramento de qualidade e tratamento?\"<br><b>Como Ajudar:</b> Monitorar é medir/analisar a água. Tratar é limpá-la.<br><br><b>Dúvida Comum:</b> \"E se o alerta de desastre é só um grupo de WhatsApp?\"<br><b>Como Ajudar:</b> Sim, isso pode ser considerado um sistema de alerta e deve ser registrado, talvez na opção \"Outro\"."

@@ -56,8 +56,18 @@ Object.assign(window.modulos_data, {
       },
       {
         "type": "exemplo",
-        "title": "📝 Exemplo Prático para Técnicos do IBGE",
-        "content": "<b>Situação:</b> Você está auxiliando o responsável de uma Prefeitura Municipal que terceiriza a limpeza de sarjetas para uma empresa privada, mas opera diretamente uma estação de bombeamento de águas pluviais.<br><br><b>Como orientar o preenchimento:</b><br>✅ <b>A Prefeitura presta serviço de MAP?</b> SIM (opera a estação de bombeamento)<br>✅ <b>Que tipo de sistema a Prefeitura opera diretamente?</b> Macrodrenagem (estação de bombeamento = grande dispositivo)<br>✅ <b>E a limpeza de sarjetas?</b> Deve ser registrada no Bloco SRT (terceirização) com a empresa privada cadastrada<br><br><b>❌ Erro comum:</b> Marcar microdrenagem só porque o município tem sarjetas - o que importa é <b>o que o PRESTADOR ESPECÍFICO faz</b>, não o que existe no município."
+        "title": "📝 Exemplo Prático 1 - Empresa de Limpeza",
+        "content": "<b>Situação Real:</b> Você está orientando o responsável de uma empresa privada contratada pela prefeitura que executa apenas a <b>manutenção de bocas de lobo e limpeza de sarjetas</b>.<br><br><b>Pergunta do informante:</b> <i>\"Não sei se nossa empresa presta serviço de drenagem...\"</i><br><br><b>Como orientar:</b><br>✅ <b>SIM, sua empresa presta serviço de MAP!</b> Manutenção de bocas de lobo e limpeza de sarjetas são serviços de drenagem<br>✅ <b>Tipo de sistema:</b> Microdrenagem (bocas de lobo e sarjetas = dispositivos locais)<br>✅ <b>No questionário:</b> Marcar que executa \"Manutenção\" no Bloco CZP<br><br><b>💡 Conceito-chave:</b> Microdrenagem = dispositivos locais (sarjetas, bocas de lobo, pavimentos) vs Macrodrenagem = grandes dispositivos (rios, galerias grandes, estações de bombeamento)<br><br><b>❌ Erro comum:</b> Achar que só grandes obras são \"drenagem\" - na verdade, limpeza de sarjetas É um serviço essencial de MAP!"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 2 - Secretaria Municipal",
+        "content": "<b>Situação Real:</b> Secretaria de Obras que <b>desassoreia córregos e opera jardins de chuva</b> em parques municipais.<br><br><b>Pergunta do informante:</b> <i>\"Jardins de chuva contam como drenagem? E desassoreamento de córrego pequeno é micro ou macrodrenagem?\"</i><br><br><b>Como orientar:</b><br>✅ <b>Jardins de chuva SIM!</b> São infraestruturas verdes (Soluções Baseadas na Natureza)<br>✅ <b>Desassoreamento de córrego:</b> Macrodrenagem (córregos = canais naturais, independente do tamanho)<br>✅ <b>No questionário:</b> Marcar \"Manutenção\" e \"Execução de obras/instalação\" no Bloco CZP<br><br><b>💡 Conceito-chave:</b> Infraestruturas verdes são parte essencial do MAP moderno - não é só concreto!<br><br><b>❌ Erro comum:</b> Confundir tamanho do córrego com classificação - TODOS os córregos são macrodrenagem."
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplo Prático 3 - Consórcio Intermunicipal",
+        "content": "<b>Situação Real:</b> Consórcio que atua em área rural fazendo <b>controle de erosão e bacias de contenção</b> para reduzir velocidade da água.<br><br><b>Pergunta do informante:</b> <i>\"Isso é drenagem mesmo? É área rural, não urbana...\"</i><br><br><b>Como orientar:</b><br>✅ <b>SIM, é MAP!</b> O serviço atua tanto em área urbana quanto rural<br>✅ <b>Objetivo correto:</b> Drenagem rural visa DIMINUIR velocidade da água (vs urbana que aumenta)<br>✅ <b>Tipo de sistema:</b> Macrodrenagem (bacias de contenção = estruturas de amortecimento)<br>✅ <b>No questionário:</b> Marcar \"Execução de obras\" e área de atuação \"rural\"<br><br><b>💡 Conceito-chave:</b> Drenagem rural ≠ drenagem urbana nos objetivos - rural foca em infiltração e controle de erosão<br><br><b>❌ Erro comum:</b> Achar que MAP é só para cidade - rural também precisa de manejo de águas pluviais!"
       },
       {
         "type": "duvidas",

@@ -70,6 +70,21 @@ Object.assign(window.modulos_data, {
         "content": "Este quesito visa identificar o principal corpo hídrico receptor das águas pluviais do município. O corpo hídrico receptor é o local onde a maior parte das águas pluviais é despejada. Pode ser um rio, lago, lagoa, reservatório ou o mar. Se o município não despeja suas águas em um corpo hídrico específico (por exemplo, se a maior parte da água se infiltra no solo), deve-se marcar a opção \"Inexistente\"."
       },
       {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 1 - Empresa de Limpeza de Bueiros",
+        "content": "<b>Situação Real:</b> Empresa terceirizada que faz limpeza de bueiros e bocas de lobo.<br><br><b>Pergunta do informante:</b> \"Fazemos limpeza de bueiros e bocas de lobo. Isso é considerado captação de águas pluviais?\"<br><br><b>Como orientar:</b><br>1. SIM, é captação! Bocas de lobo são dispositivos de captação<br>2. Registre no quesito 1 que possui dispositivos de captação<br>3. A limpeza é manutenção do sistema de captação<br><br><b>Conceito-chave aplicado:</b> Captação = coleta da água da chuva das ruas<br><br><b>Erro comum:</b> Achar que captação é só construir, não incluir manutenção"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Secretaria de Obras com Canais",
+        "content": "<b>Situação Real:</b> Secretaria que mantém córregos e construiu galerias grandes.<br><br><b>Pergunta do informante:</b> \"Temos um córrego que passa pela cidade e construímos umas galerias enormes. Como classificar?\"<br><br><b>Como orientar:</b><br>1. Córrego = canal NATURAL (quesito 3)<br>2. Galerias grandes = canais ARTIFICIAIS (quesito 3)<br>3. Marque AMBOS os tipos de canais<br>4. Some as extensões dos dois tipos (quesito 4)<br><br><b>Conceito-chave aplicado:</b> Condução = transporte da água captada<br><br><b>Erro comum:</b> Confundir galeria pequena (microdrenagem) com galeria grande (canal artificial)"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Parque com Jardim de Chuva",
+        "content": "<b>Situação Real:</b> Prefeitura que construiu parque com jardins de chuva e biovaletas.<br><br><b>Pergunta do informante:</b> \"Nosso parque tem uns canteiros que enchem de água quando chove. Isso conta?\"<br><br><b>Como orientar:</b><br>1. SIM! São jardins de chuva = infraestrutura verde<br>2. Marque SIM no quesito 7 (infraestruturas verdes)<br>3. Se tem canais com plantas, são biovaletas também<br>4. Essas soluções fazem INFILTRAÇÃO da água<br><br><b>Conceito-chave aplicado:</b> Infiltração = água penetra no solo naturalmente<br><br><b>Erro comum:</b> Não reconhecer soluções verdes como parte da drenagem"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"O que são dissipadores de energia?\"<br><b>Como Ajudar:</b> Explique que são estruturas para reduzir a velocidade da água e evitar erosão, como escadas d'água.<br><br><b>Dúvida Comum:</b> \"Como diferenciar canais naturais de artificiais?\"<br><b>Como Ajudar:</b> Canais naturais são rios e córregos. Artificiais são construídos pelo homem.<br><br><b>Dúvida Comum:</b> \"O que fazer se não houver corpo hídrico receptor?\"<br><b>Como Ajudar:</b> Marque \"Inexistente\" e explique no campo de observações."

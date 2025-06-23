@@ -55,6 +55,21 @@ Object.assign(window.modulos_data, {
         "content": "Se a resposta anterior for \"Sim\", este quesito pergunta quais ações foram tomadas em relação a essas ligações clandestinas em 2024. É possível marcar mais de uma opção.<br><ul><li>Notificação ao proprietário do imóvel</li><li>Aplicação de multa</li><li>Comunicação à companhia de esgotamento sanitário</li><li>Comunicação ao órgão ambiental</li><li>Comunicação ao órgão de saúde pública</li><li>Outra(s)</li><li>Nenhuma ação foi tomada</li></ul>"
       },
       {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 1 - Drenagem que Deságua no Rio",
+        "content": "<b>Situação Real:</b> Empresa de drenagem cujo sistema deságua no Rio das Pedras e tem caixas de areia.<br><br><b>Pergunta do informante:</b> \"Nossa drenagem vai toda para o Rio das Pedras. Temos umas caixas que tiram areia. Isso é tratamento?\"<br><br><b>Como orientar:</b><br>1. Corpo receptor: \"Rio ou riacho\" (quesito 1)<br>2. Tratamento: SIM (quesito 2)<br>3. Tipo: \"Desarenador (caixa de areia)\" (quesito 3)<br>4. Caixas de areia SÃO tratamento primário<br><br><b>Conceito-chave aplicado:</b> Destinação = onde a água vai parar<br><br><b>Erro comum:</b> Não reconhecer caixas de areia como tratamento"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Sistema com Ligações Clandestinas",
+        "content": "<b>Situação Real:</b> Prefeitura que descobriu esgoto conectado na rede de drenagem.<br><br><b>Pergunta do informante:</b> \"Descobrimos que tem casas ligando esgoto na nossa rede de chuva. Multamos algumas.\"<br><br><b>Como orientar:</b><br>1. Ligações clandestinas: SIM (quesito 4)<br>2. Ações tomadas (quesito 5): marque<br>   - \"Notificação ao proprietário\"<br>   - \"Aplicação de multa\"<br>   - \"Comunicação à companhia de esgoto\"<br>3. Pode marcar VÁRIAS ações<br><br><b>Conceito-chave aplicado:</b> Ligação clandestina = esgoto na rede de chuva<br><br><b>Erro comum:</b> Não registrar todas as ações tomadas"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Wetland Construído",
+        "content": "<b>Situação Real:</b> Autarquia que construiu um alagado construído (wetland) para tratar água de drenagem.<br><br><b>Pergunta do informante:</b> \"Construímos um alagado com plantas para limpar a água da chuva antes de ir pro lago.\"<br><br><b>Como orientar:</b><br>1. Corpo receptor: \"Lago ou lagoa\" (quesito 1)<br>2. Tratamento: SIM (quesito 2)<br>3. Tipo: \"Alagado construído (wetland)\" (quesito 3)<br>4. Wetland é tratamento E infraestrutura verde<br><br><b>Conceito-chave aplicado:</b> Tratamento = limpar a água antes da destinação<br><br><b>Erro comum:</b> Confundir wetland com simples jardim"
+      },
+      {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
         "content": "<b>Dúvida Comum:</b> \"Se a água infiltra no solo, qual corpo receptor marcar?\"<br><b>Como Ajudar:</b> Marque \"Infiltração no solo para recarga de aquífero\".<br><br><b>Dúvida Comum:</b> \"Caixa de areia é tratamento?\"<br><b>Como Ajudar:</b> Sim, é um tipo de tratamento primário chamado desarenador.<br><br><b>Dúvida Comum:</b> \"E se não sabemos se há ligações clandestinas?\"<br><b>Como Ajudar:</b> A pergunta é se o PRESTADOR tem conhecimento. Se o informante, representando o prestador, não sabe, a resposta deve refletir a falta de conhecimento da entidade, que pode ser \"Não\"."

@@ -105,24 +105,42 @@ class CertificateManager {
      * Cria os dados do certificado
      */
     createCertificateData() {
-        const finalEvaluation = this.progressManager.progress.final_evaluation;
-        const completedModules = Object.values(this.progressManager.progress.modules)
-            .filter(module => module.status === 'completed').length;
-        
         const validationCode = this.generateValidationCode();
         const issuedDate = new Date().toISOString();
         
-        return {
-            username: this.username,
-            issuedDate: issuedDate,
-            finalScore: finalEvaluation.score || 100, // Admin pode ter score padrão
-            completedModules: completedModules || 8, // Admin pode ter todos os módulos
-            status: 'issued',
-            validationCode: validationCode,
-            digitalSignature: this.generateDigitalSignature(validationCode, issuedDate),
-            downloadCount: 0,
-            validationCount: 0
-        };
+        if (this.isAdmin) {
+            // Admin: Dados padrão otimizados
+            return {
+                username: this.username,
+                issuedDate: issuedDate,
+                finalScore: 100, // Admin sempre com nota máxima
+                completedModules: 8, // Admin sempre com todos os módulos
+                status: 'issued',
+                validationCode: validationCode,
+                digitalSignature: this.generateDigitalSignature(validationCode, issuedDate),
+                downloadCount: 0,
+                validationCount: 0,
+                isAdmin: true // Flag para identificar certificado de admin
+            };
+        } else {
+            // Usuário comum: Dados baseados no progresso real
+            const finalEvaluation = this.progressManager.progress.final_evaluation;
+            const completedModules = Object.values(this.progressManager.progress.modules || {})
+                .filter(module => module.status === 'completed').length;
+            
+            return {
+                username: this.username,
+                issuedDate: issuedDate,
+                finalScore: finalEvaluation?.score || 0,
+                completedModules: completedModules,
+                status: 'issued',
+                validationCode: validationCode,
+                digitalSignature: this.generateDigitalSignature(validationCode, issuedDate),
+                downloadCount: 0,
+                validationCount: 0,
+                isAdmin: false
+            };
+        }
     }
 
     /**

@@ -322,12 +322,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    console.log(' Rotas disponíveis:');
-    console.log(` - GET /api/progress/:username`);
-    console.log(` - POST /api/progress/:username`);
-    console.log(` - GET /api/certificates/:username`);
-    console.log(` - POST /api/certificates/:username`);
-    console.log(` - GET /api/admin/all-certificates`);
-    console.log(` - GET /api/admin/all-progress`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
 }); 

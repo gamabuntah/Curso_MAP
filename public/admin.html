@@ -5,209 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - PNSB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .admin-header {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .admin-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2980b9;
-        }
-
-        .admin-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
-        }
-
-        .tab-btn {
-            background: #ecf0f1;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #7f8c8d;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active {
-            background: #2980b9;
-            color: white;
-        }
-
-        .tab-btn:hover {
-            background: #3498db;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #2980b9, #3498db);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .data-table th,
-        .data-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid #ecf0f1;
-        }
-
-        .data-table th {
-            background: #2980b9;
-            color: white;
-            font-weight: 600;
-        }
-
-        .data-table tr:hover {
-            background: #f8f9fa;
-        }
-
-        .status-badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .status-completed {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status-available {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-
-        .status-locked {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .action-btn {
-            background: #2980b9;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin: 2px;
-        }
-
-        .action-btn:hover {
-            background: #3498db;
-        }
-
-        .action-btn.danger {
-            background: #e74c3c;
-        }
-
-        .action-btn.danger:hover {
-            background: #c0392b;
-        }
-
-        .back-btn {
-            background: #95a5a6;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .back-btn:hover {
-            background: #7f8c8d;
-        }
-
-        @media (max-width: 768px) {
-            .admin-container {
-                padding: 20px;
-            }
-
-            .admin-tabs {
-                flex-direction: column;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .data-table {
-                font-size: 0.9em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <div class="admin-container">
@@ -251,51 +49,58 @@
         <!-- Tab: Usuários -->
         <div id="users" class="tab-content">
             <h3>Progresso dos Usuários</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Usuário</th>
-                        <th>Progresso</th>
-                        <th>Módulos Concluídos</th>
-                        <th>Avaliação Final</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="usersTableBody">
-                    <tr>
-                        <td colspan="6" style="text-align: center;">Carregando dados...</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Progresso</th>
+                            <th>Módulos Concluídos</th>
+                            <th>Avaliação Final</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Carregando dados...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Tab: Certificados -->
         <div id="certificates" class="tab-content">
             <h3>Certificados Emitidos</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Usuário</th>
-                        <th>Código</th>
-                        <th>Data de Emissão</th>
-                        <th>Pontuação</th>
-                        <th>Downloads</th>
-                        <th>Validações</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="certificatesTableBody">
-                    <tr>
-                        <td colspan="8" style="text-align: center;">Carregando dados...</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Código</th>
+                            <th>Data de Emissão</th>
+                            <th>Pontuação</th>
+                            <th>Downloads</th>
+                            <th>Validações</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="certificatesTableBody">
+                        <tr>
+                            <td colspan="8" style="text-align: center;">Carregando dados...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
+        // Detecta automaticamente se está em produção ou desenvolvimento
+        const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+        
         // Verificação de admin
         const currentUser = sessionStorage.getItem('currentUser');
         const userRole = sessionStorage.getItem('userRole');
@@ -323,23 +128,25 @@
                 loadUsersData();
             } else if (tabName === 'certificates') {
                 loadCertificatesData();
+            } else if (tabName === 'overview') {
+                loadOverviewData();
             }
         }
 
         async function loadOverviewData() {
             try {
                 // Carrega dados de usuários
-                const usersResponse = await fetch(`http://localhost:3000/api/admin/all-progress?adminUser=${currentUser}`);
+                const usersResponse = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
                 const usersData = await usersResponse.json();
 
                 // Carrega dados de certificados
-                const certsResponse = await fetch(`http://localhost:3000/api/admin/all-certificates?adminUser=${currentUser}`);
+                const certsResponse = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
                 const certsData = await certsResponse.json();
 
                 // Atualiza estatísticas
-                document.getElementById('totalUsers').textContent = usersData.length;
-                document.getElementById('activeUsers').textContent = usersData.filter(u => u.progressPercent > 0).length;
-                document.getElementById('totalCertificates').textContent = certsData.length;
+                document.getElementById('totalUsers').textContent = usersData.length || 0;
+                document.getElementById('activeUsers').textContent = usersData.filter(u => u.progressPercent > 0).length || 0;
+                document.getElementById('totalCertificates').textContent = certsData.length || 0;
                 
                 const avgProgress = usersData.length > 0 
                     ? Math.round(usersData.reduce((sum, u) => sum + u.progressPercent, 0) / usersData.length)
@@ -348,26 +155,36 @@
 
             } catch (error) {
                 console.error('Erro ao carregar dados gerais:', error);
+                // Valores padrão em caso de erro
+                document.getElementById('totalUsers').textContent = '0';
+                document.getElementById('activeUsers').textContent = '0';
+                document.getElementById('totalCertificates').textContent = '0';
+                document.getElementById('avgProgress').textContent = '0%';
             }
         }
 
         async function loadUsersData() {
             try {
-                const response = await fetch(`http://localhost:3000/api/admin/all-progress?adminUser=${currentUser}`);
+                const response = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
                 const usersData = await response.json();
 
                 const tbody = document.getElementById('usersTableBody');
                 tbody.innerHTML = '';
+
+                if (usersData.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuário encontrado</td></tr>';
+                    return;
+                }
 
                 usersData.forEach(user => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td><strong>${user.username}</strong></td>
                         <td>
-                            <div style="width: 100px; background: #ecf0f1; border-radius: 4px; overflow: hidden;">
-                                <div style="width: ${user.progressPercent}%; height: 20px; background: #2980b9;"></div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: ${user.progressPercent}%;"></div>
+                                <span class="progress-text">${user.progressPercent}%</span>
                             </div>
-                            ${user.progressPercent}%
                         </td>
                         <td>${user.completedModules}/8</td>
                         <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Não realizada'}</td>
@@ -378,7 +195,7 @@
                         </td>
                         <td>
                             <button class="action-btn" onclick="viewUserProgress('${user.username}')">
-                                <i class="fa-solid fa-eye"></i>
+                                <i class="fa-solid fa-eye"></i> Ver
                             </button>
                         </td>
                     `;
@@ -394,11 +211,16 @@
 
         async function loadCertificatesData() {
             try {
-                const response = await fetch(`http://localhost:3000/api/admin/all-certificates?adminUser=${currentUser}`);
+                const response = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
                 const certsData = await response.json();
 
                 const tbody = document.getElementById('certificatesTableBody');
                 tbody.innerHTML = '';
+
+                if (certsData.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center;">Nenhum certificado encontrado</td></tr>';
+                    return;
+                }
 
                 certsData.forEach(cert => {
                     const issuedDate = new Date(cert.issuedDate).toLocaleDateString('pt-BR');
@@ -417,10 +239,10 @@
                         </td>
                         <td>
                             <button class="action-btn" onclick="validateCertificate('${cert.validationCode}')">
-                                <i class="fa-solid fa-search"></i>
+                                <i class="fa-solid fa-search"></i> Validar
                             </button>
                             <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
-                                <i class="fa-solid fa-ban"></i>
+                                <i class="fa-solid fa-ban"></i> Revogar
                             </button>
                         </td>
                     `;
@@ -434,8 +256,142 @@
             }
         }
 
-        function viewUserProgress(username) {
-            alert(`Visualizando progresso de ${username}\n\nFuncionalidade em desenvolvimento.`);
+        async function viewUserProgress(username) {
+            try {
+                const response = await fetch(`${baseURL}/api/progress/${username}`);
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar progresso do usuário');
+                }
+                
+                const progress = await response.json();
+                showUserProgressModal(username, progress);
+            } catch (error) {
+                console.error('Erro ao carregar progresso:', error);
+                alert(`Erro ao carregar progresso de ${username}: ${error.message}`);
+            }
+        }
+
+        function showUserProgressModal(username, progress) {
+            // Remove modal anterior se existir
+            const existingModal = document.getElementById('userProgressModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+
+            // Calcular estatísticas
+            const modules = progress.modules || {};
+            const totalModules = 8;
+            const completedModules = Object.values(modules).filter(m => m.status === 'completed').length;
+            const failedModules = Object.values(modules).filter(m => m.status === 'failed').length;
+            const progressPercent = Math.round((completedModules / totalModules) * 100);
+
+            // Criar modal
+            const modal = document.createElement('div');
+            modal.id = 'userProgressModal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            `;
+
+            // Criar módulos HTML
+            let modulesHTML = '';
+            for (let i = 1; i <= totalModules; i++) {
+                const moduleData = modules[i.toString()] || { status: 'locked', score: null, audioCompleted: false };
+                const statusIcon = {
+                    'completed': '✅',
+                    'failed': '❌',
+                    'available': '📖',
+                    'locked': '🔒'
+                }[moduleData.status] || '🔒';
+                
+                const scoreText = moduleData.score !== null ? `${moduleData.score}%` : 'N/A';
+                const audioStatus = moduleData.audioCompleted ? '🎵' : '🔇';
+                
+                modulesHTML += `
+                    <tr>
+                        <td>Módulo ${i}</td>
+                        <td>${statusIcon} ${moduleData.status}</td>
+                        <td>${scoreText}</td>
+                        <td>${audioStatus}</td>
+                    </tr>
+                `;
+            }
+
+            // Avaliação final
+            const finalEval = progress.final_evaluation || {};
+            const finalStatus = finalEval.status || 'not_attempted';
+            const finalScore = finalEval.score || 'N/A';
+
+            modal.innerHTML = `
+                <div style="background: white; padding: 30px; border-radius: 15px; max-width: 800px; width: 90%; max-height: 90%; overflow-y: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>Progresso de ${username}</h2>
+                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;">×</button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background: #3498db; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h3>${progressPercent}%</h3>
+                            <p>Progresso Geral</p>
+                        </div>
+                        <div style="background: #27ae60; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h3>${completedModules}/${totalModules}</h3>
+                            <p>Módulos Concluídos</p>
+                        </div>
+                        <div style="background: #e74c3c; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h3>${failedModules}</h3>
+                            <p>Módulos Falharam</p>
+                        </div>
+                        <div style="background: #f39c12; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h3>${finalScore}%</h3>
+                            <p>Avaliação Final</p>
+                        </div>
+                    </div>
+
+                    <h3>Detalhes dos Módulos</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background: #f8f9fa;">
+                                <th style="padding: 10px; border: 1px solid #ddd;">Módulo</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">Status</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">Pontuação</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">Áudio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${modulesHTML}
+                        </tbody>
+                    </table>
+
+                    <h3>Avaliação Final</h3>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <p><strong>Status:</strong> ${finalStatus}</p>
+                        <p><strong>Pontuação:</strong> ${finalScore}${typeof finalScore === 'number' ? '%' : ''}</p>
+                        <p><strong>Data:</strong> ${finalEval.date ? new Date(finalEval.date).toLocaleDateString('pt-BR') : 'N/A'}</p>
+                    </div>
+
+                    <div style="text-align: right;">
+                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: #95a5a6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Fechar</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+
+            // Fechar modal ao clicar fora
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
         }
 
         function validateCertificate(validationCode) {
@@ -448,7 +404,7 @@
             }
 
             try {
-                const response = await fetch(`http://localhost:3000/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
+                const response = await fetch(`${baseURL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ reason: 'Revogado pelo administrador' })
@@ -462,11 +418,11 @@
                 }
             } catch (error) {
                 console.error('Erro ao revogar certificado:', error);
-                alert('Erro ao revogar certificado.');
+                alert('Erro ao revogar certificados.');
             }
         }
 
-        // Carrega dados iniciais
+        // Carrega dados iniciais quando a página carrega
         window.addEventListener('load', () => {
             loadOverviewData();
         });

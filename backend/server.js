@@ -148,22 +148,22 @@ const server = http.createServer(async (req, res) => {
         const body = await getRequestBody(req);
         const { username, password } = body;
 
-        if (!username || !password) {
+  if (!username || !password) {
           sendJSON(res, 400, { message: 'Nome de usuário e senha são obrigatórios.' });
           return;
-        }
+  }
 
         const db = await readDB();
-        const userExists = db.users.find(user => user.username === username);
+  const userExists = db.users.find(user => user.username === username);
 
-        if (userExists) {
+  if (userExists) {
           sendJSON(res, 409, { message: 'Este nome de usuário já existe.' });
           return;
-        }
+  }
 
-        const newUser = {
-          username,
-          passwordHash: simpleHash(password),
+  const newUser = {
+    username,
+    passwordHash: simpleHash(password),
           role: username.toLowerCase() === 'admin' ? 'admin' : 'user',
           createdAt: new Date().toISOString()
         };
@@ -178,24 +178,24 @@ const server = http.createServer(async (req, res) => {
         const body = await getRequestBody(req);
         const { username, password } = body;
 
-        if (!username || !password) {
+  if (!username || !password) {
           sendJSON(res, 400, { message: 'Nome de usuário e senha são obrigatórios.' });
           return;
-        }
+  }
 
         const db = await readDB();
-        const user = db.users.find(user => user.username === username);
+  const user = db.users.find(user => user.username === username);
 
-        if (!user || user.passwordHash !== simpleHash(password)) {
+  if (!user || user.passwordHash !== simpleHash(password)) {
           sendJSON(res, 401, { message: 'Nome de usuário ou senha inválidos.' });
           return;
-        }
+  }
 
         sendJSON(res, 200, { 
-          message: 'Login bem-sucedido!', 
-          username: user.username,
-          role: user.role || 'user'
-        });
+    message: 'Login bem-sucedido!', 
+    username: user.username,
+    role: user.role || 'user'
+  });
         return;
       }
 
@@ -204,13 +204,13 @@ const server = http.createServer(async (req, res) => {
         const username = pathname.split('/')[3];
         const db = await readDB();
 
-        const user = db.users.find(u => u.username === username);
-        if (!user) {
+  const user = db.users.find(u => u.username === username);
+  if (!user) {
           sendJSON(res, 404, { message: 'Usuário não encontrado.' });
           return;
-        }
+  }
 
-        const userProgress = db.progress[username] || {};
+  const userProgress = db.progress[username] || {};
         sendJSON(res, 200, userProgress);
         return;
       }
@@ -221,11 +221,11 @@ const server = http.createServer(async (req, res) => {
         const body = await getRequestBody(req);
         const db = await readDB();
 
-        const user = db.users.find(u => u.username === username);
-        if (!user) {
+  const user = db.users.find(u => u.username === username);
+  if (!user) {
           sendJSON(res, 404, { message: 'Usuário não encontrado.' });
           return;
-        }
+  }
 
         await updateProgress(username, body);
         sendJSON(res, 200, { message: 'Progresso salvo com sucesso.' });
@@ -238,21 +238,21 @@ const server = http.createServer(async (req, res) => {
         const body = await getRequestBody(req);
         const db = await readDB();
 
-        const user = db.users.find(u => u.username === username);
-        if (!user) {
+  const user = db.users.find(u => u.username === username);
+  if (!user) {
           sendJSON(res, 404, { message: 'Usuário não encontrado.' });
           return;
-        }
+  }
 
-        const existingCertificate = Object.values(db.certificates || {}).find(
-          cert => cert.username === username
-        );
+  const existingCertificate = Object.values(db.certificates || {}).find(
+    cert => cert.username === username
+  );
 
-        if (existingCertificate) {
+  if (existingCertificate) {
           sendJSON(res, 409, { 
-            message: 'Usuário já possui um certificado.',
-            certificate: existingCertificate
-          });
+      message: 'Usuário já possui um certificado.',
+      certificate: existingCertificate
+    });
           return;
         }
 
@@ -266,17 +266,17 @@ const server = http.createServer(async (req, res) => {
         const username = pathname.split('/')[3];
         const db = await readDB();
 
-        const user = db.users.find(u => u.username === username);
-        if (!user) {
+  const user = db.users.find(u => u.username === username);
+  if (!user) {
           sendJSON(res, 404, { message: 'Usuário não encontrado.' });
           return;
-        }
+  }
 
-        const certificate = Object.values(db.certificates || {}).find(
-          cert => cert.username === username
-        );
+  const certificate = Object.values(db.certificates || {}).find(
+    cert => cert.username === username
+  );
 
-        if (!certificate) {
+  if (!certificate) {
           sendJSON(res, 404, { message: 'Certificado não encontrado.' });
           return;
         }
@@ -290,30 +290,30 @@ const server = http.createServer(async (req, res) => {
         const validationCode = pathname.split('/')[4];
         const db = await readDB();
 
-        const certificate = db.certificates[validationCode];
-        if (!certificate) {
+  const certificate = db.certificates[validationCode];
+  if (!certificate) {
           sendJSON(res, 404, { 
-            valid: false, 
-            error: 'Certificado não encontrado' 
-          });
+      valid: false, 
+      error: 'Certificado não encontrado' 
+    });
           return;
-        }
+  }
 
         // Incrementar contador (usando writeDB para compatibilidade)
-        certificate.validationCount = (certificate.validationCount || 0) + 1;
+  certificate.validationCount = (certificate.validationCount || 0) + 1;
         await writeDB(db);
 
         sendJSON(res, 200, {
-          valid: true,
-          certificate: {
-            username: certificate.username,
-            issuedDate: certificate.issuedDate,
-            finalScore: certificate.finalScore,
-            completedModules: certificate.completedModules,
-            status: certificate.status,
-            validationCount: certificate.validationCount
-          }
-        });
+    valid: true,
+    certificate: {
+      username: certificate.username,
+      issuedDate: certificate.issuedDate,
+      finalScore: certificate.finalScore,
+      completedModules: certificate.completedModules,
+      status: certificate.status,
+      validationCount: certificate.validationCount
+    }
+  });
         return;
       }
 
@@ -328,9 +328,9 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        const certificate = Object.values(db.certificates || {}).find(
-          cert => cert.username === username
-        );
+  const certificate = Object.values(db.certificates || {}).find(
+    cert => cert.username === username
+  );
 
         if (!certificate) {
           sendJSON(res, 404, { message: 'Certificado não encontrado.' });
@@ -357,11 +357,11 @@ const server = http.createServer(async (req, res) => {
         if (!validationCode) {
           sendJSON(res, 400, { message: 'Código de validação é obrigatório.' });
           return;
-        }
+    }
 
         const db = await readDB();
         const certificate = db.certificates[validationCode];
-        
+    
         if (!certificate) {
           sendJSON(res, 404, { message: 'Certificado não encontrado.' });
           return;
@@ -377,20 +377,20 @@ const server = http.createServer(async (req, res) => {
           certificate: certificate
         });
         return;
-      }
+  }
 
       // Admin - todos os certificados
       if (pathname === '/api/admin/all-certificates' && method === 'GET') {
         const adminUser = parsedUrl.query.adminUser;
         const db = await readDB();
-        const requester = db.users.find(u => u.username === adminUser);
+    const requester = db.users.find(u => u.username === adminUser);
 
-        if (!requester || requester.role !== 'admin') {
+    if (!requester || requester.role !== 'admin') {
           sendJSON(res, 403, { message: 'Acesso negado.' });
           return;
-        }
+    }
 
-        const allCertificates = Object.values(db.certificates || {});
+    const allCertificates = Object.values(db.certificates || {});
         sendJSON(res, 200, allCertificates);
         return;
       }
@@ -399,29 +399,71 @@ const server = http.createServer(async (req, res) => {
       if (pathname === '/api/admin/all-progress' && method === 'GET') {
         const adminUser = parsedUrl.query.adminUser;
         const db = await readDB();
-        const requester = db.users.find(u => u.username === adminUser);
+    const requester = db.users.find(u => u.username === adminUser);
 
-        if (!requester || requester.role !== 'admin') {
+    if (!requester || requester.role !== 'admin') {
           sendJSON(res, 403, { message: 'Acesso negado.' });
           return;
-        }
+    }
 
-        const allProgressWithDetails = Object.keys(db.progress).map(username => {
-          const userProgress = db.progress[username];
-          const completedModules = userProgress.modules 
+    const allProgressWithDetails = Object.keys(db.progress).map(username => {
+        const userProgress = db.progress[username];
+        const completedModules = userProgress.modules 
             ? Object.values(userProgress.modules).filter(m => m.status === 'completed').length 
             : 0;
-          const progressPercent = Math.round((completedModules / 8) * 100);
-          
-          return {
+        const progressPercent = Math.round((completedModules / 8) * 100);
+        
+        return {
             username,
             progressPercent,
             completedModules,
             finalEvaluationScore: userProgress.final_evaluation?.score || 'N/A'
-          };
-        });
-        
+        };
+    });
+    
         sendJSON(res, 200, allProgressWithDetails);
+        return;
+      }
+
+      // Admin - revogar certificado
+      if (pathname.startsWith('/api/certificates/') && pathname.endsWith('/revoke') && method === 'POST') {
+        const username = pathname.split('/')[3];
+        const adminUser = parsedUrl.query.adminUser;
+        const body = await getRequestBody(req);
+        const { reason } = body;
+
+        const db = await readDB();
+        const requester = db.users.find(u => u.username === adminUser);
+
+        if (!requester || requester.role !== 'admin') {
+          sendJSON(res, 403, { message: 'Acesso negado. Apenas administradores podem revogar certificados.' });
+          return;
+        }
+
+        // Encontrar o certificado do usuário
+        const certificateEntry = Object.entries(db.certificates || {}).find(
+          ([code, cert]) => cert.username === username
+        );
+
+        if (!certificateEntry) {
+          sendJSON(res, 404, { message: 'Certificado não encontrado para este usuário.' });
+          return;
+        }
+
+        const [validationCode, certificate] = certificateEntry;
+
+        // Marcar como revogado
+        certificate.status = 'revoked';
+        certificate.revokedDate = new Date().toISOString();
+        certificate.revokedBy = adminUser;
+        certificate.revokeReason = reason || 'Revogado pelo administrador';
+
+        await writeDB(db);
+
+        sendJSON(res, 200, {
+          message: 'Certificado revogado com sucesso',
+          certificate: certificate
+        });
         return;
       }
 

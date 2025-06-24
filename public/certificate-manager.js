@@ -87,7 +87,13 @@ class CertificateManager {
      */
     async hasCertificate() {
         try {
-            // Primeiro verifica se pode gerar certificado (completou curso)
+            // Admin sempre pode ter certificado (bypass da verificação de progresso)
+            if (this.isAdmin) {
+                const cert = await this.loadCertificate();
+                return cert !== null;
+            }
+            
+            // Para usuários comuns, verifica se pode gerar certificado (completou curso)
             const canGenerate = await this.canGenerateCertificate();
             if (!canGenerate) {
                 return false; // Se não completou curso, não tem certificado

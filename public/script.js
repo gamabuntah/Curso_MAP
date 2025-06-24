@@ -1007,8 +1007,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const modalBody = document.getElementById('certificate-modal-body');
         modalBody.innerHTML = '<div id="certificate-container" style="min-height: 300px;"></div>';
         
-        // Cria a interface do certificado
-        await certManager.createCertificateInterface();
+        // Cria a interface do certificado e adiciona ao container
+        const certificateInterface = await certManager.createCertificateInterface();
+        const container = document.getElementById('certificate-container');
+        if (container && certificateInterface) {
+            container.appendChild(certificateInterface);
+        }
     };
 
     window.closeCertificateModal = function() {

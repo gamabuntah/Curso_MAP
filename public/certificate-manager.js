@@ -162,30 +162,28 @@ class CertificateManager {
      */
     async downloadCertificate() {
         try {
-            if (!this.validationCode) {
-                // Tenta recuperar o código de validação
-                const cert = await this.getCertificateData();
-                if (cert && cert.validationCode) {
-                    this.validationCode = cert.validationCode;
-                } else {
-                    throw new Error('Código de validação não encontrado');
+            // Carrega dados do certificado se não estiverem disponíveis
+            let certData = this.certificateData;
+            if (!certData) {
+                certData = await this.loadCertificate();
+                if (!certData) {
+                    throw new Error('Certificado não encontrado');
                 }
             }
 
-            const response = await fetch(`${this.API_URL}/download`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ validationCode: this.validationCode })
-            });
-
-            if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Erro ao baixar certificado');
+            // Verifica se o gerador de PDF está disponível
+            if (typeof window.CertificateGenerator === 'undefined') {
+                throw new Error('Gerador de PDF não está disponível. Verifique se o certificate-generator.js foi carregado.');
             }
 
-            // Cria um blob com o PDF e faz o download
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
+            // Cria instância do gerador de PDF
+            const generator = new window.CertificateGenerator(certData);
+            
+            // Gera o PDF
+            const pdfBlob = await generator.generatePDF();
+            
+            // Cria o download
+            const url = window.URL.createObjectURL(pdfBlob);
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
@@ -195,9 +193,11 @@ class CertificateManager {
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
 
+            this.showNotification('Certificado baixado com sucesso!', 'success');
             return true;
         } catch (error) {
             console.error('Erro ao baixar certificado:', error);
+            this.showNotification(`Erro ao baixar certificado: ${error.message}`, 'error');
             throw error;
         }
     }
@@ -211,6 +211,7 @@ class CertificateManager {
                 throw new Error('Acesso negado. Apenas administradores podem usar esta função.');
             }
 
+            // Busca dados do certificado pela API
             const response = await fetch(`${this.BASE_URL}/api/certificates/admin/download`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -219,15 +220,25 @@ class CertificateManager {
 
             if (!response.ok) {
                 const error = await response.json();
-                throw new Error(error.message || 'Erro ao baixar certificado');
+                throw new Error(error.message || 'Erro ao buscar certificado');
             }
 
             const result = await response.json();
             const certificate = result.certificate;
 
-            // Cria um blob com o PDF e faz o download
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
+            // Verifica se o gerador de PDF está disponível
+            if (typeof window.CertificateGenerator === 'undefined') {
+                throw new Error('Gerador de PDF não está disponível. Verifique se o certificate-generator.js foi carregado.');
+            }
+
+            // Cria instância do gerador de PDF
+            const generator = new window.CertificateGenerator(certificate);
+            
+            // Gera o PDF
+            const pdfBlob = await generator.generatePDF();
+            
+            // Cria o download
+            const url = window.URL.createObjectURL(pdfBlob);
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
@@ -237,9 +248,11 @@ class CertificateManager {
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
 
+            this.showNotification(`Certificado de ${certificate.username} baixado com sucesso!`, 'success');
             return true;
         } catch (error) {
             console.error('Erro ao baixar certificado como admin:', error);
+            this.showNotification(`Erro ao baixar certificado: ${error.message}`, 'error');
             throw error;
         }
     }
@@ -457,28 +470,47 @@ class CertificateManager {
      * Renderiza certificado existente
      */
     renderExistingCertificate(container, certData) {
+        // Cria o preview do certificado
+        const previewCanvas = this.createCertificatePreview(certData);
+        
         container.innerHTML = `
             <div class="certificate-card">
-                <div class="certificate-header">
-                    <i class="fa-solid fa-award"></i>
-                    <h3>Certificado Emitido</h3>
+                <div class="certificate-preview-container">
+                    <div class="certificate-preview" id="cert-preview-${certData.validationCode}">
+                        <div class="loading-preview">Gerando preview...</div>
+                    </div>
                 </div>
                 <div class="certificate-info">
-                    <p><strong>Usuário:</strong> ${certData.username}</p>
-                    <p><strong>Data de Emissão:</strong> ${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}</p>
-                    <p><strong>Código de Validação:</strong> <code>${certData.validationCode}</code></p>
-                    <p><strong>Pontuação Final:</strong> ${certData.finalScore}%</p>
-                </div>
-                <div class="certificate-actions">
-                    <button class="btn btn-primary" onclick="certificateManager.downloadCertificate()">
-                        <i class="fa-solid fa-download"></i> Baixar Certificado
-                    </button>
-                    <button class="btn btn-secondary" onclick="certificateManager.shareCertificate()">
-                        <i class="fa-solid fa-share"></i> Compartilhar
-                    </button>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Usuário:</span>
+                            <span class="info-value">${certData.username}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Data de Emissão:</span>
+                            <span class="info-value">${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Código de Validação:</span>
+                            <span class="info-value"><code>${certData.validationCode}</code></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Pontuação Final:</span>
+                            <span class="info-value">${certData.finalScore}%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
+        
+        // Adiciona o preview ao container
+        setTimeout(() => {
+            const previewContainer = document.getElementById(`cert-preview-${certData.validationCode}`);
+            if (previewContainer && previewCanvas) {
+                previewContainer.innerHTML = '';
+                previewContainer.appendChild(previewCanvas);
+            }
+        }, 100);
     }
 
     /**
@@ -535,6 +567,86 @@ class CertificateManager {
                 </button>
             </div>
         `;
+    }
+
+    /**
+     * Cria um preview visual do certificado
+     */
+    createCertificatePreview(certData) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 400;
+        canvas.height = 280;
+        const ctx = canvas.getContext('2d');
+        
+        // Fundo gradiente
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#f8fafc');
+        gradient.addColorStop(1, '#e2e8f0');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Borda
+        ctx.strokeStyle = '#2980b9';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+        
+        // Título
+        ctx.fillStyle = '#2c3e50';
+        ctx.font = 'bold 18px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('CERTIFICADO DE CONCLUSÃO', canvas.width / 2, 50);
+        
+        // Subtítulo
+        ctx.font = '14px Arial';
+        ctx.fillStyle = '#34495e';
+        ctx.fillText('Política Nacional de Saneamento Básico', canvas.width / 2, 75);
+        
+        // Nome do usuário
+        ctx.font = 'bold 16px Arial';
+        ctx.fillStyle = '#2980b9';
+        ctx.fillText(`${certData.username}`, canvas.width / 2, 120);
+        
+        // Texto descritivo
+        ctx.font = '12px Arial';
+        ctx.fillStyle = '#555';
+        ctx.fillText('Concluiu com êxito o curso de capacitação', canvas.width / 2, 145);
+        ctx.fillText('sobre Drenagem e Manejo de Águas Pluviais', canvas.width / 2, 162);
+        
+        // Pontuação
+        ctx.font = 'bold 14px Arial';
+        ctx.fillStyle = '#27ae60';
+        ctx.fillText(`Pontuação: ${certData.finalScore}%`, canvas.width / 2, 190);
+        
+        // Data
+        ctx.font = '11px Arial';
+        ctx.fillStyle = '#7f8c8d';
+        ctx.fillText(`Emitido em: ${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}`, canvas.width / 2, 215);
+        
+        // Código de validação
+        ctx.font = '10px monospace';
+        ctx.fillStyle = '#e74c3c';
+        ctx.fillText(`Código: ${certData.validationCode}`, canvas.width / 2, 240);
+        
+        // Ícone/Selo (simples)
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, 260, 15, 0, 2 * Math.PI);
+        ctx.fillStyle = '#f39c12';
+        ctx.fill();
+        ctx.strokeStyle = '#d35400';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        
+        // Texto do selo
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 12px Arial';
+        ctx.fillText('✓', canvas.width / 2, 265);
+        
+        canvas.style.maxWidth = '100%';
+        canvas.style.height = 'auto';
+        canvas.style.borderRadius = '8px';
+        canvas.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+        
+        return canvas;
     }
 
     /**
@@ -605,9 +717,59 @@ style.textContent = `
         text-align: center;
     }
     
+    .certificate-preview-container {
+        margin-bottom: 20px;
+    }
+    
+    .certificate-preview {
+        min-height: 280px;
+        background: #f8fafc;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(41,128,185,0.07);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+    
+    .loading-preview {
+        color: #666;
+        font-style: italic;
+    }
+    
     .certificate-info {
         margin: 20px 0;
         text-align: left;
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .info-grid {
+        display: grid;
+        gap: 12px;
+    }
+    
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .info-item:last-child {
+        border-bottom: none;
+    }
+    
+    .info-label {
+        font-weight: 600;
+        color: #4a5568;
+    }
+    
+    .info-value {
+        color: #2d3748;
     }
     
     .certificate-actions {

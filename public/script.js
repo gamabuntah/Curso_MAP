@@ -1003,15 +1003,94 @@ document.addEventListener('DOMContentLoaded', async () => {
         const currentUser = sessionStorage.getItem('currentUser');
         const certManager = new window.CertificateManager(currentUser);
         
-        // Substitui o conteúdo do modal com a interface do certificado
-        const modalBody = document.getElementById('certificate-modal-body');
-        modalBody.innerHTML = '<div id="certificate-container" style="min-height: 300px;"></div>';
-        
-        // Cria a interface do certificado e adiciona ao container
-        const certificateInterface = await certManager.createCertificateInterface();
-        const container = document.getElementById('certificate-container');
-        if (container && certificateInterface) {
-            container.appendChild(certificateInterface);
+        try {
+            // Carrega dados do certificado
+            const certData = await certManager.loadCertificate();
+            
+            if (certData) {
+                // Atualiza preview
+                const previewContainer = document.getElementById('certificate-preview');
+                if (previewContainer) {
+                    previewContainer.innerHTML = '';
+                    const canvas = certManager.createCertificatePreview(certData);
+                    previewContainer.appendChild(canvas);
+                }
+                
+                // Atualiza informações
+                const infoContainer = document.getElementById('certificate-info');
+                if (infoContainer) {
+                    infoContainer.innerHTML = `
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong>Usuário:</strong> ${certData.username}
+                            </div>
+                            <div class="info-item">
+                                <strong>Data de Emissão:</strong> ${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}
+                            </div>
+                            <div class="info-item">
+                                <strong>Código de Validação:</strong> <code>${certData.validationCode}</code>
+                            </div>
+                            <div class="info-item">
+                                <strong>Pontuação Final:</strong> ${certData.finalScore}%
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Conecta os botões do modal às funções
+                const downloadBtn = document.getElementById('download-certificate-btn');
+                const validateBtn = document.getElementById('validate-certificate-btn');
+                const shareBtn = document.getElementById('share-certificate-btn');
+                
+                if (downloadBtn) {
+                    downloadBtn.onclick = () => certManager.downloadCertificate();
+                }
+                
+                if (validateBtn) {
+                    validateBtn.onclick = () => {
+                        const url = certManager.getValidationURL();
+                        window.open(url, '_blank');
+                    };
+                }
+                
+                if (shareBtn) {
+                    shareBtn.onclick = () => certManager.shareCertificate();
+                }
+                
+            } else {
+                // Sem certificado - mostra requisitos
+                const modalBody = document.getElementById('certificate-modal-body');
+                modalBody.innerHTML = `
+                    <div class="certificate-requirements">
+                        <div class="requirements-header">
+                            <i class="fa-solid fa-exclamation-triangle"></i>
+                            <h3>Requisitos para Certificação</h3>
+                        </div>
+                        <p>Para gerar seu certificado, você precisa:</p>
+                        <ul>
+                            <li>Completar todos os 8 módulos do curso</li>
+                            <li>Obter pelo menos 70% na avaliação final</li>
+                        </ul>
+                        <p><em>Continue estudando para conquistar seu certificado!</em></p>
+                    </div>
+                `;
+                
+                // Esconde os botões de ação
+                const actionsContainer = document.querySelector('.certificate-modal-actions');
+                if (actionsContainer) {
+                    actionsContainer.style.display = 'none';
+                }
+            }
+            
+        } catch (error) {
+            console.error('Erro ao carregar certificado:', error);
+            const modalBody = document.getElementById('certificate-modal-body');
+            modalBody.innerHTML = `
+                <div class="certificate-error">
+                    <h3>Erro ao carregar certificado</h3>
+                    <p>Tente novamente mais tarde.</p>
+                </div>
+            `;
         }
     };
 

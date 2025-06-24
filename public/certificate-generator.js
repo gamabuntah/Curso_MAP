@@ -292,8 +292,11 @@ class CertificateGenerator {
         // Gera o PDF
         await this.generate();
         
+        // Retorna como Blob para download
+        const pdfBlob = this.getPDFBlob();
+        console.log(`PDF gerado com sucesso. Tamanho: ${pdfBlob.size} bytes`);
         console.log('✅ generatePDF concluída com sucesso');
-        return this.pdf;
+        return pdfBlob;
     }
 }
 

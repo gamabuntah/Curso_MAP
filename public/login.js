@@ -102,6 +102,36 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMode();
     });
 
+    // Aviso quando tentar registrar como admin
+    usernameInput.addEventListener('input', () => {
+        const username = usernameInput.value.toLowerCase();
+        const isAdminAttempt = username === 'admin';
+        
+        // Remove aviso anterior
+        const existingWarning = document.querySelector('.admin-warning');
+        if (existingWarning) {
+            existingWarning.remove();
+        }
+        
+        // Adiciona aviso se for tentativa de admin e estiver em modo registro
+        if (isAdminAttempt && !isLoginMode) {
+            const warning = document.createElement('div');
+            warning.className = 'admin-warning';
+            warning.style.cssText = `
+                background: #ff9800;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                margin-top: 10px;
+                font-size: 14px;
+                text-align: center;
+                animation: fadeIn 0.3s ease;
+            `;
+            warning.innerHTML = '⚠️ <strong>ATENÇÃO:</strong> Apenas 1 administrador é permitido no sistema!';
+            usernameInput.parentNode.appendChild(warning);
+        }
+    });
+
     // Login/Registro
     loginBtn.addEventListener('click', async (e) => {
         e.preventDefault();
@@ -170,7 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 2000);
                 }
             } else {
-                showError(data.message || (isLoginMode ? 'Erro no login' : 'Erro no registro'));
+                // Tratar mensagens específicas de erro
+                let errorMsg = data.message || (isLoginMode ? 'Erro no login' : 'Erro no registro');
+                
+                // Mensagem especial se tentar criar admin duplicado
+                if (response.status === 403 && errorMsg.includes('administrador')) {
+                    errorMsg = '⚠️ SISTEMA LIMITADO: Apenas 1 administrador é permitido.\n\nJá existe um admin registrado no sistema.';
+                }
+                
+                showError(errorMsg);
             }
         } catch (error) {
             console.error('Erro:', error);
@@ -215,6 +253,11 @@ style.textContent = `
     @keyframes slideDown {
         from { transform: translateY(-10px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
     }
     
     .btn:disabled {

@@ -19,6 +19,30 @@
       "username": "teste_automato",
       "passwordHash": "-657627925",
       "role": "user"
+    },
+    {
+      "username": "admin2",
+      "passwordHash": "1251475389",
+      "role": "user",
+      "createdAt": "2025-06-24T00:38:49.688Z"
+    },
+    {
+      "username": "usuario_teste",
+      "passwordHash": "1251475389",
+      "role": "user",
+      "createdAt": "2025-06-24T00:38:49.711Z"
+    },
+    {
+      "username": "usuario_normal",
+      "passwordHash": "1251475389",
+      "role": "user",
+      "createdAt": "2025-06-24T00:39:35.444Z"
+    },
+    {
+      "username": "user_1750725648153",
+      "passwordHash": "1251475389",
+      "role": "user",
+      "createdAt": "2025-06-24T00:40:48.446Z"
     }
   ],
   "progress": {
@@ -284,7 +308,11 @@
       "dataInicio": "2025-06-22T22:28:08.994Z",
       "ultimoAcesso": "2025-06-22T22:28:08.994Z",
       "tempoTotal": 0
-    }
+    },
+    "admin2": {},
+    "usuario_teste": {},
+    "usuario_normal": {},
+    "user_1750725648153": {}
   },
   "certificates": {
     "PNSB-2025-2S7C-IOX1": {

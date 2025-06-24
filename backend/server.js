@@ -154,22 +154,40 @@ const server = http.createServer(async (req, res) => {
   }
 
         const db = await readDB();
-  const userExists = db.users.find(user => user.username === username);
-
-  if (userExists) {
+        
+        // Verificar se está tentando criar um admin
+        const isAttemptingAdmin = username.toLowerCase() === 'admin';
+        
+        // PRIMEIRA VERIFICAÇÃO: Se está tentando criar admin, verificar se já existe um
+        if (isAttemptingAdmin) {
+          const existingAdmin = db.users.find(user => user.role === 'admin');
+          if (existingAdmin) {
+            sendJSON(res, 403, { 
+              message: 'Já existe um administrador no sistema. Apenas 1 admin é permitido.' 
+            });
+            return;
+          }
+        }
+        
+        // SEGUNDA VERIFICAÇÃO: Verificar se o username já existe
+        const userExists = db.users.find(user => user.username === username);
+        if (userExists) {
           sendJSON(res, 409, { message: 'Este nome de usuário já existe.' });
           return;
-  }
+        }
 
   const newUser = {
     username,
     passwordHash: simpleHash(password),
-          role: username.toLowerCase() === 'admin' ? 'admin' : 'user',
+          role: isAttemptingAdmin ? 'admin' : 'user',
           createdAt: new Date().toISOString()
         };
 
         await addUser(newUser);
-        sendJSON(res, 201, { message: 'Usuário criado com sucesso!' });
+        sendJSON(res, 201, { 
+          message: 'Usuário criado com sucesso!',
+          role: newUser.role
+        });
         return;
       }
 

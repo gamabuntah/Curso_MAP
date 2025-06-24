@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrativo - Curso PNSB</title>
-    <link rel="stylesheet" href="admin.css?v=1.0">
+    <title>Painel Administrativo - Sistema PNSB</title>
+    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="admin-container">
         <div class="admin-header">
-            <div class="header-left">
-                <button class="back-btn" onclick="goBackToSystem()" title="Voltar ao Sistema">
-                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Curso
+            <h1><i class="fa-solid fa-shield-halved"></i> Painel Administrativo</h1>
+            <div class="admin-nav">
+                <button class="nav-btn" onclick="goBackToSystem()">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Sistema
                 </button>
-                <h1><i class="fa-solid fa-shield-halved"></i> Painel Administrativo</h1>
-            </div>
-            <div class="admin-info">
                 <span>Bem-vindo, <strong id="adminName">Admin</strong></span>
                 <button class="logout-btn" onclick="logout()">
                     <i class="fa-solid fa-right-from-bracket"></i> Sair
@@ -105,11 +103,11 @@
 
     <script>
         // Detecta automaticamente se está em produção ou desenvolvimento
-        const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+        var baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
         
         // Verificação de admin
-        const currentUser = sessionStorage.getItem('currentUser');
-        const userRole = sessionStorage.getItem('userRole');
+        var currentUser = sessionStorage.getItem('currentUser');
+        var userRole = sessionStorage.getItem('userRole');
         
         if (!currentUser || userRole !== 'admin') {
             alert('Acesso negado. Apenas administradores podem acessar este painel.');
@@ -122,12 +120,15 @@
         // Função para mostrar abas
         function showTab(tabName) {
             // Remove classe active de todas as abas e botões
-            document.querySelectorAll('.tab-content').forEach(function(tab) {
-                tab.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(function(btn) {
-                btn.classList.remove('active');
-            });
+            var tabs = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            var buttons = document.querySelectorAll('.tab-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
 
             // Adiciona classe active na aba e botão selecionados
             document.getElementById(tabName).classList.add('active');
@@ -157,191 +158,208 @@
         }
 
         // Carrega dados da visão geral
-        async function loadOverviewData() {
-            try {
-                // Carrega dados de usuários
-                const usersResponse = await fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser);
-                const usersData = await usersResponse.json();
-
-                // Carrega dados de certificados
-                const certsResponse = await fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser);
-                const certsData = await certsResponse.json();
-
-                // Atualiza estatísticas
-                document.getElementById('totalUsers').textContent = usersData.length || 0;
-                document.getElementById('activeUsers').textContent = usersData.filter(function(u) { return u.progressPercent > 0; }).length || 0;
-                document.getElementById('totalCertificates').textContent = certsData.length || 0;
-                
-                const avgProgress = usersData.length > 0 
-                    ? Math.round(usersData.reduce(function(sum, u) { return sum + (u.progressPercent || 0); }, 0) / usersData.length)
-                    : 0;
-                document.getElementById('avgProgress').textContent = avgProgress + '%';
-
-            } catch (error) {
-                console.error('Erro ao carregar dados gerais:', error);
-                // Valores padrão em caso de erro
-                document.getElementById('totalUsers').textContent = '0';
-                document.getElementById('activeUsers').textContent = '0';
-                document.getElementById('totalCertificates').textContent = '0';
-                document.getElementById('avgProgress').textContent = '0%';
-            }
+        function loadOverviewData() {
+            // Carrega dados de usuários
+            fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser)
+                .then(function(response) { return response.json(); })
+                .then(function(usersData) {
+                    // Carrega dados de certificados
+                    return fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser)
+                        .then(function(response) { return response.json(); })
+                        .then(function(certsData) {
+                            // Atualiza estatísticas
+                            document.getElementById('totalUsers').textContent = usersData.length || 0;
+                            
+                            var activeCount = 0;
+                            for (var i = 0; i < usersData.length; i++) {
+                                if (usersData[i].progressPercent > 0) {
+                                    activeCount++;
+                                }
+                            }
+                            document.getElementById('activeUsers').textContent = activeCount;
+                            
+                            document.getElementById('totalCertificates').textContent = certsData.length || 0;
+                            
+                            var totalProgress = 0;
+                            for (var i = 0; i < usersData.length; i++) {
+                                totalProgress += usersData[i].progressPercent || 0;
+                            }
+                            var avgProgress = usersData.length > 0 ? Math.round(totalProgress / usersData.length) : 0;
+                            document.getElementById('avgProgress').textContent = avgProgress + '%';
+                        });
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar dados gerais:', error);
+                    // Valores padrão em caso de erro
+                    document.getElementById('totalUsers').textContent = '0';
+                    document.getElementById('activeUsers').textContent = '0';
+                    document.getElementById('totalCertificates').textContent = '0';
+                    document.getElementById('avgProgress').textContent = '0%';
+                });
         }
 
         // Carrega dados dos usuários
-        async function loadUsersData() {
-            try {
-                const response = await fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser);
-                const usersData = await response.json();
+        function loadUsersData() {
+            fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser)
+                .then(function(response) { return response.json(); })
+                .then(function(usersData) {
+                    var tbody = document.getElementById('usersTableBody');
+                    tbody.innerHTML = '';
 
-                const tbody = document.getElementById('usersTableBody');
-                tbody.innerHTML = '';
+                    if (usersData.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuário encontrado</td></tr>';
+                        return;
+                    }
 
-                if (usersData.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhum usuário encontrado</td></tr>';
-                    return;
-                }
-
-                usersData.forEach(function(user) {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td><strong>${user.username}</strong></td>
-                        <td>
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: ${user.progressPercent || 0}%;"></div>
-                                <span class="progress-text">${user.progressPercent || 0}%</span>
-                            </div>
-                        </td>
-                        <td>${user.completedModules || 0}/8</td>
-                        <td>${user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Não realizada'}</td>
-                        <td>
-                            <span class="status-badge ${(user.progressPercent || 0) === 100 ? 'status-completed' : (user.progressPercent || 0) > 0 ? 'status-available' : 'status-locked'}">
-                                ${(user.progressPercent || 0) === 100 ? 'Concluído' : (user.progressPercent || 0) > 0 ? 'Em Progresso' : 'Não Iniciado'}
-                            </span>
-                        </td>
-                        <td>
-                            <button class="action-btn" onclick="viewUserProgress('${user.username}')">
-                                <i class="fa-solid fa-eye"></i> Ver
-                            </button>
-                        </td>
-                    `;
-                    tbody.appendChild(row);
+                    for (var i = 0; i < usersData.length; i++) {
+                        var user = usersData[i];
+                        var row = document.createElement('tr');
+                        
+                        var progressPercent = user.progressPercent || 0;
+                        var completedModules = user.completedModules || 0;
+                        var finalScore = user.finalEvaluationScore !== 'N/A' ? user.finalEvaluationScore + '%' : 'Não realizada';
+                        
+                        var statusText = '';
+                        var statusClass = '';
+                        if (progressPercent === 100) {
+                            statusText = 'Concluído';
+                            statusClass = 'status-completed';
+                        } else if (progressPercent > 0) {
+                            statusText = 'Em Progresso';
+                            statusClass = 'status-available';
+                        } else {
+                            statusText = 'Não Iniciado';
+                            statusClass = 'status-locked';
+                        }
+                        
+                        row.innerHTML = '<td><strong>' + user.username + '</strong></td>' +
+                            '<td><div class="progress-container">' +
+                            '<div class="progress-bar" style="width: ' + progressPercent + '%;"></div>' +
+                            '<span class="progress-text">' + progressPercent + '%</span></div></td>' +
+                            '<td>' + completedModules + '/8</td>' +
+                            '<td>' + finalScore + '</td>' +
+                            '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                            '<td><button class="action-btn" onclick="viewUserProgress(\'' + user.username + '\')">' +
+                            '<i class="fa-solid fa-eye"></i> Ver</button></td>';
+                        
+                        tbody.appendChild(row);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar dados de usuários:', error);
+                    document.getElementById('usersTableBody').innerHTML = 
+                        '<tr><td colspan="6" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
                 });
-
-            } catch (error) {
-                console.error('Erro ao carregar dados de usuários:', error);
-                document.getElementById('usersTableBody').innerHTML = 
-                    '<tr><td colspan="6" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
-            }
         }
 
         // Carrega dados dos certificados
-        async function loadCertificatesData() {
-            try {
-                const response = await fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser);
-                const certsData = await response.json();
+        function loadCertificatesData() {
+            fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser)
+                .then(function(response) { return response.json(); })
+                .then(function(certsData) {
+                    var tbody = document.getElementById('certificatesTableBody');
+                    tbody.innerHTML = '';
 
-                const tbody = document.getElementById('certificatesTableBody');
-                tbody.innerHTML = '';
+                    if (certsData.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center;">Nenhum certificado encontrado</td></tr>';
+                        return;
+                    }
 
-                if (certsData.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center;">Nenhum certificado encontrado</td></tr>';
-                    return;
-                }
-
-                certsData.forEach(function(cert) {
-                    const issuedDate = new Date(cert.issuedDate).toLocaleDateString('pt-BR');
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td><strong>${cert.username}</strong></td>
-                        <td><code>${cert.validationCode}</code></td>
-                        <td>${issuedDate}</td>
-                        <td>${cert.finalScore || 0}%</td>
-                        <td>${cert.downloadCount || 0}</td>
-                        <td>${cert.validationCount || 0}</td>
-                        <td>
-                            <span class="status-badge ${cert.status === 'issued' ? 'status-completed' : 'status-locked'}">
-                                ${cert.status === 'issued' ? 'Emitido' : 'Revogado'}
-                            </span>
-                        </td>
-                        <td>
-                            <button class="action-btn" onclick="validateCertificate('${cert.validationCode}')">
-                                <i class="fa-solid fa-search"></i> Validar
-                            </button>
-                            <button class="action-btn success" onclick="downloadCertificateAsAdmin('${cert.validationCode}')">
-                                <i class="fa-solid fa-download"></i> Baixar
-                            </button>
-                            ${cert.status === 'issued' ? `
-                            <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
-                                    <i class="fa-solid fa-ban"></i> Revogar
-                            </button>
-                            ` : ''}
-                        </td>
-                    `;
-                    tbody.appendChild(row);
+                    for (var i = 0; i < certsData.length; i++) {
+                        var cert = certsData[i];
+                        var issuedDate = new Date(cert.issuedDate).toLocaleDateString('pt-BR');
+                        var row = document.createElement('tr');
+                        
+                        var statusText = cert.status === 'issued' ? 'Emitido' : 'Revogado';
+                        var statusClass = cert.status === 'issued' ? 'status-completed' : 'status-locked';
+                        
+                        var revokeButton = '';
+                        if (cert.status === 'issued') {
+                            revokeButton = '<button class="action-btn danger" onclick="revokeCertificate(\'' + cert.username + '\')">' +
+                                '<i class="fa-solid fa-ban"></i> Revogar</button>';
+                        }
+                        
+                        row.innerHTML = '<td><strong>' + cert.username + '</strong></td>' +
+                            '<td><code>' + cert.validationCode + '</code></td>' +
+                            '<td>' + issuedDate + '</td>' +
+                            '<td>' + (cert.finalScore || 0) + '%</td>' +
+                            '<td>' + (cert.downloadCount || 0) + '</td>' +
+                            '<td>' + (cert.validationCount || 0) + '</td>' +
+                            '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                            '<td>' +
+                            '<button class="action-btn" onclick="validateCertificate(\'' + cert.validationCode + '\')">' +
+                            '<i class="fa-solid fa-search"></i> Validar</button> ' +
+                            '<button class="action-btn success" onclick="downloadCertificateAsAdmin(\'' + cert.validationCode + '\')">' +
+                            '<i class="fa-solid fa-download"></i> Baixar</button> ' +
+                            revokeButton +
+                            '</td>';
+                        
+                        tbody.appendChild(row);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar dados de certificados:', error);
+                    document.getElementById('certificatesTableBody').innerHTML = 
+                        '<tr><td colspan="8" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
                 });
-
-            } catch (error) {
-                console.error('Erro ao carregar dados de certificados:', error);
-                document.getElementById('certificatesTableBody').innerHTML = 
-                    '<tr><td colspan="8" style="text-align: center; color: red;">Erro ao carregar dados</td></tr>';
-            }
         }
 
         // Visualizar progresso detalhado do usuário
-        async function viewUserProgress(username) {
-            try {
-                const response = await fetch(baseURL + '/api/progress/' + username);
-                if (!response.ok) {
-                    throw new Error('Erro ao carregar progresso do usuário');
-                }
-                
-                const progress = await response.json();
-                showUserProgressModal(username, progress);
-            } catch (error) {
-                console.error('Erro ao carregar progresso:', error);
-                alert('Erro ao carregar progresso de ' + username + ': ' + error.message);
-            }
+        function viewUserProgress(username) {
+            fetch(baseURL + '/api/progress/' + username)
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar progresso do usuário');
+                    }
+                    return response.json();
+                })
+                .then(function(progress) {
+                    showUserProgressModal(username, progress);
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar progresso:', error);
+                    alert('Erro ao carregar progresso de ' + username + ': ' + error.message);
+                });
         }
 
         // Modal de progresso detalhado
         function showUserProgressModal(username, progress) {
             // Remove modal anterior se existir
-            const existingModal = document.getElementById('userProgressModal');
+            var existingModal = document.getElementById('userProgressModal');
             if (existingModal) {
                 existingModal.remove();
             }
 
             // Calcular estatísticas
-            const modules = progress.modules || {};
-            const totalModules = 8;
-            const completedModules = Object.values(modules).filter(function(m) { return m.status === 'completed'; }).length;
-            const failedModules = Object.values(modules).filter(function(m) { return m.status === 'failed'; }).length;
-            const progressPercent = Math.round((completedModules / totalModules) * 100);
+            var modules = progress.modules || {};
+            var totalModules = 8;
+            var completedModules = 0;
+            var failedModules = 0;
+            
+            for (var key in modules) {
+                if (modules[key].status === 'completed') {
+                    completedModules++;
+                } else if (modules[key].status === 'failed') {
+                    failedModules++;
+                }
+            }
+            
+            var progressPercent = Math.round((completedModules / totalModules) * 100);
 
             // Criar modal
-            const modal = document.createElement('div');
+            var modal = document.createElement('div');
             modal.id = 'userProgressModal';
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-            `;
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;';
 
-            let modulesHtml = '';
-            for (let i = 1; i <= 8; i++) {
-                const module = modules['module' + i] || {};
-                const status = module.status || 'not_started';
-                const score = module.score || 0;
+            var modulesHtml = '';
+            for (var i = 1; i <= 8; i++) {
+                var moduleKey = i.toString();
+                var module = modules[moduleKey] || {};
+                var status = module.status || 'not_started';
+                var score = module.score || 0;
                 
-                let statusText = 'Não Iniciado';
-                let statusClass = 'status-locked';
+                var statusText = 'Não Iniciado';
+                var statusClass = 'status-locked';
                 
                 if (status === 'completed') {
                     statusText = 'Concluído';
@@ -354,143 +372,146 @@
                     statusClass = 'status-available';
                 }
 
-                modulesHtml += `
-                    <tr>
-                        <td>Módulo ${i}</td>
-                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                        <td>${score}%</td>
-                    </tr>
-                `;
+                modulesHtml += '<tr>' +
+                    '<td>Módulo ' + i + '</td>' +
+                    '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                    '<td>' + score + '%</td>' +
+                    '</tr>';
             }
 
-            modal.innerHTML = `
-                <div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                        <h2>Progresso Detalhado - ${username}</h2>
-                        <button onclick="document.getElementById('userProgressModal').remove()" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px;">
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #2980b9;">${progressPercent}%</div>
-                            <div style="font-size: 14px; color: #666;">Progresso Geral</div>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #27ae60;">${completedModules}</div>
-                            <div style="font-size: 14px; color: #666;">Módulos Concluídos</div>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #e74c3c;">${failedModules}</div>
-                            <div style="font-size: 14px; color: #666;">Módulos Reprovados</div>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #f39c12;">${progress.final_evaluation ? progress.final_evaluation.score : 'N/A'}</div>
-                            <div style="font-size: 14px; color: #666;">Avaliação Final</div>
-                        </div>
-                    </div>
+            var finalScore = progress.final_evaluation ? progress.final_evaluation.score : 'N/A';
 
-                    <h3>Detalhes por Módulo</h3>
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                        <thead>
-                            <tr style="background: #f8f9fa;">
-                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Módulo</th>
-                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Status</th>
-                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Pontuação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${modulesHtml}
-                        </tbody>
-                    </table>
-                </div>
-            `;
+            modal.innerHTML = '<div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">' +
+                '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">' +
+                '<h2>Progresso Detalhado - ' + username + '</h2>' +
+                '<button onclick="document.getElementById(\'userProgressModal\').remove()" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>' +
+                '</div>' +
+                '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px;">' +
+                '<div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">' +
+                '<div style="font-size: 24px; font-weight: bold; color: #2980b9;">' + progressPercent + '%</div>' +
+                '<div style="font-size: 14px; color: #666;">Progresso Geral</div>' +
+                '</div>' +
+                '<div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">' +
+                '<div style="font-size: 24px; font-weight: bold; color: #27ae60;">' + completedModules + '</div>' +
+                '<div style="font-size: 14px; color: #666;">Módulos Concluídos</div>' +
+                '</div>' +
+                '<div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">' +
+                '<div style="font-size: 24px; font-weight: bold; color: #e74c3c;">' + failedModules + '</div>' +
+                '<div style="font-size: 14px; color: #666;">Módulos Reprovados</div>' +
+                '</div>' +
+                '<div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">' +
+                '<div style="font-size: 24px; font-weight: bold; color: #f39c12;">' + finalScore + '</div>' +
+                '<div style="font-size: 14px; color: #666;">Avaliação Final</div>' +
+                '</div>' +
+                '</div>' +
+                '<h3>Detalhes por Módulo</h3>' +
+                '<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">' +
+                '<thead>' +
+                '<tr style="background: #f8f9fa;">' +
+                '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Módulo</th>' +
+                '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Status</th>' +
+                '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Pontuação</th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                modulesHtml +
+                '</tbody>' +
+                '</table>' +
+                '</div>';
 
             document.body.appendChild(modal);
         }
 
         // Validar certificado
-        async function validateCertificate(validationCode) {
-            try {
-                const response = await fetch(baseURL + '/api/certificates/validate/' + validationCode);
-                const result = await response.json();
-
-                if (result.valid) {
-                    alert('Certificado VÁLIDO!\n\nUsuário: ' + result.certificate.username + '\nData de Emissão: ' + new Date(result.certificate.issuedDate).toLocaleDateString('pt-BR') + '\nPontuação: ' + result.certificate.finalScore + '%\nValidações: ' + result.certificate.validationCount);
-                } else {
-                    alert('Certificado INVÁLIDO!\n\nMotivo: ' + result.error);
-                }
-            } catch (error) {
-                console.error('Erro ao validar certificado:', error);
-                alert('Erro ao validar certificado. Tente novamente.');
-            }
+        function validateCertificate(validationCode) {
+            fetch(baseURL + '/api/certificates/validate/' + validationCode)
+                .then(function(response) { return response.json(); })
+                .then(function(result) {
+                    if (result.valid) {
+                        alert('Certificado VÁLIDO!\n\nUsuário: ' + result.certificate.username + 
+                              '\nData de Emissão: ' + new Date(result.certificate.issuedDate).toLocaleDateString('pt-BR') + 
+                              '\nPontuação: ' + result.certificate.finalScore + '%' + 
+                              '\nValidações: ' + result.certificate.validationCount);
+                    } else {
+                        alert('Certificado INVÁLIDO!\n\nMotivo: ' + result.error);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Erro ao validar certificado:', error);
+                    alert('Erro ao validar certificado. Tente novamente.');
+                });
         }
 
         // Revogar certificado
-        async function revokeCertificate(username) {
-            const reason = prompt('Motivo da revogação do certificado de ' + username + ':');
+        function revokeCertificate(username) {
+            var reason = prompt('Motivo da revogação do certificado de ' + username + ':');
             if (!reason) return;
 
             if (!confirm('Tem certeza que deseja revogar o certificado de ' + username + '?\n\nMotivo: ' + reason + '\n\nEsta ação não pode ser desfeita.')) {
                 return;
             }
 
-            try {
-                const response = await fetch(baseURL + '/api/certificates/' + username + '/revoke?adminUser=' + currentUser, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ reason: reason })
+            fetch(baseURL + '/api/certificates/' + username + '/revoke?adminUser=' + currentUser, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ reason: reason })
+            })
+            .then(function(response) {
+                return response.json().then(function(result) {
+                    if (response.ok) {
+                        alert('Certificado revogado com sucesso!');
+                        loadCertificatesData(); // Recarrega a lista
+                    } else {
+                        alert('Erro ao revogar certificado: ' + result.message);
+                    }
                 });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    alert('Certificado revogado com sucesso!');
-                    loadCertificatesData(); // Recarrega a lista
-                } else {
-                    alert('Erro ao revogar certificado: ' + result.message);
-                }
-            } catch (error) {
+            })
+            .catch(function(error) {
                 console.error('Erro ao revogar certificado:', error);
                 alert('Erro ao revogar certificado. Tente novamente.');
-            }
+            });
         }
 
         // Baixar certificado como administrador
-        async function downloadCertificateAsAdmin(validationCode) {
-            try {
-                const response = await fetch(baseURL + '/api/certificates/admin/download', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ validationCode: validationCode })
-                });
-
+        function downloadCertificateAsAdmin(validationCode) {
+            fetch(baseURL + '/api/certificates/admin/download', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ validationCode: validationCode })
+            })
+            .then(function(response) {
                 if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.message || 'Erro ao baixar certificado');
+                    return response.json().then(function(error) {
+                        throw new Error(error.message || 'Erro ao baixar certificado');
+                    });
                 }
-
-                const result = await response.json();
-                
+                return response.json();
+            })
+            .then(function(result) {
                 // Simula o download do PDF (aqui você implementaria a lógica de geração de PDF)
                 alert('Download do certificado de ' + result.certificate.username + ' iniciado!');
                 
                 // Incrementa o contador de downloads
                 loadCertificatesData(); // Recarrega a lista para mostrar contador atualizado
-                
-            } catch (error) {
+            })
+            .catch(function(error) {
                 console.error('Erro ao baixar certificado:', error);
                 alert('Erro ao baixar certificado: ' + error.message);
-            }
+            });
         }
 
-        // Carrega dados iniciais
-        document.addEventListener('DOMContentLoaded', function() {
+        // Carrega dados iniciais quando a página carrega
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                loadOverviewData();
+            });
+        } else {
             loadOverviewData();
-        });
+        }
     </script>
 </body>
 </html> 

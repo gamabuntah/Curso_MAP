@@ -17,6 +17,9 @@ class CertificateManager {
         
         this.certificateData = null;
         this.validationCode = null;
+        
+        // Verificar se é admin
+        this.isAdmin = sessionStorage.getItem('userRole') === 'admin';
     }
 
     /**
@@ -112,16 +115,19 @@ class CertificateManager {
      */
     async generateCertificate() {
         try {
-            // Verifica elegibilidade
-            const canGenerate = await this.canGenerateCertificate();
-            if (!canGenerate) {
-                throw new Error('Você precisa completar todos os módulos e passar na avaliação final para gerar o certificado.');
-            }
+            // Admins podem gerar certificados para qualquer usuário
+            if (!this.isAdmin) {
+                // Verifica elegibilidade para usuários comuns
+                const canGenerate = await this.canGenerateCertificate();
+                if (!canGenerate) {
+                    throw new Error('Você precisa completar todos os módulos e passar na avaliação final para gerar o certificado.');
+                }
 
-            // Verifica se já possui certificado
-            const hasExisting = await this.hasCertificate();
-            if (hasExisting) {
-                throw new Error('Você já possui um certificado emitido.');
+                // Verifica se já possui certificado
+                const hasExisting = await this.hasCertificate();
+                if (hasExisting) {
+                    throw new Error('Você já possui um certificado emitido.');
+                }
             }
 
             const response = await fetch(`${this.API_URL}/generate`, {
@@ -191,6 +197,48 @@ class CertificateManager {
     }
 
     /**
+     * Download de certificado para administradores (qualquer usuário)
+     */
+    async downloadCertificateAsAdmin(validationCode) {
+        try {
+            if (!this.isAdmin) {
+                throw new Error('Acesso negado. Apenas administradores podem usar esta função.');
+            }
+
+            const response = await fetch(`${this.BASE_URL}/api/certificates/admin/download`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ validationCode: validationCode })
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.message || 'Erro ao baixar certificado');
+            }
+
+            const result = await response.json();
+            const certificate = result.certificate;
+
+            // Cria um blob com o PDF e faz o download
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = `certificado-pnsb-${certificate.username}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            return true;
+        } catch (error) {
+            console.error('Erro ao baixar certificado como admin:', error);
+            throw error;
+        }
+    }
+
+    /**
      * Obtém dados do certificado existente
      */
     async getCertificateData() {
@@ -198,7 +246,7 @@ class CertificateManager {
             const response = await fetch(`${this.API_URL}/data`);
             if (response.ok) {
                 const data = await response.json();
-                this.certificateData = data.certificate;
+                this.certificateData = data;
                 this.validationCode = data.validationCode;
                 return data;
             }
@@ -210,28 +258,35 @@ class CertificateManager {
     }
 
     /**
-     * Valida um certificado pelo código
+     * Valida um certificado usando o código
      */
     static async validateCertificate(validationCode) {
         try {
-            // URL de validação dinâmica baseada no ambiente
+            // Detecta automaticamente se está em produção ou desenvolvimento
             const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+            
             const response = await fetch(`${baseURL}/api/certificates/validate/${validationCode}`);
             
-            if (response.ok) {
-                return await response.json();
-            } else {
-                const error = await response.json();
-                throw new Error(error.message || 'Certificado não encontrado');
+            if (!response.ok) {
+                return {
+                    valid: false,
+                    error: 'Código de validação não encontrado'
+                };
             }
+            
+            const data = await response.json();
+            return data;
         } catch (error) {
             console.error('Erro ao validar certificado:', error);
-            throw error;
+            return {
+                valid: false,
+                error: 'Erro ao conectar com o servidor'
+            };
         }
     }
 
     /**
-     * Gera URL de validação do certificado
+     * Obtém a URL de validação do certificado
      */
     getValidationURL() {
         if (!this.validationCode) {
@@ -241,142 +296,155 @@ class CertificateManager {
     }
 
     /**
-     * Compartilha certificado (gera link de validação)
+     * Compartilha o certificado (copia URL de validação)
      */
     shareCertificate() {
         try {
             const validationURL = this.getValidationURL();
             
-            // Copia para clipboard se disponível
-            if (navigator.clipboard) {
+            // Tenta usar a API de clipboard se disponível
+            if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(validationURL).then(() => {
                     this.showNotification('Link de validação copiado para a área de transferência!', 'success');
+                }).catch(err => {
+                    console.error('Erro ao copiar para clipboard:', err);
+                    this.fallbackCopyTextToClipboard(validationURL);
                 });
             } else {
                 // Fallback para navegadores mais antigos
-                const textarea = document.createElement('textarea');
-                textarea.value = validationURL;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                this.showNotification('Link de validação copiado!', 'success');
+                this.fallbackCopyTextToClipboard(validationURL);
             }
-            
-            return validationURL;
         } catch (error) {
             console.error('Erro ao compartilhar certificado:', error);
-            throw error;
+            this.showNotification('Erro ao gerar link de compartilhamento', 'error');
         }
     }
 
     /**
-     * Mostra notificação na tela
+     * Fallback para copiar texto (navegadores antigos)
+     */
+    fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                this.showNotification('Link de validação copiado para a área de transferência!', 'success');
+            } else {
+                throw new Error('Comando copy falhou');
+            }
+        } catch (err) {
+            console.error('Fallback: Não foi possível copiar texto: ', err);
+            // Como último recurso, mostra o link para o usuário copiar manualmente
+            prompt('Copie o link abaixo:', text);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+
+    /**
+     * Mostra notificação para o usuário
      */
     showNotification(message, type = 'info') {
-        // Remove notificação anterior se existir
-        const existingNotification = document.querySelector('.certificate-notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-
+        // Cria elemento de notificação
         const notification = document.createElement('div');
-        notification.className = `certificate-notification notification-${type}`;
+        notification.className = `notification ${type}`;
         notification.textContent = message;
         
         // Estilos da notificação
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            max-width: 300px;
-            animation: slideInRight 0.3s ease;
-        `;
+        Object.assign(notification.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            padding: '15px 20px',
+            borderRadius: '5px',
+            color: 'white',
+            fontWeight: 'bold',
+            zIndex: '10000',
+            maxWidth: '300px',
+            wordWrap: 'break-word'
+        });
         
-        // Cores por tipo
+        // Cores baseadas no tipo
         const colors = {
-            success: '#4CAF50',
-            error: '#F44336',
-            warning: '#FF9800',
-            info: '#2196F3'
+            success: '#28a745',
+            error: '#dc3545',
+            warning: '#ffc107',
+            info: '#17a2b8'
         };
         
         notification.style.backgroundColor = colors[type] || colors.info;
         
         document.body.appendChild(notification);
         
-        // Remover após 4 segundos
+        // Remove a notificação após 4 segundos
         setTimeout(() => {
-            if (notification.parentNode) {
-                notification.style.animation = 'slideOutRight 0.3s ease';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.remove();
-                    }
-                }, 300);
+            if (notification && notification.parentNode) {
+                notification.parentNode.removeChild(notification);
             }
         }, 4000);
     }
 
     /**
-     * Função para uso administrativo - listar todos os certificados
+     * Método estático para buscar todos os certificados (admin)
      */
     static async getAllCertificates(adminUser) {
         try {
+            // Detecta automaticamente se está em produção ou desenvolvimento
             const baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+            
             const response = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${adminUser}`);
             
-            if (response.ok) {
-                return await response.json();
-            } else {
-                throw new Error('Erro ao obter lista de certificados');
+            if (!response.ok) {
+                throw new Error('Erro ao buscar certificados');
             }
+            
+            return await response.json();
         } catch (error) {
-            console.error('Erro ao obter certificados:', error);
+            console.error('Erro ao buscar todos os certificados:', error);
             throw error;
         }
     }
 
     /**
-     * Cria interface de certificado
+     * Cria a interface de certificação
      */
     async createCertificateInterface() {
+        const container = document.createElement('div');
+        container.className = 'certificate-container';
+        
         try {
-            const container = document.getElementById('certificate-container');
-            if (!container) {
-                console.error('Container de certificado não encontrado');
-                return;
-            }
-
-            // Primeiro verifica se completou o curso
+            // Verifica se pode gerar certificado
             const canGenerate = await this.canGenerateCertificate();
             
-            if (!canGenerate) {
-                // Usuário ainda não completou o curso
+            if (!canGenerate && !this.isAdmin) {
                 this.renderRequirements(container);
-                return;
+                return container;
             }
-
-            // Se completou o curso, verifica se já tem certificado
-            const hasExisting = await this.hasCertificate();
             
-            if (hasExisting) {
-                // Usuário já tem certificado
-                const certData = await this.getCertificateData();
-                this.renderExistingCertificate(container, certData);
+            // Carrega certificado existente
+            const existingCert = await this.loadCertificate();
+            
+            if (existingCert) {
+                this.renderExistingCertificate(container, existingCert);
             } else {
-                // Usuário pode gerar certificado
                 this.renderGenerateButton(container);
             }
+            
         } catch (error) {
-            console.error('Erro ao criar interface:', error);
-            this.renderError(container, 'Erro ao carregar informações do certificado');
+            console.error('Erro ao criar interface de certificação:', error);
+            this.renderError(container, 'Erro ao carregar dados do certificado');
         }
+        
+        return container;
     }
 
     /**
@@ -384,23 +452,24 @@ class CertificateManager {
      */
     renderExistingCertificate(container, certData) {
         container.innerHTML = `
-            <div class="certificate-existing">
-                <h3>Seu Certificado PNSB</h3>
+            <div class="certificate-card">
+                <div class="certificate-header">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Certificado Emitido</h3>
+                </div>
                 <div class="certificate-info">
-                    <p><strong>Emitido em:</strong> ${new Date(certData.certificate.issuedDate).toLocaleDateString('pt-BR')}</p>
-                    <p><strong>Pontuação Final:</strong> ${certData.certificate.finalScore}%</p>
+                    <p><strong>Usuário:</strong> ${certData.username}</p>
+                    <p><strong>Data de Emissão:</strong> ${new Date(certData.issuedDate).toLocaleDateString('pt-BR')}</p>
                     <p><strong>Código de Validação:</strong> <code>${certData.validationCode}</code></p>
+                    <p><strong>Pontuação Final:</strong> ${certData.finalScore}%</p>
                 </div>
                 <div class="certificate-actions">
                     <button class="btn btn-primary" onclick="certificateManager.downloadCertificate()">
-                        <i class="fas fa-download"></i> Baixar PDF
+                        <i class="fa-solid fa-download"></i> Baixar Certificado
                     </button>
                     <button class="btn btn-secondary" onclick="certificateManager.shareCertificate()">
-                        <i class="fas fa-share"></i> Compartilhar
+                        <i class="fa-solid fa-share"></i> Compartilhar
                     </button>
-                    <a href="${this.getValidationURL()}" target="_blank" class="btn btn-outline">
-                        <i class="fas fa-external-link-alt"></i> Validar Online
-                    </a>
                 </div>
             </div>
         `;
@@ -411,11 +480,14 @@ class CertificateManager {
      */
     renderGenerateButton(container) {
         container.innerHTML = `
-            <div class="certificate-generate">
-                <h3>Parabéns! Você concluiu o curso</h3>
-                <p>Você completou todos os módulos e passou na avaliação final. Agora pode gerar seu certificado oficial.</p>
+            <div class="certificate-card">
+                <div class="certificate-header">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>Parabéns! Você completou o curso!</h3>
+                </div>
+                <p>Você pode agora gerar seu certificado de conclusão.</p>
                 <button class="btn btn-success" onclick="certificateManager.handleGenerateCertificate()">
-                    <i class="fas fa-trophy"></i> Gerar Certificado
+                    <i class="fa-solid fa-award"></i> Gerar Certificado
                 </button>
             </div>
         `;
@@ -426,62 +498,84 @@ class CertificateManager {
      */
     renderRequirements(container) {
         container.innerHTML = `
-            <div class="certificate-requirements">
-                <h3>Certificado PNSB</h3>
-                <p>Para obter seu certificado, você precisa:</p>
+            <div class="certificate-card">
+                <div class="certificate-header">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <h3>Requisitos para Certificação</h3>
+                </div>
+                <p>Para gerar seu certificado, você precisa:</p>
                 <ul>
-                    <li>✅ Completar todos os 8 módulos do curso</li>
-                    <li>✅ Obter pelo menos 70% na avaliação final</li>
+                    <li>Completar todos os 8 módulos do curso</li>
+                    <li>Obter pelo menos 70% na avaliação final</li>
                 </ul>
-                <p class="text-muted">Continue estudando para desbloquear seu certificado!</p>
+                <p><em>Continue estudando para conquistar seu certificado!</em></p>
             </div>
         `;
     }
 
     /**
-     * Renderiza erro
+     * Renderiza mensagem de erro
      */
     renderError(container, message) {
         container.innerHTML = `
-            <div class="certificate-error">
-                <h3>Erro</h3>
+            <div class="certificate-card error">
+                <div class="certificate-header">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <h3>Erro</h3>
+                </div>
                 <p>${message}</p>
                 <button class="btn btn-secondary" onclick="location.reload()">
-                    <i class="fas fa-refresh"></i> Tentar Novamente
+                    <i class="fa-solid fa-refresh"></i> Tentar Novamente
                 </button>
             </div>
         `;
     }
 
     /**
-     * Handler para gerar certificado
+     * Manipula a geração do certificado
      */
     async handleGenerateCertificate() {
         try {
             const button = event.target;
             const originalText = button.innerHTML;
-            
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gerando...';
             button.disabled = true;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando...';
             
-            await this.generateCertificate();
+            const result = await this.generateCertificate();
             
             this.showNotification('Certificado gerado com sucesso!', 'success');
             
-            // Recarrega a interface
+            // Recarrega a interface para mostrar o certificado
             setTimeout(() => {
-                this.createCertificateInterface();
-            }, 1000);
+                location.reload();
+            }, 1500);
             
         } catch (error) {
+            console.error('Erro ao gerar certificado:', error);
             this.showNotification(error.message, 'error');
             
             // Restaura o botão
             const button = event.target;
+            button.innerHTML = '<i class="fa-solid fa-award"></i> Gerar Certificado';
             button.disabled = false;
-            button.innerHTML = '<i class="fas fa-trophy"></i> Gerar Certificado';
         }
     }
+}
+
+// Instância global para ser usada nos eventos onclick
+window.certificateManager = null;
+
+// Inicialização automática quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = sessionStorage.getItem('currentUser');
+    if (currentUser) {
+        window.certificateManager = new CertificateManager(currentUser);
+    }
+});
+
+// Exporta a classe para uso em módulos
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = CertificateManager;
 }
 
 // Adicionar CSS para animações
@@ -547,7 +641,5 @@ style.textContent = `
         color: #e74c3c;
     }
 `;
-document.head.appendChild(style);
-
-// Tornar disponível globalmente
+document.head.appendChild(style); 
 window.CertificateManager = CertificateManager; 

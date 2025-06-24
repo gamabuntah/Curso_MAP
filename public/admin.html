@@ -122,10 +122,10 @@
         // Função para mostrar abas
         function showTab(tabName) {
             // Remove classe active de todas as abas e botões
-            document.querySelectorAll('.tab-content').forEach(tab => {
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
                 tab.classList.remove('active');
             });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
+            document.querySelectorAll('.tab-btn').forEach(function(btn) {
                 btn.classList.remove('active');
             });
 
@@ -160,20 +160,20 @@
         async function loadOverviewData() {
             try {
                 // Carrega dados de usuários
-                const usersResponse = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
+                const usersResponse = await fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser);
                 const usersData = await usersResponse.json();
 
                 // Carrega dados de certificados
-                const certsResponse = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
+                const certsResponse = await fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser);
                 const certsData = await certsResponse.json();
 
                 // Atualiza estatísticas
                 document.getElementById('totalUsers').textContent = usersData.length || 0;
-                document.getElementById('activeUsers').textContent = usersData.filter(u => u.progressPercent > 0).length || 0;
+                document.getElementById('activeUsers').textContent = usersData.filter(function(u) { return u.progressPercent > 0; }).length || 0;
                 document.getElementById('totalCertificates').textContent = certsData.length || 0;
                 
                 const avgProgress = usersData.length > 0 
-                    ? Math.round(usersData.reduce((sum, u) => sum + (u.progressPercent || 0), 0) / usersData.length)
+                    ? Math.round(usersData.reduce(function(sum, u) { return sum + (u.progressPercent || 0); }, 0) / usersData.length)
                     : 0;
                 document.getElementById('avgProgress').textContent = avgProgress + '%';
 
@@ -190,7 +190,7 @@
         // Carrega dados dos usuários
         async function loadUsersData() {
             try {
-                const response = await fetch(`${baseURL}/api/admin/all-progress?adminUser=${currentUser}`);
+                const response = await fetch(baseURL + '/api/admin/all-progress?adminUser=' + currentUser);
                 const usersData = await response.json();
 
                 const tbody = document.getElementById('usersTableBody');
@@ -201,7 +201,7 @@
                     return;
                 }
 
-                usersData.forEach(user => {
+                usersData.forEach(function(user) {
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td><strong>${user.username}</strong></td>
@@ -237,7 +237,7 @@
         // Carrega dados dos certificados
         async function loadCertificatesData() {
             try {
-                const response = await fetch(`${baseURL}/api/admin/all-certificates?adminUser=${currentUser}`);
+                const response = await fetch(baseURL + '/api/admin/all-certificates?adminUser=' + currentUser);
                 const certsData = await response.json();
 
                 const tbody = document.getElementById('certificatesTableBody');
@@ -248,7 +248,7 @@
                     return;
                 }
 
-                certsData.forEach(cert => {
+                certsData.forEach(function(cert) {
                     const issuedDate = new Date(cert.issuedDate).toLocaleDateString('pt-BR');
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -266,6 +266,9 @@
                         <td>
                             <button class="action-btn" onclick="validateCertificate('${cert.validationCode}')">
                                 <i class="fa-solid fa-search"></i> Validar
+                            </button>
+                            <button class="action-btn success" onclick="downloadCertificateAsAdmin('${cert.validationCode}')">
+                                <i class="fa-solid fa-download"></i> Baixar
                             </button>
                             ${cert.status === 'issued' ? `
                             <button class="action-btn danger" onclick="revokeCertificate('${cert.username}')">
@@ -287,7 +290,7 @@
         // Visualizar progresso detalhado do usuário
         async function viewUserProgress(username) {
             try {
-                const response = await fetch(`${baseURL}/api/progress/${username}`);
+                const response = await fetch(baseURL + '/api/progress/' + username);
                 if (!response.ok) {
                     throw new Error('Erro ao carregar progresso do usuário');
                 }
@@ -296,7 +299,7 @@
                 showUserProgressModal(username, progress);
             } catch (error) {
                 console.error('Erro ao carregar progresso:', error);
-                alert(`Erro ao carregar progresso de ${username}: ${error.message}`);
+                alert('Erro ao carregar progresso de ' + username + ': ' + error.message);
             }
         }
 
@@ -311,8 +314,8 @@
             // Calcular estatísticas
             const modules = progress.modules || {};
             const totalModules = 8;
-            const completedModules = Object.values(modules).filter(m => m.status === 'completed').length;
-            const failedModules = Object.values(modules).filter(m => m.status === 'failed').length;
+            const completedModules = Object.values(modules).filter(function(m) { return m.status === 'completed'; }).length;
+            const failedModules = Object.values(modules).filter(function(m) { return m.status === 'failed'; }).length;
             const progressPercent = Math.round((completedModules / totalModules) * 100);
 
             // Criar modal
@@ -333,7 +336,7 @@
 
             let modulesHtml = '';
             for (let i = 1; i <= 8; i++) {
-                const module = modules[`module${i}`] || {};
+                const module = modules['module' + i] || {};
                 const status = module.status || 'not_started';
                 const score = module.score || 0;
                 
@@ -381,7 +384,7 @@
                             <div style="font-size: 14px; color: #666;">Módulos Reprovados</div>
                         </div>
                         <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #f39c12;">${progress.final_evaluation?.score || 'N/A'}</div>
+                            <div style="font-size: 24px; font-weight: bold; color: #f39c12;">${progress.final_evaluation ? progress.final_evaluation.score : 'N/A'}</div>
                             <div style="font-size: 14px; color: #666;">Avaliação Final</div>
                         </div>
                     </div>
@@ -408,13 +411,13 @@
         // Validar certificado
         async function validateCertificate(validationCode) {
             try {
-                const response = await fetch(`${baseURL}/api/certificates/validate/${validationCode}`);
+                const response = await fetch(baseURL + '/api/certificates/validate/' + validationCode);
                 const result = await response.json();
 
                 if (result.valid) {
-                    alert(`Certificado VÁLIDO!\n\nUsuário: ${result.certificate.username}\nData de Emissão: ${new Date(result.certificate.issuedDate).toLocaleDateString('pt-BR')}\nPontuação: ${result.certificate.finalScore}%\nValidações: ${result.certificate.validationCount}`);
+                    alert('Certificado VÁLIDO!\n\nUsuário: ' + result.certificate.username + '\nData de Emissão: ' + new Date(result.certificate.issuedDate).toLocaleDateString('pt-BR') + '\nPontuação: ' + result.certificate.finalScore + '%\nValidações: ' + result.certificate.validationCount);
                 } else {
-                    alert(`Certificado INVÁLIDO!\n\nMotivo: ${result.error}`);
+                    alert('Certificado INVÁLIDO!\n\nMotivo: ' + result.error);
                 }
             } catch (error) {
                 console.error('Erro ao validar certificado:', error);
@@ -424,20 +427,20 @@
 
         // Revogar certificado
         async function revokeCertificate(username) {
-            const reason = prompt(`Motivo da revogação do certificado de ${username}:`);
+            const reason = prompt('Motivo da revogação do certificado de ' + username + ':');
             if (!reason) return;
 
-            if (!confirm(`Tem certeza que deseja revogar o certificado de ${username}?\n\nMotivo: ${reason}\n\nEsta ação não pode ser desfeita.`)) {
+            if (!confirm('Tem certeza que deseja revogar o certificado de ' + username + '?\n\nMotivo: ' + reason + '\n\nEsta ação não pode ser desfeita.')) {
                 return;
             }
 
             try {
-                const response = await fetch(`${baseURL}/api/certificates/${username}/revoke?adminUser=${currentUser}`, {
+                const response = await fetch(baseURL + '/api/certificates/' + username + '/revoke?adminUser=' + currentUser, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ reason })
+                    body: JSON.stringify({ reason: reason })
                 });
 
                 const result = await response.json();
@@ -446,11 +449,41 @@
                     alert('Certificado revogado com sucesso!');
                     loadCertificatesData(); // Recarrega a lista
                 } else {
-                    alert(`Erro ao revogar certificado: ${result.message}`);
+                    alert('Erro ao revogar certificado: ' + result.message);
                 }
             } catch (error) {
                 console.error('Erro ao revogar certificado:', error);
                 alert('Erro ao revogar certificado. Tente novamente.');
+            }
+        }
+
+        // Baixar certificado como administrador
+        async function downloadCertificateAsAdmin(validationCode) {
+            try {
+                const response = await fetch(baseURL + '/api/certificates/admin/download', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ validationCode: validationCode })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Erro ao baixar certificado');
+                }
+
+                const result = await response.json();
+                
+                // Simula o download do PDF (aqui você implementaria a lógica de geração de PDF)
+                alert('Download do certificado de ' + result.certificate.username + ' iniciado!');
+                
+                // Incrementa o contador de downloads
+                loadCertificatesData(); // Recarrega a lista para mostrar contador atualizado
+                
+            } catch (error) {
+                console.error('Erro ao baixar certificado:', error);
+                alert('Erro ao baixar certificado: ' + error.message);
             }
         }
 

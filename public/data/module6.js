@@ -6,88 +6,58 @@ Object.assign(window.modulos_data, {
     "cards": [
       {
         "type": "default",
-        "title": "📋 Resumo",
-        "content": "Este módulo tem como objetivo principal aprofundar a compreensão sobre o percurso da água pluvial após ser coletada e os métodos de tratamento aplicados a ela antes de sua disposição final. O módulo está dividido em dois blocos: <b>Bloco DES (Destinação)</b> que foca em compreender o fluxo da água pluvial após a captação e os impactos no seu ponto de despejo, e <b>Bloco TRA (Tratamento)</b> que aborda a distinção entre tratamento de águas pluviais, esgoto e água para abastecimento, descrevendo os locais e tipos de tratamento aplicados."
-      },
-      {
-        "type": "default",
-        "title": "6.1 Bloco DES - Destinação",
-        "content": "O Bloco DES foca em compreender o <b>fluxo da água pluvial após a captação e os impactos no seu ponto de despejo</b>. Após ser captada pelos dispositivos de drenagem, a água pluvial é conduzida ao seu destino final, que pode ser rios, córregos, entre outros, ou pode ser direcionada para estações de tratamento ou reservatórios para reúso. O <b>ponto final de despejo é crucial</b> para garantir que a drenagem não cause problemas como erosão, poluição ou alagamento."
-      },
-      {
-        "type": "default",
-        "title": "6.1.1 Quesito 1 - Pontos Finais de Destinação",
-        "content": "A água captada é descarregada, liberada ou tratada nestes locais, finalizando o percurso do sistema. Os <b>pontos finais de destinação</b> podem ser:<br><br><b>• Rios intermitentes:</b> rios com água somente no período chuvoso<br><b>• Rios perenes:</b> rios com água o ano todo<br><b>• Lagoas</b><br><b>• Mar</b><br><b>• Áreas livres públicas ou particulares:</b><br>&nbsp;&nbsp;- Públicas: ruas, calçadas, praças, jardins, parques, etc., mantidas pelo poder público<br>&nbsp;&nbsp;- Particulares: terrenos, jardins, quintais, etc., de propriedade privada<br><b>• Reservatórios/açudes:</b> importante não confundir com reservatórios para tratamento de águas pluviais<br><b>• Encaminhamento para tratamento</b><br><b>• Outro(s)</b><br><b>• Não sabe</b>"
-      },
-      {
-        "type": "default",
-        "title": "6.1.2 Quesito 2 - Dispositivos para Redução da Velocidade da Água",
-        "content": "Verifica-se a existência de <b>dispositivos para redução da velocidade da água</b>, como dissipadores de energia, antes do deságue em rios, lagos ou outros locais no município pesquisado.<br><br>Um <b>dissipador de energia</b> é uma estrutura que reduz a velocidade das águas para evitar erosão, como escadas ou rampas com blocos. Estes dispositivos são fundamentais para proteger os pontos de lançamento contra processos erosivos causados pela alta velocidade da água."
-      },
-      {
-        "type": "default",
-        "title": "6.1.3 Quesito 3 - Erosão ou Deslizamentos nos Pontos Finais",
-        "content": "Esta seção busca identificar <b>processos erosivos e/ou movimentos de massa</b> relacionados exclusivamente aos pontos finais de deságue do sistema de drenagem de águas pluviais.<br><br>A <b>erosão</b> é um processo de deterioração de solos e rochas causado por agentes naturais (chuva, água, vento, gelo, clima) ou por intervenção humana, que pode levar a modificações paisagísticas, por vezes catastróficas.<br><br><b>Os processos erosivos e/ou movimentos de massa a serem identificados incluem:</b><br><br><b>• Deslizamentos / escorregamentos</b><br><b>• Erosão/solapamento de margens de corpos d'água:</b> tipo de erosão que causa a queda das encostas, afundando o solo e destruindo as bases da margem. Na Amazônia, é conhecido como \"terras caídas\"<br><b>• Sulcos / ravinamentos / voçoroca (vossoroca ou bossoroca ou boçoroca)</b><br><b>• Outro(s)</b>"
-      },
-      {
-        "type": "default",
-        "title": "6.2 Bloco TRA - Tratamento",
-        "content": "No Bloco TRA, a atenção é dada à <b>clara distinção entre tratamento de águas pluviais, esgoto e água para abastecimento</b>. Este bloco foca especificamente no tratamento das águas pluviais captadas pela rede separadora antes de sua destinação final, explorando locais, tipos de tratamento e possibilidades de reúso do efluente tratado."
-      },
-      {
-        "type": "default",
-        "title": "6.2.1 Quesito 1 - Realização de Tratamento",
-        "content": "Verifica se o prestador de serviço realizou o <b>tratamento das águas pluviais captadas pela rede separadora</b> (captação e transporte somente de águas de chuva), antes da destinação final.<br><br>É importante distinguir que este quesito refere-se especificamente ao tratamento de águas pluviais em sistemas separadores absolutos, onde apenas água da chuva é coletada e transportada, diferentemente de sistemas unitários ou mistos."
-      },
-      {
-        "type": "default",
-        "title": "6.2.2 Quesito 2 - Locais de Tratamento",
-        "content": "Os <b>locais onde o tratamento das águas pluviais</b> pode ser realizado incluem:<br><br><b>• Estação de Tratamento de Esgotos (ETE):</b> instalação projetada para tratar e depurar o esgoto coletado, removendo contaminantes físicos, químicos e biológicos antes de seu descarte no meio ambiente<br><br><b>• Unidade de Tratamento de Rios (UTR) / Unidades de Recuperação da Qualidade da Água de Córregos (UQR):</b> sistemas implementados diretamente em corpos d'água, como rios e córregos, para melhorar a qualidade da água. Podem incluir processos físicos, químicos ou biológicos para remover poluentes e restaurar a saúde ambiental do ecossistema aquático<br><br><b>• Reservatório de retenção ou detenção:</b> estruturas projetadas para armazenar temporariamente grandes volumes de água provenientes de chuvas ou escoamento superficial<br><br><b>• Estruturas de fitorremediação ou biorremediação:</b> soluções naturais ou biotecnológicas que utilizam plantas (fitorremediação) ou microrganismos (biorremediação) para remover, estabilizar ou degradar poluentes presentes no solo, na água ou no ar<br><br><b>• Outro(s):</b> inclui tecnologias ou soluções diversas não abrangidas nas categorias acima, como wetlands construídos, barreiras filtrantes ou novas inovações no campo da sustentabilidade hídrica"
-      },
-      {
-        "type": "default",
-        "title": "6.2.3 Quesito 3 - Tipos de Tratamento",
-        "content": "Os <b>tipos de tratamento</b> que podem ser realizados são:<br><br><b>• Preliminar:</b> responsável pela remoção de materiais sólidos mais grosseiros, como gradeamento e caixa de areia<br><br><b>• Sedimentação:</b> etapa focada na remoção de sólidos suspensos menores por meio de decantação<br><br><b>• Biológico:</b> envolve o uso de microrganismos para decompor matéria orgânica dissolvida e em suspensão no esgoto<br><br><b>• Outro(s):</b> pode incluir processos como:<br>&nbsp;&nbsp;- Oxidação Química (uso de reagentes químicos)<br>&nbsp;&nbsp;- Membranas Filtrantes (tratamento avançado para remoção de partículas muito finas e compostos dissolvidos)<br>&nbsp;&nbsp;- Reúso de Água (sistemas que permitem a recuperação e reutilização do efluente tratado para fins não potáveis)"
-      },
-      {
-        "type": "default",
-        "title": "6.2.4 Quesito 4 - Aproveitamento do Efluente Tratado",
-        "content": "Verifica a existência de <b>sistemas que utilizam a água tratada para diferentes fins, promovendo sustentabilidade</b>.<br><br>Refere-se a tecnologias e práticas que utilizam a água resultante do tratamento para diversas finalidades, <b>reduzindo a necessidade de captação de água de fontes naturais</b>, o que promove a sustentabilidade, a economia de recursos hídricos e contribui para a preservação ambiental.<br><br>O aproveitamento do efluente tratado representa uma abordagem circular da gestão de recursos hídricos, transformando o que seria descarte em recurso útil."
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 1 - Destinação para Rio Intermitente",
-        "content": "<b>Situação Real:</b> Sistema de drenagem que deságua em um rio que só tem água na época de chuva.<br><br><b>Pergunta do informante:</b> \"Nosso sistema vai para um rio que só tem água quando chove. Como classificar?\"<br><br><b>Como orientar:</b><br>1. Ponto final: \"Rios intermitentes\" (quesito 1)<br>2. Verificar se há dissipadores de energia<br>3. Investigar erosão no ponto de lançamento<br>4. Rio intermitente ≠ Rio perene<br><br><b>Conceito-chave aplicado:</b> Intermitente = só na chuva, Perene = o ano todo<br><br><b>Erro comum:</b> Confundir rios intermitentes com perenes"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 2 - Erosão no Ponto de Deságue",
-        "content": "<b>Situação Real:</b> Município com problemas de erosão onde a drenagem deságua no rio.<br><br><b>Pergunta do informante:</b> \"Onde nossa rede despeja no rio está cavando um buraco grande. Isso é problema?\"<br><br><b>Como orientar:</b><br>1. SIM! É erosão/solapamento de margens<br>2. Registrar no quesito 3 do Bloco DES<br>3. Indica necessidade de dissipador de energia<br>4. \"Solapamento\" = erosão que destrói as bases da margem<br><br><b>Conceito-chave aplicado:</b> Velocidade excessiva causa erosão<br><br><b>Erro comum:</b> Não relacionar erosão com falta de dissipadores"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 3 - Fitorremediação",
-        "content": "<b>Situação Real:</b> Autarquia que usa plantas para tratar água de drenagem antes do lançamento.<br><br><b>Pergunta do informante:</b> \"Temos um sistema com plantas que limpa a água da chuva. É tratamento?\"<br><br><b>Como orientar:</b><br>1. SIM! É tratamento (quesito 1 do TRA)<br>2. Local: \"Estruturas de fitorremediação\" (quesito 2)<br>3. Tipo: \"Biológico\" (quesito 3)<br>4. Verificar se há reúso do efluente (quesito 4)<br><br><b>Conceito-chave aplicado:</b> Fitorremediação = plantas que removem poluentes<br><br><b>Erro comum:</b> Não reconhecer plantas como tratamento biológico"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 4 - UTR/UQR",
-        "content": "<b>Situação Real:</b> Sistema que trata água diretamente no córrego urbano.<br><br><b>Pergunta do informante:</b> \"Instalamos equipamentos no próprio córrego para melhorar a qualidade da água. Como classificar?\"<br><br><b>Como orientar:</b><br>1. É tratamento in-situ (quesito 1 do TRA)<br>2. Local: \"UTR/UQR\" (quesito 2)<br>3. UTR = Unidade de Tratamento de Rios<br>4. UQR = Unidade de Qualidade da Água de Córregos<br><br><b>Conceito-chave aplicado:</b> Tratamento direto no corpo d'água<br><br><b>Erro comum:</b> Confundir UTR/UQR com ETE convencional"
-      },
-      {
-        "type": "atencao",
-        "title": "⚠️ Atenção - Diferenças Críticas",
-        "content": "<b>DES vs TRA:</b><br>• DES = Para onde a água vai (destinação final)<br>• TRA = Como a água é limpa (tratamento)<br><br><b>Rios Intermitentes vs Perenes:</b><br>• Intermitente = Só tem água na época de chuva<br>• Perene = Tem água o ano todo<br><br><b>Tratamento de Águas Pluviais vs Esgoto:</b><br>• Pluviais = Remove lixo, areia, óleos das ruas<br>• Esgoto = Remove matéria orgânica e patógenos<br><br><b>Fitorremediação vs Biorremediação:</b><br>• Fitorremediação = Usa plantas<br>• Biorremediação = Usa microrganismos"
-      },
-      {
-        "type": "duvidas",
-        "title": "🗨️ Dúvidas Frequentes",
-        "content": "<b>Dúvida Comum:</b> \"Qual a diferença entre UTR e UQR?\"<br><b>Como Ajudar:</b> UTR é para rios, UQR é para córregos. Ambas tratam água diretamente no corpo d'água.<br><br><b>Dúvida Comum:</b> \"Dissipador de energia é obrigatório?\"<br><b>Como Ajudar:</b> Não é obrigatório, mas é recomendado para evitar erosão no ponto de lançamento.<br><br><b>Dúvida Comum:</b> \"Voçoroca é diferente de ravina?\"<br><b>Como Ajudar:</b> Voçoroca é mais profunda que ravina, mas ambas são processos erosivos a serem registrados.<br><br><b>Dúvida Comum:</b> \"Wetland é fitorremediação?\"<br><b>Como Ajudar:</b> Sim, wetlands construídos usam plantas (fitorremediação) para tratar água."
+        "title": "📖 Introdução ao Módulo 6",
+        "content": "Este módulo tem como objetivo principal aprofundar a compreensão sobre o percurso da água pluvial após ser coletada e os métodos de tratamento aplicados a ela antes de sua disposição final."
       },
       {
         "type": "resumo",
-        "title": "📊 Resumo Visual - Quesitos por Bloco",
-        "content": "<table><tr><th>Bloco DES (Destinação)</th><th>Bloco TRA (Tratamento)</th></tr><tr><td>Quesito 1: Pontos Finais</td><td>Quesito 1: Realização</td></tr><tr><td>Quesito 2: Dissipadores</td><td>Quesito 2: Locais</td></tr><tr><td>Quesito 3: Erosão/Deslizamentos</td><td>Quesito 3: Tipos</td></tr><tr><td></td><td>Quesito 4: Aproveitamento</td></tr></table><br><br><table><tr><th>Processo Erosivo</th><th>Descrição</th></tr><tr><td>Deslizamento</td><td>Movimento de massa em encostas</td></tr><tr><td>Solapamento</td><td>Erosão que destrói bases das margens</td></tr><tr><td>Voçoroca</td><td>Erosão profunda em forma de vale</td></tr></table>"
+        "title": "📝 Resumo do Módulo",
+        "content": "O Módulo 6 do curso de Capacitação para Técnicos do IBGE, intitulado \"Destinação e Tratamento de Águas Pluviais\", aborda o percurso da água da chuva após sua coleta e os métodos para tratá-la antes do descarte final. O Bloco DES – Destinação, concentra-se em compreender o fluxo da água pluvial após a captação e os impactos no seu ponto de despejo, detalhando os locais para onde a água pode ser direcionada, como rios, lagoas ou estações de tratamento. Ele também explora dispositivos para reduzir a velocidade da água e evitar erosão e identifica processos erosivos nos pontos de deságue. O Bloco TRA – Tratamento, foca na distinção entre o tratamento de águas pluviais, esgoto e água para abastecimento, descrevendo os locais e tipos de tratamento aplicados, como estações de tratamento de esgoto ou estruturas de fitorremediação, e a possibilidade de aproveitamento do efluente tratado para promover a sustentabilidade."
+      },
+      {
+        "type": "default",
+        "title": "🎯 6.1. Bloco DES - Destinação",
+        "content": "O Bloco DES foca em compreender o fluxo da água pluvial após a captação e os impactos no seu ponto de despejo. Após ser captada pelos dispositivos de drenagem, a água pluvial é conduzida ao seu destino final, que pode ser rios, córregos, entre outros, ou pode ser direcionada para estações de tratamento ou reservatórios para reúso. O ponto final de despejo é crucial para garantir que a drenagem não cause problemas como erosão, poluição ou alagamento."
+      },
+      {
+        "type": "exemplo",
+        "title": "📍 Pontos Finais de Destinação (Quesito 1)",
+        "content": "A água captada é descarregada, liberada ou tratada nestes locais, finalizando o percurso do sistema. Os pontos finais de destinação podem ser:<ul><li>Rios intermitentes: rios com água somente no período chuvoso.</li><li>Rios perenes: rios com água o ano todo.</li><li>Lagoas.</li><li>Mar.</li><li>Áreas livres públicas ou particulares: <ul><li>Públicas: ruas, calçadas, praças, jardins, parques, etc., mantidas pelo poder público.</li><li>Particulares: terrenos, jardins, quintais, etc., de propriedade privada.</li></ul></li><li>Reservatórios/açudes: importante não confundir com reservatórios para tratamento de águas pluviais.</li><li>Encaminhamento para tratamento.</li><li>Outro(s).</li><li>Não sabe.</li></ul>"
+      },
+      {
+        "type": "default",
+        "title": "🐌 Dispositivos para Redução da Velocidade da Água (Quesito 2)",
+        "content": "Verifica-se a existência de dispositivos para redução da velocidade da água, como dissipadores de energia, antes do deságue em rios, lagos ou outros locais no município pesquisado. Um dissipador de energia é uma estrutura que reduz a velocidade das águas para evitar erosão, como escadas ou rampas com blocos."
+      },
+      {
+        "type": "atencao",
+        "title": "⚠️ Erosão ou Deslizamentos nos Pontos Finais (Quesito 3)",
+        "content": "Esta seção busca identificar processos erosivos e/ou movimentos de massa relacionados exclusivamente aos pontos finais de deságue do sistema de drenagem de águas pluviais. A erosão é um processo de deterioração de solos e rochas causado por agentes naturais (chuva, água, vento, gelo, clima) ou por intervenção humana, que pode levar a modificações paisagísticas, por vezes catastróficas. Os processos erosivos e/ou movimentos de massa a serem identificados incluem:<ul><li>Deslizamentos / escorregamentos.</li><li>Erosão/solapamento de margens de corpos d'água: tipo de erosão que causa a queda das encostas, afundando o solo e destruindo as bases da margem. Na Amazônia, é conhecido como \"terras caídas\".</li><li>Sulcos / ravinamentos / voçoroca (vossoroca ou bossoroca ou boçoroca).</li><li>Outro(s).</li></ul>"
+      },
+      {
+        "type": "default",
+        "title": "🧪 6.2. Bloco TRA - Tratamento",
+        "content": "No Bloco TRA, a atenção é dada à clara distinção entre tratamento de águas pluviais, esgoto e água para abastecimento."
+      },
+      {
+        "type": "default",
+        "title": "✅ Realização de Tratamento (Quesito 1)",
+        "content": "Verifica se o prestador de serviço realizou o tratamento das águas pluviais captadas pela rede separadora (captação e transporte somente de águas de chuva), antes da destinação final."
+      },
+      {
+        "type": "exemplo",
+        "title": "📍 Locais de Tratamento (Quesito 2)",
+        "content": "Os locais onde o tratamento das águas pluviais pode ser realizado incluem:<ul><li><b>Estação de Tratamento de Esgotos (ETE):</b> instalação projetada para tratar e depurar o esgoto coletado, removendo contaminantes físicos, químicos e biológicos antes de seu descarte no meio ambiente, visando minimizar impactos ambientais e proteger a saúde pública.</li><li><b>Unidade de Tratamento de Rios (UTR) / Unidades de Recuperação da Qualidade da Água de Córregos (UQR):</b> sistemas implementados diretamente em corpos d'água, como rios e córregos, para melhorar a qualidade da água. Podem incluir processos físicos, químicos ou biológicos para remover poluentes e restaurar a saúde ambiental do ecossistema aquático.</li><li><b>Reservatório de retenção ou detenção:</b> estruturas projetadas para armazenar temporariamente grandes volumes de água provenientes de chuvas ou escoamento superficial. Entre os métodos comuns estão o tratamento preliminar (grades, cestos coletores, caixas de retenção), sedimentação e, em áreas com grande circulação de veículos, a separação de óleo e graxa. Alguns projetos também incluem soluções naturais, como jardins de chuva ou áreas com vegetação filtrante.</li><li><b>Estruturas de fitorremediação ou biorremediação:</b> soluções naturais ou biotecnológicas que utilizam plantas (fitorremediação) ou microrganismos (biorremediação) para remover, estabilizar ou degradar poluentes presentes no solo, na água ou no ar. São métodos sustentáveis e de baixo impacto ambiental.</li><li><b>Outro(s):</b> inclui tecnologias ou soluções diversas não abrangidas nas categorias acima, como wetlands construídos, barreiras filtrantes ou novas inovações no campo da sustentabilidade hídrica.</li></ul>"
+      },
+      {
+        "type": "exemplo",
+        "title": "🔬 Tipos de Tratamento (Quesito 3)",
+        "content": "Os tipos de tratamento que podem ser realizados são:<ul><li><b>Preliminar:</b> responsável pela remoção de materiais sólidos mais grosseiros, como gradeamento e caixa de areia.</li><li><b>Sedimentação:</b> etapa focada na remoção de sólidos suspensos menores por meio de decantação.</li><li><b>Biológico:</b> envolve o uso de microrganismos para decompor matéria orgânica dissolvida e em suspensão no esgoto.</li><li><b>Outro(s):</b> pode incluir processos como Oxidação Química (uso de reagentes químicos), Membranas Filtrantes (tratamento avançado para remoção de partículas muito finas e compostos dissolvidos), e Reúso de Água (sistemas que permitem a recuperação e reutilização do efluente tratado para fins não potáveis).</li></ul>"
+      },
+      {
+        "type": "default",
+        "title": "♻️ Aproveitamento do Efluente Tratado (Quesito 4)",
+        "content": "Verifica a existência de sistemas que utilizam a água tratada para diferentes fins, promovendo sustentabilidade. Refere-se a tecnologias e práticas que utilizam a água resultante do tratamento para diversas finalidades, reduzindo a necessidade de captação de água de fontes naturais, o que promove a sustentabilidade, a economia de recursos hídricos e contribui para a preservação ambiental."
       }
     ],
     "quiz": {

@@ -6,123 +6,108 @@ Object.assign(window.modulos_data, {
     "cards": [
       {
         "type": "default",
-        "title": "📋 Resumo",
-        "content": "Este módulo tem como objetivo capacitar os técnicos do IBGE a compreender e identificar as diversas estruturas e sistemas de proteção utilizados no manejo de águas pluviais, especialmente aquelas voltadas para o controle de cheias e inundações. O módulo está dividido em dois blocos principais: <b>Bloco EDR (Estruturas de Retenção/Detenção)</b> que aborda o armazenamento temporário de enxurradas para reduzir vazão a jusante, e <b>Bloco SPI (Sistema de Proteção Contra Enchentes e Inundações)</b> que trata de estruturas lineares como diques, pôlderes e comportas que impedem o ingresso das águas dos rios nas cidades."
+        "title": "📖 Introdução ao Módulo 5",
+        "content": "Este módulo tem como objetivo capacitar os técnicos do IBGE a compreender e identificar as diversas estruturas e sistemas de proteção utilizados no manejo de águas pluviais, especialmente aquelas voltadas para o controle de cheias e inundações."
+      },
+      {
+        "type": "resumo",
+        "title": "📝 Resumo do Módulo",
+        "content": "Este documento detalha o Módulo 5 de um curso de capacitação sobre drenagem e manejo de águas pluviais, focado em estruturas de retenção/detenção (EDR) e sistemas de proteção contra enchentes e inundações (SPI). O módulo visa ensinar técnicos a identificar e compreender sistemas que armazenam temporariamente enxurradas para reduzir a vazão a jusante, distinguindo entre a detenção, que é temporária, e a retenção, que mantém um nível de água permanente. Além disso, o texto explora a operação e manutenção dessas estruturas, incluindo a gestão de sistemas de bombeamento e a existência de protocolos de contingência para acionamento em caso de cheias. O documento também descreve os componentes de sistemas de proteção contra enchentes, como diques e polders, e os quesitos de vistoria e manutenção para garantir sua eficácia."
       },
       {
         "type": "default",
-        "title": "5.1 Bloco EDR - Estruturas de Retenção/Detenção",
-        "content": "O propósito das Estruturas de Retenção/Detenção é o <b>armazenamento temporário de enxurradas</b> com o objetivo de reduzir a vazão a jusante (rio abaixo, montanha abaixo, encosta abaixo).<br><br>É fundamental compreender a diferença entre <b>Detenção</b> e <b>Retenção</b>:<br><br><b>• Detenção:</b> Refere-se a bacias utilizadas para receber temporariamente o acréscimo de águas, sendo dimensionadas para descarregar totalmente a água armazenada. Estas bacias permanecem <b>sem água em seu interior no período de estiagem</b>. Exemplos incluem piscinões e sistemas subterrâneos.<br><br><b>• Retenção:</b> São bacias que possuem um <b>nível permanente de água (espelho d'água)</b> ao longo do ano, regularizando os níveis dos rios por meio do armazenamento das águas das chuvas.<br><br><b>Regra prática:</b> A detenção é temporária, mas a retenção tem um nível de água permanente."
+        "title": "🌊 5.1. Bloco EDR - Estruturas de Retenção/Detenção",
+        "content": "O propósito das Estruturas de Retenção/Detenção é o armazenamento temporário de enxurradas com o objetivo de reduzir a vazão a jusante (rio abaixo, montanha abaixo, encosta abaixo)."
+      },
+      {
+        "type": "duvidas",
+        "title": "❓ Detenção vs. Retenção: Qual a diferença?",
+        "content": "É fundamental compreender a diferença entre Detenção e Retenção:<ul><li><b>Detenção:</b> Refere-se a bacias utilizadas para receber temporariamente o acréscimo de águas, sendo dimensionadas para descarregar totalmente a água armazenada. Estas bacias permanecem sem água em seu interior no período de estiagem. Exemplos incluem piscinões e sistemas subterrâneos. Durante o período sem chuva, é comum que a área seja utilizada para atividades de lazer da comunidade, como pista de caminhada, pista de skate ou futebol. Sistemas de armazenamento subterrâneos são geralmente considerados de detenção, pois são projetados para reter um volume específico de água e liberá-lo lentamente.</li><li><b>Retenção:</b> São bacias que possuem um nível permanente de água (espelho d'água) ao longo do ano, regularizando os níveis dos rios por meio do armazenamento das águas das chuvas. Nesses sistemas, a saída da água ocorre por tubulações ou infiltração nas margens quando o nível permanente é ultrapassado.</li></ul><p>Uma boa regra prática para distinguir esses sistemas é lembrar que a <b>detenção é temporária</b>, mas a <b>retenção tem um nível de água permanente</b>.</p>"
       },
       {
         "type": "default",
-        "title": "5.1.1 Quesito 2 - Responsabilidade pela Operação e/ou Manutenção",
-        "content": "Este quesito visa identificar quem era o responsável pela operação e/ou manutenção de estruturas de retenção/detenção para controle de inundações no município pesquisado, podendo ser o próprio prestador de serviço ou outros entes, como o município, o estado, o governo federal, uma empresa privada ou um consórcio público.<br><br><b>• Operação:</b> Procedimentos executados nos dispositivos para o funcionamento do sistema de drenagem, como, por exemplo, abertura ou fechamento de comportas ou diques.<br><br><b>• Manutenção:</b> Inclui a recuperação de infraestrutura, limpeza, reparos, como limpeza de bocas de lobo, desobstrução de galerias de drenagem, desassoreamento de córregos e barragens, limpeza de filtros, inspeção de bombas e verificação de sensores."
+        "title": "👤 Quesito 2: Responsabilidade pela Operação e/ou Manutenção (EDR)",
+        "content": "Este quesito visa identificar quem era o responsável pela operação e/ou manutenção de estruturas de retenção/detenção para controle de inundações no município pesquisado, podendo ser o próprio prestador de serviço ou outros entes, como o município, o estado, o governo federal, uma empresa privada ou um consórcio público.<ul><li><b>Operação:</b> Procedimentos executados nos dispositivos para o funcionamento do sistema de drenagem, como, por exemplo, abertura ou fechamento de comportas ou diques.</li><li><b>Manutenção:</b> Inclui a recuperação de infraestrutura, limpeza, reparos, como limpeza de bocas de lobo, desobstrução de galerias de drenagem, desassoreamento de córregos e barragens, limpeza de filtros, inspeção de bombas e verificação de sensores.</li></ul>"
       },
       {
         "type": "default",
-        "title": "5.1.2 Quesito 3 - Estruturas com Bombeamento",
-        "content": "Aborda a existência e as estratégias de mitigação de riscos adotadas no sistema de bombeamento das estruturas, em caso de falha no suprimento de energia elétrica. Essas estratégias são ações preventivas que visam reduzir ou eliminar riscos operacionais, ambientais ou outros, identificando-os e desenvolvendo um plano para seu controle ou eliminação.<br><br><b>Exemplos de estratégias de mitigação:</b><br>• Fornecimento alternativo de energia elétrica por sistema de geradores<br>• Atendimento prioritário por parte da concessionária de energia elétrica<br>• Banco de baterias"
+        "title": "⚡ Quesito 3: Estruturas com Bombeamento",
+        "content": "Aborda a existência e as estratégias de mitigação de riscos adotadas no sistema de bombeamento das estruturas, em caso de falha no suprimento de energia elétrica. Essas estratégias são ações preventivas que visam reduzir ou eliminar riscos operacionais, ambientais ou outros, identificando-os e desenvolvendo um plano para seu controle ou eliminação."
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Exemplos de Estratégias de Mitigação de Risco Elétrico",
+        "content": "<ul><li>Fornecimento alternativo de energia elétrica por sistema de geradores.</li><li>Atendimento prioritário por parte da concessionária de energia elétrica (o fornecimento de energia é especial, e o desligamento da rede nas proximidades não implica no seu desligamento).</li><li>Banco de baterias.</li></ul>"
       },
       {
         "type": "default",
-        "title": "5.1.3 Quesito 4 - Protocolo de Contingência",
-        "content": "Verifica se o município possuía um protocolo de contingência para atuação na ocorrência de enchentes e inundações. Um <b>protocolo de contingência de desastres</b> é um conjunto pré-definido de ações locais, que orienta os procedimentos a serem tomados em caso de desastre, sendo geralmente de conhecimento dos gestores e demais órgãos municipais e empresas responsáveis pelas ações de resposta a desastres."
+        "title": "🚨 Quesito 4: Protocolo de Contingência",
+        "content": "Verifica se o município possuía um protocolo de contingência para atuação na ocorrência de enchentes e inundações. Um protocolo de contingência de desastres é um conjunto pré-definido de ações locais, que orienta os procedimentos a serem tomados em caso de desastre, sendo geralmente de conhecimento dos gestores e demais órgãos municipais e empresas responsáveis pelas ações de resposta a desastres."
       },
       {
         "type": "default",
-        "title": "5.1.4 Quesito 4.2 - Parâmetros de Nível de Cheia para Acionamento do Protocolo",
-        "content": "Identifica os parâmetros de nível de cheia que acionam o protocolo de contingência. Estes podem ser:<br><br><b>• Altura em metros:</b> Quando o nível da cheia do rio atinge uma altura pré-determinada, as primeiras ações do protocolo começam a ser acionadas.<br><br><b>• Referência física:</b> Quando o nível da cheia do rio atinge um ponto ou local pré-determinado, como um pilar de ponte, marcação em muros, ou determinada rua, as ações do protocolo são iniciadas."
+        "title": "📈 Quesito 4.2: Parâmetros de Nível de Cheia para Acionamento do Protocolo",
+        "content": "Identifica os parâmetros de nível de cheia que acionam o protocolo de contingência. Estes podem ser:<ul><li><b>Altura em metros:</b> Quando o nível da cheia do rio atinge uma altura pré-determinada, as primeiras ações do protocolo começam a ser acionadas.</li><li><b>Referência física:</b> Quando o nível da cheia do rio atinge um ponto ou local pré-determinado, como um pilar de ponte, marcação em muros, ou determinada rua, as ações do protocolo são iniciadas.</li></ul>"
       },
       {
         "type": "default",
-        "title": "5.2 Bloco SPI - Sistema de Proteção Contra Enchentes e Inundações",
-        "content": "O sistema de proteção contra enchentes e inundações tem a função de <b>impedir o ingresso das águas dos rios nas cidades</b>. É composto por diversos elementos, tais como:<br><br><b>• Pôlder:</b> Zonas ou locais de baixa altitude protegidos pelos sistemas de diques, reservatórios, cortinas de concreto e barreiras móveis, dutos e bombas, para controle de inundação.<br><br><b>• Dique:</b> Estrutura construída para barrar o avanço das águas fluviais em zonas urbanas e rurais, podendo ser de terra ou outro material.<br><br><b>• Cortina de concreto / Muro:</b> Estrutura em concreto armado, alternativa aos diques, para locais onde não há largura suficiente.<br><br><b>• Barreiras móveis:</b> Estruturas que desempenham a mesma funcionalidade dos diques, mas são instaladas apenas quando há previsão de inundação."
+        "title": "🛡️ 5.2. Bloco SPI - Sistema de Proteção Contra Enchentes e Inundações",
+        "content": "O sistema de proteção contra enchentes e inundações tem a função de impedir o ingresso das águas dos rios nas cidades. É composto por diversos elementos, tais como:"
+      },
+      {
+        "type": "exemplo",
+        "title": "📝 Componentes do Sistema de Proteção (SPI)",
+        "content": "<ul><li><b>Pôlder:</b> Zonas ou locais de baixa altitude protegidos pelos sistemas de diques, reservatórios, cortinas de concreto e barreiras móveis, dutos e bombas, para controle de inundação. Para ser considerada a existência do sistema, é imprescindível que exista o pôlder, ou seja, uma área protegida por alguma barreira (um ou mais dos componentes de proteção) com dutos e bombas para escoar a água.</li><li><b>Dique:</b> Estrutura construída para barrar o avanço das águas fluviais em zonas urbanas e rurais, podendo ser de terra ou outro material.</li><li><b>Cortina de concreto / Muro:</b> Estrutura em concreto armado, alternativa aos diques, para locais onde não há largura suficiente.</li><li><b>Barreiras móveis:</b> Estruturas que desempenham a mesma funcionalidade dos diques, mas são instaladas apenas quando há previsão de inundação, exigindo maiores requisitos de treinamento de montagem e manutenção.</li><li><b>Comportas de passagem / Portões:</b> Utilizadas em locais onde há necessidade de passagem de pessoas, veículos ou mercadorias, são comportas móveis e herméticas que são fechadas durante as inundações.</li><li><b>Comportas de gravidade, retenção, tipo flap:</b> Estruturas hidráulicas autônomas que permitem o fluxo de água apenas em um sentido dentro de galerias de descarga das casas de bomba e condutos forçados.</li><li><b>Comportas tipo stop-log:</b> Consistem em placas de acionamento manual, mecânico ou remoto que interrompem o fluxo por obstrução através de movimento descendente em trilhos (guilhotina).</li><li><b>Casas de bombas / Estações elevatórias:</b> Instalações que abrigam sistemas de bombeamento de água pluvial que são acionados.</li></ul>"
       },
       {
         "type": "default",
-        "title": "5.2.1 Componentes do Sistema SPI (Continuação)",
-        "content": "<b>• Comportas de passagem / Portões:</b> Utilizadas em locais onde há necessidade de passagem de pessoas, veículos ou mercadorias, são comportas móveis e herméticas que são fechadas durante as inundações.<br><br><b>• Comportas de gravidade, retenção, tipo flap:</b> Estruturas hidráulicas autônomas que permitem o fluxo de água apenas em um sentido dentro de galerias de descarga das casas de bomba e condutos forçados.<br><br><b>• Comportas tipo stop-log:</b> Consistem em placas de acionamento manual, mecânico ou remoto que interrompem o fluxo por obstrução através de movimento descendente em trilhos (guilhotina).<br><br><b>• Casas de bombas / Estações elevatórias:</b> Instalações que abrigam sistemas de bombeamento de água pluvial que são acionados."
+        "title": "❓ Quesito 1: Existência do Sistema (SPI)",
+        "content": "Questiona a existência do sistema de proteção contra enchentes e inundações no município pesquisado, sendo imprescindível a existência de um pôlder (área protegida) e pelo menos um componente de proteção (como dique ou cortina de concreto)."
       },
       {
         "type": "default",
-        "title": "5.2.2 Quesito 1 - Existência do Sistema",
-        "content": "Questiona a existência do sistema de proteção contra enchentes e inundações no município pesquisado, sendo <b>imprescindível a existência de um pôlder (área protegida) e pelo menos um componente de proteção</b> (como dique ou cortina de concreto). Para ser considerada a existência do sistema, é imprescindível que exista o pôlder, ou seja, uma área protegida por alguma barreira com dutos e bombas para escoar a água."
-      },
-      {
-        "type": "default",
-        "title": "5.2.3 Quesito 2 - Responsabilidade pela Operação e/ou Manutenção",
+        "title": "👤 Quesito 2: Responsabilidade pela Operação e/ou Manutenção (SPI)",
         "content": "Identifica o responsável pela operação e/ou manutenção do sistema de proteção contra enchentes e inundações no município."
       },
       {
         "type": "default",
-        "title": "5.2.4 Quesitos 2.1 e 2.2 - Cota de Projeto",
-        "content": "Verificam se o sistema de proteção estava totalmente construído na <b>cota de projeto</b> (a altura do topo do dique ou da cortina de concreto definida pelo projeto) e se possuía trechos abaixo dessa cota."
+        "title": "📏 Quesitos 2.1 e 2.2: Cota de Projeto",
+        "content": "Verificam se o sistema de proteção estava totalmente construído na cota de projeto (a altura do topo do dique ou da cortina de concreto definida pelo projeto) e se possuía trechos abaixo dessa cota."
       },
       {
         "type": "default",
-        "title": "5.2.5 Quesito 3 - Vistoria (Inspeção Visual)",
-        "content": "Pergunta sobre a existência de vistoria (inspeção visual) no sistema de proteção para identificação de princípio de colapso por erosão, recalque (afundamento), desmoronamento ou corrosão de armadura/ferragem do concreto.<br><br><b>• Colapso por erosão:</b> Problemas causados pela erosão do solo que destrói as bases das fundações<br><b>• Recalque:</b> Ocorre quando o solo sob uma edificação se compacta, rebaixando as fundações<br><b>• Desmoronamento:</b> Desabamento<br><b>• Corrosão de armadura/ferragem do concreto:</b> Oxidação do aço das armaduras do concreto<br><br>São questionadas a periodicidade da vistoria e a existência de responsabilidade técnica (ART) para as vistorias."
+        "title": "🔍 Quesito 3: Vistoria (Inspeção Visual)",
+        "content": "Pergunta sobre a existência de vistoria (inspeção visual) no sistema de proteção para identificação de princípio de colapso por erosão, recalque (afundamento), desmoronamento ou corrosão de armadura/ferragem do concreto.<br><ul><li><b>Colapso por erosão:</b> Problemas causados pela erosão do solo que destrói as bases das fundações, podendo resultar em desabamento parcial ou total das estruturas.</li><li><b>Recalque:</b> Ocorre quando o solo sob uma edificação se compacta, rebaixando as fundações e podendo causar trincas, rachaduras, deslocamentos.</li><li><b>Desmoronamento:</b> Desabamento.</li><li><b>Corrosão de armadura/ferragem do concreto:</b> Oxidação do aço das armaduras do concreto, podendo levar ao desgaste e, em casos extremos, ao colapso estrutural.</li></ul><p>São questionadas a periodicidade da vistoria (semestral, anual, bianual, entre 2 e 5 anos, mais de 5 anos, somente em caso de alerta meteorológico, somente durante o período chuvoso, outra, ou se não há periodicidade), e a existência de responsabilidade técnica (ART) para as vistorias. Uma Anotação de Responsabilidade Técnica (A.R.T.) é o instrumento que define legalmente os responsáveis técnicos pela execução de obras ou prestação de serviços.</p>"
       },
       {
         "type": "default",
-        "title": "5.2.6 Quesito 4 - Levantamento Topográfico (Planialtimétrico)",
-        "content": "Investiga a realização de levantamento topográfico (planialtimétrico) dos diques e muros do sistema de proteção.<br><br><b>• Levantamento topográfico:</b> Conjunto de medições feitas em um terreno para representar acidentes geográficos e distâncias entre pontos notáveis.<br><br><b>• Levantamento planialtimétrico:</b> Tipo de levantamento topográfico que destaca as diferenças de nível no relevo, registrando a inclinação do terreno através de curvas de nível.<br><br>São questionadas a periodicidade do levantamento e a existência de responsabilidade técnica (ART)."
-      },
-      {
-        "type": "default",
-        "title": "5.2.7 Quesitos 5 e 6 - Vegetação e Edificações Irregulares",
-        "content": "Verificam a presença de <b>vegetação de porte médio ou grande (maior que 50 cm de altura)</b> e a existência de <b>edificações irregulares</b> (qualquer tipo de construção não legalizada) sobre as estruturas do sistema de proteção contra enchentes e inundações."
-      },
-      {
-        "type": "default",
-        "title": "5.2.8 Quesito 7 - Manutenção de Comportas",
-        "content": "Averigua se o sistema de proteção possuía comportas (estruturas que controlam a passagem de água) e qual a periodicidade de sua manutenção. As opções incluem: semestral, anual, bianual, entre 2 e 5 anos, mais de 5 anos, somente em caso de alerta meteorológico, somente durante o período chuvoso, outra, não há periodicidade, ou se não realiza manutenção. Também questiona a existência de responsabilidade técnica (ART) para as vistorias das comportas."
-      },
-      {
-        "type": "default",
-        "title": "5.2.9 Quesito 8 - Características e Mitigação de Riscos em Casas de Bombas",
-        "content": "Questiona a existência de casas de bombas / estações elevatórias no sistema de proteção e as características e estratégias de mitigação de riscos adotadas em caso de falha no suprimento de energia elétrica.<br><br><b>As características incluem:</b><br>• Se operam mesmo com a estrutura inundada (motores e quadros elétricos acima da cota de inundação ou operam submersos/blindados)<br>• Se as tampas de acesso às galerias de descarga são herméticas ou estão acima da cota de inundação<br>• A existência de bombas volantes (equipamentos transportáveis) para redundância do sistema<br><br><b>Estratégias de mitigação:</b> fornecimento alternativo de energia (geradores), atendimento prioritário da concessionária, ou banco de baterias."
-      },
-      {
-        "type": "default",
-        "title": "5.2.10 Quesito 9 - Manutenção de Galerias de Descarga",
-        "content": "Indaga se as galerias de descarga das casas de bombas / estações elevatórias possuíam comportas de gravidade, retenção, tipo flap ou tipo stop-log, e qual a periodicidade de sua manutenção.<br><br><b>• Comportas de gravidade, retenção e tipo flap:</b> Permitem o fluxo de água em apenas um sentido<br><b>• Comportas tipo stop-log:</b> São placas de acionamento manual/remoto que interrompem o fluxo<br><br>A periodicidade da manutenção é investigada, bem como a existência de responsabilidade técnica (ART) para as vistorias."
-      },
-      {
-        "type": "default",
-        "title": "5.2.11 Quesito 10 - Condução de Águas Pluviais por Outros Dispositivos",
-        "content": "Este quesito verifica se as águas pluviais foram conduzidas para fora do sistema de proteção por outro tipo de dispositivo que não as casas de bombas/estações elevatórias.<br><br><b>Os dispositivos podem ser:</b><br><br><b>• Condutos forçados:</b> Galerias ou tubulações herméticas com escoamento sob pressão interna superior à atmosférica. Podem ser por gravidade ou pressurizados por bombeamento.<br><br><b>• Ligações diretas por gravidade que permitem o fluxo para dentro do pôlder durante as cheias:</b> Redes pluviais direcionadas diretamente para o rio ou lago, atravessando diques, causando refluxo.<br><br><b>• Ligações diretas por gravidade que NÃO permitem o fluxo para dentro do pôlder durante as cheias:</b> Possuem comportas que impedem o refluxo."
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 1 - Sistema EDR com Bombeamento",
-        "content": "<b>Situação Real:</b> Município com piscinão que possui sistema de bombeamento para esvaziamento.<br><br><b>Pergunta do informante:</b> \"Nosso piscinão tem bombas. Como avaliar os riscos?\"<br><br><b>Como orientar:</b><br>1. Identifique o responsável pela operação/manutenção<br>2. Verifique estratégias de mitigação:<br>   - Tem gerador de emergência?<br>   - Atendimento prioritário da concessionária?<br>   - Banco de baterias?<br>3. Existe protocolo de contingência?<br>4. Quais parâmetros acionam o protocolo?<br><br><b>Conceito-chave aplicado:</b> Bombeamento introduz pontos críticos de falha<br><br><b>Erro comum:</b> Não verificar estratégias de backup energético"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 2 - Sistema SPI com Pôlder",
-        "content": "<b>Situação Real:</b> Área baixa protegida por diques com casa de bombas.<br><br><b>Pergunta do informante:</b> \"Temos uma área cercada por diques com bombas. Isso é SPI?\"<br><br><b>Como orientar:</b><br>1. SIM! É um sistema SPI completo:<br>   - Área protegida (pôlder) ✓<br>   - Estrutura de proteção (diques) ✓<br>   - Sistema de bombeamento ✓<br>2. Verifique todos os quesitos do SPI<br>3. Atenção especial à cota de projeto<br>4. Vistoria e manutenção são críticas<br><br><b>Conceito-chave aplicado:</b> Pôlder = área protegida + sistema de drenagem<br><br><b>Erro comum:</b> Não reconhecer sistemas completos de proteção"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 3 - Comportas e Manutenção",
-        "content": "<b>Situação Real:</b> Sistema com comportas tipo flap que não recebem manutenção regular.<br><br><b>Pergunta do informante:</b> \"Nossas comportas flap funcionam sozinhas. Precisam de manutenção?\"<br><br><b>Como orientar:</b><br>1. SIM! Comportas automáticas precisam de manutenção:<br>   - Lubrificação das dobradiças<br>   - Verificação de vedações<br>   - Teste de funcionamento<br>2. Periodicidade é importante<br>3. ART para vistorias técnicas<br>4. Falha pode causar refluxo e inundar área protegida<br><br><b>Conceito-chave aplicado:</b> Automático ≠ sem manutenção<br><br><b>Erro comum:</b> Negligenciar manutenção de sistemas automáticos"
+        "title": "🗺️ Quesito 4: Levantamento Topográfico (Planialtimétrico)",
+        "content": "Investiga a realização de levantamento topográfico (planialtimétrico) dos diques e muros do sistema de proteção.<br><ul><li><b>Levantamento topográfico:</b> Conjunto de medições feitas em um terreno para representar acidentes geográficos e distâncias entre pontos notáveis.</li><li><b>Levantamento planialtimétrico:</b> Tipo de levantamento topográfico que destaca as diferenças de nível no relevo, registrando a inclinação do terreno através de curvas de nível.</li></ul><p>São questionadas a periodicidade do levantamento (semestral, anual, bianual, entre 2 e 5 anos, mais de 5 anos, outra, ou se não há periodicidade), e a existência de responsabilidade técnica (ART).</p>"
       },
       {
         "type": "atencao",
-        "title": "⚠️ Atenção - Diferenças Críticas",
-        "content": "<b>EDR vs SPI:</b><br>• EDR = Armazenamento temporário (piscinões, barragens)<br>• SPI = Proteção linear (diques, comportas, pôlderes)<br><br><b>Detenção vs Retenção:</b><br>• Detenção = Esvazia após a chuva<br>• Retenção = Mantém água permanentemente<br><br><b>Pôlder:</b><br>• Não é só a área baixa<br>• Precisa de proteção + sistema de drenagem<br>• Imprescindível para caracterizar SPI"
+        "title": "⚠️ Quesitos 5 e 6: Vegetação e Edificações Irregulares",
+        "content": "Verificam a presença de vegetação de porte médio ou grande (maior que 50 cm de altura) e a existência de edificações irregulares (qualquer tipo de construção não legalizada) sobre as estruturas do sistema de proteção contra enchentes e inundações."
       },
       {
-        "type": "duvidas",
-        "title": "🗨️ Dúvidas Frequentes",
-        "content": "<b>Dúvida Comum:</b> \"Qual a diferença entre EDR e SPI?\"<br><b>Como Ajudar:</b> EDR armazena água temporariamente. SPI impede entrada de água com barreiras.<br><br><b>Dúvida Comum:</b> \"Uma área com dique sem bomba é SPI?\"<br><b>Como Ajudar:</b> Não, precisa do pôlder completo (área protegida + drenagem).<br><br><b>Dúvida Comum:</b> \"Comporta flap precisa de ART?\"<br><b>Como Ajudar:</b> Sim, vistorias técnicas precisam de responsabilidade técnica.<br><br><b>Dúvida Comum:</b> \"O que é cota de projeto?\"<br><b>Como Ajudar:</b> É a altura final prevista no projeto do dique ou muro."
+        "type": "default",
+        "title": "🔧 Quesito 7: Manutenção de Comportas",
+        "content": "Averigua se o sistema de proteção possuía comportas (estruturas que controlam a passagem de água) e qual a periodicidade de sua manutenção (semestral, anual, bianual, entre 2 e 5 anos, mais de 5 anos, somente em caso de alerta meteorológico, somente durante o período chuvoso, outra, não há periodicidade, ou se não realiza manutenção). Também questiona a existência de responsabilidade técnica (ART) para as vistorias das comportas."
       },
       {
-        "type": "resumo",
-        "title": "📊 Resumo Visual - Quesitos por Bloco",
-        "content": "<table><tr><th>Bloco EDR</th><th>Bloco SPI</th></tr><tr><td>Quesito 2: Responsabilidade</td><td>Quesito 1: Existência</td></tr><tr><td>Quesito 3: Bombeamento</td><td>Quesito 2: Responsabilidade</td></tr><tr><td>Quesito 4: Protocolo</td><td>Quesitos 2.1/2.2: Cota</td></tr><tr><td>Quesito 4.2: Parâmetros</td><td>Quesito 3: Vistoria</td></tr><tr><td></td><td>Quesito 4: Topografia</td></tr><tr><td></td><td>Quesitos 5/6: Vegetação/Edificações</td></tr><tr><td></td><td>Quesito 7: Comportas</td></tr><tr><td></td><td>Quesito 8: Casas de Bombas</td></tr><tr><td></td><td>Quesito 9: Galerias</td></tr><tr><td></td><td>Quesito 10: Outros Dispositivos</td></tr></table>"
+        "type": "default",
+        "title": "🏠 Quesito 8: Características e Riscos em Casas de Bombas",
+        "content": "Questiona a existência de casas de bombas / estações elevatórias no sistema de proteção. E as características e estratégias de mitigação de riscos adotadas em caso de falha no suprimento de energia elétrica.<br><br>As <b>características</b> incluem se operam mesmo com a estrutura inundada (motores e quadros elétricos acima da cota de inundação ou operam submersos/blindados), se as tampas de acesso às galerias de descarga são herméticas (vedam perfeitamente) ou estão acima da cota de inundação para evitar refluxo, e a existência de bombas volantes (equipamentos transportáveis de bombeamento) nas proximidades para redundância do sistema de bombeamento (equipamentos em duplicidade).<br><br>As <b>estratégias de mitigação de riscos</b> são o conjunto de ações que visam reduzir ou eliminar os riscos de falhas nos equipamentos e no desempenho do sistema, como fornecimento alternativo de energia (geradores), atendimento prioritário da concessionária, ou banco de baterias."
+      },
+      {
+        "type": "default",
+        "title": "🔩 Quesito 9: Manutenção de Galerias de Descarga",
+        "content": "Indaga se as galerias de descarga das casas de bombas / estações elevatórias possuíam comportas de gravidade, retenção, tipo flap ou tipo stop-log, e qual a periodicidade de sua manutenção. As comportas de gravidade, retenção e tipo flap permitem o fluxo de água em apenas um sentido, enquanto as tipo stop-log são placas de acionamento manual/remoto que interrompem o fluxo. A periodicidade da manutenção é investigada, bem como a existência de responsabilidade técnica (ART) para as vistorias."
+      },
+      {
+        "type": "default",
+        "title": "🔗 Quesito 10: Condução por Outros Dispositivos",
+        "content": "Por fim, este quesito verifica se as águas pluviais foram conduzidas para fora do sistema de proteção por outro tipo de dispositivo que não as casas de bombas/estações elevatórias. Os dispositivos podem ser:<ul><li><b>Condutos forçados:</b> Galerias ou tubulações herméticas com escoamento sob pressão interna superior à atmosférica. Podem ser por gravidade (recebendo água de partes altas e herméticos no trecho inferior) ou pressurizados por bombeamento (trechos após uma casa de bombas).</li><li><b>Ligações diretas por gravidade que permitem o fluxo para dentro do pôlder durante as cheias:</b> Redes pluviais direcionadas diretamente para o rio ou lago, atravessando diques e/ou cortinas de concreto, causando refluxo e inundando a área protegida.</li><li><b>Ligações diretas por gravidade que NÃO permitem o fluxo para dentro do pôlder durante as cheias:</b> Possuem comportas de gravidade, retenção, tipo flap ou tipo stop-log que impedem o refluxo.</li></ul>"
       }
     ],
     "quiz": {

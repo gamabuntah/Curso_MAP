@@ -65,4 +65,39 @@
 - Nenhum erro crítico identificado
 - Sistema completamente funcional e pronto para produção
 - Qualidade técnica e educativa confirmada
-- Fidelidade ao conteúdo original garantida 
+- Fidelidade ao conteúdo original garantida
+
+## Processo Padronizado de Atualização dos Módulos (PNSB)
+
+### Objetivo
+Garantir máxima fidelidade, didática e padronização em todos os módulos do curso PNSB no sistema de certificação digital.
+
+### Fluxo de Trabalho
+
+1. **Geração de Prompt para o Gemini**
+   - Para cada módulo (2 a 8), criar um prompt detalhado, seguindo o mesmo padrão do prompt do Módulo 1.
+   - O prompt deve conter:
+     - Instruções claras sobre fidelidade ao texto original, organização didática em cards e proibição de resumos/omissões.
+     - O texto integral do módulo correspondente (extraído do arquivo markdown original).
+     - Orientação para que o Gemini devolva um array de cards em JavaScript, pronto para uso, sem comentários ou explicações extras.
+   - Salvar cada prompt em um arquivo markdown próprio (ex: `prompt_gemini_modulo2.md`).
+
+2. **Uso do Gemini**
+   - Enviar o prompt ao Gemini e obter o retorno com o array de cards didáticos, fiel ao texto original.
+
+3. **Atualização do Sistema**
+   - Substituir o array de cards do arquivo de dados do módulo (`public/data/moduleX.js`) pelo conteúdo gerado pelo Gemini.
+   - Preservar integralmente o bloco de quiz original de cada módulo.
+
+4. **Repetição e Validação**
+   - Repetir o processo para todos os módulos (2 a 8).
+   - Validar a integridade, didática e fidelidade do conteúdo em cada etapa.
+
+### Observações
+- Não alterar títulos, áudios ou estrutura dos objetos principais dos módulos.
+- Garantir que a sintaxe final esteja correta e funcional.
+- Registrar cada etapa no banco de memória do projeto para rastreabilidade.
+
+---
+
+**Este processo deve ser seguido rigorosamente para todos os módulos, garantindo padrão e qualidade em todo o sistema.** 

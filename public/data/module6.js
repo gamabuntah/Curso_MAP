@@ -1,252 +1,262 @@
 window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "6": {
-    "title": "Módulo 6: Destinação (Bloco DES) e Tratamento de Águas Pluviais",
+    "title": "Módulo 6: Destinação (Bloco DES) e Tratamento (Bloco TRA)",
     "audio": "MAP/Audios/Curso MAP - Mod 6.mp3",
     "cards": [
       {
         "type": "default",
         "title": "📋 Resumo",
-        "content": "Este módulo explora o Bloco DES (Destinação) e o tratamento de águas pluviais. O foco é capacitar o técnico a identificar o destino final das águas da chuva coletadas pelo sistema de drenagem e se existe algum tipo de tratamento antes do descarte. O bloco investiga os tipos de corpos hídricos receptores, como rios, lagos, mar ou aquíferos (via infiltração), e a existência de estruturas de tratamento, como grades, desarenadores ou separadores de óleo. Além disso, aborda a questão crítica das ligações clandestinas de esgoto na rede de drenagem pluvial, um problema comum que afeta a qualidade da água."
+        "content": "Este módulo tem como objetivo principal aprofundar a compreensão sobre o percurso da água pluvial após ser coletada e os métodos de tratamento aplicados a ela antes de sua disposição final. O módulo está dividido em dois blocos: <b>Bloco DES (Destinação)</b> que foca em compreender o fluxo da água pluvial após a captação e os impactos no seu ponto de despejo, e <b>Bloco TRA (Tratamento)</b> que aborda a distinção entre tratamento de águas pluviais, esgoto e água para abastecimento, descrevendo os locais e tipos de tratamento aplicados."
       },
       {
         "type": "default",
         "title": "6.1 Bloco DES - Destinação",
-        "content": "O objetivo deste bloco é capacitar o técnico a identificar o corpo receptor, se existe tratamento da água pluvial e a existência de ligações clandestinas de esgoto."
+        "content": "O Bloco DES foca em compreender o <b>fluxo da água pluvial após a captação e os impactos no seu ponto de despejo</b>. Após ser captada pelos dispositivos de drenagem, a água pluvial é conduzida ao seu destino final, que pode ser rios, córregos, entre outros, ou pode ser direcionada para estações de tratamento ou reservatórios para reúso. O <b>ponto final de despejo é crucial</b> para garantir que a drenagem não cause problemas como erosão, poluição ou alagamento."
       },
       {
         "type": "default",
-        "title": "6.1.1 Tipo de Corpo Hídrico Receptor (Quesito 1)",
-        "content": "Este quesito busca identificar o(s) tipo(s) de corpo(s) hídrico(s) receptor(es) das águas pluviais no município em 2024. É possível marcar mais de uma opção.<br><ul><li><b>Rio ou riacho:</b> Curso de água natural.</li><li><b>Lago ou lagoa:</b> Depressão natural contendo água.</li><li><b>Represa ou reservatório:</b> Corpo d'água formado por barramento.</li><li><b>Águas marinhas:</b> Oceano ou mar.</li><li><b>Infiltração no solo para recarga de aquífero:</b> A água é direcionada para o subsolo.</li><li><b>Outro(s):</b> Outros tipos de corpos receptores.</li><li><b>Inexistente:</b> Se não há um corpo receptor definido.</li></ul>"
+        "title": "6.1.1 Quesito 1 - Pontos Finais de Destinação",
+        "content": "A água captada é descarregada, liberada ou tratada nestes locais, finalizando o percurso do sistema. Os <b>pontos finais de destinação</b> podem ser:<br><br><b>• Rios intermitentes:</b> rios com água somente no período chuvoso<br><b>• Rios perenes:</b> rios com água o ano todo<br><b>• Lagoas</b><br><b>• Mar</b><br><b>• Áreas livres públicas ou particulares:</b><br>&nbsp;&nbsp;- Públicas: ruas, calçadas, praças, jardins, parques, etc., mantidas pelo poder público<br>&nbsp;&nbsp;- Particulares: terrenos, jardins, quintais, etc., de propriedade privada<br><b>• Reservatórios/açudes:</b> importante não confundir com reservatórios para tratamento de águas pluviais<br><b>• Encaminhamento para tratamento</b><br><b>• Outro(s)</b><br><b>• Não sabe</b>"
+      },
+      {
+        "type": "default",
+        "title": "6.1.2 Quesito 2 - Dispositivos para Redução da Velocidade da Água",
+        "content": "Verifica-se a existência de <b>dispositivos para redução da velocidade da água</b>, como dissipadores de energia, antes do deságue em rios, lagos ou outros locais no município pesquisado.<br><br>Um <b>dissipador de energia</b> é uma estrutura que reduz a velocidade das águas para evitar erosão, como escadas ou rampas com blocos. Estes dispositivos são fundamentais para proteger os pontos de lançamento contra processos erosivos causados pela alta velocidade da água."
+      },
+      {
+        "type": "default",
+        "title": "6.1.3 Quesito 3 - Erosão ou Deslizamentos nos Pontos Finais",
+        "content": "Esta seção busca identificar <b>processos erosivos e/ou movimentos de massa</b> relacionados exclusivamente aos pontos finais de deságue do sistema de drenagem de águas pluviais.<br><br>A <b>erosão</b> é um processo de deterioração de solos e rochas causado por agentes naturais (chuva, água, vento, gelo, clima) ou por intervenção humana, que pode levar a modificações paisagísticas, por vezes catastróficas.<br><br><b>Os processos erosivos e/ou movimentos de massa a serem identificados incluem:</b><br><br><b>• Deslizamentos / escorregamentos</b><br><b>• Erosão/solapamento de margens de corpos d'água:</b> tipo de erosão que causa a queda das encostas, afundando o solo e destruindo as bases da margem. Na Amazônia, é conhecido como \"terras caídas\"<br><b>• Sulcos / ravinamentos / voçoroca (vossoroca ou bossoroca ou boçoroca)</b><br><b>• Outro(s)</b>"
+      },
+      {
+        "type": "default",
+        "title": "6.2 Bloco TRA - Tratamento",
+        "content": "No Bloco TRA, a atenção é dada à <b>clara distinção entre tratamento de águas pluviais, esgoto e água para abastecimento</b>. Este bloco foca especificamente no tratamento das águas pluviais captadas pela rede separadora antes de sua destinação final, explorando locais, tipos de tratamento e possibilidades de reúso do efluente tratado."
+      },
+      {
+        "type": "default",
+        "title": "6.2.1 Quesito 1 - Realização de Tratamento",
+        "content": "Verifica se o prestador de serviço realizou o <b>tratamento das águas pluviais captadas pela rede separadora</b> (captação e transporte somente de águas de chuva), antes da destinação final.<br><br>É importante distinguir que este quesito refere-se especificamente ao tratamento de águas pluviais em sistemas separadores absolutos, onde apenas água da chuva é coletada e transportada, diferentemente de sistemas unitários ou mistos."
+      },
+      {
+        "type": "default",
+        "title": "6.2.2 Quesito 2 - Locais de Tratamento",
+        "content": "Os <b>locais onde o tratamento das águas pluviais</b> pode ser realizado incluem:<br><br><b>• Estação de Tratamento de Esgotos (ETE):</b> instalação projetada para tratar e depurar o esgoto coletado, removendo contaminantes físicos, químicos e biológicos antes de seu descarte no meio ambiente<br><br><b>• Unidade de Tratamento de Rios (UTR) / Unidades de Recuperação da Qualidade da Água de Córregos (UQR):</b> sistemas implementados diretamente em corpos d'água, como rios e córregos, para melhorar a qualidade da água. Podem incluir processos físicos, químicos ou biológicos para remover poluentes e restaurar a saúde ambiental do ecossistema aquático<br><br><b>• Reservatório de retenção ou detenção:</b> estruturas projetadas para armazenar temporariamente grandes volumes de água provenientes de chuvas ou escoamento superficial<br><br><b>• Estruturas de fitorremediação ou biorremediação:</b> soluções naturais ou biotecnológicas que utilizam plantas (fitorremediação) ou microrganismos (biorremediação) para remover, estabilizar ou degradar poluentes presentes no solo, na água ou no ar<br><br><b>• Outro(s):</b> inclui tecnologias ou soluções diversas não abrangidas nas categorias acima, como wetlands construídos, barreiras filtrantes ou novas inovações no campo da sustentabilidade hídrica"
+      },
+      {
+        "type": "default",
+        "title": "6.2.3 Quesito 3 - Tipos de Tratamento",
+        "content": "Os <b>tipos de tratamento</b> que podem ser realizados são:<br><br><b>• Preliminar:</b> responsável pela remoção de materiais sólidos mais grosseiros, como gradeamento e caixa de areia<br><br><b>• Sedimentação:</b> etapa focada na remoção de sólidos suspensos menores por meio de decantação<br><br><b>• Biológico:</b> envolve o uso de microrganismos para decompor matéria orgânica dissolvida e em suspensão no esgoto<br><br><b>• Outro(s):</b> pode incluir processos como:<br>&nbsp;&nbsp;- Oxidação Química (uso de reagentes químicos)<br>&nbsp;&nbsp;- Membranas Filtrantes (tratamento avançado para remoção de partículas muito finas e compostos dissolvidos)<br>&nbsp;&nbsp;- Reúso de Água (sistemas que permitem a recuperação e reutilização do efluente tratado para fins não potáveis)"
+      },
+      {
+        "type": "default",
+        "title": "6.2.4 Quesito 4 - Aproveitamento do Efluente Tratado",
+        "content": "Verifica a existência de <b>sistemas que utilizam a água tratada para diferentes fins, promovendo sustentabilidade</b>.<br><br>Refere-se a tecnologias e práticas que utilizam a água resultante do tratamento para diversas finalidades, <b>reduzindo a necessidade de captação de água de fontes naturais</b>, o que promove a sustentabilidade, a economia de recursos hídricos e contribui para a preservação ambiental.<br><br>O aproveitamento do efluente tratado representa uma abordagem circular da gestão de recursos hídricos, transformando o que seria descarte em recurso útil."
       },
       {
         "type": "exemplo",
-        "title": "📝 Exemplo",
-        "content": "Se a drenagem do município deságua principalmente em um rio e, em menor parte, em uma lagoa, ambas as opções devem ser marcadas."
+        "title": "🎯 Exemplo Prático 1 - Destinação para Rio Intermitente",
+        "content": "<b>Situação Real:</b> Sistema de drenagem que deságua em um rio que só tem água na época de chuva.<br><br><b>Pergunta do informante:</b> \"Nosso sistema vai para um rio que só tem água quando chove. Como classificar?\"<br><br><b>Como orientar:</b><br>1. Ponto final: \"Rios intermitentes\" (quesito 1)<br>2. Verificar se há dissipadores de energia<br>3. Investigar erosão no ponto de lançamento<br>4. Rio intermitente ≠ Rio perene<br><br><b>Conceito-chave aplicado:</b> Intermitente = só na chuva, Perene = o ano todo<br><br><b>Erro comum:</b> Confundir rios intermitentes com perenes"
       },
       {
-        "type": "default",
-        "title": "6.1.2 Tratamento das Águas Pluviais (Quesito 2)",
-        "content": "Este quesito investiga se, em 2024, o município dispunha de algum sistema para tratamento das águas pluviais antes de sua destinação final. A resposta \"Não\" para este quesito encerra o bloco. O tratamento visa remover poluentes carregados pela chuva."
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 2 - Erosão no Ponto de Deságue",
+        "content": "<b>Situação Real:</b> Município com problemas de erosão onde a drenagem deságua no rio.<br><br><b>Pergunta do informante:</b> \"Onde nossa rede despeja no rio está cavando um buraco grande. Isso é problema?\"<br><br><b>Como orientar:</b><br>1. SIM! É erosão/solapamento de margens<br>2. Registrar no quesito 3 do Bloco DES<br>3. Indica necessidade de dissipador de energia<br>4. \"Solapamento\" = erosão que destrói as bases da margem<br><br><b>Conceito-chave aplicado:</b> Velocidade excessiva causa erosão<br><br><b>Erro comum:</b> Não relacionar erosão com falta de dissipadores"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 3 - Fitorremediação",
+        "content": "<b>Situação Real:</b> Autarquia que usa plantas para tratar água de drenagem antes do lançamento.<br><br><b>Pergunta do informante:</b> \"Temos um sistema com plantas que limpa a água da chuva. É tratamento?\"<br><br><b>Como orientar:</b><br>1. SIM! É tratamento (quesito 1 do TRA)<br>2. Local: \"Estruturas de fitorremediação\" (quesito 2)<br>3. Tipo: \"Biológico\" (quesito 3)<br>4. Verificar se há reúso do efluente (quesito 4)<br><br><b>Conceito-chave aplicado:</b> Fitorremediação = plantas que removem poluentes<br><br><b>Erro comum:</b> Não reconhecer plantas como tratamento biológico"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 4 - UTR/UQR",
+        "content": "<b>Situação Real:</b> Sistema que trata água diretamente no córrego urbano.<br><br><b>Pergunta do informante:</b> \"Instalamos equipamentos no próprio córrego para melhorar a qualidade da água. Como classificar?\"<br><br><b>Como orientar:</b><br>1. É tratamento in-situ (quesito 1 do TRA)<br>2. Local: \"UTR/UQR\" (quesito 2)<br>3. UTR = Unidade de Tratamento de Rios<br>4. UQR = Unidade de Qualidade da Água de Córregos<br><br><b>Conceito-chave aplicado:</b> Tratamento direto no corpo d'água<br><br><b>Erro comum:</b> Confundir UTR/UQR com ETE convencional"
       },
       {
         "type": "atencao",
-        "title": "⚠️ Atenção",
-        "content": "O tratamento de águas pluviais é diferente do tratamento de esgoto. Ele foca em poluentes como lixo, areia e óleos."
-      },
-      {
-        "type": "default",
-        "title": "6.1.3 Tipo de Tratamento (Quesito 3)",
-        "content": "Este quesito detalha os tipos de tratamento existentes no município em 2024. É possível marcar mais de uma opção.<br><ul><li><b>Gradeamento:</b> Remoção de sólidos grosseiros através de grades.</li><li><b>Desarenador (caixa de areia):</b> Remoção de areia e materiais pesados por sedimentação.</li><li><b>Separador de água e óleo:</b> Remoção de óleos e graxas.</li><li><b>Bacia de sedimentação:</b> Estrutura maior para decantação de partículas.</li><li><b>Alagado construído (wetland):</b> Sistema que utiliza processos naturais (plantas, solo) para purificar a água.</li><li><b>Outro(s):</b> Outros tipos de tratamento.</li></ul>"
-      },
-      {
-        "type": "dica",
-        "title": "💡 Dica",
-        "content": "Alagados construídos (wetlands) são considerados tanto infraestrutura verde (Bloco CCI) quanto estrutura de tratamento (Bloco DES)."
-      },
-      {
-        "type": "default",
-        "title": "6.1.4 Ligações Clandestinas de Esgoto (Quesito 4)",
-        "content": "Este quesito investiga se, em 2024, o prestador de serviço tinha conhecimento da existência de ligações de esgoto sanitário na rede de drenagem de águas pluviais. A resposta \"Sim\" ou \"Não\" é obrigatória."
-      },
-      {
-        "type": "default",
-        "title": "6.1.5 Ações para Ligações Clandestinas (Quesito 5)",
-        "content": "Se a resposta anterior for \"Sim\", este quesito pergunta quais ações foram tomadas em relação a essas ligações clandestinas em 2024. É possível marcar mais de uma opção.<br><ul><li>Notificação ao proprietário do imóvel</li><li>Aplicação de multa</li><li>Comunicação à companhia de esgotamento sanitário</li><li>Comunicação ao órgão ambiental</li><li>Comunicação ao órgão de saúde pública</li><li>Outra(s)</li><li>Nenhuma ação foi tomada</li></ul>"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 1 - Drenagem que Deságua no Rio",
-        "content": "<b>Situação Real:</b> Empresa de drenagem cujo sistema deságua no Rio das Pedras e tem caixas de areia.<br><br><b>Pergunta do informante:</b> \"Nossa drenagem vai toda para o Rio das Pedras. Temos umas caixas que tiram areia. Isso é tratamento?\"<br><br><b>Como orientar:</b><br>1. Corpo receptor: \"Rio ou riacho\" (quesito 1)<br>2. Tratamento: SIM (quesito 2)<br>3. Tipo: \"Desarenador (caixa de areia)\" (quesito 3)<br>4. Caixas de areia SÃO tratamento primário<br><br><b>Conceito-chave aplicado:</b> Destinação = onde a água vai parar<br><br><b>Erro comum:</b> Não reconhecer caixas de areia como tratamento"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 2 - Sistema com Ligações Clandestinas",
-        "content": "<b>Situação Real:</b> Prefeitura que descobriu esgoto conectado na rede de drenagem.<br><br><b>Pergunta do informante:</b> \"Descobrimos que tem casas ligando esgoto na nossa rede de chuva. Multamos algumas.\"<br><br><b>Como orientar:</b><br>1. Ligações clandestinas: SIM (quesito 4)<br>2. Ações tomadas (quesito 5): marque<br>   - \"Notificação ao proprietário\"<br>   - \"Aplicação de multa\"<br>   - \"Comunicação à companhia de esgoto\"<br>3. Pode marcar VÁRIAS ações<br><br><b>Conceito-chave aplicado:</b> Ligação clandestina = esgoto na rede de chuva<br><br><b>Erro comum:</b> Não registrar todas as ações tomadas"
-      },
-      {
-        "type": "exemplo",
-        "title": "🎯 Exemplo Prático 3 - Wetland Construído",
-        "content": "<b>Situação Real:</b> Autarquia que construiu um alagado construído (wetland) para tratar água de drenagem.<br><br><b>Pergunta do informante:</b> \"Construímos um alagado com plantas para limpar a água da chuva antes de ir pro lago.\"<br><br><b>Como orientar:</b><br>1. Corpo receptor: \"Lago ou lagoa\" (quesito 1)<br>2. Tratamento: SIM (quesito 2)<br>3. Tipo: \"Alagado construído (wetland)\" (quesito 3)<br>4. Wetland é tratamento E infraestrutura verde<br><br><b>Conceito-chave aplicado:</b> Tratamento = limpar a água antes da destinação<br><br><b>Erro comum:</b> Confundir wetland com simples jardim"
+        "title": "⚠️ Atenção - Diferenças Críticas",
+        "content": "<b>DES vs TRA:</b><br>• DES = Para onde a água vai (destinação final)<br>• TRA = Como a água é limpa (tratamento)<br><br><b>Rios Intermitentes vs Perenes:</b><br>• Intermitente = Só tem água na época de chuva<br>• Perene = Tem água o ano todo<br><br><b>Tratamento de Águas Pluviais vs Esgoto:</b><br>• Pluviais = Remove lixo, areia, óleos das ruas<br>• Esgoto = Remove matéria orgânica e patógenos<br><br><b>Fitorremediação vs Biorremediação:</b><br>• Fitorremediação = Usa plantas<br>• Biorremediação = Usa microrganismos"
       },
       {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
-        "content": "<b>Dúvida Comum:</b> \"Se a água infiltra no solo, qual corpo receptor marcar?\"<br><b>Como Ajudar:</b> Marque \"Infiltração no solo para recarga de aquífero\".<br><br><b>Dúvida Comum:</b> \"Caixa de areia é tratamento?\"<br><b>Como Ajudar:</b> Sim, é um tipo de tratamento primário chamado desarenador.<br><br><b>Dúvida Comum:</b> \"E se não sabemos se há ligações clandestinas?\"<br><b>Como Ajudar:</b> A pergunta é se o PRESTADOR tem conhecimento. Se o informante, representando o prestador, não sabe, a resposta deve refletir a falta de conhecimento da entidade, que pode ser \"Não\"."
+        "content": "<b>Dúvida Comum:</b> \"Qual a diferença entre UTR e UQR?\"<br><b>Como Ajudar:</b> UTR é para rios, UQR é para córregos. Ambas tratam água diretamente no corpo d'água.<br><br><b>Dúvida Comum:</b> \"Dissipador de energia é obrigatório?\"<br><b>Como Ajudar:</b> Não é obrigatório, mas é recomendado para evitar erosão no ponto de lançamento.<br><br><b>Dúvida Comum:</b> \"Voçoroca é diferente de ravina?\"<br><b>Como Ajudar:</b> Voçoroca é mais profunda que ravina, mas ambas são processos erosivos a serem registrados.<br><br><b>Dúvida Comum:</b> \"Wetland é fitorremediação?\"<br><b>Como Ajudar:</b> Sim, wetlands construídos usam plantas (fitorremediação) para tratar água."
       },
       {
         "type": "resumo",
-        "title": "📊 Resumo Visual",
-        "content": "<table><tr><th>Estrutura de Tratamento</th><th>Função</th></tr><tr><td>Gradeamento</td><td>Remover lixo grande</td></tr><tr><td>Desarenador</td><td>Remover areia</td></tr><tr><td>Separador água/óleo</td><td>Remover óleos e graxas</td></tr><tr><td>Alagado construído</td><td>Filtrar água com processos naturais</td></tr></table><br><b>Ligações Clandestinas:</b> É quando o esgoto de uma casa é conectado na rede de drenagem de chuva, causando poluição direta nos rios."
+        "title": "📊 Resumo Visual - Quesitos por Bloco",
+        "content": "<table><tr><th>Bloco DES (Destinação)</th><th>Bloco TRA (Tratamento)</th></tr><tr><td>Quesito 1: Pontos Finais</td><td>Quesito 1: Realização</td></tr><tr><td>Quesito 2: Dissipadores</td><td>Quesito 2: Locais</td></tr><tr><td>Quesito 3: Erosão/Deslizamentos</td><td>Quesito 3: Tipos</td></tr><tr><td></td><td>Quesito 4: Aproveitamento</td></tr></table><br><br><table><tr><th>Processo Erosivo</th><th>Descrição</th></tr><tr><td>Deslizamento</td><td>Movimento de massa em encostas</td></tr><tr><td>Solapamento</td><td>Erosão que destrói bases das margens</td></tr><tr><td>Voçoroca</td><td>Erosão profunda em forma de vale</td></tr></table>"
       }
     ],
     "quiz": {
       "title": "📝 Quiz do Módulo 6",
       "questions": [
         {
-          "question": "Qual é o principal foco do Bloco DES (Destinação) na coleta de dados para o SNIS?",
+          "question": "Qual é a diferença fundamental entre rios intermitentes e rios perenes no contexto do Quesito 1 do Bloco DES?",
           "options": [
-            "Identificar o destino final das águas pluviais coletadas e se há tratamento prévio, incluindo a verificação de ligações clandestinas.",
-            "Quantificar o volume de esgoto sanitário tratado que é despejado na rede de drenagem pluvial.",
-            "Mapear exclusivamente a localização de estruturas de captação, como bocas de lobo e poços de visita.",
-            "Analisar a viabilidade econômica da implementação de sistemas de reuso de água da chuva para fins potáveis."
+            "Rios intermitentes são de água doce, rios perenes são de água salgada.",
+            "Rios intermitentes têm água somente no período chuvoso, rios perenes têm água o ano todo.",
+            "Rios intermitentes são artificiais, rios perenes são naturais.",
+            "Rios intermitentes são urbanos, rios perenes são rurais."
           ],
-          "answer": "Identificar o destino final das águas pluviais coletadas e se há tratamento prévio, incluindo a verificação de ligações clandestinas.",
-          "feedback": "O Bloco DES foca em identificar para onde vai a água da chuva, se ela passa por algum tratamento antes de chegar ao seu destino e se existem problemas como esgoto sendo lançado irregularmente na rede pluvial."
+          "answer": "Rios intermitentes têm água somente no período chuvoso, rios perenes têm água o ano todo.",
+          "feedback": "A diferença está na permanência da água: intermitentes secam na estiagem, perenes mantêm fluxo contínuo."
         },
         {
-          "question": "De acordo com o material, qual das seguintes opções é considerada um tipo válido de corpo hídrico receptor para as águas pluviais?",
+          "question": "O que são 'dissipadores de energia' no contexto do Quesito 2 do Bloco DES?",
           "options": [
-            "A rede coletora de esgoto sanitário, para que a água da chuva ajude a 'lavar' a tubulação.",
-            "A Estação de Tratamento de Água (ETA), para que a água da chuva seja tratada e distribuída para a população.",
-            "Infiltração no solo para recarga de aquífero, representando uma destinação que promove a sustentabilidade hídrica.",
-            "Lançamento em aterros sanitários para auxiliar na compactação do lixo e controle de poeira."
+            "Equipamentos elétricos que geram energia a partir do fluxo da água.",
+            "Estruturas que reduzem a velocidade das águas para evitar erosão, como escadas ou rampas com blocos.",
+            "Sistemas de bombeamento que controlam a vazão da água na rede.",
+            "Dispositivos que separam água limpa de água contaminada."
           ],
-          "answer": "Infiltração no solo para recarga de aquífero, representando uma destinação que promove a sustentabilidade hídrica.",
-          "feedback": "A infiltração no solo é uma forma de destinação válida e sustentável, pois ajuda a recarregar os aquíferos, ao contrário das outras opções que representam práticas incorretas ou conceitos distintos."
+          "answer": "Estruturas que reduzem a velocidade das águas para evitar erosão, como escadas ou rampas com blocos.",
+          "feedback": "Dissipadores de energia são estruturas físicas projetadas para reduzir a velocidade da água e proteger contra erosão."
         },
         {
-          "question": "Um município informa que possui uma estrutura que utiliza plantas e processos naturais para purificar a água da chuva antes de seu lançamento em um lago. Como essa estrutura deve ser classificada?",
+          "question": "No Quesito 3 do Bloco DES, o que significa 'solapamento de margens'?",
           "options": [
-            "Como um separador de água e óleo, focado na remoção de hidrocarbonetos.",
-            "Como um alagado construído (wetland), que funciona como tratamento e infraestrutura verde.",
-            "Como um gradeamento mecanizado, que remove apenas sólidos grosseiros.",
-            "Como uma bacia de detenção, cuja única função é o controle de vazão."
+            "Acúmulo de sedimentos nas margens dos rios.",
+            "Tipo de erosão que causa a queda das encostas, afundando o solo e destruindo as bases da margem.",
+            "Construção de muros de contenção nas margens.",
+            "Plantio de vegetação para proteger as margens."
           ],
-          "answer": "Como um alagado construído (wetland), que funciona como tratamento e infraestrutura verde.",
-          "feedback": "Alagados construídos (wetlands) são soluções baseadas na natureza que utilizam processos biológicos para tratar a água, sendo classificadas tanto como tratamento (Bloco DES) quanto infraestrutura verde (Bloco CCI)."
+          "answer": "Tipo de erosão que causa a queda das encostas, afundando o solo e destruindo as bases da margem.",
+          "feedback": "Solapamento é um processo erosivo destrutivo que compromete a estabilidade das margens, conhecido na Amazônia como 'terras caídas'."
         },
         {
-          "question": "O que o quesito sobre 'Ligações Clandestinas de Esgoto' busca investigar especificamente?",
+          "question": "Qual é a principal distinção do Bloco TRA em relação aos outros tipos de tratamento?",
           "options": [
-            "Se o prestador de serviço tem conhecimento formal da existência de conexões de esgoto doméstico ou industrial na rede de drenagem pluvial.",
-            "A quantidade de residências que não possuem ligação com a rede de abastecimento de água potável.",
-            "Se a rede de drenagem possui capacidade hidráulica para receber o volume adicional de ligações clandestinas de água potável.",
-            "O número de multas aplicadas por ligações irregulares de calhas e rufos na rede de esgoto."
+            "Foca especificamente no tratamento de águas pluviais, distinguindo-o do tratamento de esgoto e água para abastecimento.",
+            "Trata apenas água potável para distribuição à população.",
+            "É exclusivo para tratamento de esgoto industrial.",
+            "Serve apenas para tratamento de água de piscinas e fontes ornamentais."
           ],
-          "answer": "Se o prestador de serviço tem conhecimento formal da existência de conexões de esgoto doméstico ou industrial na rede de drenagem pluvial.",
-          "feedback": "A pergunta foca no conhecimento do prestador sobre o problema específico de esgoto sanitário ou industrial sendo lançado na rede projetada apenas para águas pluviais."
+          "answer": "Foca especificamente no tratamento de águas pluviais, distinguindo-o do tratamento de esgoto e água para abastecimento.",
+          "feedback": "O Bloco TRA tem como característica principal a clara distinção entre diferentes tipos de tratamento, focando nas águas pluviais."
         },
         {
-          "question": "Se um prestador de serviços identifica ligações clandestinas de esgoto em sua rede pluvial e comunica o fato à companhia de esgotamento sanitário, qual ação ele está tomando?",
+          "question": "O que são UTR e UQR no contexto do Quesito 2 do Bloco TRA?",
           "options": [
-            "Aplicação de multa, que é uma sanção pecuniária direta ao proprietário do imóvel.",
-            "Comunicação entre órgãos/entidades, uma medida administrativa para a resolução conjunta do problema.",
-            "Notificação ao órgão de saúde pública, que só ocorre em casos de epidemias comprovadas.",
-            "Execução de obra para desconexão, que implica na intervenção física direta na ligação irregular."
+            "Unidades de Tratamento de Rios e Unidades de Qualidade da Água de Córregos - sistemas implementados diretamente em corpos d'água.",
+            "Unidades de Transporte Rápido e Unidades de Qualidade Urbana para gestão de tráfego.",
+            "Unidades de Tratamento Residencial e Unidades de Qualidade Rural para saneamento básico.",
+            "Unidades de Tecnologia Renovável e Unidades de Qualidade do Ar para sustentabilidade."
           ],
-          "answer": "Comunicação entre órgãos/entidades, uma medida administrativa para a resolução conjunta do problema.",
-          "feedback": "A comunicação à companhia de esgoto é uma ação colaborativa entre entidades para resolver o problema da poluição, sendo uma das ações previstas no questionário."
+          "answer": "Unidades de Tratamento de Rios e Unidades de Qualidade da Água de Córregos - sistemas implementados diretamente em corpos d'água.",
+          "feedback": "UTR e UQR são tecnologias de tratamento in-situ que atuam diretamente nos corpos d'água para melhorar sua qualidade."
         },
         {
-          "question": "Qual é a principal diferença de propósito entre o tratamento de águas pluviais e o tratamento de esgoto sanitário?",
+          "question": "Qual a diferença entre fitorremediação e biorremediação no Quesito 2 do Bloco TRA?",
           "options": [
-            "O tratamento de águas pluviais visa remover principalmente poluentes difusos como lixo, areia e óleos, enquanto o tratamento de esgoto foca em matéria orgânica e patógenos.",
-            "Não há diferença, ambos os processos utilizam exatamente as mesmas tecnologias e visam atingir o padrão de potabilidade.",
-            "O tratamento de águas pluviais é obrigatório em todos os municípios brasileiros, enquanto o tratamento de esgoto é opcional.",
-            "O tratamento de esgoto é sempre mais simples e barato, pois lida com um volume menor e mais constante que o da água da chuva."
+            "Fitorremediação usa plantas, biorremediação usa microrganismos para remover poluentes.",
+            "Fitorremediação é mais cara, biorremediação é mais barata.",
+            "Fitorremediação é para água, biorremediação é para solo.",
+            "Fitorremediação é natural, biorremediação é artificial."
           ],
-          "answer": "O tratamento de águas pluviais visa remover principalmente poluentes difusos como lixo, areia e óleos, enquanto o tratamento de esgoto foca em matéria orgânica e patógenos.",
-          "feedback": "Os alvos do tratamento são distintos. A água da chuva carrega poluição das ruas (lixo, areia, óleo), enquanto o esgoto tem alta carga de matéria orgânica e microrganismos."
+          "answer": "Fitorremediação usa plantas, biorremediação usa microrganismos para remover poluentes.",
+          "feedback": "A diferença está no agente biológico utilizado: plantas na fitorremediação, microrganismos na biorremediação."
         },
         {
-          "question": "Uma estrutura de 'desarenador' ou 'caixa de areia' instalada em um sistema de drenagem é considerada que tipo de processo?",
+          "question": "No Quesito 3 do Bloco TRA, o que caracteriza o tratamento 'biológico'?",
           "options": [
-            "Um tipo de tratamento terciário, focado na remoção de nutrientes como nitrogênio e fósforo.",
-            "Uma forma de destinação final, onde a água é permanentemente armazenada.",
-            "Um tipo de tratamento preliminar ou primário, que remove sólidos pesados por sedimentação.",
-            "Um mecanismo de reuso, que separa a areia para uso direto na construção civil."
+            "Uso de produtos químicos sintéticos para purificar a água.",
+            "Uso de microrganismos para decompor matéria orgânica dissolvida e em suspensão.",
+            "Uso de filtros mecânicos para remover partículas sólidas.",
+            "Uso de radiação ultravioleta para eliminar bactérias."
           ],
-          "answer": "Um tipo de tratamento preliminar ou primário, que remove sólidos pesados por sedimentação.",
-          "feedback": "O desarenador é uma etapa inicial do tratamento, projetada para remover, por gravidade, partículas mais densas como a areia, protegendo o restante do sistema."
+          "answer": "Uso de microrganismos para decompor matéria orgânica dissolvida e em suspensão.",
+          "feedback": "O tratamento biológico utiliza processos naturais com microrganismos para degradar matéria orgânica."
         },
         {
-          "question": "Por que a resposta 'Não' ao quesito 'O município dispunha de algum sistema para tratamento das águas pluviais?' encerra o preenchimento de parte do questionário?",
+          "question": "O que significa 'aproveitamento do efluente tratado' no Quesito 4 do Bloco TRA?",
           "options": [
-            "Porque se não há tratamento, os quesitos subsequentes sobre os *tipos* de tratamento existentes se tornam inaplicáveis.",
-            "Porque a ausência de tratamento indica uma irregularidade grave, que bloqueia automaticamente o envio dos dados.",
-            "Porque o sistema assume que a ausência de tratamento implica na inexistência de um corpo receptor para a drenagem.",
-            "Porque a legislação proíbe o preenchimento de dados sobre drenagem para municípios sem tratamento de águas pluviais."
+            "Descarte do efluente em aterros sanitários.",
+            "Utilização da água tratada para diferentes fins, promovendo sustentabilidade e reduzindo captação de fontes naturais.",
+            "Armazenamento permanente do efluente em reservatórios subterrâneos.",
+            "Mistura do efluente com água potável para distribuição."
           ],
-          "answer": "Porque se não há tratamento, os quesitos subsequentes sobre os *tipos* de tratamento existentes se tornam inaplicáveis.",
-          "feedback": "A lógica do questionário é que, se não existe um sistema de tratamento, não faz sentido perguntar sobre quais tecnologias de tratamento são utilizadas."
+          "answer": "Utilização da água tratada para diferentes fins, promovendo sustentabilidade e reduzindo captação de fontes naturais.",
+          "feedback": "O aproveitamento representa uma abordagem circular, transformando efluente em recurso útil e promovendo sustentabilidade."
         },
         {
-          "question": "O que significa a coexistência de um 'alagado construído' (wetland) como infraestrutura verde (Bloco CCI) e estrutura de tratamento (Bloco DES)?",
+          "question": "Qual tipo de área é classificada como 'área livre particular' no Quesito 1 do Bloco DES?",
           "options": [
-            "Que o conceito é aplicado de forma inconsistente e o prestador deve escolher apenas uma das classificações.",
-            "Que a estrutura desempenha múltiplas funções: controla a vazão, promove a infiltração e melhora a qualidade da água simultaneamente.",
-            "Que o Bloco CCI é um pré-requisito para o Bloco DES, e um não pode ser preenchido sem o outro.",
-            "Que a estrutura é puramente estética e sua função de tratamento é apenas secundária e não deve ser reportada."
+            "Parques e praças públicas mantidas pelo poder público.",
+            "Terrenos, jardins, quintais de propriedade privada.",
+            "Rios e lagos de domínio público.",
+            "Estradas e rodovias federais."
           ],
-          "answer": "Que a estrutura desempenha múltiplas funções: controla a vazão, promove a infiltração e melhora a qualidade da água simultaneamente.",
-          "feedback": "Essa é a essência das soluções baseadas na natureza. Um wetland pode, ao mesmo tempo, ajudar a controlar cheias (CCI) e remover poluentes (DES), sendo um exemplo de infraestrutura multifuncional."
+          "answer": "Terrenos, jardins, quintais de propriedade privada.",
+          "feedback": "Áreas livres particulares são espaços de propriedade privada, diferenciando-se das áreas públicas mantidas pelo poder público."
         },
         {
-          "question": "Ao investigar as ações tomadas contra ligações clandestinas, a opção 'Notificação ao proprietário do imóvel' representa que tipo de medida?",
+          "question": "Por que é importante distinguir entre 'reservatórios/açudes' e 'reservatórios para tratamento' no Bloco DES?",
           "options": [
-            "Uma sanção financeira imediata, com a emissão de um boleto de cobrança.",
-            "Uma medida judicial, que inicia um processo legal contra o proprietário.",
-            "Uma ação punitiva que resulta no corte do fornecimento de água potável.",
-            "Uma comunicação formal inicial, informando o proprietário sobre a irregularidade e solicitando providências."
+            "Porque têm diferentes custos de manutenção.",
+            "Porque reservatórios/açudes são pontos de destinação final, enquanto reservatórios para tratamento são estruturas intermediárias.",
+            "Porque um é público e outro é privado.",
+            "Porque um é permanente e outro é temporário."
           ],
-          "answer": "Uma comunicação formal inicial, informando o proprietário sobre a irregularidade e solicitando providências.",
-          "feedback": "A notificação é o primeiro passo administrativo, um ato formal de comunicação para dar ciência ao responsável e solicitar a regularização, antes de medidas mais severas."
+          "answer": "Porque reservatórios/açudes são pontos de destinação final, enquanto reservatórios para tratamento são estruturas intermediárias.",
+          "feedback": "A distinção é funcional: açudes são destinos finais da água, reservatórios de tratamento são etapas intermediárias do processo."
         },
         {
-          "question": "Qual dos seguintes itens NÃO é um tipo de tratamento de águas pluviais listado no material de referência?",
+          "question": "O que caracteriza uma 'voçoroca' no contexto de processos erosivos do Quesito 3?",
           "options": [
-            "Gradeamento e desarenador.",
-            "Separador de água e óleo.",
-            "Osmose reversa para dessalinização.",
-            "Alagado construído (wetland)."
+            "Erosão superficial que forma pequenos sulcos no solo.",
+            "Erosão profunda que forma vales ou ravinas extensas.",
+            "Acúmulo de sedimentos em áreas baixas.",
+            "Movimento lateral de massas de solo."
           ],
-          "answer": "Osmose reversa para dessalinização.",
-          "feedback": "Osmose reversa é um processo de tratamento de altíssima tecnologia, geralmente usado para purificação de água ou dessalinização, e não é uma tecnologia comumente listada para tratamento de águas pluviais em geral."
+          "answer": "Erosão profunda que forma vales ou ravinas extensas.",
+          "feedback": "Voçoroca (ou vossoroca/bossoroca/boçoroca) é um processo erosivo avançado que forma sulcos profundos e extensos."
         },
         {
-          "question": "A presença de 'separadores de água e óleo' como sistema de tratamento é mais comum em que tipo de área de contribuição?",
+          "question": "No tratamento preliminar (Quesito 3 do TRA), qual é o principal objetivo?",
           "options": [
-            "Áreas exclusivamente residenciais com baixa densidade populacional.",
-            "Bacias de drenagem com grande presença de postos de gasolina, oficinas mecânicas e grandes estacionamentos.",
-            "Zonas de preservação ambiental onde não há tráfego de veículos.",
-            "Áreas rurais com foco na agricultura orgânica e de subsistência."
+            "Remoção de materiais sólidos mais grosseiros, como gradeamento e caixa de areia.",
+            "Decomposição biológica de matéria orgânica.",
+            "Desinfecção da água com produtos químicos.",
+            "Ajuste do pH da água tratada."
           ],
-          "answer": "Bacias de drenagem com grande presença de postos de gasolina, oficinas mecânicas e grandes estacionamentos.",
-          "feedback": "Essas estruturas são projetadas para capturar poluentes específicos (hidrocarbonetos) que são mais comuns em áreas com alto tráfego de veículos e atividades relacionadas."
+          "answer": "Remoção de materiais sólidos mais grosseiros, como gradeamento e caixa de areia.",
+          "feedback": "O tratamento preliminar é a primeira etapa, focada na remoção de sólidos grosseiros para proteger as etapas seguintes."
         },
         {
-          "question": "Se a água da drenagem de um município deságua em uma represa usada para abastecimento público, qual é a classificação correta do corpo receptor?",
+          "question": "Qual é a principal diferença entre sedimentação e tratamento preliminar?",
           "options": [
-            "Águas marinhas, pois toda água eventualmente chega ao mar.",
-            "Outro(s), pois represas de abastecimento não são consideradas corpos hídricos receptores padrão.",
-            "Represa ou reservatório.",
-            "Inexistente, pois a água está sendo reutilizada e não destinada."
+            "Sedimentação remove sólidos suspensos menores por decantação, preliminar remove sólidos grosseiros.",
+            "Sedimentação é mais cara que tratamento preliminar.",
+            "Sedimentação é opcional, tratamento preliminar é obrigatório.",
+            "Sedimentação é para esgoto, tratamento preliminar é para águas pluviais."
           ],
-          "answer": "Represa ou reservatório.",
-          "feedback": "De acordo com as opções do quesito, 'Represa ou reservatório' é a classificação apropriada para esse tipo de corpo d'água formado por barramento."
+          "answer": "Sedimentação remove sólidos suspensos menores por decantação, preliminar remove sólidos grosseiros.",
+          "feedback": "A diferença está no tamanho das partículas removidas: preliminar remove grandes, sedimentação remove pequenas."
         },
         {
-          "question": "Qual é a principal preocupação ambiental relacionada à existência de ligações clandestinas de esgoto na rede pluvial?",
+          "question": "Qual tecnologia é considerada 'tratamento avançado' no contexto do Quesito 3?",
           "options": [
-            "O aumento do custo de manutenção das galerias devido ao maior volume de fluxo.",
-            "A sobrecarga hidráulica do sistema de drenagem, que pode causar alagamentos em pontos baixos da cidade.",
-            "A descarga de esgoto bruto (não tratado) diretamente em rios e lagos, causando poluição hídrica e riscos à saúde.",
-            "A mistura de água da chuva com esgoto, que dilui o esgoto e dificulta seu tratamento na ETE."
+            "Gradeamento simples.",
+            "Membranas filtrantes para remoção de partículas muito finas e compostos dissolvidos.",
+            "Caixa de areia básica.",
+            "Decantação por gravidade."
           ],
-          "answer": "A descarga de esgoto bruto (não tratado) diretamente em rios e lagos, causando poluição hídrica e riscos à saúde.",
-          "feedback": "O impacto mais grave é a poluição direta dos corpos d'água, pois a rede pluvial geralmente não tem tratamento, transformando-se em uma fonte direta de contaminação."
+          "answer": "Membranas filtrantes para remoção de partículas muito finas e compostos dissolvidos.",
+          "feedback": "Membranas filtrantes representam tecnologia avançada, capaz de remover contaminantes muito pequenos e dissolvidos."
         },
         {
-          "question": "Um informante diz que, em sua cidade, 'a água da chuva vai para o mesmo cano do esgoto'. Qual é a interpretação técnica mais provável e relevante para a pesquisa?",
+          "question": "Por que o Quesito 1 do TRA especifica 'rede separadora' para águas pluviais?",
           "options": [
-            "O município possui um sistema de drenagem do tipo unitário ou combinado, onde uma única rede transporta águas pluviais e esgoto.",
-            "O informante está equivocado, pois é tecnicamente impossível que as duas redes sejam compartilhadas.",
-            "Trata-se de uma situação generalizada de ligações clandestinas, e não de um projeto de sistema unitário.",
-            "A cidade não possui rede de esgoto, e todo o saneamento é feito por fossas sépticas individuais."
+            "Porque redes separadoras são mais baratas de construir.",
+            "Para distinguir de sistemas unitários onde águas pluviais e esgoto compartilham a mesma rede.",
+            "Porque redes separadoras são obrigatórias por lei.",
+            "Para facilitar a manutenção do sistema."
           ],
-          "answer": "O município possui um sistema de drenagem do tipo unitário ou combinado, onde uma única rede transporta águas pluviais e esgoto.",
-          "feedback": "Embora menos comum em projetos novos no Brasil, o sistema unitário (ou combinado) é uma concepção de engenharia onde uma única tubulação é projetada para transportar tanto esgoto quanto águas pluviais, sendo esta a interpretação técnica correta para a fala do informante."
+          "answer": "Para distinguir de sistemas unitários onde águas pluviais e esgoto compartilham a mesma rede.",
+          "feedback": "A especificação 'rede separadora' é importante para distinguir sistemas que coletam apenas águas pluviais dos sistemas mistos ou unitários."
         }
       ]
     }

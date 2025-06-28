@@ -1,264 +1,339 @@
 window.modulos_data = window.modulos_data || {};
 Object.assign(window.modulos_data, {
   "7": {
-    "title": "Módulo 7: Monitoramento (Bloco MON)",
+    "title": "Módulo 7: Monitoramento (Bloco MON) e Manutenção, Melhoria e Prevenção (Bloco MMP)",
     "audio": "MAP/Audios/Curso MAP - Mod 7.mp3",
     "cards": [
       {
         "type": "default",
         "title": "📋 Resumo",
-        "content": "Este módulo foca no Bloco MON (Monitoramento), que visa verificar a existência de sistemas de monitoramento da quantidade e qualidade das águas pluviais, bem como o monitoramento de desastres. O objetivo é capacitar o técnico para identificar se o município realiza medições de chuva (pluviométrico) e de nível dos rios (fluviométrico), a frequência dessas medições, a existência de estações de monitoramento e o monitoramento da qualidade da água pluvial. Além disso, o bloco aborda o importante tema do monitoramento de áreas de risco e a existência de sistemas de alerta de desastres para a população, como sirenes e alertas por SMS."
+        "content": "Este módulo aborda a importância do monitoramento da quantidade e qualidade da água no sistema de drenagem, bem como as práticas de manutenção, melhoria e prevenção de problemas para assegurar o funcionamento adequado da infraestrutura de drenagem e manejo de águas pluviais. Divide-se em dois blocos principais: Monitoramento (MON) e Manutenção, Melhoria e Prevenção (MMP)."
       },
       {
         "type": "default",
-        "title": "7.1 Bloco MON - Monitoramento",
-        "content": "O objetivo deste bloco é capacitar o técnico a verificar a existência de monitoramento da quantidade e qualidade das águas pluviais e monitoramento de desastres."
+        "title": "7.1 Bloco MON - Monitoramento de Nível, de Vazão e de Qualidade da Água",
+        "content": "O Bloco MON tem como propósito registrar a altura e a vazão da água, além de analisar as características físico-químicas e biológicas para identificar contaminantes no sistema de drenagem. O objetivo é identificar nos corpos d'água e demais estruturas de drenagem possíveis contaminantes, com vistas a assegurar que as águas pluviais, ao serem captadas e conduzidas, não comprometam a qualidade dos corpos hídricos receptores e o meio ambiente urbano."
       },
       {
         "type": "default",
-        "title": "7.1.1 Monitoramento Pluviométrico/Fluviométrico (Quesito 1)",
-        "content": "Este quesito investiga se, em 2024, o município realizou monitoramento pluviométrico (quantidade de chuva) e/ou fluviométrico (nível/vazão dos rios). A resposta \"Não\" para este quesito encerra o bloco.<br><ul><li><b>Monitoramento pluviométrico:</b> Medição da quantidade de chuva.</li><li><b>Monitoramento fluviométrico:</b> Medição do nível ou da vazão dos cursos d'água.</li></ul>"
+        "title": "7.1.1 Monitoramento de Nível ou Vazão (Quesito 1)",
+        "content": "Refere-se ao registro contínuo da altura da água em rios, reservatórios ou outros corpos d'água (nível) e da quantidade de água que passa por um ponto específico ao longo de um período (vazão), para medir o fluxo de água de um rio em uma bacia hidrográfica.<br><br><b>Responsabilidade pela realização (Quesito 1.1):</b><br>• Diretamente pelo prestador ou por terceiros<br>• Quem realizou (se terceirizado): Órgão público, Empresa privada, Universidade, Agência Reguladora, Outro"
+      },
+      {
+        "type": "default",
+        "title": "7.1.2 Locais do Monitoramento (Quesito 2)",
+        "content": "<b>Locais onde pode ser realizado o monitoramento:</b><br>• <b>Rios intermitentes:</b> rios com água somente no período chuvoso<br>• <b>Rios perenes:</b> rios com água o ano todo<br>• <b>Mar</b><br>• <b>Estruturas de retenção, detenção e barragens para controle de cheias</b><br>• <b>Sistema de drenagem construído (galerias, tubulação)</b><br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
+      },
+      {
+        "type": "default",
+        "title": "7.1.3 Métodos Utilizados (Quesito 3)",
+        "content": "<b>Métodos e equipamentos para monitoramento:</b><br>• <b>Régua milimétrica</b><br>• <b>Linígrafo</b><br>• <b>Sensor ultrassônico</b><br>• <b>ADCP (Perfilador Acústico por Efeito Doppler)</b><br>• <b>Medição manual</b><br>• <b>Curva-Chave (cota descarga, cota vazão):</b> relação entre a altura da lâmina de água e a vazão de um curso d'água<br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
       },
       {
         "type": "atencao",
-        "title": "⚠️ Atenção",
-        "content": "Se não houver nenhum tipo de monitoramento de quantidade de água (chuva ou rio), o Bloco MON é encerrado após o quesito 1."
+        "title": "⚠️ Conceitos Técnicos Importantes",
+        "content": "<b>ADCP:</b> Perfilador Acústico por Efeito Doppler - equipamento que mede vazão usando ondas sonoras.<br><br><b>Curva-Chave:</b> Relação matemática entre nível da água e vazão, permitindo calcular vazão a partir da medição do nível."
       },
       {
         "type": "default",
-        "title": "7.1.2 Frequência do Monitoramento (Quesito 2)",
-        "content": "Este quesito detalha a frequência com que o monitoramento pluviométrico e/ou fluviométrico foi realizado em 2024.<br><ul><li><b>Horária:</b> A cada hora.</li><li><b>Diária:</b> Uma vez ao dia.</li><li><b>Semanal:</b> Uma vez por semana.</li><li><b>Mensal:</b> Uma vez por mês.</li><li><b>Anual:</b> Uma vez por ano.</li><li><b>Apenas quando chove:</b> Medições realizadas somente durante ou após eventos de chuva.</li><li><b>Outra:</b> Outra frequência não listada.</li></ul>"
+        "title": "7.1.4 Frequência Mínima (Quesito 4)",
+        "content": "<b>Frequência do monitoramento:</b><br>• <b>Minutos</b><br>• <b>Horária</b><br>• <b>Diária</b><br>• <b>Semanal</b><br>• <b>Mensal</b><br>• <b>Não sabe</b>"
       },
       {
         "type": "default",
-        "title": "7.1.3 Estações de Monitoramento (Quesito 3)",
-        "content": "Este quesito pergunta sobre a existência de estações de monitoramento pluviométrico e/ou fluviométrico no município em 2024. É possível marcar mais de uma opção.<br><ul><li>Estações próprias</li><li>Estações de outra(s) instituição(ões)</li><li>Não há estações</li></ul>"
+        "title": "7.1.5 Monitoramento da Qualidade das Águas Pluviais (Quesito 5)",
+        "content": "Refere-se ao processo de coleta, análise e avaliação das características físicas, químicas, biológicas e hidrológicas das águas das chuvas que escoam pelo sistema de drenagem urbana ou natural.<br><br><b>Responsabilidade pela realização (Quesito 5.1):</b><br>• Diretamente pelo prestador ou por terceiros<br>• Quem realizou (se terceirizado): Órgão público, Empresa privada, Universidade, Agência Reguladora, Outro"
       },
       {
         "type": "default",
-        "title": "7.1.4 Monitoramento da Qualidade da Água (Quesito 4)",
-        "content": "Este quesito investiga se, em 2024, foi realizado o monitoramento da qualidade da água pluvial no município. A resposta \"Não\" para este quesito leva ao quesito 6."
+        "title": "7.1.6 Locais do Monitoramento de Qualidade (Quesito 6)",
+        "content": "<b>Locais onde pode ser realizado o monitoramento de qualidade:</b><br>• <b>Rios intermitentes</b><br>• <b>Rios perenes</b><br>• <b>Mar</b><br>• <b>Estruturas de retenção, detenção e barragens para controle de cheias</b><br>• <b>Sistema de drenagem construído (galerias, tubulação)</b><br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
       },
       {
         "type": "default",
-        "title": "7.1.5 Parâmetros de Qualidade Analisados (Quesito 5)",
-        "content": "Se a resposta anterior for \"Sim\", este quesito pergunta quais parâmetros de qualidade da água pluvial foram analisados em 2024. É possível marcar mais de uma opção.<br><ul><li><b>Parâmetros físico-químicos:</b> pH, turbidez, temperatura, oxigênio dissolvido, etc.</li><li><b>Parâmetros biológicos:</b> Coliformes, bactérias, etc.</li><li><b>Metais pesados:</b> Chumbo, mercúrio, etc.</li><li><b>Agrotóxicos:</b> Pesticidas e outros produtos químicos agrícolas.</li><li><b>Outro(s)</b></li></ul>"
-      },
-      {
-        "type": "exemplo",
-        "title": "📝 Exemplo",
-        "content": "Se o município mede apenas a turbidez (aparência turva) e o pH da água da chuva, ele está analisando parâmetros físico-químicos."
-      },
-      {
-        "type": "default",
-        "title": "7.1.6 Monitoramento de Áreas de Risco e Alerta de Desastres (Quesito 6)",
-        "content": "Este quesito investiga se, em 2024, o município realizava o monitoramento de áreas de risco de desastres relacionados a águas pluviais (inundações, deslizamentos). A resposta \"Não\" para este quesito encerra o bloco."
-      },
-      {
-        "type": "default",
-        "title": "7.1.7 Sistema de Alerta de Desastres (Quesito 7)",
-        "content": "Se a resposta anterior for \"Sim\", este quesito pergunta se existia um sistema de alerta de desastres para a população em 2024. Exemplos de sistemas de alerta incluem:<br><ul><li>Sirenes em áreas de risco</li><li>Mensagens de texto (SMS)</li><li>Alerta em mídias sociais ou rádio/TV</li><li>Carros de som</li></ul>"
+        "title": "7.1.7 Métodos de Monitoramento de Qualidade (Quesito 7)",
+        "content": "<b>Métodos utilizados para monitoramento de qualidade:</b><br>• <b>Coleta manual e análise em laboratório:</b> coleta amostras de água manualmente, usada em campanhas pontuais ou periódicas, como após eventos de chuva<br>• <b>Coleta NÃO manual e análise em laboratório:</b> usa equipamentos automáticos programados para coletar amostras sem a necessidade de um operador<br>• <b>Sistema de monitoramento contínuo em tempo real (sensores, sondas etc.)</b><br>• <b>Curva-chave de parâmetros de qualidade:</b> relação entre a altura da lâmina de água e a vazão de um curso d'água para avaliar, por exemplo, o fluxo de sedimentos<br>• <b>Bioindicadores:</b> análise de organismos presentes na água que indicam alterações ambientais<br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
       },
       {
         "type": "dica",
-        "title": "💡 Dica",
-        "content": "O sistema de alerta é crucial para a Defesa Civil e pode salvar vidas. Verifique se o município possui algum método, por mais simples que seja, para avisar a população sobre riscos iminentes."
+        "title": "💡 Bioindicadores",
+        "content": "Bioindicadores são organismos vivos (peixes, insetos aquáticos, plantas) cuja presença, ausência ou condição indica a saúde do ecossistema aquático. Complementam as análises físico-químicas."
+      },
+      {
+        "type": "default",
+        "title": "7.1.8 Frequência do Monitoramento de Qualidade (Quesito 8)",
+        "content": "<b>Frequência do monitoramento de qualidade:</b><br>• <b>Minutos</b><br>• <b>Horária</b><br>• <b>Diária</b><br>• <b>Semanal</b><br>• <b>Mensal</b><br>• <b>Semestral</b><br>• <b>Anual</b><br>• <b>Na onda de cheia:</b> aumento repentino do nível da água<br>• <b>Outra</b><br>• <b>Não sabe</b>"
+      },
+      {
+        "type": "default",
+        "title": "7.1.9 Parâmetros Analisados (Quesito 9)",
+        "content": "<b>Parâmetros de qualidade da água analisados:</b><br>• <b>Matéria orgânica (DQO/DBO)</b><br>• <b>Oxigênio dissolvido</b><br>• <b>Sólidos totais, suspensos e dissolvidos</b><br>• <b>Nutrientes (Nitrogênio, Fósforo)</b><br>• <b>Turbidez</b><br>• <b>Condutividade</b><br>• <b>Metais pesados</b><br>• <b>Óleos e graxas</b><br>• <b>Coliformes</b><br>• <b>pH</b><br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
+      },
+      {
+        "type": "default",
+        "title": "7.2 Bloco MMP - Manutenção, Melhoria e Prevenção",
+        "content": "Este bloco foca nas atividades para manter o sistema de drenagem em funcionamento, aprimorá-lo e prevenir problemas como o assoreamento e o descarte inadequado de resíduos."
+      },
+      {
+        "type": "default",
+        "title": "7.2.1 Limpeza e/ou Manutenção do Sistema de Drenagem (Quesito 1)",
+        "content": "Verifica se foram realizadas atividades como limpeza, desobstrução de rios, córregos, galerias, barragens e reparos em estruturas.<br><br><b>Atividades desenvolvidas (Quesito 1.1):</b><br><br><b>Microdrenagem:</b><br>• Limpeza e desobstrução de dispositivos de captação<br>• Varrição e limpeza de vias<br>• Reparo das estruturas de microdrenagem<br>• Outra(s)<br><br><b>Macrodrenagem:</b><br>• Limpeza e desobstrução de galerias<br>• Dragagem e limpeza de canais<br>• Limpeza e desobstrução de estruturas de detenção, retenção e barragem para controle de cheias<br>• Reparo das estruturas de macrodrenagem<br>• Outra(s)<br><br><b>Infraestruturas verdes:</b><br>• Limpeza e manutenção das Infraestruturas verdes<br>• Reparo das Infraestruturas verdes<br>• Cuidados com a vegetação<br>• Outra(s)"
+      },
+      {
+        "type": "atencao",
+        "title": "⚠️ Microdrenagem vs Macrodrenagem",
+        "content": "<b>Microdrenagem:</b> Estruturas menores - bueiros, sarjetas, galerias, dispositivos de captação.<br><br><b>Macrodrenagem:</b> Estruturas maiores - córregos, rios, grandes canais, barragens."
+      },
+      {
+        "type": "default",
+        "title": "7.2.2 Frequência da Limpeza e/ou Manutenção (Quesito 2)",
+        "content": "<b>Frequência das atividades de limpeza e manutenção:</b><br>• <b>Semanal</b><br>• <b>Quinzenal</b><br>• <b>Mensal</b><br>• <b>Semestral</b><br>• <b>Anual</b><br>• <b>Somente em caso de alerta meteorológico:</b> quando a prefeitura intensifica a manutenção e limpeza em eventos de chuvas intensas<br>• <b>Somente durante o período chuvoso:</b> manutenção realizada durante chuvas menos intensas, que NÃO acionaram o sistema de alerta<br>• <b>Não realiza</b>"
+      },
+      {
+        "type": "default",
+        "title": "7.2.3 Destinação dos Resíduos (Quesito 3)",
+        "content": "Verifica para onde são enviados os resíduos gerados pela limpeza e manutenção do sistema de drenagem.<br><br><b>Opções de destinação:</b><br>• <b>Lançamento em corpos d'água (oceanos, mares, lagos, rios, riachos, córregos, lagoas, poças, reservatórios e nascentes)</b><br>• <b>Aterro sanitário</b><br>• <b>Áreas livres públicas ou particulares</b><br>• <b>Vazadouro a céu aberto (lixão)</b><br>• <b>Processamento (triagem, reciclagem, incineração)</b><br>• <b>Compostagem</b><br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
+      },
+      {
+        "type": "default",
+        "title": "7.2.4 Problemas de Assoreamento (Quesito 4)",
+        "content": "Identifica a existência de acúmulo de terra, areia, argila, detritos que interferem no funcionamento do sistema de drenagem. O assoreamento pode causar alagamentos, enchentes, redução da qualidade da água e perda da vida aquática.<br><br><b>Locais afetados (Quesito 4.1):</b><br>• <b>Rios, arroios, ribeirões e córregos</b><br>• <b>Estruturas de retenção, detenção e barragem para controle de cheias</b><br>• <b>Sistema de drenagem construído (galerias, tubulação)</b><br>• <b>Outro(s)</b><br>• <b>Não sabe</b>"
+      },
+      {
+        "type": "dica",
+        "title": "💡 Assoreamento",
+        "content": "Assoreamento é o acúmulo de sedimentos (areia, argila, detritos) que reduz a capacidade de vazão dos canais e aumenta o risco de inundações. É um dos principais problemas a serem combatidos com manutenção."
+      },
+      {
+        "type": "default",
+        "title": "7.2.5 Medidas Preventivas para Resíduos Sólidos (Quesito 5)",
+        "content": "Verifica se o prestador adota ações para evitar que resíduos sólidos atinjam os sistemas de drenagem.<br><br><b>Tipos de medidas preventivas (Quesito 5.1):</b><br>• <b>Caixa de areia:</b> dispositivo que recolhe detritos e sólidos<br>• <b>Gradeamento:</b> instalação de grades ou mantas para reter sedimentos e resíduos<br>• <b>Ecobarreiras:</b> estruturas flutuantes que bloqueiam o escoamento de resíduos sólidos<br>• <b>Varrição preventiva</b><br>• <b>Orientações para acondicionamento adequado dos resíduos sólidos (evitar descarte nas calçadas)</b><br>• <b>Outra(s)</b>"
+      },
+      {
+        "type": "dica",
+        "title": "💡 Ecobarreiras",
+        "content": "Ecobarreiras são estruturas flutuantes instaladas em rios e canais para capturar resíduos sólidos antes que cheguem a corpos d'água maiores, funcionando como uma 'rede' para lixo."
+      },
+      {
+        "type": "default",
+        "title": "7.2.6 Controle de Geração de Sedimentos em Obras (Quesito 6)",
+        "content": "Avalia a atuação do prestador no controle de boas práticas em obras para evitar o fluxo de sedimentos que possam entupir bocas de lobo e galerias.<br><br><b>Ações para controle (Quesito 6.1):</b><br>• <b>Grades e caixas de sedimentação nas redes pluviais</b><br>• <b>Proteção nos acessos das obras</b><br>• <b>Estabilização com camada de britas</b><br>• <b>Sistema lava-rodas</b><br>• <b>Estabilização de solos expostos em superfícies</b><br>• <b>Controle da geração de poeira nas atividades construtivas e vias de circulação de veículos</b><br>• <b>Proteção do perímetro do canteiro de obras</b><br>• <b>Cercas de membrana de geotêxtil</b><br>• <b>Assentamento de fiadas de bloco de concreto ao longo do perímetro</b><br>• <b>Leiras:</b> monte de terra ou material que funciona como barreira<br>• <b>Diques de contenção com sacarias</b><br>• <b>Outra(s)</b>"
+      },
+      {
+        "type": "atencao",
+        "title": "⚠️ Controle de Sedimentos em Obras",
+        "content": "<b>Lava-rodas:</b> Sistema que limpa as rodas dos veículos antes de saírem da obra.<br><br><b>Leiras:</b> Montes de terra que funcionam como barreiras para conter sedimentos.<br><br><b>Geotêxtil:</b> Tecido permeável usado para filtrar e conter sedimentos."
+      },
+      {
+        "type": "default",
+        "title": "7.2.7 Ampliação e/ou Melhoria do Sistema de Drenagem (Quesito 7 - últimos 4 anos)",
+        "content": "Refere-se a obras realizadas ou em andamento no período entre 2021 e 2024.<br><br><b>Tipos de ampliação e/ou melhoria (Quesito 7.1):</b><br>• <b>Canalização de cursos d'água naturais:</b> modificação do leito do rio, podendo ter consequências negativas como aumento da velocidade da água<br>• <b>Expansão ou requalificação do sistema de microdrenagem em bairros antigos</b><br>• <b>Expansão ou requalificação do sistema de microdrenagem em bairros novos / loteamentos</b><br>• <b>Implantação de galerias pluviais visando aumentar a capacidade da rede existente</b><br>• <b>Implantação de estruturas de detenção/retenção para controle / amortecimento de cheias (\"piscinão\")</b><br>• <b>Renaturalização / Restauração ou Recuperação / Revitalização de cursos d'água:</b> restaurar funções ecológicas e hidrológicas, tornando rios \"vivos\"<br>• <b>Tamponamento de cursos d'água naturais:</b> canalização do rio que o \"enterra\" em galerias ou tubulações<br>• <b>Implantação de estruturas de contenção de enchentes</b><br>• <b>Outro(s)</b>"
+      },
+      {
+        "type": "atencao",
+        "title": "⚠️ Renaturalização vs Tamponamento",
+        "content": "<b>Renaturalização:</b> Restaurar as características naturais do rio (vegetação, curvas, funções ecológicas) - abordagem sustentável.<br><br><b>Tamponamento:</b> \"Enterrar\" o rio em galerias ou tubulações - abordagem tradicional com impactos ambientais."
       },
       {
         "type": "exemplo",
-        "title": "🎯 Exemplo Prático 1 - Defesa Civil com Pluviômetro",
-        "content": "<b>Situação Real:</b> Defesa Civil municipal que tem um pluviômetro e mede chuva todo dia.<br><br><b>Pergunta do informante:</b> \"A Defesa Civil mede chuva todo dia com um pluviômetro. Isso conta como monitoramento?\"<br><br><b>Como orientar:</b><br>1. Monitoramento: SIM (quesito 1)<br>2. Tipo: \"pluviométrico\" (mede chuva)<br>3. Frequência: \"Diária\" (quesito 2)<br>4. Estações: \"Estações próprias\" (quesito 3)<br><br><b>Conceito-chave aplicado:</b> Monitoramento = acompanhar sistematicamente<br><br><b>Erro comum:</b> Achar que só equipamento sofisticado conta"
+        "title": "🎯 Exemplo Prático 1 - Monitoramento com ADCP",
+        "content": "<b>Situação Real:</b> Prestador que usa ADCP para medir vazão de um rio urbano.<br><br><b>Pergunta do informante:</b> \"Usamos um equipamento ADCP para medir a vazão do córrego. Medimos toda semana.\"<br><br><b>Como orientar:</b><br>1. Monitoramento de nível/vazão: SIM (quesito 1)<br>2. Local: \"Sistema de drenagem construído\" (quesito 2)<br>3. Método: \"ADCP (Perfilador Acústico por Efeito Doppler)\" (quesito 3)<br>4. Frequência: \"Semanal\" (quesito 4)<br><br><b>Conceito-chave aplicado:</b> ADCP mede vazão usando ondas sonoras<br><br><b>Erro comum:</b> Confundir ADCP com sensor de nível"
       },
       {
         "type": "exemplo",
-        "title": "🎯 Exemplo Prático 2 - Sistema de Alerta por SMS",
-        "content": "<b>Situação Real:</b> Prefeitura que monitora áreas de risco e envia SMS de alerta para população.<br><br><b>Pergunta do informante:</b> \"Monitoramos 3 áreas de risco e mandamos SMS quando vai chover forte. Temos sirene também.\"<br><br><b>Como orientar:</b><br>1. Monitoramento de áreas de risco: SIM (quesito 6)<br>2. Sistema de alerta: SIM (quesito 7)<br>3. Tipos de alerta:<br>   - \"Mensagens de texto (SMS)\"<br>   - \"Sirenes em áreas de risco\"<br><br><b>Conceito-chave aplicado:</b> Sistema de alerta salva vidas<br><br><b>Erro comum:</b> Não registrar sistemas simples mas eficazes"
+        "title": "🎯 Exemplo Prático 2 - Ecobarreiras para Resíduos",
+        "content": "<b>Situação Real:</b> Município que instalou ecobarreiras em um córrego urbano.<br><br><b>Pergunta do informante:</b> \"Colocamos umas estruturas flutuantes no córrego para pegar o lixo antes de chegar no rio.\"<br><br><b>Como orientar:</b><br>1. Medidas preventivas para resíduos: SIM (quesito 5)<br>2. Tipo: \"Ecobarreiras\" (quesito 5.1)<br>3. Explicar: estruturas flutuantes que capturam resíduos<br><br><b>Conceito-chave aplicado:</b> Prevenção é melhor que correção<br><br><b>Erro comum:</b> Não reconhecer ecobarreiras como medida preventiva"
       },
       {
         "type": "exemplo",
-        "title": "🎯 Exemplo Prático 3 - Monitoramento de Qualidade da Água",
-        "content": "<b>Situação Real:</b> Empresa de saneamento que analisa qualidade da água de drenagem mensalmente.<br><br><b>Pergunta do informante:</b> \"Todo mês coletamos água da nossa drenagem e analisamos pH, turbidez e coliformes.\"<br><br><b>Como orientar:</b><br>1. Monitoramento de qualidade: SIM (quesito 4)<br>2. Parâmetros analisados (quesito 5):<br>   - \"Parâmetros físico-químicos\" (pH, turbidez)<br>   - \"Parâmetros biológicos\" (coliformes)<br>3. Pode marcar MÚLTIPLOS parâmetros<br><br><b>Conceito-chave aplicado:</b> Qualidade = analisar poluentes na água<br><br><b>Erro comum:</b> Confundir análise de qualidade com tratamento"
+        "title": "🎯 Exemplo Prático 3 - Renaturalização de Córrego",
+        "content": "<b>Situação Real:</b> Projeto de renaturalização que removeu concreto e replantou vegetação.<br><br><b>Pergunta do informante:</b> \"Tiramos o concreto do córrego e plantamos árvores nas margens para deixar mais natural.\"<br><br><b>Como orientar:</b><br>1. Ampliação/melhoria: SIM (quesito 7)<br>2. Tipo: \"Renaturalização / Restauração ou Recuperação / Revitalização de cursos d'água\" (quesito 7.1)<br>3. Explicar: restaurar funções ecológicas<br><br><b>Conceito-chave aplicado:</b> Infraestrutura verde vs cinza<br><br><b>Erro comum:</b> Confundir renaturalização com canalização"
+      },
+      {
+        "type": "exemplo",
+        "title": "🎯 Exemplo Prático 4 - Controle de Sedimentos em Obra",
+        "content": "<b>Situação Real:</b> Construtora que usa lava-rodas e leiras para controlar sedimentos.<br><br><b>Pergunta do informante:</b> \"Na nossa obra temos um lugar para lavar as rodas dos caminhões e fizemos uns montes de terra para segurar a lama.\"<br><br><b>Como orientar:</b><br>1. Controle de sedimentos em obras: SIM (quesito 6)<br>2. Ações: \"Sistema lava-rodas\" e \"Leiras\" (quesito 6.1)<br>3. Explicar: leiras são barreiras de terra<br><br><b>Conceito-chave aplicado:</b> Controlar sedimentos na fonte<br><br><b>Erro comum:</b> Não reconhecer medidas simples mas eficazes"
       },
       {
         "type": "duvidas",
         "title": "🗨️ Dúvidas Frequentes",
-        "content": "<b>Dúvida Comum:</b> \"Se a medição de chuva é feita por um voluntário com um pluviômetro caseiro, isso conta?\"<br><b>Como Ajudar:</b> Sim, se essa informação for utilizada oficialmente pelo prestador de serviço, conta como monitoramento.<br><br><b>Dúvida Comum:</b> \"Qual a diferença entre monitoramento de qualidade e tratamento?\"<br><b>Como Ajudar:</b> Monitorar é medir/analisar a água. Tratar é limpá-la.<br><br><b>Dúvida Comum:</b> \"E se o alerta de desastre é só um grupo de WhatsApp?\"<br><b>Como Ajudar:</b> Sim, isso pode ser considerado um sistema de alerta e deve ser registrado, talvez na opção \"Outro\"."
+        "content": "<b>Dúvida Comum:</b> \"Qual a diferença entre curva-chave e ADCP?\"<br><b>Como Ajudar:</b> ADCP é um equipamento que mede vazão diretamente. Curva-chave é uma relação matemática que permite calcular vazão a partir do nível da água.<br><br><b>Dúvida Comum:</b> \"Assoreamento é só areia?\"<br><b>Como Ajudar:</b> Não, inclui areia, argila, lama, detritos, lixo - qualquer material que se acumula e reduz a capacidade do canal.<br><br><b>Dúvida Comum:</b> \"Renaturalização é o mesmo que limpeza?\"<br><b>Como Ajudar:</b> Não, renaturalização é restaurar as características naturais do rio (vegetação, curvas). Limpeza é só remover detritos."
       },
       {
         "type": "resumo",
-        "title": "📊 Resumo Visual",
-        "content": "<table><tr><th>Tipo de Monitoramento</th><th>O que mede?</th></tr><tr><td>Pluviométrico</td><td>Quantidade de chuva</td></tr><tr><td>Fluviométrico</td><td>Nível ou vazão do rio</td></tr><tr><td>Qualidade da Água</td><td>Poluentes (químicos, biológicos)</td></tr><tr><td>Áreas de Risco</td><td>Probabilidade de desastres (inundação, deslizamento)</td></tr></table><br><b>Sistema de Alerta:</b> Forma de avisar a população sobre perigos. Ex: Sirene, SMS."
+        "title": "📊 Resumo dos Dois Blocos",
+        "content": "<table><tr><th>Bloco MON</th><th>Bloco MMP</th></tr><tr><td>Monitoramento de nível/vazão</td><td>Limpeza e manutenção</td></tr><tr><td>Monitoramento de qualidade</td><td>Destinação de resíduos</td></tr><tr><td>Métodos: ADCP, curva-chave</td><td>Controle de assoreamento</td></tr><tr><td>Parâmetros: DQO, pH, metais</td><td>Medidas preventivas</td></tr><tr><td>Bioindicadores</td><td>Controle em obras</td></tr><tr><td>Frequência de monitoramento</td><td>Melhorias: renaturalização</td></tr></table><br><b>Conceito-chave:</b> MON = medir e analisar / MMP = manter e melhorar"
       }
     ],
     "quiz": {
       "title": "📝 Quiz do Módulo 7",
       "questions": [
         {
-          "question": "Qual é o objetivo central do Bloco MON (Monitoramento) na PNSB?",
+          "question": "Qual é o objetivo principal do Bloco MON (Monitoramento) na PNSB?",
           "options": [
-            "Controlar o orçamento destinado à compra de equipamentos de medição, como pluviômetros e sensores de nível.",
-            "Fiscalizar a frequência com que os funcionários do prestador de serviço realizam rondas de inspeção visual nas redes.",
-            "Verificar se o prestador monitora os aspectos quantitativos (nível e vazão) e qualitativos (parâmetros físico-químicos) das águas pluviais.",
-            "Analisar os relatórios de sustentabilidade publicados pelo prestador de serviço em seu site oficial e redes sociais."
+            "Registrar apenas o orçamento destinado à compra de equipamentos de medição como pluviômetros.",
+            "Registrar a altura e vazão da água, além de analisar características físico-químicas e biológicas para identificar contaminantes.",
+            "Fiscalizar exclusivamente a frequência de inspeções visuais realizadas pelos funcionários do prestador.",
+            "Controlar apenas os relatórios de sustentabilidade publicados pelo prestador em mídias sociais."
           ],
-          "answer": "Verificar se o prestador monitora os aspectos quantitativos (nível e vazão) e qualitativos (parâmetros físico-químicos) das águas pluviais.",
-          "feedback": "O Bloco MON foca em investigar se e como o prestador de serviço realiza o monitoramento técnico, tanto da quantidade quanto da qualidade da água no sistema de drenagem."
+          "answer": "Registrar a altura e vazão da água, além de analisar características físico-químicas e biológicas para identificar contaminantes.",
+          "feedback": "O Bloco MON foca no monitoramento técnico quantitativo (nível/vazão) e qualitativo (parâmetros físico-químicos e biológicos) das águas pluviais."
         },
         {
-          "question": "Para o monitoramento da VAZÃO de um curso d'água, qual método ou equipamento é destacado como fundamental no material?",
+          "question": "O que é um ADCP (Perfilador Acústico por Efeito Doppler) e para que serve?",
           "options": [
-            "O uso de um Perfilador Acústico Doppler de Corrente (ADCP) ou a elaboração de uma curva-chave.",
-            "A utilização de sensores ultrassônicos e réguas linimétricas para medir apenas o nível estático da água.",
-            "A coleta de amostras de água para análise de Oxigênio Dissolvido (OD) e Demanda Química de Oxigênio (DQO).",
-            "A instalação de pluviômetros em pontos estratégicos para medir o volume de chuva na bacia hidrográfica."
+            "Um sensor que mede apenas a temperatura da água em reservatórios de detenção.",
+            "Um equipamento que mede vazão de cursos d'água utilizando ondas sonoras para detectar a velocidade da água.",
+            "Um dispositivo que coleta automaticamente amostras de água para análise de qualidade em laboratório.",
+            "Uma régua eletrônica que registra apenas variações do nível da água em rios intermitentes."
           ],
-          "answer": "O uso de um Perfilador Acústico Doppler de Corrente (ADCP) ou a elaboração de uma curva-chave.",
-          "feedback": "Enquanto pluviômetros medem chuva e sensores medem nível, a VAZÃO (volume de água por tempo) é determinada por equipamentos como o ADCP ou calculada através de uma curva-chave, que relaciona nível e vazão."
+          "answer": "Um equipamento que mede vazão de cursos d'água utilizando ondas sonoras para detectar a velocidade da água.",
+          "feedback": "O ADCP é um equipamento sofisticado que usa o efeito Doppler para medir a velocidade da água em diferentes profundidades, permitindo calcular a vazão total."
         },
         {
-          "question": "No monitoramento da qualidade da água, qual é a principal diferença entre a coleta manual e a não manual?",
+          "question": "O que é uma 'curva-chave' no contexto do monitoramento hidrológico?",
           "options": [
-            "A coleta manual é considerada mais precisa para medir o pH, enquanto a não manual é mais adequada para medir a temperatura da água.",
-            "A coleta não manual analisa apenas parâmetros visuais como cor e turbidez, enquanto a manual permite análises químicas complexas.",
-            "A coleta manual é realizada diretamente no curso d'água, enquanto a não manual é feita a partir de amostras de chuva coletadas em telhados.",
-            "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico."
+            "Uma chave de segurança para acessar dados de monitoramento em sistemas informatizados.",
+            "Uma relação matemática entre o nível da água e a vazão, obtida através de medições de campo.",
+            "Uma ferramenta física usada para abrir comportas de barragens durante emergências.",
+            "Um mapa que indica os pontos prioritários para instalação de estações de monitoramento."
           ],
-          "answer": "A coleta não manual utiliza amostradores automáticos que coletam amostras em intervalos programados, enquanto a manual depende de um técnico.",
-          "feedback": "A coleta não manual se refere ao uso de equipamentos automáticos que podem ser programados para coletar amostras de forma sistemática, útil para monitorar eventos de chuva, por exemplo."
+          "answer": "Uma relação matemática entre o nível da água e a vazão, obtida através de medições de campo.",
+          "feedback": "A curva-chave permite estimar a vazão (difícil de medir continuamente) a partir da medição do nível da água (mais fácil de medir), sendo fundamental para o monitoramento hidrológico."
         },
         {
-          "question": "Qual dos seguintes grupos de parâmetros de qualidade da água é relevante para o monitoramento de águas pluviais, segundo o material?",
+          "question": "Qual é a diferença entre rios intermitentes e rios perenes no contexto do monitoramento?",
           "options": [
-            "Contagem de células somáticas, teor de gordura e proteína, e acidez, característicos da análise de qualidade do leite.",
-            "Sólidos, nutrientes (fósforo e nitrogênio), Demanda Química de Oxigênio (DQO), metais pesados e óleos e graxas.",
-            "Nível de cloro residual, flúor, dureza da água e presença de sais minerais, típicos do tratamento de água potável.",
-            "Índice de radiação ultravioleta, concentração de ozônio e presença de material particulado no ar atmosférico."
+            "Rios intermitentes têm água apenas no período chuvoso, enquanto rios perenes têm água o ano todo.",
+            "Rios intermitentes são artificiais e rios perenes são naturais.",
+            "Rios intermitentes são urbanos e rios perenes são rurais.",
+            "Rios intermitentes são poluídos e rios perenes são limpos."
           ],
-          "answer": "Sólidos, nutrientes (fósforo e nitrogênio), Demanda Química de Oxigênio (DQO), metais pesados e óleos e graxas.",
-          "feedback": "Estes parâmetros são indicadores típicos da poluição carregada pela água da chuva em ambientes urbanos (poluição difusa), refletindo o que é 'lavado' das ruas."
+          "answer": "Rios intermitentes têm água apenas no período chuvoso, enquanto rios perenes têm água o ano todo.",
+          "feedback": "Esta distinção é importante para o monitoramento, pois rios intermitentes requerem estratégias diferentes de medição, já que secam em períodos sem chuva."
         },
         {
-          "question": "O que o Bloco MMP (Manutenção, Melhoria e Prevenção) busca identificar?",
+          "question": "O que são bioindicadores no monitoramento da qualidade da água?",
           "options": [
-            "As atividades realizadas para garantir o funcionamento do sistema, como limpeza, desassoreamento e medidas preventivas.",
-            "Os processos de licitação e compra de materiais de escritório, veículos e equipamentos de proteção individual (EPIs).",
-            "O planejamento de longo prazo para a expansão da malha urbana, incluindo a criação de novos bairros e loteamentos.",
-            "A gestão de recursos humanos do prestador, incluindo a contratação, treinamento e plano de carreira dos funcionários."
+            "Equipamentos eletrônicos que mudam de cor na presença de poluentes específicos.",
+            "Organismos vivos cuja presença, ausência ou condição indica a saúde do ecossistema aquático.",
+            "Tabelas com limites máximos de poluentes definidos pela legislação ambiental.",
+            "Modelos matemáticos que preveem a qualidade da água com base em dados meteorológicos."
           ],
-          "answer": "As atividades realizadas para garantir o funcionamento do sistema, como limpeza, desassoreamento e medidas preventivas.",
-          "feedback": "O Bloco MMP foca nas ações práticas de manutenção (corretiva e preventiva) e nas melhorias realizadas na infraestrutura de drenagem existente."
+          "answer": "Organismos vivos cuja presença, ausência ou condição indica a saúde do ecossistema aquático.",
+          "feedback": "Bioindicadores são organismos (peixes, insetos aquáticos, plantas) que complementam as análises físico-químicas, indicando a saúde geral do ecossistema."
         },
         {
-          "question": "Qual é a principal diferença na atividade de limpeza entre a microdrenagem e a macrodrenagem?",
+          "question": "Qual é o objetivo principal do Bloco MMP (Manutenção, Melhoria e Prevenção)?",
           "options": [
-            "A microdrenagem se refere à limpeza de estruturas cinzas, e a macrodrenagem à manutenção de infraestruturas verdes.",
-            "A limpeza da microdrenagem ocorre anualmente, enquanto a da macrodrenagem é realizada semanalmente.",
-            "A limpeza da microdrenagem envolve bueiros e galerias, enquanto a da macrodrenagem foca em córregos e rios.",
-            "A microdrenagem é limpa exclusivamente com equipamentos manuais, enquanto a macrodrenagem exige sempre grandes maquinários."
+            "Manter o sistema de drenagem funcionando, aprimorá-lo e prevenir problemas como assoreamento e descarte inadequado de resíduos.",
+            "Controlar exclusivamente os processos de licitação para compra de equipamentos de limpeza.",
+            "Gerenciar apenas os recursos humanos envolvidos nas atividades de manutenção.",
+            "Planejar exclusivamente a expansão urbana e criação de novos loteamentos."
           ],
-          "answer": "A limpeza da microdrenagem envolve bueiros e galerias, enquanto a da macrodrenagem foca em córregos e rios.",
-          "feedback": "A distinção se dá pela escala: microdrenagem são as estruturas menores de captação e condução (bueiros, sarjetas, galerias), e macrodrenagem são os grandes canais e cursos d'água."
+          "answer": "Manter o sistema de drenagem funcionando, aprimorá-lo e prevenir problemas como assoreamento e descarte inadequado de resíduos.",
+          "feedback": "O Bloco MMP foca nas ações práticas de manutenção (corretiva e preventiva) e melhorias da infraestrutura de drenagem existente."
         },
         {
-          "question": "O que é 'assoreamento' no contexto da manutenção de sistemas de drenagem?",
+          "question": "Qual é a principal diferença entre microdrenagem e macrodrenagem nas atividades de limpeza?",
           "options": [
-            "O crescimento excessivo de vegetação aquática nas margens e no leito dos rios, dificultando o fluxo da água.",
-            "O processo de corrosão de tubulações de metal devido à ação de agentes químicos presentes na água pluvial.",
-            "A formação de uma camada de lodo e biofilme na superfície interna das galerias pluviais.",
-            "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade."
+            "Microdrenagem refere-se a estruturas menores (bueiros, sarjetas, galerias) e macrodrenagem a estruturas maiores (córregos, rios, canais).",
+            "Microdrenagem é limpa manualmente e macrodrenagem sempre com maquinário pesado.",
+            "Microdrenagem é responsabilidade municipal e macrodrenagem é estadual.",
+            "Microdrenagem trata águas limpas e macrodrenagem trata águas poluídas."
           ],
-          "answer": "O acúmulo de sedimentos (areia, argila, etc.) e detritos no fundo de canais, rios e reservatórios, reduzindo sua capacidade.",
-          "feedback": "O assoreamento é um dos principais problemas a serem combatidos com a manutenção (desassoreamento), pois ele diminui a capacidade de vazão dos canais e aumenta o risco de inundações."
+          "answer": "Microdrenagem refere-se a estruturas menores (bueiros, sarjetas, galerias) e macrodrenagem a estruturas maiores (córregos, rios, canais).",
+          "feedback": "A distinção é por escala: microdrenagem são as estruturas de captação e condução menores, macrodrenagem são os grandes canais e cursos d'água."
         },
         {
-          "question": "Qual das seguintes opções é uma medida PREVENTIVA para o controle de sedimentos em sistemas de drenagem?",
+          "question": "O que é assoreamento e por que é um problema para sistemas de drenagem?",
           "options": [
-            "Implantação de ecobarreiras, caixas de areia ou varrição mecanizada de ruas antes das chuvas.",
-            "Reforço estrutural das margens de um córrego com gabiões após um evento de erosão e deslizamento.",
-            "Abertura de comportas de barragens após uma chuva intensa para liberar o excesso de água acumulada.",
-            "Utilização de caminhões hidrojato para desobstruir galerias que já estão entupidas com lixo e detritos."
+            "É o crescimento de vegetação aquática que dificulta o fluxo da água.",
+            "É o acúmulo de sedimentos (areia, argila, detritos) que reduz a capacidade de vazão e aumenta o risco de inundações.",
+            "É a corrosão de tubulações metálicas causada por agentes químicos na água.",
+            "É a formação de biofilme nas superfícies internas das galerias pluviais."
           ],
-          "answer": "Implantação de ecobarreiras, caixas de areia ou varrição mecanizada de ruas antes das chuvas.",
-          "feedback": "Medidas preventivas são aquelas que evitam que o problema ocorra, como impedir que o lixo e os sedimentos cheguem ao sistema de drenagem. A desobstrução e o reforço são ações corretivas."
+          "answer": "É o acúmulo de sedimentos (areia, argila, detritos) que reduz a capacidade de vazão e aumenta o risco de inundações.",
+          "feedback": "O assoreamento é um dos principais problemas a serem combatidos, pois diminui a capacidade dos canais de conduzir água, aumentando o risco de enchentes."
         },
         {
-          "question": "Para controle de sedimentos em áreas de OBRAS, que tipo de medida preventiva pode ser adotada?",
+          "question": "O que são ecobarreiras e qual sua função no controle de resíduos sólidos?",
           "options": [
-            "Aumento do número de bueiros no entorno da obra para captar mais rapidamente a água com sedimentos.",
-            "Instalação de dispositivos de lava-rodas para veículos, construção de leiras e uso de barreiras de contenção.",
-            "Cobertura total da área da obra com lona plástica para impedir o contato da chuva com o solo exposto.",
-            "Aplicação de uma camada de asfalto temporária em toda a área de terraplanagem para evitar a lama."
+            "São barreiras de concreto instaladas nas margens dos rios para evitar erosão.",
+            "São estruturas flutuantes que bloqueiam o escoamento de resíduos sólidos em corpos d'água.",
+            "São filtros submersos que removem poluentes químicos da água.",
+            "São grades fixas instaladas no fundo dos canais para reter sedimentos."
           ],
-          "answer": "Instalação de dispositivos de lava-rodas para veículos, construção de leiras e uso de barreiras de contenção.",
-          "feedback": "O material destaca medidas específicas para canteiros de obras, que são grandes fontes de sedimentos. Lava-rodas, leiras e barreiras ajudam a conter o sedimento na fonte."
+          "answer": "São estruturas flutuantes que bloqueiam o escoamento de resíduos sólidos em corpos d'água.",
+          "feedback": "Ecobarreiras funcionam como 'redes' flutuantes que capturam lixo e resíduos antes que cheguem a corpos d'água maiores, sendo uma medida preventiva eficaz."
         },
         {
-          "question": "Qual é a principal finalidade da 'renaturalização' de um curso d'água, como uma melhoria no sistema de drenagem?",
+          "question": "No controle de sedimentos em obras, o que são 'leiras' e qual sua função?",
           "options": [
-            "Transformar o rio em um canal retilíneo e profundo para otimizar o transporte de água e evitar transbordamentos.",
-            "Cobrir (tamponar) o rio com uma laje de concreto para criar novas áreas de lazer e espaços públicos sobre ele.",
-            "Revestir completamente o leito e as margens do rio com concreto para aumentar a velocidade da água e a eficiência da vazão.",
-            "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização."
+            "São tubulações especiais para drenar água de canteiros de obras.",
+            "São montes de terra ou material que funcionam como barreiras para conter sedimentos.",
+            "São equipamentos mecânicos para compactar o solo em áreas de construção.",
+            "São revestimentos impermeáveis aplicados em superfícies expostas."
           ],
-          "answer": "Restaurar as características ecológicas e hidrológicas do rio, aproximando-o de sua forma original antes da urbanização.",
-          "feedback": "A renaturalização é o oposto da canalização com concreto. Ela busca trazer de volta a vegetação, as curvas e as funções ecológicas de um rio, sendo uma abordagem de infraestrutura verde."
+          "answer": "São montes de terra ou material que funcionam como barreiras para conter sedimentos.",
+          "feedback": "Leiras são barreiras simples mas eficazes, feitas com terra ou outros materiais, que impedem que sedimentos das obras sejam carregados pela chuva para o sistema de drenagem."
         },
         {
-          "question": "O que distingue a destinação final dos resíduos removidos na limpeza dos sistemas de drenagem?",
+          "question": "Qual é a diferença fundamental entre renaturalização e tamponamento de cursos d'água?",
           "options": [
-            "Podem ser destinados a aterros sanitários, vazadouros, áreas de processamento (bota-fora) ou compostagem.",
-            "Devem ser obrigatoriamente incinerados em usinas específicas para geração de energia elétrica.",
-            "São sempre reutilizados como matéria-prima na indústria da construção civil para fabricação de tijolos.",
-            "Precisam ser depositados diretamente nas margens dos rios a jusante do ponto de coleta para seguir o fluxo natural."
+            "Renaturalização restore características naturais do rio (vegetação, curvas), enquanto tamponamento 'enterra' o rio em galerias.",
+            "Renaturalização é mais barata que tamponamento.",
+            "Renaturalização é usada em rios poluídos e tamponamento em rios limpos.",
+            "Renaturalização é técnica antiga e tamponamento é técnica moderna."
           ],
-          "answer": "Podem ser destinados a aterros sanitários, vazadouros, áreas de processamento (bota-fora) ou compostagem.",
-          "feedback": "O questionário investiga o destino dado a esses resíduos, que pode variar muito em termos de adequação ambiental, desde a correta (aterro, compostagem) até a incorreta (vazadouro)."
+          "answer": "Renaturalização restore características naturais do rio (vegetação, curvas), enquanto tamponamento 'enterra' o rio em galerias.",
+          "feedback": "Renaturalização é uma abordagem de infraestrutura verde que restaura funções ecológicas, enquanto tamponamento é uma abordagem tradicional que esconde o rio em estruturas artificiais."
         },
         {
-          "question": "O que são 'bioindicadores' no contexto do monitoramento da qualidade da água?",
+          "question": "Qual dos seguintes parâmetros NÃO é tipicamente analisado no monitoramento de qualidade de águas pluviais?",
           "options": [
-            "Modelos matemáticos que preveem a qualidade da água com base em dados de chuva e uso do solo.",
-            "Sensores eletrônicos que mudam de cor para indicar a presença de poluentes específicos na água.",
-            "Organismos vivos (como peixes ou insetos aquáticos) cuja presença, ausência ou condição indica a saúde do ecossistema.",
-            "Tabelas de referência com os limites máximos permitidos para cada poluente, definidas pelo CONAMA."
+            "Demanda Química de Oxigênio (DQO) e sólidos suspensos.",
+            "Metais pesados e óleos e graxas.",
+            "Radioatividade e isótopos nucleares.",
+            "Nutrientes (nitrogênio e fósforo) e coliformes."
           ],
-          "answer": "Organismos vivos (como peixes ou insetos aquáticos) cuja presença, ausência ou condição indica a saúde do ecossistema.",
-          "feedback": "O uso de bioindicadores é uma forma de avaliar a qualidade da água a partir da resposta da comunidade biológica, complementando as análises físico-químicas."
+          "answer": "Radioatividade e isótopos nucleares.",
+          "feedback": "Parâmetros radioativos não são típicos do monitoramento de águas pluviais urbanas. Os parâmetros relevantes são aqueles relacionados à poluição difusa urbana."
         },
         {
-          "question": "Qual é a diferença fundamental entre 'melhoria' e 'manutenção' no Bloco MMP?",
+          "question": "Qual é a diferença entre coleta manual e coleta não manual no monitoramento de qualidade da água?",
           "options": [
-            "Manutenção é realizada por equipes próprias do prestador, enquanto melhorias são sempre executadas por empresas terceirizadas.",
-            "Manutenção se aplica apenas a infraestruturas cinzas (concreto), enquanto melhoria se aplica a infraestruturas verdes.",
-            "Manutenção é uma despesa corrente (custeio), enquanto melhoria é sempre classificada como despesa de capital (investimento).",
-            "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura."
+            "Coleta manual é mais precisa para pH, coleta não manual é melhor para temperatura.",
+            "Coleta não manual utiliza amostradores automáticos programados, enquanto manual depende de um técnico.",
+            "Coleta manual é feita em rios, coleta não manual é feita em reservatórios.",
+            "Coleta manual analisa parâmetros físicos, coleta não manual analisa parâmetros químicos."
           ],
-          "answer": "Manutenção visa preservar a funcionalidade existente, enquanto melhoria busca ampliar ou qualificar a infraestrutura.",
-          "feedback": "Manutenção é sobre manter o que já existe funcionando (limpeza, reparos). Melhoria é sobre fazer um upgrade no sistema (ampliar, renaturalizar, etc.)."
+          "answer": "Coleta não manual utiliza amostradores automáticos programados, enquanto manual depende de um técnico.",
+          "feedback": "A coleta não manual permite monitoramento sistemático usando equipamentos automáticos, útil para capturar eventos de chuva sem necessidade de presença humana."
         },
         {
-          "question": "No monitoramento quantitativo, o que é uma 'curva-chave'?",
+          "question": "Qual das seguintes opções representa uma destinação INADEQUADA dos resíduos da limpeza de sistemas de drenagem?",
           "options": [
-            "Uma chave de acesso criptografada para acessar os dados de monitoramento em tempo real pela internet.",
-            "Uma relação matemática entre o nível da água e a vazão em uma seção do rio, obtida por medições de campo.",
-            "Uma ferramenta usada para abrir e fechar as comportas de barragens de forma manual em caso de emergência.",
-            "Um mapa que indica os pontos-chave onde o monitoramento de enchentes deve ser realizado com prioridade."
+            "Aterro sanitário licenciado.",
+            "Lançamento em corpos d'água (rios, lagos, oceanos).",
+            "Processamento através de triagem e reciclagem.",
+            "Compostagem de materiais orgânicos."
           ],
-          "answer": "Uma relação matemática entre o nível da água e a vazão em uma seção do rio, obtida por medições de campo.",
-          "feedback": "A curva-chave é uma ferramenta essencial. Após estabelecida, permite estimar a vazão (que é difícil de medir continuamente) a partir da medição do nível da água (que é mais fácil)."
+          "answer": "Lançamento em corpos d'água (rios, lagos, oceanos).",
+          "feedback": "Lançar resíduos da limpeza diretamente em corpos d'água é uma prática inadequada que contamina o meio ambiente. As outras opções são formas apropriadas de destinação."
         },
         {
-          "question": "Qual dos seguintes equipamentos é utilizado para medir a quantidade de chuva em um determinado local?",
+          "question": "No contexto das melhorias de drenagem, o que caracteriza um 'piscinão'?",
           "options": [
-            "Um ADCP (Perfilador Acústico Doppler de Corrente), para medir a velocidade da água.",
-            "Um sensor de nível ultrassônico, para medir a altura da lâmina d'água em um rio.",
-            "Um pluviômetro ou uma estação pluviométrica.",
-            "Um termômetro digital, para registrar a temperatura do ar durante a precipitação."
+            "Uma piscina pública construída em área de lazer urbano.",
+            "Uma estrutura de detenção/retenção para controle e amortecimento de cheias.",
+            "Um reservatório de água potável para abastecimento público.",
+            "Uma lagoa ornamental em parques e praças."
           ],
-          "answer": "Um pluviômetro ou uma estação pluviométrica.",
-          "feedback": "O pluviômetro é o instrumento padrão e específico para medir a precipitação (chuva) em um ponto."
+          "answer": "Uma estrutura de detenção/retenção para controle e amortecimento de cheias.",
+          "feedback": "'Piscinão' é o termo popular para grandes reservatórios que temporariamente armazenam água de chuva durante eventos intensos, reduzindo picos de vazão e controlando enchentes."
         }
       ]
     }
   }
-});
+}); 
